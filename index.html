@@ -205,6 +205,10 @@ h1{margin:0;font-size:26px;line-height:1.25;font-weight:700;letter-spacing:-.03e
 .osbox[hidden]{display:none}
 .appbox{display:grid;gap:10px;padding-bottom:16px;border-bottom:.5px solid var(--sep)}
 .appbox[hidden]{display:none}
+.steps .li-cp{position:relative;min-height:28px}
+.steps .li-cp>span{display:inline}
+.cpurl{float:right;display:inline-flex;align-items:center;margin:-3px 0 0 8px;border:0;border-radius:999px;background:var(--tint-soft);color:var(--tint);font:inherit;font-size:13px;font-weight:600;min-height:28px;padding:0 12px;cursor:pointer;white-space:nowrap}
+.cpurl[data-done]{background:var(--fill);color:var(--label2)}
 .sub-h{margin:0;font-size:15px;font-weight:600;color:var(--label)}
 
 /* bottom tab bar */
@@ -305,13 +309,13 @@ body.lock{overflow:hidden}
             </div>
             <p class="sub-h">바로가기만 만들기</p>
             <ol class="steps">
-              <li><b>크롬</b>에서 이 페이지를 열어요.</li>
+              <li class="li-cp"><button class="cpurl" type="button" data-copy-url="https://cysrocke.github.io/daily-briefing/">주소 복사</button><span><b>크롬</b>에서 이 페이지를 열어요.</span></li>
               <li>오른쪽 위 <b>⋮</b> 메뉴를 눌러요.</li>
               <li><b>홈 화면에 추가</b>를 누르고 <b>추가</b>를 눌러요.</li>
             </ol>
           </div>
           <ol class="steps" id="os-ios-steps" hidden>
-            <li><b>사파리</b>에서 이 페이지를 열어요.</li>
+            <li class="li-cp"><button class="cpurl" type="button" data-copy-url="https://cysrocke.github.io/daily-briefing/">주소 복사</button><span><b>사파리</b>에서 이 페이지를 열어요.</span></li>
             <li>아래쪽 <b>공유</b> 버튼(네모에 위쪽 화살표)을 눌러요.</li>
             <li><b>홈 화면에 추가</b>를 누르고 <b>추가</b>를 눌러요.</li>
           </ol>
@@ -641,8 +645,8 @@ body.lock{overflow:hidden}
     if(e)return "[행사] "+(e.title_ko||e.title)+"\n기간: "+period(e.start,e.end)+(e.place?"\n장소: "+e.place:"")+(e.host?"\n주최: "+e.host:"")+(e.reg?"\n신청: "+e.reg:"")+(e.summary?"\n\n"+e.summary:"")+"\n\n"+e.url;
     return "";
   }
-  function copyItem(btn){
-    var txt=copyText(btn.getAttribute("data-copy-id")); if(!txt)return;
+  function copyItem(btn,raw){
+    var txt=raw||copyText(btn.getAttribute("data-copy-id")); if(!txt)return;
     function done(){btn.setAttribute("data-done","1");toast("복사했어요");setTimeout(function(){btn.removeAttribute("data-done")},1600)}
     function fallback(){var ta=document.createElement("textarea");ta.value=txt;ta.setAttribute("readonly","");ta.style.position="fixed";ta.style.opacity="0";document.body.appendChild(ta);ta.select();var ok=false;try{ok=document.execCommand("copy")}catch(e){}document.body.removeChild(ta);if(ok)done();else toast("복사가 막혀 있어요. 글을 길게 눌러 복사해 주세요.")}
     try{if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt).then(done,fallback)}else fallback()}catch(e){fallback()}
@@ -717,6 +721,7 @@ body.lock{overflow:hidden}
     b.setAttribute("aria-expanded",String(o)); body.hidden=!o; b.parentNode.setAttribute("data-open",o?"1":"0");
   })});
   try{if(window.DPApp)document.getElementById("appbox").hidden=true}catch(x){}
+  document.querySelector(".help").addEventListener("click",function(e){var b=e.target.closest("button[data-copy-url]");if(!b)return;copyItem(b,b.getAttribute("data-copy-url"));var t=b.textContent;b.textContent="복사했어요";setTimeout(function(){b.textContent=t},1600)});
   document.getElementById("ostabs").addEventListener("click",function(e){var b=e.target.closest("button[data-os]");if(!b)return;
     document.querySelectorAll("#ostabs button").forEach(function(x){x.setAttribute("aria-selected",String(x===b))});
     document.getElementById("os-android-steps").hidden=b.dataset.os!=="android";document.getElementById("os-ios-steps").hidden=b.dataset.os!=="ios"});
