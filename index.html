@@ -406,7 +406,9 @@ body.lock{overflow:hidden}
       icon:svg('<path d="M8 8l-4 4 4 4M16 8l4 4-4 4M13.5 5l-3 14"/>')},
     {id:"fe",name:"FE 개발자",desc:"웹 프론트엔드 성능, 구조, 도구",scope:"프론트엔드 성능/구조/도구를 다른 팀이 어떻게 개선했는지 모았어요.",
       icon:svg('<rect x="3" y="4" width="18" height="16" rx="2.5"/><path d="M3 8.5h18M9.5 12.5l-2 2 2 2M14.5 12.5l2 2-2 2"/>')},
-    {id:"be",name:"BE 개발자",desc:"서버, 데이터베이스, 장애와 운영",scope:"서버/데이터베이스/장애 대응을 다른 팀이 어떻게 풀었는지 모았어요.",
+    {id:"be",name:"BE 개발자",desc:"서버, API, 장애와 운영",scope:"서버/API/트래픽/장애 대응을 다른 팀이 어떻게 풀었는지 모았어요.",
+      icon:svg('<rect x="4" y="4" width="16" height="6.5" rx="1.8"/><rect x="4" y="13.5" width="16" height="6.5" rx="1.8"/><path d="M8 7.25h.01M8 16.75h.01M12 7.25h4M12 16.75h4"/>')},
+    {id:"dba",name:"DBA",desc:"DB 설계, 성능 튜닝, 이전과 운영",scope:"데이터베이스 설계/성능 튜닝/이전/백업과 복구를 다른 팀이 어떻게 했는지 모았어요.",
       icon:svg('<ellipse cx="12" cy="6" rx="7.5" ry="2.8"/><path d="M4.5 6v6c0 1.5 3.4 2.8 7.5 2.8s7.5-1.3 7.5-2.8V6M4.5 12v6c0 1.5 3.4 2.8 7.5 2.8s7.5-1.3 7.5-2.8v-6"/>')},
     {id:"app",name:"앱 개발자",desc:"안드로이드/iOS, 스토어 정책 대응",scope:"안드로이드/iOS 앱을 다른 팀이 어떻게 만들고 고쳤는지, 스토어 변화에 어떻게 맞췄는지 모았어요.",
       icon:svg('<rect x="6.5" y="2.5" width="11" height="19" rx="2.5"/><path d="M10.5 18.5h3"/>')},
@@ -497,7 +499,7 @@ body.lock{overflow:hidden}
   function splitSent(t){
     var out=[],buf="";
     for(var i=0;i<t.length;i++){var c=t.charAt(i);buf+=c;
-      if((c==="."||c==="!"||c==="?")&&/\s/.test(t.charAt(i+1)||" ")){if(buf.trim())out.push(buf.trim());buf=""}}
+      if((c==="."||c==="!"||c==="?")&&/\s/.test(t.charAt(i+1)||" ")&&/[\uAC00-\uD7A3)\]"'”’]/.test(t.charAt(i-1)||"")){if(buf.trim())out.push(buf.trim());buf=""}}
     if(buf.trim())out.push(buf.trim());
     return out;
   }
