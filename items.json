@@ -9,10 +9,10 @@
     "roles": {
      "planner": "토스뱅크가 송금 상태를 9개에서 3개로 줄이고 AI 상담에 자주 묻는 질문을 먼저 보여 준 화면 개선 사례가 올라왔다. Baymard의 상품 스펙 표 기준과 목록 비교 기능 사례, 사내 AI 앱을 운영에 올리는 승인 절차도 함께 볼 수 있다.",
      "designer": "토스뱅크 디자이너들이 추천 영역, AI 상담 첫 화면, 해외송금 상태, 적금 상품을 어떻게 다시 설계했는지 직접 정리한 글 4편이 올라왔다. AI 이미지 생성으로 캐릭터를 만든 작업 방식과 CSS random()으로 화면에 변주를 주는 법도 함께 실었다.",
-     "pm": "토스뱅크 사례에서 디자이너와 PO가 같은 비용 안에서 보상 구조를 비교하고 데이터로 방향을 설득한 과정을 볼 수 있다. AI 숙련자들이 맥락 파일을 관리하는 방식과, 직원이 AI로 만든 앱을 접수부터 운영 배포까지 관리하는 절차도 올라왔다.",
+     "pm": "평점이 높아도 매일 직접 써보는 점검으로 프로모션 입력 문제를 찾은 사례와, AI 전환에서 데이터 준비와 정확도 목표를 따로 관리한 사례가 오늘 새로 올라왔다. 토스뱅크 송금 화면의 상태 정리, 추천 영역과 AI 상담 개선, 사내 AI 앱 운영 플랫폼도 함께 실었다.",
      "publisher": "Chrome 154/155와 9월 웹 플랫폼 변경, 8월 Baseline 정리로 지금 바로 쓸 수 있는 CSS/HTML 기능을 한 번에 확인할 수 있다. JPEG XL 디코딩, iframe 높이 자동 맞춤, CSS random() 같은 새 기능은 지원 범위를 확인한 뒤 점진 적용하는 것이 좋다.",
      "fe": "토스뱅크 프론트엔드 챕터가 사내 패키지를 ESM 단독으로 바꾸고 배포 기준을 세운 과정을 두 편으로 정리했다. 당근의 웹뷰 오버레이 순서 제어, React Native 0.88, Chrome DevTools와 웹 플랫폼 변경 소식도 함께 올라왔다.",
-     "be": "토스증권은 평균 지표가 정상인데 커밋이 느려지던 원인을 NIC 인터럽트 쏠림에서 찾았고, 토스는 사내 AI 게이트웨이로 모델 호출과 비용을 묶었다. AWS의 PgBouncer와 RDS Proxy 비교, 스냅샷 복원 직후 느려지는 현상 대응도 실었다.",
+     "be": "주문 취소의 출고 경합 처리, 문자 발송 구조의 점진 전환, 대용량 DB 이전의 컷오버와 롤백 설계, 배치 오케스트레이션 분리 같은 운영 중 시스템을 바꾼 사례가 새로 올라왔다. 커밋 지연 원인 추적, 커넥션 풀링 비교, 스냅샷 복원 후 지연, 사내 AI 플랫폼 글도 함께 실었다.",
      "app": "Grab은 R8와 프로파일 최적화로 ANR을 약 32% 줄였고, Instagram Direct는 AI 에이전트가 다루기 쉬운 구조로 Compose 전환을 진행했다. 29CM의 실기기 자동화 개선, 당근의 웹뷰 오버레이 제어, React Native 0.88 소식도 함께 볼 수 있다.",
      "qa": "LINE Plus QA가 AI로 E2E 회귀 테스트 98개를 자동화하며 잘못 통과하는 테스트를 걸러 낸 과정을 정리했다. 29CM은 실기기 테스트 큐를 공유해 iOS 수행 시간을 25분에서 12분으로 줄였다."
     }
@@ -28,6 +28,110 @@
   }
  ],
  "items": [
+  {
+   "menu": "plan",
+   "type": "아티클/블로그",
+   "title": "Why we replaced weekly product reviews with daily customer journeys",
+   "title_ko": "주간 제품 리뷰를 매일 고객 여정 점검으로 바꾼 이유",
+   "source": "Mind the Product",
+   "url": "https://www.mindtheproduct.com/crash-the-app-what-our-4-8-star-rating-was-hiding/",
+   "date": "2026-10-20",
+   "summary": "Holland & Barrett의 프린시펄 PM이 앱 평점이 4.8점인데도 프로모션 코드 적용이 안정적이지 않았던 문제를 풀어간 과정을 정리했다. 주 1회 30분 점검을 PM이 매일 아침 자기 영역을 직접 써보고 발견한 불편을 팀 백로그에 바로 올리는 방식으로 바꿨다. 원인은 CMS와 프로모션 도구에 프로모션을 이중 입력하는 구조였고, CMS 수동 입력란을 없애 프로모션 도구를 단일 기준으로 삼았으며 다음 대형 캠페인 전에 출시해 관련 불만이 크게 줄었다고 한다(구체 수치는 글에 없음).",
+   "why": "프로모션/쿠폰 설정이 여러 어드민에 흩어진 리테일 팀에서 PM이 직접 매일 써보는 점검 루틴과 입력 일원화 우선순위 결정에 참고할 수 있다.",
+   "lang": "en",
+   "roles": [
+    "pm",
+    "planner"
+   ],
+   "id": "2026-10-21-plan-30",
+   "issue": "2026-10-21"
+  },
+  {
+   "menu": "plan",
+   "type": "아티클/블로그",
+   "title": "Lessons from managing AI transformation in a $40 billion contract portfolio",
+   "title_ko": "400억 달러 규모 계약 포트폴리오 AI 전환 관리에서 얻은 교훈",
+   "source": "Mind the Product",
+   "url": "https://www.mindtheproduct.com/lessons-from-managing-ai-transformation-in-a-40-billion-contract-portfolio/",
+   "date": "2026-10-01",
+   "summary": "아마존 물류 조직의 시니어 기술 PM이었던 필자가 계약서 조항을 추출하는 ML 시스템을 공동 구축해 추출 정확도 95%를 달성한 과정을 소개한다. 법무/구매/운영이 몇 주에 걸쳐 조항 분류 체계를 먼저 합의하고, 실제 계약 문서 수천 건을 직접 라벨링하며, 모델 오류를 하류 시스템 전에 잡는 검수 단계를 뒀다. 데이터 준비를 별도 담당/일정/예산이 있는 워크스트림으로 분리하고 정확도 목표를 수동 검토 폐지 같은 실제 의사결정에 묶으라고 권한다.",
+   "why": "상품/주문/정책 데이터를 AI에 붙이려는 리테일 팀에서 PM이 데이터 준비 범위와 정확도 기준을 잡을 때 쓸 수 있다.",
+   "lang": "en",
+   "roles": [
+    "pm",
+    "planner"
+   ],
+   "id": "2026-10-21-plan-31",
+   "issue": "2026-10-21"
+  },
+  {
+   "menu": "plan",
+   "type": "아티클/블로그",
+   "title": "고객의 취소할 권리를 보장하다",
+   "title_ko": "고객의 취소할 권리를 보장하다: 배송준비중 주문 취소 구조 개편",
+   "source": "올리브영 테크블로그",
+   "url": "https://oliveyoung.tech/2026-09-23/order-cancellation-shipping-ready/",
+   "date": "2026-09-23",
+   "summary": "배송준비중 상태에서 취소가 막히던 문제를 취소 마감 시점을 배송 유형별 되돌릴 수 없는 시점(센터는 피킹 완료, 업체 배송은 송장 등록, 당일배송은 기사 출발)으로 옮겨 풀었다. 주문번호 단위 Redis 분산락으로 출고와 취소의 경합을 막고, 택배사 장애는 서킷브레이커와 SQS로 분리했으며 미완료 후속 처리는 보상 배치로 맞췄다. 회사 자체 평가로 배송준비중 취소 관련 문의가 평시 약 90%, 세일 기간 약 89% 줄었다.",
+   "why": "주문/취소 상태 정책과 출고 경합 처리를 설계하는 BE가 락 방식 선택과 외부 연동 장애 격리를 그대로 참고할 수 있다.",
+   "lang": "ko",
+   "roles": [
+    "be"
+   ],
+   "id": "2026-10-21-plan-32",
+   "issue": "2026-10-21"
+  },
+  {
+   "menu": "plan",
+   "type": "아티클/블로그",
+   "title": "때로는 오버엔지니어링이 필요합니다",
+   "title_ko": "때로는 오버엔지니어링이 필요합니다: 레거시 문자 발송 데몬을 CDC와 Kafka로 전환",
+   "source": "올리브영 테크블로그",
+   "url": "https://oliveyoung.tech/2026-09-23/overengineering-message-system/",
+   "date": "2026-09-23",
+   "summary": "WAS와 같은 장비에서 돌던 문자 발송 데몬을, 서비스들이 기존처럼 발송 대상 테이블에 넣으면 CDC가 이를 Kafka로 보내는 방식으로 점진 전환했다. 큐에는 메시지 ID만 싣고 별도 워커가 처리하며, 컨슈머 그룹으로 단일 인스턴스 제약을 없앴고 발송 대상 테이블 INSERT가 0이 되면 임시 구조를 걷어내기로 했다. 15일 운영 기준 건당 평균 처리 시간은 67ms이고 10분간 1만 건 넘는 스파이크도 큐가 흡수했다고 밝혔다.",
+   "why": "여러 서비스가 직접 테이블에 쓰는 알림/문자 발송을 빅뱅 없이 큐 기반으로 옮겨야 하는 BE의 전환 방법으로 쓸 수 있다.",
+   "lang": "ko",
+   "roles": [
+    "be"
+   ],
+   "id": "2026-10-21-plan-33",
+   "issue": "2026-10-21"
+  },
+  {
+   "menu": "plan",
+   "type": "아티클/블로그",
+   "title": "How U.S. Bank migrated 119 TB from Oracle Exadata to Amazon RDS for Oracle",
+   "title_ko": "U.S. Bank의 119TB Oracle Exadata에서 RDS for Oracle 이전 사례",
+   "source": "AWS Database Blog",
+   "url": "https://aws.amazon.com/blogs/database/how-u-s-bank-migrated-119-tb-from-oracle-exadata-to-amazon-rds-for-oracle/",
+   "date": "2026-10-20",
+   "summary": "Oracle 19c Exadata DB 4개(총 119TB)를 크로스 플랫폼 트랜스포터블 테이블스페이스와 DataSync, EFS 스테이징으로 RDS for Oracle에 옮긴 사례다. 증분 백업으로 원본을 운영 상태로 유지하다 읽기 전용 전환 후 최종 증분을 적용했고, DB당 다운타임은 평균 약 4시간이었으며 검증 실패 시 원본을 되돌리는 롤백 경로를 남겼다. 공유 회선 대역폭 제약 아래 최초 전체 복사에 약 7일이 걸렸다.",
+   "why": "대용량 DB 이전 시 컷오버 절차와 다운타임 산정, 롤백 설계를 잡는 BE가 참고할 수 있다.",
+   "lang": "en",
+   "roles": [
+    "be"
+   ],
+   "id": "2026-10-21-plan-34",
+   "issue": "2026-10-21"
+  },
+  {
+   "menu": "plan",
+   "type": "아티클/블로그",
+   "title": "실행은 도메인별로, 문맥은 한 레포에 중앙 DW Airflow를 멈추지 않고 도메인별 DW로 나눈 9개월",
+   "title_ko": "중앙 DW Airflow를 멈추지 않고 도메인별 DW로 나눈 9개월",
+   "source": "토스 테크블로그",
+   "url": "https://toss.tech/article/dw-airflow-migration",
+   "date": "2026-10-16",
+   "summary": "DAG 파일 400개 이상을 돌리던 중앙 Airflow를 Strangler Fig 방식으로 도메인별 클러스터로 나눈 과정이다. 신구 파이프라인을 약 3주 병행 실행하며 결과를 비교했고, dbt ref로 의존 순서를 자동 도출해 광고 도메인 DAG 코드를 2,794줄에서 100줄로, 파이프라인 실행 시간을 4시간에서 2시간 30분으로 줄였다. 이는 회사 자체 평가 수치다.",
+   "why": "정산/집계 배치를 많이 운영하는 BE가 배치 오케스트레이션을 무중단으로 쪼개는 순서와 병행 검증 방식을 참고할 수 있다.",
+   "lang": "ko",
+   "roles": [
+    "be"
+   ],
+   "id": "2026-10-21-plan-35",
+   "issue": "2026-10-21"
+  },
   {
    "id": "2026-10-21-plan-04",
    "issue": "2026-10-21",
@@ -1167,7 +1271,7 @@
    "lang": "en"
   }
  ],
- "updated": "2026-10-21T10:30+09:00",
+ "updated": "2026-10-21T10:40+09:00",
  "next": "2026-10-22",
  "seen": [
   "https://2026.feconf.kr/",
@@ -1281,7 +1385,13 @@
   "https://www.salesforce.com/kr/events/industry-summit/2026/retail-consumer-goods/",
   "https://www.wowtv.co.kr/NewsCenter/News/Read?articleId=A202610150114",
   "https://www.wowtv.co.kr/NewsCenter/News/Read?articleId=A202610160113",
-  "https://yage.ai/share/ai-design-direction-written-down-en-20261011.html"
+  "https://yage.ai/share/ai-design-direction-written-down-en-20261011.html",
+  "https://www.mindtheproduct.com/crash-the-app-what-our-4-8-star-rating-was-hiding/",
+  "https://www.mindtheproduct.com/lessons-from-managing-ai-transformation-in-a-40-billion-contract-portfolio/",
+  "https://oliveyoung.tech/2026-09-23/order-cancellation-shipping-ready/",
+  "https://oliveyoung.tech/2026-09-23/overengineering-message-system/",
+  "https://aws.amazon.com/blogs/database/how-u-s-bank-migrated-119-tb-from-oracle-exadata-to-amazon-rds-for-oracle/",
+  "https://toss.tech/article/dw-airflow-migration"
  ],
  "events": [
   {
