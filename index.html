@@ -293,7 +293,10 @@ body.lock{overflow:hidden}
 .tok.rchip{display:inline-flex;align-items:center;gap:6px;background:var(--tint-soft);color:var(--tint);font-weight:600;padding:0 12px 0 10px}
 .tok.rchip .ri{margin-right:0}
 .tok.rchip::before{content:"";order:3;width:6px;height:6px;border-right:1.6px solid currentColor;border-bottom:1.6px solid currentColor;transform:translateY(-2px) rotate(45deg);margin-left:2px}
-.tsep{flex:none;width:1px;align-self:center;height:18px;background:var(--sep)}
+.tokens.inrow{overflow:visible;margin-inline:0;padding-inline:0;justify-content:space-between;align-items:center;gap:10px}
+.tokens.inrow .rchip{flex:0 1 auto;min-width:0;overflow:hidden;text-overflow:ellipsis}
+.lvseg{flex:none;width:172px}
+.lvseg button{min-height:28px;font-size:13px}
 .ibox{padding:14px 16px;display:grid;gap:10px}
 .ibox+.ibox{border-top:.5px solid var(--sep)}
 .ibox p{margin:0;font-size:15px;line-height:1.65}
@@ -530,7 +533,7 @@ a.srow h3{margin:0;font-size:15px;font-weight:500;line-height:1.4;display:-webki
     return s+'</article>';
   }
   function renderArticleControls(){
-    document.getElementById("views").hidden=false; document.getElementById("evviews").hidden=true; document.getElementById("inviews").hidden=true; document.getElementById("chips").hidden=false;
+    document.getElementById("views").hidden=false; document.getElementById("evviews").hidden=true; document.getElementById("inviews").hidden=true; document.getElementById("chips").classList.remove("inrow"); document.getElementById("chips").hidden=false;
     document.querySelectorAll("#views button").forEach(function(b){b.setAttribute("aria-selected",String(b.dataset.view===view))});
     var is=document.getElementById("issues"), past=data.issues.slice(1);
     if(view==="past"&&past.length){
@@ -627,7 +630,7 @@ a.srow h3{margin:0;font-size:15px;font-weight:500;line-height:1.4;display:-webki
     return s+'</article>';
   }
   function renderEventControls(){
-    document.getElementById("views").hidden=true; document.getElementById("inviews").hidden=true;
+    document.getElementById("views").hidden=true; document.getElementById("inviews").hidden=true; document.getElementById("chips").classList.remove("inrow");
     var ev=document.getElementById("evviews"); ev.hidden=false;
     ev.querySelectorAll("button").forEach(function(b){b.setAttribute("aria-selected",String(b.dataset.evview===evView))});
     var is=document.getElementById("issues"); is.hidden=true; is.innerHTML="";
@@ -717,9 +720,9 @@ a.srow h3{margin:0;font-size:15px;font-weight:500;line-height:1.4;display:-webki
     if(inView==="past"&&past.length){curIns(); is.hidden=false;
       is.innerHTML=past.map(function(x){return '<button class="tok" data-inweek="'+esc(x.id)+'" aria-pressed="'+(x.id===inWeek)+'">'+wk(x.id)+'</button>'}).join("")}
     else {is.hidden=true;is.innerHTML=""}
-    var ch=document.getElementById("chips"); ch.hidden=inView==="star";
-    ch.innerHTML=inView==="star"?"":'<button class="tok rchip" type="button" id="inrolebtn" aria-haspopup="dialog" aria-label="직군 바꾸기, 지금 '+esc(ROLE[role].name)+'"><span class="ri">'+ROLE[role].icon+'</span>'+esc(tabName(role))+'</button><i class="tsep" aria-hidden="true"></i>'
-      +[["all","전체"],["junior","주니어"],["senior","시니어"]].map(function(x){return '<button class="tok" data-lvl="'+x[0]+'" aria-pressed="'+(lvl===x[0])+'">'+x[1]+'</button>'}).join("");
+    var ch=document.getElementById("chips"); ch.hidden=inView==="star"; ch.classList.add("inrow");
+    ch.innerHTML=inView==="star"?"":'<button class="tok rchip" type="button" id="inrolebtn" aria-haspopup="dialog" aria-label="직군 바꾸기, 지금 '+esc(ROLE[role].name)+'"><span class="ri">'+ROLE[role].icon+'</span>'+esc(tabName(role))+'</button><div class="seg lvseg" role="tablist" aria-label="연차">'
+      +[["all","전체"],["junior","주니어"],["senior","시니어"]].map(function(x){return '<button type="button" role="tab" data-lvl="'+x[0]+'" aria-selected="'+(lvl===x[0])+'" title="'+(x[0]==="junior"?"1~4년차":x[0]==="senior"?"5년차 이상":"주니어와 시니어 모두")+'">'+x[1]+'</button>'}).join("")+'</div>';
     document.getElementById("opts").innerHTML="";
   }
   function refChips(x,refs){return '<div class="refs">'+(refs||[]).filter(function(r){return x.sources&&x.sources[r]}).map(function(r){var s=x.sources[r];
