@@ -1410,7 +1410,12 @@
    "url": "https://industrialaiexpo.or.kr/Contents.asp?LoadPage=Overview_2026",
    "lang": "ko",
    "id": "ev-20261021-2026-ai-expo",
-   "added": "2026-10-20"
+   "added": "2026-10-20",
+   "roles": [
+    "pm",
+    "planner",
+    "be"
+   ]
   },
   {
    "id": "ev-20261021-k-commerce-expansion-summit",
@@ -1428,7 +1433,11 @@
    "why": "숏폼 커머스 운영 방식과 해외 판매 사례를 보고 신규 커머스 채널 기획에 참고할 수 있다.",
    "url": "https://luma.com/dmevqhjl",
    "lang": "ko",
-   "added": "2026-10-21"
+   "added": "2026-10-21",
+   "roles": [
+    "planner",
+    "pm"
+   ]
   },
   {
    "title": "OpenAI DevDay Exchange 2026 - Seoul",
@@ -1446,7 +1455,14 @@
    "url": "https://events.openai.com/devdayexchange2026/",
    "lang": "en",
    "id": "ev-20261022-openai-devday-exchange-2",
-   "added": "2026-10-20"
+   "added": "2026-10-20",
+   "roles": [
+    "be",
+    "fe",
+    "app",
+    "pm",
+    "planner"
+   ]
   },
   {
    "title": "FEConf 2026",
@@ -1464,7 +1480,12 @@
    "url": "https://2026.feconf.kr/",
    "lang": "ko",
    "id": "ev-20261024-feconf-2026",
-   "added": "2026-10-20"
+   "added": "2026-10-20",
+   "roles": [
+    "fe",
+    "publisher",
+    "designer"
+   ]
   },
   {
    "title": "GitHub Copilot Dev Days | Seoul",
@@ -1482,7 +1503,14 @@
    "url": "https://ticketa.co/event/xzch6c1g",
    "lang": "ko",
    "id": "ev-20261024-github-copilot-dev-days",
-   "added": "2026-10-20"
+   "added": "2026-10-20",
+   "roles": [
+    "fe",
+    "be",
+    "app",
+    "qa",
+    "planner"
+   ]
   },
   {
    "title": "AWSKRUG #을지로 소모임 - KiroCrew 및 올리브영앱 개선 사례 (10월 26일)",
@@ -1500,7 +1528,11 @@
    "url": "https://www.meetup.com/awskrug/events/316977004/",
    "lang": "ko",
    "id": "ev-20261026-awskrug-kirocrew-10-26",
-   "added": "2026-10-20"
+   "added": "2026-10-20",
+   "roles": [
+    "app",
+    "be"
+   ]
   },
   {
    "id": "ev-20261026-ax-meetup-4",
@@ -1518,7 +1550,10 @@
    "why": "AI 도구가 디자인 업무를 어떻게 바꾸는지 현업 사례로 듣고 디자이너와의 협업 방식을 점검할 수 있다.",
    "url": "https://luma.com/9fpuff0n",
    "lang": "ko",
-   "added": "2026-10-21"
+   "added": "2026-10-21",
+   "roles": [
+    "designer"
+   ]
   },
   {
    "title": "AWSKRUG #AIEngineering 소모임 - 문서를 이해하는 실전 AI 에이전트 [10월 27일]",
@@ -1536,7 +1571,10 @@
    "url": "https://www.meetup.com/awskrug/events/316967026/",
    "lang": "ko",
    "id": "ev-20261027-awskrug-aiengineering-ai",
-   "added": "2026-10-20"
+   "added": "2026-10-20",
+   "roles": [
+    "be"
+   ]
   },
   {
    "title": "WOOWACON 2026",
@@ -1554,7 +1592,16 @@
    "url": "https://techblog.woowahan.com/27782/",
    "lang": "ko",
    "id": "ev-20261028-woowacon-2026",
-   "added": "2026-10-20"
+   "added": "2026-10-20",
+   "roles": [
+    "planner",
+    "designer",
+    "pm",
+    "fe",
+    "be",
+    "app",
+    "qa"
+   ]
   },
   {
    "title": "JetBrains Air Day Seoul 2026",
@@ -1572,7 +1619,14 @@
    "url": "https://lp.jetbrains.com/jetbrains-air-day-seoul-2026/",
    "lang": "ko",
    "id": "ev-20261028-jetbrains-air-day-seoul",
-   "added": "2026-10-20"
+   "added": "2026-10-20",
+   "roles": [
+    "fe",
+    "be",
+    "app",
+    "qa",
+    "pm"
+   ]
   },
   {
    "title": "AI: Clarity amongst hype, uncertainty, and instability (Dev Korea #18)",
@@ -1590,7 +1644,11 @@
    "url": "https://dev-korea.com/events/ai-clarity-october-2026",
    "lang": "en",
    "id": "ev-20261029-ai-clarity-amongst-hype",
-   "added": "2026-10-20"
+   "added": "2026-10-20",
+   "roles": [
+    "pm",
+    "be"
+   ]
   },
   {
    "title": "드로이드나이츠 2026",
@@ -1608,7 +1666,10 @@
    "url": "https://ticketa.co/event/2o8rdpls",
    "lang": "ko",
    "id": "ev-20261102-2026",
-   "added": "2026-10-20"
+   "added": "2026-10-20",
+   "roles": [
+    "app"
+   ]
   },
   {
    "title": "2026 서울 AI 인사이트 포럼",
@@ -1626,7 +1687,11 @@
    "url": "https://seoulaiforum.kr/",
    "lang": "ko",
    "id": "ev-20261103-2026-ai",
-   "added": "2026-10-20"
+   "added": "2026-10-20",
+   "roles": [
+    "planner",
+    "pm"
+   ]
   },
   {
    "title": "월간 AX: 10월 - AX 온톨로지와 거버넌스",
@@ -1644,7 +1709,12 @@
    "url": "https://event-us.kr/FKH3nHkjmPGh/event/137338",
    "lang": "ko",
    "id": "ev-20261103-ax-10-ax",
-   "added": "2026-10-20"
+   "added": "2026-10-20",
+   "roles": [
+    "pm",
+    "planner",
+    "be"
+   ]
   },
   {
    "title": "Industry Summit 2026: Retail & Consumer Goods",
@@ -1662,7 +1732,11 @@
    "url": "https://www.salesforce.com/kr/events/industry-summit/2026/retail-consumer-goods/",
    "lang": "ko",
    "id": "ev-20261104-industry-summit-2026-ret",
-   "added": "2026-10-20"
+   "added": "2026-10-20",
+   "roles": [
+    "planner",
+    "pm"
+   ]
   },
   {
    "id": "ev-20261104-2026-aiot",
@@ -1680,7 +1754,12 @@
    "why": "AI와 사물인터넷이 접목된 서비스 사례를 보고 매장 연계 서비스 아이디어를 얻을 수 있다.",
    "url": "https://event-us.kr/AIoTWeek/event/135387",
    "lang": "ko",
-   "added": "2026-10-21"
+   "added": "2026-10-21",
+   "roles": [
+    "planner",
+    "pm",
+    "be"
+   ]
   },
   {
    "title": "NVIDIA AI Day Seoul 2026",
@@ -1698,7 +1777,11 @@
    "url": "https://www.nvidia.com/ko-kr/ai-days/",
    "lang": "ko",
    "id": "ev-20261109-nvidia-ai-day-seoul-2026",
-   "added": "2026-10-20"
+   "added": "2026-10-20",
+   "roles": [
+    "be",
+    "pm"
+   ]
   },
   {
    "title": "디지털 마케팅 & 테크놀로지 서밋 2027 (DMTS 2027)",
@@ -1716,7 +1799,11 @@
    "url": "https://www.bloter.net/event/event28.html",
    "lang": "ko",
    "id": "ev-20261111-2027-dmts-2027",
-   "added": "2026-10-20"
+   "added": "2026-10-20",
+   "roles": [
+    "planner",
+    "pm"
+   ]
   },
   {
    "title": "PyTorch Day Korea 2026",
@@ -1734,7 +1821,10 @@
    "url": "https://pytorchday.kr/",
    "lang": "ko",
    "id": "ev-20261121-pytorch-day-korea-2026",
-   "added": "2026-10-20"
+   "added": "2026-10-20",
+   "roles": [
+    "be"
+   ]
   },
   {
    "title": "디자인코리아 2026",
@@ -1752,7 +1842,10 @@
    "url": "https://www.coex.co.kr/exhibitions/%EB%94%94%EC%9E%90%EC%9D%B8%EC%BD%94%EB%A6%AC%EC%95%84-2026/",
    "lang": "ko",
    "id": "ev-20261125-2026",
-   "added": "2026-10-20"
+   "added": "2026-10-20",
+   "roles": [
+    "designer"
+   ]
   },
   {
    "title": "2026 서울디자인페스티벌",
@@ -1770,7 +1863,10 @@
    "url": "https://www.coex.co.kr/exhibitions/2026-%EC%84%9C%EC%9A%B8%EB%94%94%EC%9E%90%EC%9D%B8%ED%8E%98%EC%8A%A4%ED%8B%B0%EB%B2%8C/",
    "lang": "ko",
    "id": "ev-20261126-2026",
-   "added": "2026-10-20"
+   "added": "2026-10-20",
+   "roles": [
+    "designer"
+   ]
   },
   {
    "title": "소프트웨이브 2026 (제11회 대한민국 소프트웨어대전)",
@@ -1788,7 +1884,12 @@
    "url": "https://k-softwave.com/",
    "lang": "ko",
    "id": "ev-20261202-2026-11",
-   "added": "2026-10-20"
+   "added": "2026-10-20",
+   "roles": [
+    "pm",
+    "planner",
+    "be"
+   ]
   },
   {
    "title": "HCI KOREA 2027",
@@ -1806,7 +1907,12 @@
    "url": "https://hcikorea.org/board/maininfo/article/284491",
    "lang": "ko",
    "id": "ev-20270127-hci-korea-2027",
-   "added": "2026-10-20"
+   "added": "2026-10-20",
+   "roles": [
+    "designer",
+    "planner",
+    "qa"
+   ]
   },
   {
    "title": "AI EXPO KOREA 2027 (국제인공지능대전)",
@@ -1824,7 +1930,12 @@
    "url": "https://aiexpo.co.kr/%EC%A0%84%EC%8B%9C%ED%9A%8C-%EA%B0%9C%EC%9A%94/",
    "lang": "ko",
    "id": "ev-20270414-ai-expo-korea-2027",
-   "added": "2026-10-20"
+   "added": "2026-10-20",
+   "roles": [
+    "planner",
+    "pm",
+    "be"
+   ]
   }
  ]
 }

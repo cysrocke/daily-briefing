@@ -180,8 +180,9 @@ h1{margin:0;font-size:26px;line-height:1.25;font-weight:700;letter-spacing:-.03e
 .agday{display:grid;gap:8px}
 .agday .dl{font-size:13px;font-weight:600;color:var(--label2);padding:0 4px}
 .ev .row{grid-template-columns:4px minmax(0,1fr) 12px;padding-left:12px}
-.ev .bar{align-self:stretch;border-radius:2px;background:var(--c-plan)}
-.ev.ai .bar{background:var(--c-ai)}.ev.it .bar{background:var(--c-it)}
+.ev .bar{align-self:stretch;border-radius:2px;background:var(--tint)}
+.tok .ri{display:inline-flex;width:16px;height:16px;margin-right:5px;vertical-align:-3px}
+.tok .ri svg{width:16px;height:16px}
 .ev .detail{padding-left:30px}
 .ev+.ev::before{left:30px}
 
@@ -325,7 +326,7 @@ body.lock{overflow:hidden}
             <li>첫 번째 탭은 <strong>직군 탭</strong>이에요. 탭 위 직군 이름을 눌러 내 직군을 고르면 아래 탭에 고정되고, 언제든 다시 바꿀 수 있어요. 여러 직군에 함께 쓸모 있는 글에는 공통 표시가 붙어요.</li>
             <li>글은 올라온 날부터 <strong>7일 동안</strong> 볼 수 있어요. 저장한 글도 함께 사라지니, 오래 둘 글은 복사해 두세요.</li>
             <li><strong>AI근황</strong>은 새 AI 모델과 서비스, 규제, 업무에 AI를 쓰는 방법을 모아요. <strong>IT업계</strong>는 플랫폼/커머스/정책 쪽에서 새로 생긴 일을 모아요.</li>
-            <li><strong>행사</strong>는 국내에서 열리는 기획/AI/IT 행사를 모아요. 끝나는 날까지 남고, 끝나면 자동으로 빠져요.</li>
+            <li><strong>행사</strong>는 국내에서 열리는 기획/디자인/개발/AI/IT 행사를 모아요. 내 직군 행사가 먼저 보이고, 다른 직군이나 전체를 눌러 볼 수도 있어요. 끝나는 날까지 남고, 끝나면 자동으로 빠져요.</li>
             <li>글을 펼쳐 저장을 누르면 위쪽 <strong>저장</strong> 보기에 모여요.</li>
             <li>공개된 기사, 글, 영상만 모아요. 회사 내부 자료는 올리지 않아요.</li>
             <li>기사/리포트는 원문에서 확인한 사실만 실어요. 요약과 기획 포인트는 직접 쓴 글이고, 원문의 저작권은 각 출처에 있어요.</li>
@@ -393,6 +394,7 @@ body.lock{overflow:hidden}
   var digestOpen=false, data=null, menu="plan", view="now", type="전체", issue=null, onlyStar=false, evf="all", evOpenOnly=false, evStarOnly=false, stars={}, open={}, gopen={};
   try{stars=JSON.parse(localStorage.getItem("dp-stars")||localStorage.getItem("wm-stars")||"{}")||{}}catch(e){stars={}}
   try{var m=localStorage.getItem("dp-menu"); if(MENUS[m])menu=m}catch(e){}
+  evf=role;
   var h=(location.hash||"").replace("#",""); if(MENUS[h])menu=h;
 
   function esc(s){return String(s==null?"":s).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
@@ -506,9 +508,10 @@ body.lock{overflow:hidden}
     if(s<=14)return '<span class="badge soon">'+(s===1?"내일":s+"일 뒤")+'</span>';
     return '';
   }
+  function evRolesOf(e){return (e.roles&&e.roles.length)?e.roles:ROLES.map(function(r){return r.id})}
   function evPool(){
     return evs().filter(function(e){
-      if(evf!=="all"&&e.menu!==evf)return false;
+      if(evf!=="all"&&evRolesOf(e).indexOf(evf)<0)return false;
       if(evOpenOnly&&e.reg_status!=="신청 중")return false;
       if(evStarOnly&&!stars[e.id])return false;
       return true;
@@ -530,6 +533,7 @@ body.lock{overflow:hidden}
         +(e.reg?'<dt>신청</dt><dd>'+esc(e.reg)+'</dd>':'')
         +(e.fee?'<dt>비용</dt><dd>'+esc(e.fee)+'</dd>':'')+'</dl>'
         +(e.why?'<div class="why"><b>기획 포인트</b>'+esc(e.why)+'</div>':'')
+        +(e.roles&&e.roles.length?'<p class="orig">함께 보는 직군: '+e.roles.map(function(r){return ROLE[r]?ROLE[r].name:r}).join(" / ")+'</p>':'')
         +acts(e.id,e.url,"공식 페이지")+'</div>';
     }
     return s+'</article>';
@@ -539,10 +543,12 @@ body.lock{overflow:hidden}
     var ev=document.getElementById("evviews"); ev.hidden=false;
     ev.querySelectorAll("button").forEach(function(b){b.setAttribute("aria-selected",String(b.dataset.evview===evView))});
     var is=document.getElementById("issues"); is.hidden=true; is.innerHTML="";
-    var all=evs().filter(function(e){return (!evOpenOnly||e.reg_status==="신청 중")&&(!evStarOnly||stars[e.id])}), c={all:all.length,plan:0,ai:0,it:0};
-    all.forEach(function(e){if(c[e.menu]!=null)c[e.menu]++});
-    var opts=[["all","전체"],["plan","서비스기획"],["ai","AI근황"],["it","IT업계"]];
-    var html=opts.map(function(o){return '<button class="tok" data-ev="'+o[0]+'" aria-pressed="'+(evf===o[0])+'">'+(MCOL[o[0]]?'<i class="mk" style="background:'+MCOL[o[0]]+'"></i>':'')+o[1]+'<small>'+c[o[0]]+'</small></button>'}).join("");
+    var all=evs().filter(function(e){return (!evOpenOnly||e.reg_status==="신청 중")&&(!evStarOnly||stars[e.id])}), c={all:all.length};
+    ROLES.forEach(function(r){c[r.id]=0});
+    all.forEach(function(e){evRolesOf(e).forEach(function(r){if(c[r]!=null)c[r]++})});
+    var order=[role,"all"].concat(ROLES.map(function(r){return r.id}).filter(function(id){return id!==role}));
+    var html=order.map(function(id){var mine=id===role,nm=id==="all"?"전체":ROLE[id].name;
+      return '<button class="tok" data-ev="'+id+'" aria-pressed="'+(evf===id)+'"'+(mine?' aria-label="내 직군 '+esc(nm)+'"':'')+'>'+(mine?'<span class="ri">'+ROLE[id].icon+'</span>':'')+esc(nm)+'<small>'+c[id]+'</small></button>'}).join("");
     document.getElementById("chips").innerHTML=html;
     document.getElementById("opts").innerHTML='<button class="opt" type="button" data-opt="open" aria-pressed="'+evOpenOnly+'"><i class="ck" aria-hidden="true"></i>신청 중만</button>'+'<button class="opt" type="button" data-opt="evstar" aria-pressed="'+evStarOnly+'"><i class="ck" aria-hidden="true"></i>저장한 행사만</button>';
   }
@@ -574,7 +580,7 @@ body.lock{overflow:hidden}
     for(var dnum=1;dnum<=ndays;dnum++){
       var d=new Date(calY,calM,dnum), k=ymd(d), on=list.filter(function(e){return onDay(e,k)});
       var cls="day"+(d.getDay()===0?" sun":d.getDay()===6?" sat":"")+(k<tk?" past":"")+(k===tk?" today":"")+(k===selDay?" sel":"");
-      var dots=on.slice(0,3).map(function(e){return '<i style="background:'+(MCOL[e.menu]||"var(--label3)")+'"></i>'}).join("");
+      var dots=on.slice(0,3).map(function(){return '<i style="background:var(--tint)"></i>'}).join("");
       cells+='<button type="button" class="'+cls+'" data-day="'+k+'" aria-label="'+(calM+1)+'월 '+dnum+'일, 행사 '+on.length+'개"'+(k===selDay?' aria-pressed="true"':'')+'><span class="dn">'+dnum+'</span><span class="dots">'+dots+'</span></button>';
     }
     var ICL='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>';
@@ -665,7 +671,7 @@ body.lock{overflow:hidden}
   function ro(w){var c=w.charCodeAt(w.length-1);if(c<0xAC00||c>0xD7A3)return "로";var j=(c-0xAC00)%28;return (j===0||j===8)?"로":"으로"}
   function pickRole(id){
     if(!ROLE[id])return;
-    role=id; rolePinned=true; type="전체"; onlyStar=false; if(view==="star")view="now"; digestOpen=false;
+    role=id; rolePinned=true; evf=id; type="전체"; onlyStar=false; if(view==="star")view="now"; digestOpen=false;
     try{localStorage.setItem("dp-role",id)}catch(e){}
     closeSheet(); render(); window.scrollTo(0,0);
     toast(ROLE[id].name+ro(ROLE[id].name)+" 고정했어요");
@@ -677,7 +683,7 @@ body.lock{overflow:hidden}
   document.getElementById("roles").addEventListener("click",function(e){var b=e.target.closest("button[data-role]");if(b)pickRole(b.dataset.role)});
   document.addEventListener("keydown",function(e){if(e.key==="Escape"&&!sheet.hidden)closeSheet()});
 
-  document.getElementById("menubar").addEventListener("click",function(e){var b=e.target.closest("button[data-menu]");if(!b)return;menu=b.dataset.menu;type="전체";onlyStar=false;if(view==="star")view="now";digestOpen=false;try{localStorage.setItem("dp-menu",menu)}catch(x){}render();window.scrollTo(0,0)});
+  document.getElementById("menubar").addEventListener("click",function(e){var b=e.target.closest("button[data-menu]");if(!b)return;menu=b.dataset.menu;type="전체";onlyStar=false;if(view==="star")view="now";digestOpen=false;if(menu==="ev"){evf=role;selDay=null}try{localStorage.setItem("dp-menu",menu)}catch(x){}render();window.scrollTo(0,0)});
   document.getElementById("views").addEventListener("click",function(e){var b=e.target.closest("button[data-view]");if(!b)return;view=b.dataset.view;onlyStar=(view==="star");type="전체";render();keepControls()});
   document.getElementById("evviews").addEventListener("click",function(e){var b=e.target.closest("button[data-evview]");if(!b)return;evView=b.dataset.evview;render();keepControls()});
   document.getElementById("issues").addEventListener("click",function(e){var b=e.target.closest("button[data-issue]");if(!b)return;issue=b.dataset.issue;type="전체";render();keepControls()});
