@@ -30,7 +30,7 @@
   --green:#248A3D; --green-soft:rgba(52,199,89,.14); --orange:#C93400;
   --c-plan:#6E33F0; --c-ai:#007AFF; --c-it:#1F9D55; --sun:#E5352B; --sat:#2F6BD8;
   --font:"Noto Sans CJK KR","Noto Sans KR",-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;
-  --w:390px; --tabh:56px; --g:max(20px,env(safe-area-inset-left,0px));
+  --w:390px; --tabh:56px; --g:max(10px,env(safe-area-inset-left,0px));
 }
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
   --bg:#000000; --cell:#1C1C1E; --label:#FFFFFF; --label2:rgba(235,235,245,.72); --label3:rgba(235,235,245,.40);
@@ -51,7 +51,7 @@ a{color:inherit}
 button{font-family:inherit;-webkit-tap-highlight-color:transparent}
 button:focus-visible,a:focus-visible,[tabindex]:focus-visible{outline:2px solid var(--tint);outline-offset:2px}
 
-.wrap{max-width:var(--w);margin:0 auto;padding-left:var(--g);padding-right:max(20px,env(safe-area-inset-right,0px));
+.wrap{max-width:var(--w);margin:0 auto;padding-left:var(--g);padding-right:max(10px,env(safe-area-inset-right,0px));
   padding-block:calc(12px + env(safe-area-inset-top,0px)) calc(var(--tabh) + 32px + env(safe-area-inset-bottom,0px))}
 
 /* header */
@@ -85,8 +85,14 @@ h1{margin:0;font-size:26px;line-height:1.25;font-weight:700;letter-spacing:-.03e
 .digest{width:100%;border:0;text-align:left;background:var(--cell);border-radius:12px;padding:14px 16px;display:grid;gap:6px;color:var(--label);font:inherit;cursor:pointer}
 .digest b{display:flex;justify-content:space-between;align-items:center;font-size:13px;font-weight:600;color:var(--tint)}
 .digest b span{font-weight:400;color:var(--label3);font-size:12px}
-.digest p{margin:0;font-size:15px;line-height:1.6;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-.digest[aria-expanded="true"] p{display:block;-webkit-line-clamp:unset}
+.digest .dl{display:grid}
+.digest .ds{display:block;position:relative;padding:8px 0 8px 14px;font-size:15px;line-height:1.55}
+.digest .ds:first-child{padding-top:2px}
+.digest .ds:last-child{padding-bottom:0}
+.digest .ds+.ds{border-top:.5px solid var(--sep)}
+.digest .ds::before{content:"";position:absolute;left:1px;top:17px;width:5px;height:5px;border-radius:50%;background:var(--label3)}
+.digest .ds:first-child::before{top:11px}
+.digest[aria-expanded="false"] .ds+.ds{display:none}
 .section{display:grid;gap:8px}
 /* level 1: section header with chevron in a filled circle */
 .sh{display:flex;align-items:center;gap:6px;width:100%;border:0;background:transparent;color:var(--label);padding:0 6px 0 4px;min-height:40px;cursor:pointer;text-align:left;font:inherit}
@@ -426,6 +432,13 @@ body.lock{overflow:hidden}
     document.getElementById("chips").innerHTML=html;
     document.getElementById("opts").innerHTML='<button class="opt" type="button" data-opt="star" aria-pressed="'+onlyStar+'"><i class="ck" aria-hidden="true"></i>저장한 글만</button>';
   }
+  function splitSent(t){
+    var out=[],buf="";
+    for(var i=0;i<t.length;i++){var c=t.charAt(i);buf+=c;
+      if((c==="."||c==="!"||c==="?")&&/\s/.test(t.charAt(i+1)||" ")){if(buf.trim())out.push(buf.trim());buf=""}}
+    if(buf.trim())out.push(buf.trim());
+    return out;
+  }
   function renderArticles(){
     var items=pool().filter(function(it){return type==="전체"||it.type===type});
     var el=document.getElementById("list");
@@ -433,7 +446,8 @@ body.lock{overflow:hidden}
     var iss=data.issues.filter(function(x){return x.id===cur})[0];
     var hl=iss&&iss.highlights||{};
     var text=menu==="plan"?((hl.roles&&hl.roles[role])||(role==="planner"?hl.plan:"")):hl[menu];
-    var dg=(text&&!onlyStar&&type==="전체")?'<button class="digest" id="digest" type="button" aria-expanded="'+(digestOpen?"true":"false")+'"><b><em style="font-style:normal">'+(view==="now"?"오늘의 요약":mdw(iss.id)+" 요약")+'</em><span>'+(digestOpen?"접기":"더 보기")+'</span></b><p>'+esc(text)+'</p></button>':'';
+    var sents=splitSent(text||"");
+    var dg=(text&&!onlyStar&&type==="전체")?'<button class="digest" id="digest" type="button" aria-expanded="'+(digestOpen?"true":"false")+'"><b><em style="font-style:normal">'+(view==="now"?"오늘의 요약":mdw(iss.id)+" 요약")+'</em>'+(sents.length>1?'<span>'+(digestOpen?"접기":"더 보기")+'</span>':'')+'</b><span class="dl">'+sents.map(function(x){return '<span class="ds">'+esc(x)+'</span>'}).join("")+'</span></button>':'';
     if(!items.length){
       var noPast=view==="past"&&!onlyStar&&data.issues.length<2;
       var noRole=menu==="plan"&&!onlyStar&&!noPast&&type==="전체";
