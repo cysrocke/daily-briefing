@@ -736,15 +736,15 @@ a.srow h3{margin:0;font-size:15px;font-weight:500;line-height:1.4;display:-webki
     if(inView==="star"){
       var S=L.filter(function(x){return stars["in-"+x.id]});
       if(!S.length){el.innerHTML='<div class="empty"><b>저장한 인사이트가 없어요</b>인사이트 맨 아래 저장을 누르면 여기에 모여요.</div>';return}
-      el.innerHTML='<div class="group">'+S.map(function(x){var f=splitSent(x.flow||"")[0]||"";
+      el.innerHTML='<div class="group">'+S.map(function(x){var rf=x.roles&&x.roles[role],f=splitSent((rf&&rf.flow)||x.flow||"")[0]||"";
         return '<article class="cell"><div class="row" role="button" tabindex="0" data-inopen="'+esc(x.id)+'"><div class="main"><h3>'+esc(wk(x.id))+' 인사이트</h3><div class="sub"><span class="src">'+esc(f)+'</span><span class="badge left">'+inLeft(x)+'</span></div></div><i class="chev" aria-hidden="true" style="transform:rotate(-45deg);margin:0 auto"></i></div></article>'}).join("")+'</div>';
       return}
     if(!L.length){el.innerHTML='<div class="empty"><b>아직 인사이트가 없어요</b>첫 인사이트는 월요일 아침에 올라와요.</div>';return}
     if(inView==="past"&&L.length<2){el.innerHTML='<div class="empty"><b>지난 인사이트가 아직 없어요</b>매주 월요일에 하나씩 쌓이고 8주 동안 볼 수 있어요.</div>';return}
-    var x=curIns(), rd=(x.roles&&x.roles[role])||null, R=ROLE[role], sents=splitSent(x.flow||""), key="in|"+x.id+"|"+role+"|"+lvl;
+    var x=curIns(), rd=(x.roles&&x.roles[role])||null, R=ROLE[role], sents=splitSent((rd&&rd.flow)||x.flow||""), key="in|"+x.id+"|"+role+"|"+lvl;
     var out='<button class="digest" id="digest" type="button" aria-expanded="'+(digestOpen?"true":"false")+'"><b><em style="font-style:normal">'+(inView==="now"?"이번 주 흐름":wk(x.id)+" 흐름")+'</em>'+(sents.length>1?'<span>'+(digestOpen?"접기":"더 보기")+'</span>':'')+'</b><span class="dl">'+sents.map(function(t){return '<span class="ds">'+esc(t)+'</span>'}).join("")+'</span></button>';
     var sg=x.signals||[];
-    if(sg.length)out+=section(key+"|sig","흐름을 만든 신호",sg.length,sg.map(function(s){return '<div class="ibox"><p>'+esc(s.text)+'</p>'+refChips(x,s.refs)+'</div>'}).join(""));
+    if(sg.length)out+=section(key+"|sig","전체 시장 신호",sg.length,sg.map(function(s){return '<div class="ibox"><p>'+esc(s.text)+'</p>'+refChips(x,s.refs)+'</div>'}).join(""));
     if(rd){
       out+=section(key+"|imp",R.name+"에 오는 변화","",'<div class="ibox">'+(rd.thin?'<p class="thin">이번 주에는 '+esc(R.name)+' 글이 많지 않아서, 전체 흐름에 비춰 정리했어요.</p>':'')+'<p>'+esc(rd.impact||"")+'</p>'+refChips(x,rd.refs)+'</div>');
       out+=section(key+"|know","알아야 할 것",inCount(rd,"know"),lvBlocks(rd,"know"));
@@ -760,7 +760,7 @@ a.srow h3{margin:0;font-size:15px;font-weight:500;line-height:1.4;display:-webki
   function inCopy(id){var x=(data.insights||[]).filter(function(y){return "in-"+y.id===id})[0];if(!x)return "";
     var rd=x.roles&&x.roles[role], R=ROLE[role], ks=lvl==="all"?["junior","senior"]:[lvl];
     function lst(key){return ks.map(function(k){var a=(rd&&rd[k]&&rd[k][key])||[];return a.length?(LV[k]+"\n"+a.map(function(t){return "- "+t}).join("\n")):""}).filter(Boolean).join("\n")}
-    return "[위클리 인사이트] "+wk(x.id)+" / "+R.name+"\n\n"+splitSent(x.flow||"").map(function(t){return "- "+t}).join("\n")
+    return "[위클리 인사이트] "+wk(x.id)+" / "+R.name+"\n\n"+splitSent((rd&&rd.flow)||x.flow||"").map(function(t){return "- "+t}).join("\n")
       +(rd?"\n\n"+R.name+"에 오는 변화\n"+rd.impact+"\n\n알아야 할 것\n"+lst("know")+"\n\n해야 할 것\n"+lst("do"):"")+"\n\nhttps://cysrocke.github.io/daily-briefing/#in";
   }
 
