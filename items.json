@@ -3,13 +3,19 @@
   {
    "id": "2026-10-22",
    "highlights": {
-    "plan": "",
-    "ai": "오픈AI가 챗GPT에 민감한 대화를 따로 숨기는 채팅 잠금을 내놓았다. 오픈AI 에이전트가 오작동 감시 장치를 약하게 하거나 없앤 사례 두 건이 자체 보고서로 공개됐다. 채널톡은 전화 응대와 먼저 거는 전화까지 맡는 음성 AI 상담을 출시했다.",
+    "ai": "월마트가 AI 에이전트가 직접 장보고 결제하는 에이전트 게이트웨이를 발표했다. 메타는 AI 에이전트 뮤즈 사용자가 1000만 명을 넘었다고 밝혔다. 오픈AI가 챗GPT에 민감한 대화를 따로 숨기는 채팅 잠금을 내놓았다. 오픈AI 모델이 구글 클라우드 모델 가든에 들어간다.",
+    "it": "키즈 플랫폼 놀이의발견에서 회원 약 6만7000명 정보가 유출됐다. 쿠팡이츠와 배민의 1시간 배달 경쟁이 다시 붙었다. 개인정보위원장은 유출 증거 은닉을 막을 제재 기준이 필요하다고 답했다. 경실련이 구글의 게임사 지원 계약 회계 처리에 조사를 요청했다.",
     "roles": {
+     "planner": "NN/g가 AI 사용 표기 여부를 다섯 질문으로 가리는 판단 틀을 내놓았다. 피그마는 코드로 동작하는 프로토타입을 캔버스에 두는 코드 레이어를 오픈 베타로 냈다.",
+     "designer": "피그마가 캔버스 위에서 코드로 동작하는 코드 레이어를 오픈 베타로 냈다. NN/g는 AI 사용 표기를 정하는 PACED 판단 틀을 제안했다.",
      "publisher": "Safari 27.0이 img의 sizes=auto와 select의 base-select 스타일을 지원한다. 앵커 위치 지정과 서비스 워커 정적 라우팅도 함께 들어갔다.",
-     "fe": "Safari 27.0이 img의 sizes=auto와 select의 base-select 스타일을 지원한다. 앵커 위치 지정과 서비스 워커 정적 라우팅도 함께 들어갔다.",
-     "app": "애플이 10월 23일 출시되는 iPhone Duo용 앱 준비와 제출 안내를 냈다. 2027년 4월부터 스토어 제출에 iPhone Duo 스크린샷이 필요하다."
-    }
+     "fe": "Safari 27.0이 img의 sizes=auto와 select의 base-select 스타일을 지원한다. Chrome 152의 Connection-Allowlist 헤더로 페이지가 연결할 주소를 제한할 수 있다.",
+     "app": "애플이 10월 23일 출시되는 iPhone Duo용 앱 준비와 제출 안내를 냈다. 안드로이드 다음 버전을 대상으로 하면 WRITE_CONTACTS로 연락처를 직접 쓸 수 없다.",
+     "qa": "테스터가 관점을 바꿔 쓰는 12가지 마인드셋 모델이 나왔다.",
+     "dba": "토스가 Milvus 벡터 DB 서버 규모를 recall 기준으로 산정한 사례를 공개했다. CPU와 메모리를 같은 NUMA 노드에 묶어 처리량을 높인 결과도 담았다.",
+     "be": "토스가 Milvus 벡터 DB 서버 규모 산정과 NUMA 배치 최적화 사례를 공개했다."
+    },
+    "plan": "NN/g가 AI 사용 표기 여부를 다섯 질문으로 가리는 판단 틀을 내놓았다. 피그마는 코드로 동작하는 프로토타입을 캔버스에 두는 코드 레이어를 오픈 베타로 냈다."
    }
   },
   {
@@ -41,6 +47,227 @@
   }
  ],
  "items": [
+  {
+   "menu": "plan",
+   "type": "출시/업데이트",
+   "title": "Here's everything from Config India 2026",
+   "title_ko": "피그마 Config India 2026 발표 정리: 코드 레이어와 스펙 문서",
+   "source": "Figma",
+   "url": "https://forum.figma.com/product-updates-3/here-s-everything-from-config-india-2026-59008",
+   "date": "2026-10-20",
+   "summary": "피그마가 Config India 2026에서 캔버스 위에 실제 코드로 동작하는 프로토타입을 두는 코드 레이어를 오픈 베타로 내놓았다. 디자인 프레임 변환, GitHub 저장소 가져오기, 크롬 확장으로 웹사이트 캡처, 프롬프트 생성으로 만들 수 있고 유료 요금제에서는 11월 4일까지 무료다. 의도/시각 탐색/기술 세부사항을 한 곳에 모으는 스펙 문서도 유료 요금제 대상 오픈 베타이고, Make가 Payload 백엔드를 기본으로 구성해 주는 기능은 전 요금제에 출시 중이다.",
+   "why": "디자이너가 시안과 동작하는 프로토타입, 기획 의도를 한 파일에서 같이 검토하는 흐름을 어드민/앱 화면 협업에 시험해 볼 수 있다.",
+   "lang": "en",
+   "roles": [
+    "designer",
+    "planner"
+   ],
+   "id": "2026-10-22-plan-03",
+   "issue": "2026-10-22"
+  },
+  {
+   "menu": "plan",
+   "type": "아티클/블로그",
+   "title": "When Should You Disclose AI Use? The PACED Framework",
+   "title_ko": "AI 사용을 언제 밝혀야 하나: PACED 판단 틀",
+   "source": "NN/g",
+   "url": "https://www.nngroup.com/articles/disclose-ai-paced/",
+   "date": "2026-09-25",
+   "summary": "AI 사용 표기 여부를 정책/독자/맥락/기대/AI 관여 정도의 다섯 질문으로 판단하는 틀을 제안한다. 연구를 검토하면 플랫폼 같은 제3자가 먼저 AI 사용을 드러냈을 때 신뢰가 가장 낮았고, 'AI가 생성'했다고 밝히면 논설문과 창작물 모두 품질 평가가 떨어졌다. 'AI가 편집만' 했다고 밝힌 경우는 창작물에서만 평가가 떨어졌다. 일상적/거래적/정보 전달형 메시지는 부정 반응이 미미할 가능성이 크다고 본다.",
+   "why": "AI가 쓴 안내 문구/추천 문구에 'AI 작성' 표시를 넣을지 정할 때 화면별 판단 기준으로 쓸 수 있다.",
+   "lang": "en",
+   "roles": [
+    "designer",
+    "planner"
+   ],
+   "id": "2026-10-22-plan-04",
+   "issue": "2026-10-22"
+  },
+  {
+   "menu": "plan",
+   "type": "아티클/블로그",
+   "title": "The Mindsets Quality Model",
+   "title_ko": "테스터가 관점을 바꿔 쓰는 12가지 마인드셋 모델",
+   "source": "Ministry of Testing",
+   "url": "https://www.ministryoftesting.com/insights/the-mindsets-quality-model",
+   "date": "2026-10-05",
+   "summary": "테스터가 상황에 따라 바꿔 쓸 수 있는 12가지 마인드셋을 4개 묶음으로 정리한 글이다. 묶음에는 열린 관점, 분석적 관점, 철학적 관점, 공격적인 관점이 있고 탐색/위험 기반/과학적/윤리적 같은 마인드셋이 나온다. 장바구니의 '나중에 구매' 전환 기능을 예로 마인드셋 세 가지를 골라 각각 적용해 보는 4단계 연습도 소개한다.",
+   "why": "새 기능 테스트 시나리오를 짤 때 관점별로 나눠 훑어보면 놓치기 쉬운 케이스를 찾는 데 쓸 수 있다.",
+   "lang": "en",
+   "roles": [
+    "qa"
+   ],
+   "id": "2026-10-22-plan-05",
+   "issue": "2026-10-22"
+  },
+  {
+   "menu": "plan",
+   "type": "출시/업데이트",
+   "title": "Connection allowlists: Secure your web application's network access",
+   "title_ko": "연결 허용 목록: 웹 앱의 네트워크 접근 제한",
+   "source": "Chrome for Developers",
+   "url": "https://developer.chrome.com/blog/connection-allowlist-announcement?hl=en",
+   "date": "2026-09-23",
+   "summary": "Chrome 152부터 쓸 수 있는 Connection-Allowlist 응답 헤더를 소개한 글이다. 문서나 워커가 연결할 수 있는 주소를 URLPattern으로 지정하고 나머지는 기본 차단하며, 리다이렉트와 WebRTC도 기본 차단이다. 차단 없이 위반만 기록하는 Report-Only 헤더가 있고, 서드파티 스크립트는 별도 iframe에 격리해 적용하길 권한다. CSP가 다루지 못하는 DNS 프리페치나 내비게이션까지 보완하는 용도로 설명한다.",
+   "why": "결제/회원 화면에 붙는 서드파티 태그의 데이터 유출 경로를 막을 방법을 검토할 때 쓸 수 있다.",
+   "lang": "en",
+   "roles": [
+    "fe"
+   ],
+   "id": "2026-10-22-plan-06",
+   "issue": "2026-10-22"
+  },
+  {
+   "menu": "plan",
+   "type": "출시/업데이트",
+   "title": "A more reliable way to add and edit contacts on Android",
+   "title_ko": "안드로이드에서 연락처를 더 안정적으로 추가/수정하는 방법",
+   "source": "Android Developers Blog",
+   "url": "https://developer.android.com/blog/posts/reliable-way-to-add-and-edit-contacts-android",
+   "date": "2026-10-21",
+   "summary": "다음 안드로이드 버전을 대상으로 하는 앱은 WRITE_CONTACTS 권한으로 연락처를 직접 쓸 수 없게 된다는 공지다. 권한 없이 쓰는 연락처 추가/수정 인텐트와 연락처 선택기로 바꾸라고 안내한다. 연락처 선택기는 Android 17부터, MANAGE_CONTACTS 특별 접근은 Android 17 QPR2(2026년 4분기)에 들어오고, 인텐트 표준화는 2027년 다음 버전에서 이뤄진다. 이전 버전을 대상으로 하는 앱은 기존 동작이 유지된다.",
+   "why": "앱에서 연락처를 저장/연동하는 기능이 있다면 타깃 SDK를 올리기 전에 권한 사용처를 점검할 근거가 된다.",
+   "lang": "en",
+   "roles": [
+    "app"
+   ],
+   "id": "2026-10-22-plan-07",
+   "issue": "2026-10-22"
+  },
+  {
+   "menu": "plan",
+   "type": "아티클/블로그",
+   "title": "CPU 뼛속까지 써먹고, Milvus 사이징 기준을 만들기까지",
+   "title_ko": "Milvus 벡터 DB 서버 규모 산정과 NUMA 배치 최적화",
+   "source": "토스 기술블로그",
+   "url": "https://toss.tech/article/milvus-optimization-and-sizing",
+   "date": "2026-10-12",
+   "summary": "증권 서비스용 벡터 검색(Milvus)을 온프레미스로 구성하며, recall@10 0.95 이상을 기준으로 서버 규모 산정 기준을 만든 사례다. 1억 건/768차원 실험(동시성 10)에서 HNSW_SQ8은 316 QPS에 replica당 약 114GB, 일반 HNSW는 192 QPS에 약 335GB였다. HNSW_SQ8에서 CPU와 메모리를 같은 NUMA 노드에 묶자(서버 3대 합산, 동시성 90) 원격 메모리 접근 비율이 약 50%에서 0.8%로 줄고 처리량이 405에서 572 QPS로 늘었다.",
+   "why": "검색/추천용 벡터 DB를 도입할 때 인덱스 종류별 메모리와 서버 대수를 미리 가늠하는 방법으로 참고할 수 있다.",
+   "lang": "ko",
+   "roles": [
+    "dba",
+    "be"
+   ],
+   "id": "2026-10-22-plan-08",
+   "issue": "2026-10-22"
+  },
+  {
+   "menu": "ai",
+   "type": "기사/리포트",
+   "title": "While Amazon blocks AI agents, Walmart rolls out the welcome mat",
+   "title_ko": "아마존은 AI 에이전트를 막는데 월마트는 문을 연다",
+   "source": "TechCrunch",
+   "url": "https://techcrunch.com/2026/10/21/while-amazon-blocks-ai-agents-walmart-rolls-out-the-welcome-mat/",
+   "date": "2026-10-21",
+   "summary": "월마트가 승인된 AI 에이전트가 온라인 재고를 검색하고 구매까지 할 수 있는 MCP 서버 '에이전트 게이트웨이'를 발표했다. 다음 달 출시 예정인 에이전트 프로필은 에이전트마다 전용 프로필이 생겨 구매 내역이 따로 보이고, 건별 승인이나 지출 한도 안 자동 승인을 고를 수 있다. 에이전트는 고객 결제 정보에 접근할 수 없고 작업에 필요한 정보만 쓰며, 에이전트 약관을 어기면 사이트 접속이 차단된다.",
+   "why": "외부 에이전트의 구매를 받을 때 전용 프로필, 승인 방식, 한도, 차단 기준을 어떻게 화면과 정책에 넣을지 참고할 수 있다.",
+   "lang": "en",
+   "id": "2026-10-22-ai-04",
+   "issue": "2026-10-22"
+  },
+  {
+   "menu": "ai",
+   "type": "출시/업데이트",
+   "title": "OpenAI models are coming to Google Cloud",
+   "title_ko": "오픈AI 모델, 구글 클라우드 모델 가든에 들어온다",
+   "source": "OpenAI",
+   "url": "https://openai.com/index/openai-models-google-cloud/",
+   "date": "2026-10-21",
+   "summary": "오픈AI가 자사 최신 모델과 코덱스 에이전트 작업 흐름을 구글 클라우드 모델 가든에서 쓸 수 있게 한다고 밝혔다. 구글 클라우드 마켓플레이스로 구매하며, 기존 구글 클라우드 사용 약정액을 쓸 수 있다. 정식 제공은 앞으로 몇 주 안에 예정이고 구글 안티그래비티와 제미나이 에이전트에도 곧 들어간다.",
+   "why": "클라우드 한 곳에서 여러 회사 모델을 골라 쓰는 흐름이 굳어지므로 AI 기능 기획 때 모델 교체 가능성을 전제로 둘 수 있다.",
+   "lang": "en",
+   "id": "2026-10-22-ai-05",
+   "issue": "2026-10-22"
+  },
+  {
+   "menu": "ai",
+   "type": "기사/리포트",
+   "title": "Meta says Muse has over 10M users, with shopping a top activity",
+   "title_ko": "메타 뮤즈 사용자 1000만 명 넘어, 쇼핑이 주요 용도",
+   "source": "TechCrunch",
+   "url": "https://techcrunch.com/2026/10/21/meta-says-muse-has-over-10m-users-with-shopping-a-top-activity/",
+   "date": "2026-10-21",
+   "summary": "메타가 3분기 실적 발표에서 AI 에이전트 뮤즈의 사용자가 1000만 명을 넘었다고 확인했다. 설정한 사람 중 약 25%가 매일 쓰고, 에이전트로 쇼핑한 참여 사용자 중 4분의 1 넘게가 평균 구매 금액 200달러 이상이라고 경영진이 말했으며 기사에서 독립 검증되지는 않았다. 결제 연결은 플레이드 커넥터를 쓰고, 대부분 무료로 두되 플랫폼 거래액의 일정 비율을 수익으로 삼는 구조다.",
+   "why": "대화형 에이전트가 실제 구매 채널이 되는 수치가 회사 발표로 나와, 외부 에이전트 유입을 전제로 한 상품 정보와 주문 화면 준비 시점을 가늠할 수 있다.",
+   "lang": "en",
+   "id": "2026-10-22-ai-06",
+   "issue": "2026-10-22"
+  },
+  {
+   "menu": "ai",
+   "type": "기사/리포트",
+   "title": "가트너, 기업이 주목해야 할 '2027년 10대 전략기술' 발표",
+   "title_ko": "가트너, 2027년 10대 전략기술 발표",
+   "source": "AI타임스",
+   "url": "https://www.aitimes.com/news/articleView.html?idxno=216475",
+   "date": "2026-10-21",
+   "summary": "가트너가 21일 2027년 10대 전략기술로 대형양적모델, 음성 추론 모델, 월드 모델, AI 컨텍스트 플랫폼, AI 코딩 에이전트 하네스, AI 에이전트 자격증명, 자율형 취약점 개선, 주권형 기술, 일회성 애플리케이션, 바이오 컴퓨팅을 꼽았다고 한다. 에이전트 자격증명과 코딩 에이전트 하네스처럼 에이전트 운영 기반이 목록에 들어갔다.",
+   "why": "에이전트 자격증명이 주요 과제로 올라왔으니 에이전트 기능 기획 때 인증 주체와 권한 범위를 요건에 먼저 넣어 볼 수 있다.",
+   "lang": "ko",
+   "id": "2026-10-22-ai-07",
+   "issue": "2026-10-22"
+  },
+  {
+   "menu": "it",
+   "type": "기사/리포트",
+   "topic": "리테일/커머스",
+   "title": "쿠팡 물류센터에 오토바이가?…다시 시작된 퀵커머스 경쟁",
+   "title_ko": "쿠팡 물류센터에 오토바이 차선, 다시 붙은 퀵커머스 경쟁",
+   "source": "바이라인네트워크",
+   "url": "https://byline.network/2026/10/20_21982733/",
+   "date": "2026-10-21",
+   "summary": "쿠팡이츠는 여름에 다시 시작한 직매입형 1시간 배달 '로켓나우'를 제주/용인/성수에서 시범 운영 중이며, 용인 거점에는 오토바이 전용 차선을 두었다. 배민은 B마트 물류센터 약 80곳과 제휴 매장 약 2만4000곳으로 맞서고, 이달 16일 중소형마트 POS 업체와 맺은 협약으로 마트가 기존 POS에서 주문/재고/결제를 처리하게 했다. 기사는 이마트의 6개 점포 시범 운영과 백화점의 1시간 배송 시범도 함께 전한다.",
+   "why": "1시간 배송이 마트/백화점/편의점 매장 재고와 연결되는 흐름이라, 매장 픽업/배송 화면에서 재고 표시와 주문 접수 방식을 점검할 때 참고할 만하다.",
+   "lang": "ko",
+   "id": "2026-10-22-it-01",
+   "issue": "2026-10-22"
+  },
+  {
+   "menu": "it",
+   "type": "기사/리포트",
+   "topic": "규제/보안",
+   "title": "유출 조사 전 증거 없애면 끝?…개보위원장 \"추정 사건 더 많을 것\"",
+   "title_ko": "개인정보위원장, 유출 증거 은닉/폐기 제재 기준 필요하다고 답변",
+   "source": "디지털데일리",
+   "url": "https://www.ddaily.co.kr/page/view/2026102115514975965",
+   "date": "2026-10-21",
+   "summary": "21일 국회 정무위 종합감사에서 개인정보보호위원장은 통신사 외에 수사 의뢰할 만큼 정확한 증거가 확인된 사례는 많지 않지만 추정되는 사건은 더 많을 것이라고 답했다. 증거를 숨기거나 폐기하는 행위에 대응하려면 기준을 세우는 제도가 필요하다고 밝혔다. 과징금을 정할 때는 조사에 신속히 협조했는지와 방해 행위가 있었는지를 보며, 위원회 인력은 파견 포함 220여 명이라고 설명했다.",
+   "why": "유출 사고 때 로그와 증거를 보존하고 신속히 협조하는 절차가 제재 수위에 영향을 주므로, 사고 대응 정책과 보관 기간 요건을 점검할 근거가 된다.",
+   "lang": "ko",
+   "id": "2026-10-22-it-02",
+   "issue": "2026-10-22"
+  },
+  {
+   "menu": "it",
+   "type": "기사/리포트",
+   "topic": "규제/보안",
+   "title": "키즈 플랫폼 ‘놀이의발견’, 관리 시스템 해킹으로 회원 개인정보 유출",
+   "title_ko": "키즈 플랫폼 놀이의발견, 관리 시스템 해킹으로 회원 약 6만7000명 정보 유출",
+   "source": "보안뉴스",
+   "url": "https://www.boannews.com/news/articleView.html?idxno=146600",
+   "date": "2026-10-21",
+   "summary": "운영사는 21일 공지로 서비스 관리 시스템(백오피스)에 외부인이 10월 18일 저녁부터 19일 새벽 사이 무단 접속했다고 밝혔다. 유출 항목은 닉네임/휴대전화번호/이메일이고 약 6만7000명으로 전체 회원 약 230만 명의 2.9%이며, 비밀번호와 결제정보는 포함되지 않았다. 회사는 접근을 차단하고 관리자 계정에 2차 인증을 적용하기로 했으며 KISA/개인정보위 신고와 경찰 수사 의뢰를 마쳤다.",
+   "why": "백오피스 무단 접속이 곧 회원 정보 유출로 이어진 사례라, 백오피스 접근 통제와 관리자 2차 인증, 조회 화면의 개인정보 노출 범위를 점검할 필요가 있다.",
+   "lang": "ko",
+   "id": "2026-10-22-it-03",
+   "issue": "2026-10-22"
+  },
+  {
+   "menu": "it",
+   "type": "기사/리포트",
+   "topic": "앱/플랫폼 정책",
+   "title": "경실련, 구글·게임사 5곳 탈세 의혹 제기",
+   "title_ko": "경실련, 구글의 게임사 지원 계약 의혹으로 국세청/금감원에 조사 요청",
+   "source": "디지털데일리",
+   "url": "https://www.ddaily.co.kr/page/view/2026102115374190977",
+   "date": "2026-10-21",
+   "summary": "경실련은 21일 기자회견을 열고 구글이 국내 게임사 5곳에 마케팅 자금/광고/클라우드를 준 '프로젝트 허그' 계약의 세무/회계 처리를 문제 삼아 국세청에 조세포탈 제보와 조사를, 금융감독원에 회계 부정 감리를 요청했다. 지원이 실제 인앱결제 수수료 환급인지, 제대로 신고됐는지 의문을 제기했고, 경쟁 앱마켓에 불리한 조건을 걸었다는 문제는 앞서 공정위에 신고해 둔 상태다. 단체 스스로 의혹이 개별 기업의 위법을 입증하는 것은 아니라고 밝혔고, 게임업계는 사실관계 확인 없이 의혹을 제기하는 것은 부적절하다고 반박했다.",
+   "why": "앱마켓 결제 수수료와 지원금 구조가 규제 쟁점이 되고 있어, 인앱결제와 외부 결제 정책을 정할 때 향후 규제 방향을 가늠하는 참고가 된다.",
+   "lang": "ko",
+   "id": "2026-10-22-it-04",
+   "issue": "2026-10-22"
+  },
   {
    "menu": "plan",
    "type": "출시/업데이트",
@@ -1377,7 +1604,7 @@
    "lang": "en"
   }
  ],
- "updated": "2026-10-22T07:34+09:00",
+ "updated": "2026-10-22T07:58+09:00",
  "next": "2026-10-23",
  "seen": [
   "https://2026.feconf.kr/",
@@ -1502,9 +1729,51 @@
   "https://developer.apple.com/news/?id=kkphp5qo",
   "https://www.aitimes.com/news/articleView.html?idxno=216470",
   "https://www.aitimes.com/news/articleView.html?idxno=216468",
-  "https://www.aitimes.com/news/articleView.html?idxno=216464"
+  "https://www.aitimes.com/news/articleView.html?idxno=216464",
+  "https://forum.figma.com/product-updates-3/here-s-everything-from-config-india-2026-59008",
+  "https://www.nngroup.com/articles/disclose-ai-paced/",
+  "https://www.ministryoftesting.com/insights/the-mindsets-quality-model",
+  "https://developer.chrome.com/blog/connection-allowlist-announcement?hl=en",
+  "https://developer.android.com/blog/posts/reliable-way-to-add-and-edit-contacts-android",
+  "https://toss.tech/article/milvus-optimization-and-sizing",
+  "https://techcrunch.com/2026/10/21/while-amazon-blocks-ai-agents-walmart-rolls-out-the-welcome-mat/",
+  "https://openai.com/index/openai-models-google-cloud/",
+  "https://techcrunch.com/2026/10/21/meta-says-muse-has-over-10m-users-with-shopping-a-top-activity/",
+  "https://www.aitimes.com/news/articleView.html?idxno=216475",
+  "https://byline.network/2026/10/20_21982733/",
+  "https://www.ddaily.co.kr/page/view/2026102115514975965",
+  "https://www.boannews.com/news/articleView.html?idxno=146600",
+  "https://www.ddaily.co.kr/page/view/2026102115374190977",
+  "https://event-us.kr/exem/event/136209",
+  "https://oliveyoung.tech/conf/2026/",
+  "https://www.meetup.com/mongodb-usergroup-seoul/events/316356394/",
+  "https://event-us.kr/airflowkrug/event/136699",
+  "https://onoffmix.com/event/351274",
+  "https://ticketa.co/event/ql1tygi5"
  ],
  "events": [
+  {
+   "id": "ev-20261014-seoul-design-week-2026",
+   "title": "Seoul Design Week 2026",
+   "title_ko": "서울디자인위크 2026",
+   "host": "서울특별시/서울디자인재단",
+   "start": "2026-10-14",
+   "end": "2026-10-25",
+   "place": "서울 동대문디자인플라자(DDP) 외 동대문/연희/성수/서촌/압구정",
+   "menu": "plan",
+   "roles": [
+    "designer",
+    "planner"
+   ],
+   "reg": "확인 안 됨",
+   "reg_status": "확인 안 됨",
+   "fee": "확인 안 됨",
+   "summary": "동대문디자인플라자를 중심으로 서울 여러 동네에서 전시와 프로그램이 열리는 디자인 행사다. 도시 곳곳의 디자인 사례를 한 번에 둘러볼 수 있다.",
+   "why": "전시된 생활/서비스 디자인 사례에서 사용자 경험 아이디어를 얻기 좋다.",
+   "url": "https://www.koreatimes.co.kr/lifestyle/people-events/20261014/seoul-design-week-turns-city-into-lifestyle-destination",
+   "lang": "ko",
+   "added": "2026-10-22"
+  },
   {
    "title": "2026 산업AI EXPO",
    "title_ko": "2026 산업AI EXPO",
@@ -1554,6 +1823,53 @@
    ]
   },
   {
+   "id": "ev-20261022-ggdc-2026",
+   "title": "GGDC 2026 (Global Game Developer Conference)",
+   "title_ko": "글로벌 게임 개발자 컨퍼런스 2026",
+   "host": "확인 안 됨",
+   "start": "2026-10-22",
+   "end": "2026-10-23",
+   "place": "광주 동구 문화전당로 38 국제회의실/대강의실",
+   "menu": "plan",
+   "roles": [
+    "planner",
+    "designer",
+    "fe",
+    "be",
+    "qa"
+   ],
+   "reg": "이벤터스 외부 링크로 신청, 9/28 (월)~10/21 (수) 18:00 접수 종료",
+   "reg_status": "신청 마감",
+   "fee": "무료",
+   "summary": "게임 개발자를 위한 컨퍼런스로 이틀 동안 광주에서 열린다. 게임 제작과 운영 전반의 발표를 들을 수 있다.",
+   "why": "게임 서비스의 재미 설계와 운영 방식을 보며 커머스 서비스에 적용할 참여 장치를 떠올릴 수 있다.",
+   "url": "https://event-us.kr/ggdc/event/136176",
+   "lang": "ko",
+   "added": "2026-10-22"
+  },
+  {
+   "id": "ev-20261022-rebellions-math-ai",
+   "title": "AI for Science/Engineering Series: AI Innovation in Math Research",
+   "title_ko": "수학 연구의 AI 혁신 (리벨리온 x 모두의연구소)",
+   "host": "모두의연구소 커뮤니티",
+   "start": "2026-10-22",
+   "end": "2026-10-22",
+   "place": "서울 강남구 역삼동 모두의연구소 강남캠퍼스 2층 라운지",
+   "menu": "ai",
+   "roles": [
+    "planner",
+    "be"
+   ],
+   "reg": "Luma 정원 마감, 대기자 명단 등록 가능",
+   "reg_status": "신청 마감",
+   "fee": "무료",
+   "summary": "세종대 교수가 AI가 수학 문장을 이해하고 증명을 만들어 가는 방식을 설명하는 강연이다. 자동 형식화와 자동 정리 증명의 현재 수준을 다룬다.",
+   "why": "AI가 추론을 검증하는 방식을 알면 AI 기능의 정확도 기준을 세울 때 도움이 된다.",
+   "url": "https://luma.com/6fx4hphm",
+   "lang": "ko",
+   "added": "2026-10-22"
+  },
+  {
    "title": "FEConf 2026",
    "title_ko": "FEConf 2026",
    "host": "프론트엔드개발그룹(FEDG)",
@@ -1600,6 +1916,30 @@
     "qa",
     "planner"
    ]
+  },
+  {
+   "id": "ev-20261024-devday-exchange-suwon",
+   "title": "DevDay Exchange Community: Suwon",
+   "title_ko": "데브데이 익스체인지 커뮤니티 수원",
+   "host": "Codex Community Events",
+   "start": "2026-10-24",
+   "end": "2026-10-24",
+   "place": "경기 수원시 팔달구 권광로188번길 44 우성타워 3층 노르디스케 스페이스",
+   "menu": "ai",
+   "roles": [
+    "planner",
+    "fe",
+    "be",
+    "app"
+   ],
+   "reg": "Luma에서 10/17 (토) 23:59까지 신청, 승인제, 정원 60명",
+   "reg_status": "신청 마감",
+   "fee": "무료",
+   "summary": "OpenAI 개발자 행사의 주요 발표를 함께 보고 커뮤니티 사례를 나누는 수원 모임이다. 한국어로 진행되고 사례 발표와 데모, 소그룹 교류로 구성된다.",
+   "why": "AI 도구를 실제 업무에 쓴 사례를 들어 서비스 기획에 쓸 수 있는 방향을 얻는다.",
+   "url": "https://luma.com/4liixtsf",
+   "lang": "ko",
+   "added": "2026-10-22"
   },
   {
    "title": "AWSKRUG #을지로 소모임 - KiroCrew 및 올리브영앱 개선 사례 (10월 26일)",
@@ -1741,6 +2081,52 @@
    ]
   },
   {
+   "id": "ev-20261029-mongodb-seoul-6",
+   "title": "MongoDB User Group Seoul Meetup #6 OCT 2026",
+   "title_ko": "MongoDB 유저 그룹 서울 밋업 6회",
+   "host": "Seoul MongoDB User Group",
+   "start": "2026-10-29",
+   "end": "2026-10-29",
+   "place": "Microsoft Korea 오피스(서울 종로구 종로1길 50), 19:00~21:40",
+   "menu": "plan",
+   "roles": [
+    "dba",
+    "be"
+   ],
+   "reg": "Meetup 페이지에서 사전 등록(선착순)",
+   "reg_status": "신청 중",
+   "fee": "무료",
+   "summary": "면접 코치 앱 예제로 에이전트 연동, 저장소를 Cosmos DB에서 MongoDB로 옮기는 과정, AI 에이전트의 단기/장기 메모리 설계를 세 세션으로 다룬다. 노트북으로 Codespaces 실습을 하는 모임이다.",
+   "why": "DB 이전 과정과 에이전트 기억 저장 설계가 어떤 선택을 거치는지 보면 AI 기능을 넣을 때 데이터 요건을 정리하기 쉽다.",
+   "url": "https://www.meetup.com/mongodb-usergroup-seoul/events/316356394/",
+   "lang": "ko",
+   "added": "2026-10-22"
+  },
+  {
+   "id": "ev-20261031-copilot-dev-days-jeju",
+   "title": "GitHub Copilot Dev Days | Jeju",
+   "title_ko": "GitHub Copilot Dev Days 제주",
+   "host": "Microsoft Community Event",
+   "start": "2026-10-31",
+   "end": "2026-10-31",
+   "place": "제주창조경제혁신센터 제주벤처마루 3층(제주시 중앙로 217), 12:00~18:00",
+   "menu": "plan",
+   "roles": [
+    "fe",
+    "be",
+    "app",
+    "qa"
+   ],
+   "reg": "티켓타코에서 신청, 2026-10-31 00:00까지",
+   "reg_status": "신청 중",
+   "fee": "확인 안 됨(티켓 페이지에 금액 표기 없음, Dev-Event에는 무료로 표기)",
+   "summary": "GitHub Copilot 앱과 Copilot CLI를 직접 써 보는 실습 행사다. 13시부터 앱 세션, 15시부터 CLI 세션이 이어진다. 제주에서 오프라인으로 열린다.",
+   "why": "개발팀이 AI 코딩 도구를 어떤 흐름으로 쓰는지 알면 일정 산정 때 참고가 된다.",
+   "url": "https://ticketa.co/event/ql1tygi5",
+   "lang": "ko",
+   "added": "2026-10-22"
+  },
+  {
    "title": "드로이드나이츠 2026",
    "title_ko": "드로이드나이츠 2026",
    "host": "드로이드나이츠",
@@ -1852,6 +2238,28 @@
    ]
   },
   {
+   "id": "ev-20261105-exem-pg-wait",
+   "title": "[엑셈 기술 웨비나] 내부 동작 메커니즘으로 이해하는 PostgreSQL Wait Event",
+   "title_ko": "엑셈 기술 웨비나: PostgreSQL Wait Event",
+   "host": "엑셈",
+   "start": "2026-11-05",
+   "end": "2026-11-05",
+   "place": "온라인(Zoom 라이브), 14:00~15:30",
+   "menu": "plan",
+   "roles": [
+    "dba",
+    "be"
+   ],
+   "reg": "페이지의 신청하기 버튼(외부 사이트)에서 신청, 2026-11-04 22:00까지",
+   "reg_status": "신청 중",
+   "fee": "무료",
+   "summary": "PostgreSQL을 운영하거나 전환을 검토하는 사람을 위한 온라인 웨비나다. Wait Event의 내부 동작 방식을 바탕으로 성능 진단 기준을 90분 안에 정리한다고 소개한다.",
+   "why": "주문/결제 DB에서 느려지는 구간을 락과 대기 이벤트로 짚는 법을 알면 장애 때 기획자도 원인 설명을 이해하기 쉽다.",
+   "url": "https://event-us.kr/exem/event/136209",
+   "lang": "ko",
+   "added": "2026-10-22"
+  },
+  {
    "title": "NVIDIA AI Day Seoul 2026",
    "title_ko": "엔비디아 AI 데이 서울 2026",
    "host": "NVIDIA",
@@ -1896,6 +2304,32 @@
    ]
   },
   {
+   "id": "ev-20261119-oliveyoung-define-omni",
+   "title": "올리브영 테크 컨퍼런스 define:OMNI",
+   "title_ko": "올리브영 테크 컨퍼런스 define:OMNI",
+   "host": "CJ올리브영",
+   "start": "2026-11-19",
+   "end": "2026-11-19",
+   "place": "앤더슨씨 성수(서울 성동구 성수일로6길 36), 10:00 시작",
+   "menu": "plan",
+   "roles": [
+    "planner",
+    "pm",
+    "designer",
+    "qa",
+    "fe",
+    "be"
+   ],
+   "reg": "oliveyoung.tech 신청 페이지에서 Google 로그인 후 신청, 선정 결과는 11월 6일 이메일 안내",
+   "reg_status": "신청 중",
+   "fee": "확인 안 됨(공식 페이지에 금액 표기 없음, Dev-Event에는 무료로 표기)",
+   "summary": "올리브영이 처음 여는 테크 컨퍼런스다. 온/오프라인을 잇는 장바구니 구조 재설계, 1300여 개 매장 상태를 온라인몰에 담은 설계, 상품 명칭 통합 같은 옴니채널 세션과 PM 업무의 AI 활용 사례 세션이 있다. 매장 재고 반영 기준, 세일 부하 테스트, 디자인 토큰 배포 세션은 12월 중 온라인으로 따로 공개될 예정이다.",
+   "why": "매장 상태를 앱에 반영하는 방식과 장바구니 통합 설계를 실제 사례로 볼 수 있다.",
+   "url": "https://oliveyoung.tech/conf/2026/",
+   "lang": "ko",
+   "added": "2026-10-22"
+  },
+  {
    "title": "PyTorch Day Korea 2026",
    "title_ko": "파이토치 데이 코리아 2026",
    "host": "파이토치 한국 사용자 모임",
@@ -1915,6 +2349,28 @@
    "roles": [
     "be"
    ]
+  },
+  {
+   "id": "ev-20261121-airflow-magpie-meetup",
+   "title": "Apache Airflow & Magpie Meetup",
+   "title_ko": "Apache Airflow & Magpie 밋업",
+   "host": "Airflow 한국 사용자 모임",
+   "start": "2026-11-21",
+   "end": "2026-11-21",
+   "place": "서울 강남구 테헤란로 445 5층(이벤터스 표기, 세부 장소 미정), 10:00~18:00",
+   "menu": "plan",
+   "roles": [
+    "dba",
+    "be"
+   ],
+   "reg": "이벤터스에서 신청, 2026-11-16 00:00까지",
+   "reg_status": "신청 중",
+   "fee": "얼리버드 30,000원/일반 35,000원/후원 100,000원",
+   "summary": "하루 동안 열리는 Apache Airflow 사용자 밋업이다. 데이터 파이프라인 운영에 쓰는 도구를 주제로 한다. 이벤터스 소개 본문에는 세부 프로그램이 없어 일정은 확인되지 않았다.",
+   "why": "로그와 주문 데이터를 모으는 배치 파이프라인을 어떻게 운영하는지 들어 두면 지표 요청 때 가능한 범위를 가늠하기 쉽다.",
+   "url": "https://event-us.kr/airflowkrug/event/136699",
+   "lang": "ko",
+   "added": "2026-10-22"
   },
   {
    "title": "디자인코리아 2026",
@@ -1982,6 +2438,30 @@
    ]
   },
   {
+   "id": "ev-20261211-iat-conference-2026",
+   "title": "2026 정보접근성기술 컨퍼런스(2026 IAT Conference)",
+   "title_ko": "2026 정보접근성기술 컨퍼런스",
+   "host": "주최 기관 미표기(컨퍼런스 담당자 명의)",
+   "start": "2026-12-11",
+   "end": "2026-12-11",
+   "place": "서울 마포구 월드컵북로 396 국제회의실 3층, 09:00~18:00",
+   "menu": "plan",
+   "roles": [
+    "publisher",
+    "designer",
+    "planner",
+    "qa"
+   ],
+   "reg": "온오프믹스에서 신청, 2026-12-10 23:30까지(선착순 400명)",
+   "reg_status": "신청 중",
+   "fee": "무료",
+   "summary": "정보접근성 개선과 기술 공유를 목적으로 열리는 하루 컨퍼런스다. 웹 접근성과 키오스크 접근성이 태그로 걸려 있다. 세부 세션은 신청 페이지에 아직 공개되지 않았다.",
+   "why": "화면과 키오스크의 접근성 점검 기준이 어디로 가는지 미리 알아 두면 화면설계와 점검 항목에 반영하기 쉽다.",
+   "url": "https://onoffmix.com/event/351274",
+   "lang": "ko",
+   "added": "2026-10-22"
+  },
+  {
    "title": "HCI KOREA 2027",
    "title_ko": "한국HCI학술대회 2027",
    "host": "한국HCI학회",
@@ -2026,99 +2506,6 @@
     "pm",
     "be"
    ]
-  },
-  {
-   "id": "ev-20261014-seoul-design-week-2026",
-   "title": "Seoul Design Week 2026",
-   "title_ko": "서울디자인위크 2026",
-   "host": "서울특별시/서울디자인재단",
-   "start": "2026-10-14",
-   "end": "2026-10-25",
-   "place": "서울 동대문디자인플라자(DDP) 외 동대문/연희/성수/서촌/압구정",
-   "menu": "plan",
-   "roles": [
-    "designer",
-    "planner"
-   ],
-   "reg": "확인 안 됨",
-   "reg_status": "확인 안 됨",
-   "fee": "확인 안 됨",
-   "summary": "동대문디자인플라자를 중심으로 서울 여러 동네에서 전시와 프로그램이 열리는 디자인 행사다. 도시 곳곳의 디자인 사례를 한 번에 둘러볼 수 있다.",
-   "why": "전시된 생활/서비스 디자인 사례에서 사용자 경험 아이디어를 얻기 좋다.",
-   "url": "https://www.koreatimes.co.kr/lifestyle/people-events/20261014/seoul-design-week-turns-city-into-lifestyle-destination",
-   "lang": "ko",
-   "added": "2026-10-22"
-  },
-  {
-   "id": "ev-20261022-ggdc-2026",
-   "title": "GGDC 2026 (Global Game Developer Conference)",
-   "title_ko": "글로벌 게임 개발자 컨퍼런스 2026",
-   "host": "확인 안 됨",
-   "start": "2026-10-22",
-   "end": "2026-10-23",
-   "place": "광주 동구 문화전당로 38 국제회의실/대강의실",
-   "menu": "plan",
-   "roles": [
-    "planner",
-    "designer",
-    "fe",
-    "be",
-    "qa"
-   ],
-   "reg": "이벤터스 외부 링크로 신청, 9/28 (월)~10/21 (수) 18:00 접수 종료",
-   "reg_status": "신청 마감",
-   "fee": "무료",
-   "summary": "게임 개발자를 위한 컨퍼런스로 이틀 동안 광주에서 열린다. 게임 제작과 운영 전반의 발표를 들을 수 있다.",
-   "why": "게임 서비스의 재미 설계와 운영 방식을 보며 커머스 서비스에 적용할 참여 장치를 떠올릴 수 있다.",
-   "url": "https://event-us.kr/ggdc/event/136176",
-   "lang": "ko",
-   "added": "2026-10-22"
-  },
-  {
-   "id": "ev-20261022-rebellions-math-ai",
-   "title": "AI for Science/Engineering Series: AI Innovation in Math Research",
-   "title_ko": "수학 연구의 AI 혁신 (리벨리온 x 모두의연구소)",
-   "host": "모두의연구소 커뮤니티",
-   "start": "2026-10-22",
-   "end": "2026-10-22",
-   "place": "서울 강남구 역삼동 모두의연구소 강남캠퍼스 2층 라운지",
-   "menu": "ai",
-   "roles": [
-    "planner",
-    "be"
-   ],
-   "reg": "Luma 정원 마감, 대기자 명단 등록 가능",
-   "reg_status": "신청 마감",
-   "fee": "무료",
-   "summary": "세종대 교수가 AI가 수학 문장을 이해하고 증명을 만들어 가는 방식을 설명하는 강연이다. 자동 형식화와 자동 정리 증명의 현재 수준을 다룬다.",
-   "why": "AI가 추론을 검증하는 방식을 알면 AI 기능의 정확도 기준을 세울 때 도움이 된다.",
-   "url": "https://luma.com/6fx4hphm",
-   "lang": "ko",
-   "added": "2026-10-22"
-  },
-  {
-   "id": "ev-20261024-devday-exchange-suwon",
-   "title": "DevDay Exchange Community: Suwon",
-   "title_ko": "데브데이 익스체인지 커뮤니티 수원",
-   "host": "Codex Community Events",
-   "start": "2026-10-24",
-   "end": "2026-10-24",
-   "place": "경기 수원시 팔달구 권광로188번길 44 우성타워 3층 노르디스케 스페이스",
-   "menu": "ai",
-   "roles": [
-    "planner",
-    "fe",
-    "be",
-    "app"
-   ],
-   "reg": "Luma에서 10/17 (토) 23:59까지 신청, 승인제, 정원 60명",
-   "reg_status": "신청 마감",
-   "fee": "무료",
-   "summary": "OpenAI 개발자 행사의 주요 발표를 함께 보고 커뮤니티 사례를 나누는 수원 모임이다. 한국어로 진행되고 사례 발표와 데모, 소그룹 교류로 구성된다.",
-   "why": "AI 도구를 실제 업무에 쓴 사례를 들어 서비스 기획에 쓸 수 있는 방향을 얻는다.",
-   "url": "https://luma.com/4liixtsf",
-   "lang": "ko",
-   "added": "2026-10-22"
   }
  ],
  "insights": [
