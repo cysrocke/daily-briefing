@@ -293,7 +293,7 @@ body.lock{overflow:hidden}
 .tok.rchip{display:inline-flex;align-items:center;gap:6px;background:var(--tint-soft);color:var(--tint);font-weight:600;padding:0 12px 0 10px}
 .tok.rchip .ri{margin-right:0}
 .tok.rchip::before{content:"";order:3;width:6px;height:6px;border-right:1.6px solid currentColor;border-bottom:1.6px solid currentColor;transform:translateY(-2px) rotate(45deg);margin-left:2px}
-.tokens.inrow{overflow:visible;margin-inline:0;padding-inline:0;justify-content:space-between;align-items:center;gap:10px}
+.tokens.inrow{overflow:visible;margin-inline:0;padding-inline:0;justify-content:flex-start;align-items:center;gap:10px}
 .tokens.inrow .rchip{flex:0 1 auto;min-width:0;overflow:hidden;text-overflow:ellipsis}
 .lvseg{flex:none;width:172px}
 .lvseg button{min-height:28px;font-size:13px}
@@ -703,7 +703,6 @@ a.srow h3{margin:0;font-size:15px;font-weight:500;line-height:1.4;display:-webki
 
   /* weekly insight */
   var IN_KEEP=56, inView="now", inWeek=null, lvl="all";
-  try{var lv=localStorage.getItem("dp-lvl"); if(lv==="junior"||lv==="senior"||lv==="all")lvl=lv}catch(e){}
   var LV={junior:"주니어",senior:"시니어"}, LVY={junior:"1~4년차",senior:"5년차 이상"};
   var ICON_GRID='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><rect x="13" y="13" width="7" height="7" rx="1.5"/></svg>';
   function insights(){return (data.insights||[]).filter(function(x){var d=parse(x.id);return d&&Math.round((today()-d)/864e5)<=IN_KEEP}).sort(function(a,b){return a.id<b.id?1:-1})}
@@ -721,8 +720,7 @@ a.srow h3{margin:0;font-size:15px;font-weight:500;line-height:1.4;display:-webki
       is.innerHTML=past.map(function(x){return '<button class="tok" data-inweek="'+esc(x.id)+'" aria-pressed="'+(x.id===inWeek)+'">'+wk(x.id)+'</button>'}).join("")}
     else {is.hidden=true;is.innerHTML=""}
     var ch=document.getElementById("chips"); ch.hidden=inView==="star"; ch.classList.add("inrow");
-    ch.innerHTML=inView==="star"?"":'<button class="tok rchip" type="button" id="inrolebtn" aria-haspopup="dialog" aria-label="직군 바꾸기, 지금 '+esc(ROLE[role].name)+'"><span class="ri">'+ROLE[role].icon+'</span>'+esc(tabName(role))+'</button><div class="seg lvseg" role="tablist" aria-label="연차">'
-      +[["all","전체"],["junior","주니어"],["senior","시니어"]].map(function(x){return '<button type="button" role="tab" data-lvl="'+x[0]+'" aria-selected="'+(lvl===x[0])+'" title="'+(x[0]==="junior"?"1~4년차":x[0]==="senior"?"5년차 이상":"주니어와 시니어 모두")+'">'+x[1]+'</button>'}).join("")+'</div>';
+    ch.innerHTML=inView==="star"?"":'<button class="tok rchip" type="button" id="inrolebtn" aria-haspopup="dialog" aria-label="직군 바꾸기, 지금 '+esc(ROLE[role].name)+'"><span class="ri">'+ROLE[role].icon+'</span>'+esc(tabName(role))+'</button>';
     document.getElementById("opts").innerHTML="";
   }
   function refChips(x,refs){return '<div class="refs">'+(refs||[]).filter(function(r){return x.sources&&x.sources[r]}).map(function(r){var s=x.sources[r];
