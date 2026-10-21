@@ -13,6 +13,21 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <style>body{margin:0}[hidden]{display:none!important}img{max-width:100%}</style>
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#F2F2F7" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon-192.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="apple-mobile-web-app-title" content="데일리 픽">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<style>body{margin:0}[hidden]{display:none!important}img{max-width:100%}</style>
 <title>데일리 픽</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -231,7 +246,7 @@ a.ritem{text-decoration:none}
 /* bottom tab bar */
 .tabbar{position:fixed;left:0;right:0;bottom:0;z-index:20;background:var(--bar);-webkit-backdrop-filter:saturate(180%) blur(20px);backdrop-filter:saturate(180%) blur(20px);
   border-top:.5px solid var(--sep);padding-bottom:env(safe-area-inset-bottom,0px);padding-left:env(safe-area-inset-left,0px);padding-right:env(safe-area-inset-right,0px)}
-.tabbar-in{max-width:var(--w);margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);height:var(--tabh)}
+.tabbar-in{max-width:var(--w);margin:0 auto;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));height:var(--tabh)}
 .tabbar button{border:0;background:transparent;color:var(--label3);display:grid;justify-items:center;align-content:center;gap:3px;font-size:11px;font-weight:500;cursor:pointer;white-space:nowrap;padding:0 2px;min-width:0;overflow:hidden}
 .tabbar svg{width:25px;height:25px}
 .tabbar button[aria-selected="true"]{color:var(--tint);font-weight:600}
@@ -274,9 +289,35 @@ body.lock{overflow:hidden}
 
 .toast{white-space:nowrap;max-width:calc(100% - 40px);overflow:hidden;text-overflow:ellipsis;position:fixed;left:50%;bottom:calc(var(--tabh) + 16px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:rgba(30,30,30,.86);color:#FFFFFF;font-size:14px;font-weight:500;padding:9px 16px;border-radius:999px;z-index:30;opacity:0;transition:opacity .2s;pointer-events:none;-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px)}
 .toast[data-show="1"]{opacity:1}
+/* weekly insight */
+.tok.rchip{display:inline-flex;align-items:center;gap:6px;background:var(--tint-soft);color:var(--tint);font-weight:600;padding:0 12px 0 10px}
+.tok.rchip .ri{margin-right:0}
+.tok.rchip::before{content:"";order:3;width:6px;height:6px;border-right:1.6px solid currentColor;border-bottom:1.6px solid currentColor;transform:translateY(-2px) rotate(45deg);margin-left:2px}
+.tsep{flex:none;width:1px;align-self:center;height:18px;background:var(--sep)}
+.ibox{padding:14px 16px;display:grid;gap:10px}
+.ibox+.ibox{border-top:.5px solid var(--sep)}
+.ibox p{margin:0;font-size:15px;line-height:1.65}
+.ibox .lv{font-size:13px;font-weight:600;color:var(--tint)}
+.ibox .thin{font-size:13px;color:var(--label2);line-height:1.5}
+.pts{margin:0;padding:0;list-style:none;display:grid;gap:8px}
+.pts li{position:relative;padding-left:14px;font-size:15px;line-height:1.6}
+.pts li::before{content:"";position:absolute;left:1px;top:10px;width:5px;height:5px;border-radius:50%;background:var(--label3)}
+.refs{display:flex;flex-wrap:wrap;gap:6px;min-width:0}
+.ref{display:inline-flex;align-items:center;gap:4px;max-width:100%;min-width:0;min-height:28px;padding:0 9px;border-radius:7px;background:var(--fill);color:var(--label2);font-size:12px;font-weight:500;text-decoration:none;position:relative}
+.ref span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0}
+.ref svg{width:12px;height:12px;flex:none}
+.ref::after{content:"";position:absolute;left:0;right:0;top:-4px;bottom:-4px}
+a.srow{display:grid;grid-template-columns:minmax(0,1fr) 16px;gap:12px;align-items:center;padding:12px 16px;text-decoration:none;color:var(--label);min-height:60px}
+a.srow svg{width:15px;height:15px;color:var(--label3)}
+a.srow h3{margin:0;font-size:15px;font-weight:500;line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.acts.two{grid-template-columns:1fr 1fr}
+.ifoot{display:grid;gap:10px}
+.ifoot .orig{padding:0 4px;margin:0}
 @media (prefers-reduced-motion:reduce){.chev,.sh .disc::before,.toast,.sheet,.sheet-bg{transition:none}}
 </style>
 
+</head>
+<body>
 </head>
 <body>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
@@ -299,6 +340,11 @@ body.lock{overflow:hidden}
       <button role="tab" id="evview-cal" data-evview="cal" aria-selected="true">달력</button>
       <button role="tab" id="evview-list" data-evview="list" aria-selected="false">목록</button>
       <button role="tab" id="evview-star" data-evview="star" aria-selected="false">저장</button>
+    </div>
+    <div class="seg" role="tablist" id="inviews" hidden>
+      <button role="tab" id="inview-now" data-inview="now" aria-selected="true">이번 주</button>
+      <button role="tab" id="inview-past" data-inview="past" aria-selected="false">지난 인사이트</button>
+      <button role="tab" id="inview-star" data-inview="star" aria-selected="false">저장</button>
     </div>
     <div class="tokens" id="issues" hidden></div>
     <div class="tokens" id="chips"></div>
@@ -354,6 +400,7 @@ body.lock{overflow:hidden}
             <li>첫 번째 탭은 <strong>직군 탭</strong>이에요. 탭 위 직군 이름을 눌러 내 직군을 고르면 아래 탭에 고정되고, 언제든 다시 바꿀 수 있어요. 여러 직군에 함께 쓸모 있는 글에는 공통 표시가 붙어요.</li>
             <li>글은 올라온 날부터 <strong>7일 동안</strong> 볼 수 있어요. 저장한 글도 함께 사라지니, 오래 둘 글은 복사해 두세요.</li>
             <li><strong>AI근황</strong>은 새 AI 모델과 서비스, 규제, 업무에 AI를 쓰는 방법을 모아요. <strong>IT업계</strong>는 플랫폼/커머스/정책 쪽에서 새로 생긴 일을 모아요.</li>
+            <li><strong>인사이트</strong>는 매주 월요일 아침에 올라와요. 지난주 글을 바탕으로 시장이 어디로 가는지, 내 직군이 지금 알아야 할 것과 해야 할 것을 주니어/시니어로 나눠 정리해요. 8주 동안 볼 수 있어요.</li>
             <li><strong>행사</strong>는 국내에서 열리는 기획/디자인/개발/AI/IT 행사를 모아요. 내 직군 행사가 먼저 보이고, 위쪽 제목을 누르면 다른 직군이나 전체 행사를 볼 수 있어요. 끝나는 날까지 남고, 끝나면 자동으로 빠져요.</li>
             <li>글을 펼쳐 저장을 누르면 위쪽 <strong>저장</strong> 보기에 모여요.</li>
             <li>공개된 기사, 글, 영상만 모아요. 회사 내부 자료는 올리지 않아요.</li>
@@ -371,6 +418,7 @@ body.lock{overflow:hidden}
     <button role="tab" id="menu-plan" data-menu="plan" aria-selected="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2.5"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>서비스기획</button>
     <button role="tab" id="menu-ai" data-menu="ai" aria-selected="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.8 4.7L18.5 9.5l-4.7 1.8L12 16l-1.8-4.7L5.5 9.5l4.7-1.8z"/><path d="M18 15l.9 2.1L21 18l-2.1.9L18 21l-.9-2.1L15 18l2.1-.9z"/></svg>AI근황</button>
     <button role="tab" id="menu-it" data-menu="it" aria-selected="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg>IT업계</button>
+    <button role="tab" id="menu-in" data-menu="in" aria-selected="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.6 10.8c.7.6 1.1 1.3 1.1 2.2h5c0-.9.4-1.6 1.1-2.2A6 6 0 0 0 12 3z"/></svg>인사이트</button>
     <button role="tab" id="menu-ev" data-menu="ev" aria-selected="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg>행사</button>
   </div>
 </nav>
@@ -387,7 +435,7 @@ body.lock{overflow:hidden}
 
 <script>
 (function(){
-  var MENUS={plan:"서비스기획",ai:"AI근황",it:"IT업계",ev:"행사"};
+  var MENUS={plan:"서비스기획",ai:"AI근황",it:"IT업계",in:"위클리 인사이트",ev:"행사"};
   var SCOPE={
     plan:"다른 서비스가 화면/정책/어드민/QA를 어떻게 풀었는지, 바로 참고할 사례를 모았어요.",
     ai:"새 AI 모델과 서비스, 규제, 업무에 AI를 쓰는 방법을 모았어요.",
@@ -416,6 +464,7 @@ body.lock{overflow:hidden}
       icon:svg('<path d="M12 3l7.5 3v5.5c0 4.5-3.2 8.2-7.5 9.5-4.3-1.3-7.5-5-7.5-9.5V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/>')}
   ];
   var ROLE={}; ROLES.forEach(function(r){ROLE[r.id]=r});
+  var TABNAME={designer:"디자이너"}; function tabName(id){return TABNAME[id]||ROLE[id].name}
   var role="planner", rolePinned=false;
   try{var rr=localStorage.getItem("dp-role"); if(ROLE[rr]){role=rr;rolePinned=true}}catch(e){}
   function rolesOf(it){return (it.roles&&it.roles.length)?it.roles:["planner"]}
@@ -481,7 +530,7 @@ body.lock{overflow:hidden}
     return s+'</article>';
   }
   function renderArticleControls(){
-    document.getElementById("views").hidden=false; document.getElementById("evviews").hidden=true; document.getElementById("chips").hidden=false;
+    document.getElementById("views").hidden=false; document.getElementById("evviews").hidden=true; document.getElementById("inviews").hidden=true; document.getElementById("chips").hidden=false;
     document.querySelectorAll("#views button").forEach(function(b){b.setAttribute("aria-selected",String(b.dataset.view===view))});
     var is=document.getElementById("issues"), past=data.issues.slice(1);
     if(view==="past"&&past.length){
@@ -578,7 +627,7 @@ body.lock{overflow:hidden}
     return s+'</article>';
   }
   function renderEventControls(){
-    document.getElementById("views").hidden=true;
+    document.getElementById("views").hidden=true; document.getElementById("inviews").hidden=true;
     var ev=document.getElementById("evviews"); ev.hidden=false;
     ev.querySelectorAll("button").forEach(function(b){b.setAttribute("aria-selected",String(b.dataset.evview===evView))});
     var is=document.getElementById("issues"); is.hidden=true; is.innerHTML="";
@@ -649,16 +698,82 @@ body.lock{overflow:hidden}
     el.innerHTML=cal+'<div style="display:grid;gap:16px">'+head+body+'</div>';
   }
 
+  /* weekly insight */
+  var IN_KEEP=56, inView="now", inWeek=null, lvl="all";
+  try{var lv=localStorage.getItem("dp-lvl"); if(lv==="junior"||lv==="senior"||lv==="all")lvl=lv}catch(e){}
+  var LV={junior:"주니어",senior:"시니어"}, LVY={junior:"1~4년차",senior:"5년차 이상"};
+  var ICON_GRID='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><rect x="13" y="13" width="7" height="7" rx="1.5"/></svg>';
+  function insights(){return (data.insights||[]).filter(function(x){var d=parse(x.id);return d&&Math.round((today()-d)/864e5)<=IN_KEEP}).sort(function(a,b){return a.id<b.id?1:-1})}
+  function wk(id){var d=parse(id);return (d.getMonth()+1)+"/"+d.getDate()+" 주"}
+  function curIns(){var L=insights();if(!L.length)return null;if(inView==="now")return L[0];
+    if(!inWeek||!L.some(function(x){return x.id===inWeek}))inWeek=(L[1]||L[0]).id;
+    return L.filter(function(x){return x.id===inWeek})[0]}
+  function inLeft(x){var n=Math.ceil((IN_KEEP-Math.round((today()-parse(x.id))/864e5))/7);if(n<1)n=1;return n+"주 남음"}
+  function renderInsightControls(){
+    document.getElementById("views").hidden=true; document.getElementById("evviews").hidden=true;
+    var v=document.getElementById("inviews"); v.hidden=false;
+    v.querySelectorAll("button").forEach(function(b){b.setAttribute("aria-selected",String(b.dataset.inview===inView))});
+    var L=insights(), is=document.getElementById("issues"), past=L.slice(1);
+    if(inView==="past"&&past.length){curIns(); is.hidden=false;
+      is.innerHTML=past.map(function(x){return '<button class="tok" data-inweek="'+esc(x.id)+'" aria-pressed="'+(x.id===inWeek)+'">'+wk(x.id)+'</button>'}).join("")}
+    else {is.hidden=true;is.innerHTML=""}
+    var ch=document.getElementById("chips"); ch.hidden=inView==="star";
+    ch.innerHTML=inView==="star"?"":'<button class="tok rchip" type="button" id="inrolebtn" aria-haspopup="dialog" aria-label="직군 바꾸기, 지금 '+esc(ROLE[role].name)+'"><span class="ri">'+ROLE[role].icon+'</span>'+esc(tabName(role))+'</button><i class="tsep" aria-hidden="true"></i>'
+      +[["all","전체"],["junior","주니어"],["senior","시니어"]].map(function(x){return '<button class="tok" data-lvl="'+x[0]+'" aria-pressed="'+(lvl===x[0])+'">'+x[1]+'</button>'}).join("");
+    document.getElementById("opts").innerHTML="";
+  }
+  function refChips(x,refs){return '<div class="refs">'+(refs||[]).filter(function(r){return x.sources&&x.sources[r]}).map(function(r){var s=x.sources[r];
+    return '<a class="ref" href="'+esc(safeUrl(s.url))+'" target="_blank" rel="noopener noreferrer" title="'+esc(s.title)+'"><span>'+esc(s.source)+'</span>'+ICON_OPEN+'</a>'}).join("")+'</div>'}
+  function lvBlocks(rd,key){var ks=lvl==="all"?["junior","senior"]:[lvl];
+    return ks.map(function(k){var a=(rd[k]&&rd[k][key])||[];if(!a.length)return "";
+      return '<div class="ibox">'+(lvl==="all"?'<b class="lv">'+LV[k]+' / '+LVY[k]+'</b>':'')+'<ul class="pts">'+a.map(function(t){return '<li>'+esc(t)+'</li>'}).join("")+'</ul></div>'}).join("")}
+  function inCount(rd,key){var ks=lvl==="all"?["junior","senior"]:[lvl],n=0;ks.forEach(function(k){n+=((rd[k]&&rd[k][key])||[]).length});return n}
+  function renderInsight(){
+    var el=document.getElementById("list"), L=insights();
+    if(inView==="star"){
+      var S=L.filter(function(x){return stars["in-"+x.id]});
+      if(!S.length){el.innerHTML='<div class="empty"><b>저장한 인사이트가 없어요</b>인사이트 맨 아래 저장을 누르면 여기에 모여요.</div>';return}
+      el.innerHTML='<div class="group">'+S.map(function(x){var f=splitSent(x.flow||"")[0]||"";
+        return '<article class="cell"><div class="row" role="button" tabindex="0" data-inopen="'+esc(x.id)+'"><div class="main"><h3>'+esc(wk(x.id))+' 인사이트</h3><div class="sub"><span class="src">'+esc(f)+'</span><span class="badge left">'+inLeft(x)+'</span></div></div><i class="chev" aria-hidden="true" style="transform:rotate(-45deg);margin:0 auto"></i></div></article>'}).join("")+'</div>';
+      return}
+    if(!L.length){el.innerHTML='<div class="empty"><b>아직 인사이트가 없어요</b>첫 인사이트는 월요일 아침에 올라와요.</div>';return}
+    if(inView==="past"&&L.length<2){el.innerHTML='<div class="empty"><b>지난 인사이트가 아직 없어요</b>매주 월요일에 하나씩 쌓이고 8주 동안 볼 수 있어요.</div>';return}
+    var x=curIns(), rd=(x.roles&&x.roles[role])||null, R=ROLE[role], sents=splitSent(x.flow||""), key="in|"+x.id+"|"+role+"|"+lvl;
+    var out='<button class="digest" id="digest" type="button" aria-expanded="'+(digestOpen?"true":"false")+'"><b><em style="font-style:normal">'+(inView==="now"?"이번 주 흐름":wk(x.id)+" 흐름")+'</em>'+(sents.length>1?'<span>'+(digestOpen?"접기":"더 보기")+'</span>':'')+'</b><span class="dl">'+sents.map(function(t){return '<span class="ds">'+esc(t)+'</span>'}).join("")+'</span></button>';
+    var sg=x.signals||[];
+    if(sg.length)out+=section(key+"|sig","흐름을 만든 신호",sg.length,sg.map(function(s){return '<div class="ibox"><p>'+esc(s.text)+'</p>'+refChips(x,s.refs)+'</div>'}).join(""));
+    if(rd){
+      out+=section(key+"|imp",R.name+"에 오는 변화","",'<div class="ibox">'+(rd.thin?'<p class="thin">이번 주에는 '+esc(R.name)+' 글이 많지 않아서, 전체 흐름에 비춰 정리했어요.</p>':'')+'<p>'+esc(rd.impact||"")+'</p>'+refChips(x,rd.refs)+'</div>');
+      out+=section(key+"|know","알아야 할 것",inCount(rd,"know"),lvBlocks(rd,"know"));
+      out+=section(key+"|do","해야 할 것",inCount(rd,"do"),lvBlocks(rd,"do"));
+    } else out+='<div class="empty"><b>이번 주에는 '+esc(R.name)+' 인사이트가 없어요</b>위쪽 흐름과 신호를 먼저 봐 주세요.</div>';
+    var ids=Object.keys(x.sources||{});
+    if(!(key+"|src" in gopen))gopen[key+"|src"]=false;
+    if(ids.length)out+=section(key+"|src","근거 글",ids.length,ids.map(function(r){var s=x.sources[r];return '<article class="cell"><a class="srow" href="'+esc(safeUrl(s.url))+'" target="_blank" rel="noopener noreferrer"><div class="main"><h3>'+esc(s.title)+'</h3><div class="sub"><span>'+mdw(s.date)+'</span><span class="src"><span class="sl">/</span> '+esc(s.source)+'</span></div></div>'+ICON_OPEN+'</a></article>'}).join(""));
+    var sid="in-"+x.id;
+    out+='<div class="ifoot"><p class="orig">'+period(x.from,x.to)+'에 올라온 글 '+(x.n||ids.length)+'개를 바탕으로 정리했어요. 8주 동안 볼 수 있어요.</p><div class="acts two">'+(CAN_SHARE?'<button class="btn gray" type="button" id="c-'+esc(sid)+'" data-share-id="'+esc(sid)+'">'+ICON_SHARE+'공유</button>':'<button class="btn gray" type="button" id="c-'+esc(sid)+'" data-copy-id="'+esc(sid)+'">'+ICON_COPY+'복사</button>')+starBtn(sid)+'</div></div>';
+    el.innerHTML=out;
+  }
+  function inCopy(id){var x=(data.insights||[]).filter(function(y){return "in-"+y.id===id})[0];if(!x)return "";
+    var rd=x.roles&&x.roles[role], R=ROLE[role], ks=lvl==="all"?["junior","senior"]:[lvl];
+    function lst(key){return ks.map(function(k){var a=(rd&&rd[k]&&rd[k][key])||[];return a.length?(LV[k]+"\n"+a.map(function(t){return "- "+t}).join("\n")):""}).filter(Boolean).join("\n")}
+    return "[위클리 인사이트] "+wk(x.id)+" / "+R.name+"\n\n"+splitSent(x.flow||"").map(function(t){return "- "+t}).join("\n")
+      +(rd?"\n\n"+R.name+"에 오는 변화\n"+rd.impact+"\n\n알아야 할 것\n"+lst("know")+"\n\n해야 할 것\n"+lst("do"):"")+"\n\nhttps://cysrocke.github.io/daily-briefing/#in";
+  }
+
   var SUBS={ai:"새 AI 모델/서비스/규제와 업무 활용 소식을 모아요",it:"플랫폼/커머스/정책 쪽 새 소식을 모아요"};
   function setSub(t){var e=document.getElementById("subline");e.textContent=t;e.hidden=!t}
   function renderHead(){
     document.querySelectorAll("#menubar button").forEach(function(b){b.setAttribute("aria-selected",String(b.dataset.menu===menu))});
     var R=ROLE[role];
-    document.getElementById("menu-plan").innerHTML=R.icon+esc(R.name);
+    document.getElementById("menu-plan").innerHTML=R.icon+esc(tabName(role));
     var h1=document.getElementById("h1");
     if(menu==="plan"){
       h1.innerHTML='<button class="rolebtn" type="button" id="rolebtn" aria-haspopup="dialog" aria-label="직군 바꾸기, 지금 '+esc(R.name)+'">'+esc(R.name)+'<i class="rdisc" aria-hidden="true"></i></button>';
       document.getElementById("rolehint").hidden=rolePinned; setSub(rolePinned?R.desc.replace(/, /g,"/")+" 사례를 모아요":"");
+    } else if(menu==="in"){
+      h1.textContent="위클리 인사이트";
+      document.getElementById("rolehint").hidden=true; setSub("월요일마다 지난주 흐름을 짚어 드려요");
     } else if(menu==="ev"){
       var en=evf==="all"?"전체 행사":ROLE[evf].name+" 행사";
       h1.innerHTML='<button class="rolebtn" type="button" id="evrolebtn" aria-haspopup="dialog" aria-label="어떤 직군 행사를 볼지 바꾸기, 지금 '+esc(en)+'">'+esc(en)+'<i class="rdisc" aria-hidden="true"></i></button>';
@@ -675,15 +790,16 @@ body.lock{overflow:hidden}
     mt.title=late&&data.updated?"마지막 업데이트 "+mdw(data.updated):"";
     mt.innerHTML=!data.next?"":late?'<span class="lg">오늘 업데이트가 늦어지고 있어요</span><span class="sh2">업데이트가 늦어져요</span>':'<span class="lg">다음 업데이트</span><span class="sh2">다음</span> '+esc(mdw(data.next))+' 오전 8시';
   }
-  function renderList(){if(menu==="ev")renderEvents();else renderArticles()}
+  function renderList(){if(menu==="ev")renderEvents();else if(menu==="in")renderInsight();else renderArticles()}
   var APP_LATEST=4, APP_NAME="1.0.3";
   function appCode(){try{if(!window.DPApp)return 0;return typeof window.DPApp.versionCode==="function"?+window.DPApp.versionCode():2}catch(e){return 0}}
   function renderAppNew(){var el=document.getElementById("appnew"),c=appCode(),dis=null;try{dis=localStorage.getItem("dp-appnew")}catch(e){}
     el.hidden=!(c&&c<APP_LATEST&&dis!==String(APP_LATEST)); document.getElementById("appnew-v").textContent=APP_NAME}
-  function render(){renderHead(); renderAppNew(); if(!data)return; if(menu==="ev")renderEventControls();else renderArticleControls(); renderList()}
+  function render(){renderHead(); renderAppNew(); if(!data)return; if(menu==="ev")renderEventControls();else if(menu==="in")renderInsightControls();else renderArticleControls(); renderList()}
 
   function toast(msg){var t=document.getElementById("toast");t.textContent=msg;t.setAttribute("data-show","1");clearTimeout(toast._t);toast._t=setTimeout(function(){t.setAttribute("data-show","0")},1600)}
   function copyText(id){
+    if(String(id).indexOf("in-")===0)return inCopy(id);
     var it=data.items.filter(function(x){return x.id===id})[0];
     if(it)return "["+(it.menu==="plan"?ROLE[role].name:MENUS[it.menu])+"] "+(it.title_ko||it.title)+"\n출처: "+it.source+"\n게시일: "+mdw(it.date)+"\n\n"+it.summary+(it.why?"\n\n"+whyLabel(it)+": "+it.why:"")+"\n\n"+it.url;
     var e=(data.events||[]).filter(function(x){return x.id===id})[0];
@@ -699,8 +815,8 @@ body.lock{overflow:hidden}
   function shareItem(btn){
     var id=btn.getAttribute("data-share-id"), txt=copyText(id); if(!txt)return;
     var it=data.items.filter(function(x){return x.id===id})[0]||(data.events||[]).filter(function(x){return x.id===id})[0];
-    var url=it&&it.url||location.href, body=txt.replace(/\n\n?https?:\/\/\S+$/,"");
-    try{navigator.share({title:(it&&(it.title_ko||it.title))||"데일리 픽",text:body,url:url}).catch(function(err){if(!err||err.name!=="AbortError")copyItem(btn,txt)})}catch(e){copyItem(btn,txt)}
+    var url=String(id).indexOf("in-")===0?"https://cysrocke.github.io/daily-briefing/#in":(it&&it.url||location.href), body=txt.replace(/\n\n?https?:\/\/\S+$/,"");
+    try{navigator.share({title:String(id).indexOf("in-")===0?"위클리 인사이트":(it&&(it.title_ko||it.title))||"데일리 픽",text:body,url:url}).catch(function(err){if(!err||err.name!=="AbortError")copyItem(btn,txt)})}catch(e){copyItem(btn,txt)}
   }
   function keepControls(){var hd=document.querySelector("header"),c=document.querySelector(".controls");var top=Math.round(hd.getBoundingClientRect().bottom+window.scrollY+parseFloat(getComputedStyle(c).marginTop||0));if(window.scrollY>top)window.scrollTo(0,top)}
 
@@ -768,17 +884,22 @@ body.lock{overflow:hidden}
     var v=e.target.closest("button[data-evrole]");if(v){evf=v.dataset.evrole;selDay=null;closeSheet();render();window.scrollTo(0,0);return}var b=e.target.closest("button[data-role]");if(b)pickRole(b.dataset.role)});
   document.addEventListener("keydown",function(e){if(e.key==="Escape"&&!sheet.hidden)closeSheet()});
 
-  document.getElementById("menubar").addEventListener("click",function(e){var b=e.target.closest("button[data-menu]");if(!b)return;menu=b.dataset.menu;type="전체";onlyStar=false;if(view==="star")view="now";digestOpen=false;if(menu==="ev"){evf=role;selDay=null;if(evView==="star"){evView="cal";evStarOnly=false}}try{localStorage.setItem("dp-menu",menu)}catch(x){}render();window.scrollTo(0,0)});
+  document.getElementById("menubar").addEventListener("click",function(e){var b=e.target.closest("button[data-menu]");if(!b)return;menu=b.dataset.menu;type="전체";onlyStar=false;if(view==="star")view="now";digestOpen=false;if(menu==="ev"){evf=role;selDay=null;if(evView==="star"){evView="cal";evStarOnly=false}}if(menu==="in"&&inView==="star")inView="now";try{localStorage.setItem("dp-menu",menu)}catch(x){}render();window.scrollTo(0,0)});
   document.getElementById("views").addEventListener("click",function(e){var b=e.target.closest("button[data-view]");if(!b)return;view=b.dataset.view;onlyStar=(view==="star");type="전체";render();keepControls()});
   document.getElementById("evviews").addEventListener("click",function(e){var b=e.target.closest("button[data-evview]");if(!b)return;evView=b.dataset.evview;evStarOnly=(evView==="star");render();keepControls()});
-  document.getElementById("issues").addEventListener("click",function(e){var b=e.target.closest("button[data-issue]");if(!b)return;issue=b.dataset.issue;type="전체";render();keepControls()});
+  document.getElementById("inviews").addEventListener("click",function(e){var b=e.target.closest("button[data-inview]");if(!b)return;inView=b.dataset.inview;digestOpen=false;render();keepControls()});
+  document.getElementById("issues").addEventListener("click",function(e){var w=e.target.closest("button[data-inweek]");if(w){inWeek=w.dataset.inweek;digestOpen=false;render();keepControls();return}var b=e.target.closest("button[data-issue]");if(!b)return;issue=b.dataset.issue;type="전체";render();keepControls()});
   document.getElementById("chips").addEventListener("click",function(e){var b=e.target.closest("button");if(!b)return;
+    if(b.id==="inrolebtn"){openSheet("pin");return}
+    if(b.dataset.lvl){lvl=b.dataset.lvl;try{localStorage.setItem("dp-lvl",lvl)}catch(x){}render();keepControls();return}
     if(b.dataset.evst){evOpenOnly=b.dataset.evst==="open";selDay=null}else if(b.dataset.ev){evf=b.dataset.ev;selDay=null}else{type=b.dataset.type}render();keepControls()});
   document.getElementById("opts").addEventListener("click",function(e){var b=e.target.closest("button[data-opt]");if(!b)return;var k=b.dataset.opt;
     if(k==="star"){onlyStar=!onlyStar;type="전체"}else if(k==="open"){evOpenOnly=!evOpenOnly}else if(k==="evstar"){evStarOnly=!evStarOnly}
     selDay=null;render();keepControls()});
   document.getElementById("list").addEventListener("click",function(e){
     if(e.target.closest("#digest")){digestOpen=!digestOpen;renderList();return}
+    var io=e.target.closest("[data-inopen]");
+    if(io){inView="past";inWeek=io.dataset.inopen;var L0=insights();if(L0.length&&L0[0].id===inWeek)inView="now";digestOpen=false;render();window.scrollTo(0,0);return}
     var dy=e.target.closest("button[data-day]");
     if(dy){selDay=selDay===dy.dataset.day?null:dy.dataset.day;renderList();return}
     var cn=e.target.closest("button[data-cal]");
@@ -789,7 +910,7 @@ body.lock{overflow:hidden}
       renderList();return}
     var st=e.target.closest("button[data-star-id]");
     if(st){e.stopPropagation();var id=st.dataset.starId,isEv=id.indexOf("ev-")===0;if(stars[id]){delete stars[id];save();render();toast("저장을 취소했어요");return}
-      stars[id]=1;save();render();toast(isEv?"저장했어요. 행사가 끝나면 사라져요":"저장했어요. 7일 뒤 사라져요");return}
+      stars[id]=1;save();render();toast(isEv?"저장했어요. 행사가 끝나면 사라져요":id.indexOf("in-")===0?"저장했어요. 8주 뒤 사라져요":"저장했어요. 7일 뒤 사라져요");return}
     var cl=e.target.closest("button[data-calendar-id]");
     if(cl){calEv=(data.events||[]).filter(function(x){return x.id===cl.dataset.calendarId})[0];if(calEv)openSheet("cal");return}
     var sh=e.target.closest("button[data-share-id]");
@@ -801,7 +922,7 @@ body.lock{overflow:hidden}
     if(gh){var k=gh.getAttribute("data-gk");gopen[k]=!gopen[k];renderList();return}
     var r=e.target.closest("[data-toggle]");if(r){var id2=r.dataset.toggle;open[id2]=!open[id2];renderList()}
   });
-  document.getElementById("list").addEventListener("keydown",function(e){if((e.key==="Enter"||e.key===" ")&&e.target.matches("[data-toggle]")){e.preventDefault();e.target.click()}});
+  document.getElementById("list").addEventListener("keydown",function(e){if((e.key==="Enter"||e.key===" ")&&e.target.matches("[data-toggle],[data-inopen]")){e.preventDefault();e.target.click()}});
   document.querySelectorAll(".hrow").forEach(function(b){b.addEventListener("click",function(){
     var body=document.getElementById(b.id+"-body"), o=b.getAttribute("aria-expanded")!=="true";
     b.setAttribute("aria-expanded",String(o)); body.hidden=!o; b.parentNode.setAttribute("data-open",o?"1":"0");
@@ -823,6 +944,9 @@ body.lock{overflow:hidden}
   }).catch(function(){document.getElementById("meta").textContent="글 목록을 불러오지 못했어요. 새로고침해 주세요."});
 })();
 </script>
+
+</body>
+</html>
 
 </body>
 </html>
