@@ -240,7 +240,10 @@ a.ritem{text-decoration:none}
 .rolebtn{display:inline-flex;align-items:center;gap:8px;border:0;background:transparent;color:inherit;font:inherit;padding:0;margin:0;cursor:pointer;text-align:left;letter-spacing:inherit}
 .rolebtn .rdisc{width:24px;height:24px;border-radius:50%;background:var(--fill);display:grid;place-items:center;flex:none}
 .rolebtn .rdisc::before{content:"";width:6px;height:6px;border-right:2px solid var(--label2);border-bottom:2px solid var(--label2);transform:translateY(-2px) rotate(45deg)}
-.rolehint{justify-self:start;margin:0;padding:2px 0;border:0;background:transparent;font:inherit;font-size:13px;color:var(--tint);font-weight:500;cursor:pointer;text-align:left}
+.rolehint{justify-self:start;margin:0;padding:0;border:0;background:transparent;font:inherit;font-size:13px;color:var(--tint);font-weight:500;cursor:pointer;text-align:left}
+.rolehint,.subline{display:block;max-width:100%;height:22px;line-height:22px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.subline{margin:0;font-size:13px;color:var(--label2)}
+.subline[hidden]{display:none}
 .rolehint[hidden]{display:none}
 .badge.common{background:var(--tint-soft);color:var(--tint)}
 .sheet-bg{position:fixed;inset:0;z-index:40;background:rgba(0,0,0,.38);opacity:0;transition:opacity .2s}
@@ -282,7 +285,8 @@ body.lock{overflow:hidden}
   <header>
     <div class="brand"><span class="logo"><span class="mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>데일리 픽</span><span class="when"><span class="date" id="today"></span><span class="next" id="meta">불러오는 중이에요</span></span></div>
     <h1 id="h1">서비스기획</h1>
-    <button class="rolehint" id="rolehint" type="button" hidden>직군 이름을 누르면 내 직군으로 바꿀 수 있어요</button>
+    <button class="rolehint" id="rolehint" type="button" hidden>직군 이름을 눌러 내 직군을 골라 보세요</button>
+    <p class="subline" id="subline"></p>
   </header>
 
   <div class="controls">
@@ -639,6 +643,8 @@ body.lock{overflow:hidden}
     el.innerHTML=cal+'<div style="display:grid;gap:16px">'+head+body+'</div>';
   }
 
+  var SUBS={ai:"새 AI 모델/서비스/규제와 업무 활용 소식을 모아요",it:"플랫폼/커머스/정책 쪽 새 소식을 모아요"};
+  function setSub(t){var e=document.getElementById("subline");e.textContent=t;e.hidden=!t}
   function renderHead(){
     document.querySelectorAll("#menubar button").forEach(function(b){b.setAttribute("aria-selected",String(b.dataset.menu===menu))});
     var R=ROLE[role];
@@ -646,14 +652,14 @@ body.lock{overflow:hidden}
     var h1=document.getElementById("h1");
     if(menu==="plan"){
       h1.innerHTML='<button class="rolebtn" type="button" id="rolebtn" aria-haspopup="dialog" aria-label="직군 바꾸기, 지금 '+esc(R.name)+'">'+esc(R.name)+'<i class="rdisc" aria-hidden="true"></i></button>';
-      document.getElementById("rolehint").hidden=rolePinned;
+      document.getElementById("rolehint").hidden=rolePinned; setSub(rolePinned?R.desc.replace(/, /g,"/")+" 사례를 모아요":"");
     } else if(menu==="ev"){
       var en=evf==="all"?"전체 행사":ROLE[evf].name+" 행사";
       h1.innerHTML='<button class="rolebtn" type="button" id="evrolebtn" aria-haspopup="dialog" aria-label="어떤 직군 행사를 볼지 바꾸기, 지금 '+esc(en)+'">'+esc(en)+'<i class="rdisc" aria-hidden="true"></i></button>';
-      document.getElementById("rolehint").hidden=true;
+      document.getElementById("rolehint").hidden=true; setSub("제목을 누르면 다른 직군 행사도 볼 수 있어요");
     } else {
       h1.textContent=MENUS[menu];
-      document.getElementById("rolehint").hidden=true;
+      document.getElementById("rolehint").hidden=true; setSub(SUBS[menu]||"");
     }
     var t0=today(); document.getElementById("today").textContent=(t0.getMonth()+1)+"월 "+t0.getDate()+"일 "+WD[t0.getDay()]+"요일";
     if(!data)return;
