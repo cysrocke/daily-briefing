@@ -420,6 +420,9 @@ body.lock{overflow:hidden}
   try{var rr=localStorage.getItem("dp-role"); if(ROLE[rr]){role=rr;rolePinned=true}}catch(e){}
   function rolesOf(it){return (it.roles&&it.roles.length)?it.roles:["planner"]}
   var TYPE_ORDER=["기사/리포트","아티클/블로그","출시/업데이트","링크드인","SNS","영상","팟캐스트","뉴스레터"];
+  var TOPIC_ORDER=["리테일/커머스","앱/플랫폼 정책","규제/보안","빅테크/서비스 동향"];
+  function grp(it){return it.menu==="it"?(TOPIC_ORDER.indexOf(it.topic)>=0?it.topic:"빅테크/서비스 동향"):it.type}
+  function gorder(){return menu==="it"?TOPIC_ORDER:TYPE_ORDER}
   var KEEP_DAYS=7, WD="일월화수목금토";
   var digestOpen=false, data=null, menu="plan", view="now", type="전체", issue=null, onlyStar=false, evf="all", evOpenOnly=false, evStarOnly=false, stars={}, open={}, gopen={};
   try{stars=JSON.parse(localStorage.getItem("dp-stars")||localStorage.getItem("wm-stars")||"{}")||{}}catch(e){stars={}}
@@ -466,7 +469,7 @@ body.lock{overflow:hidden}
     var s='<article class="cell" data-open="'+o+'">'
       +'<div class="row" role="button" tabindex="0" data-toggle="'+esc(it.id)+'" aria-expanded="'+(o?"true":"false")+'">'
       +'<div class="main"><h3>'+esc(it.title_ko||it.title)+'</h3>'
-      +'<div class="sub"><span>'+mdw(it.date)+'</span><span class="src"><span class="sl">/</span> '+esc(it.source)+'</span>'+(it.menu==="plan"&&rolesOf(it).length>1?'<span class="badge common">공통</span>':'')+(it.lang==="en"?'<span class="badge">영문</span>':'')+(stars[it.id]?'<span class="saved" aria-label="저장한 글">★</span>':'')+(onlyStar?daysLeft(it):'')+'</div></div>'
+      +'<div class="sub"><span>'+mdw(it.date)+'</span><span class="src"><span class="sl">/</span> '+esc(it.source)+'</span>'+(it.menu==="it"?'<span class="badge">'+esc(it.type)+'</span>':'')+(it.menu==="plan"&&rolesOf(it).length>1?'<span class="badge common">공통</span>':'')+(it.lang==="en"?'<span class="badge">영문</span>':'')+(stars[it.id]?'<span class="saved" aria-label="저장한 글">★</span>':'')+(onlyStar?daysLeft(it):'')+'</div></div>'
       +'<i class="chev" aria-hidden="true"></i></div>';
     if(o){
       s+='<div class="detail"><p>'+esc(it.summary)+'</p>'
@@ -487,12 +490,13 @@ body.lock{overflow:hidden}
       is.innerHTML=past.map(function(x){return '<button class="tok" data-issue="'+esc(x.id)+'" aria-pressed="'+(x.id===issue)+'">'+mdw(x.id)+'</button>'}).join("");
     } else {is.hidden=true;is.innerHTML=""}
     var items=pool(), counts={};
-    items.forEach(function(it){counts[it.type]=(counts[it.type]||0)+1});
-    var types=TYPE_ORDER.filter(function(t){return counts[t]});
+    items.forEach(function(it){var g=grp(it);counts[g]=(counts[g]||0)+1});
+    var types=menu==="it"?TOPIC_ORDER.slice():gorder().filter(function(t){return counts[t]});
     Object.keys(counts).forEach(function(t){if(types.indexOf(t)<0)types.push(t)});
-    if(type!=="전체"&&!counts[type])type="전체";
-    var html=items.length?'<button class="tok" data-type="전체" aria-pressed="'+(type==="전체")+'">전체<small>'+items.length+'</small></button>':'';
-    html+=types.map(function(t){return '<button class="tok" data-type="'+esc(t)+'" aria-pressed="'+(type===t)+'">'+esc(t)+'<small>'+counts[t]+'</small></button>'}).join("");
+    if(type!=="전체"&&types.indexOf(type)<0)type="전체";
+    if(menu!=="it"&&type!=="전체"&&!counts[type])type="전체";
+    var html=(items.length||menu==="it")?'<button class="tok" data-type="전체" aria-pressed="'+(type==="전체")+'">전체<small>'+items.length+'</small></button>':'';
+    html+=types.map(function(t){return '<button class="tok" data-type="'+esc(t)+'" aria-pressed="'+(type===t)+'">'+esc(t)+'<small>'+(counts[t]||0)+'</small></button>'}).join("");
     document.getElementById("chips").innerHTML=html;
     document.getElementById("opts").innerHTML="";
   }
@@ -504,7 +508,7 @@ body.lock{overflow:hidden}
     return out;
   }
   function renderArticles(){
-    var items=pool().filter(function(it){return type==="전체"||it.type===type});
+    var items=pool().filter(function(it){return type==="전체"||grp(it)===type});
     var el=document.getElementById("list");
     var cur=view==="now"?latest():issue;
     var iss=data.issues.filter(function(x){return x.id===cur})[0];
@@ -515,14 +519,14 @@ body.lock{overflow:hidden}
     if(!items.length){
       var noPast=view==="past"&&!onlyStar&&data.issues.length<2;
       var noRole=menu==="plan"&&!onlyStar&&!noPast&&type==="전체";
-      var t1=onlyStar?"저장한 글이 없어요":noPast?"지난 글이 아직 없어요":noRole?(view==="now"?"오늘은 "+ROLE[role].name+" 글이 없어요":"이날은 "+ROLE[role].name+" 글이 없어요"):"이 종류에는 글이 없어요";
-      var t2=onlyStar?"글을 펼친 뒤 저장을 누르면 여기에 모여요.":noPast?"내일부터 하루씩 쌓이고, 올라온 날부터 7일 동안 볼 수 있어요.":noRole?(view==="now"?"맞는 글이 있을 때만 올려요. 지난 7일에서 이전 글을 볼 수 있어요.":"다른 날짜를 골라 보세요."):"다른 종류를 골라 보세요.";
+      var t1=onlyStar?"저장한 글이 없어요":noPast?"지난 글이 아직 없어요":noRole?(view==="now"?"오늘은 "+ROLE[role].name+" 글이 없어요":"이날은 "+ROLE[role].name+" 글이 없어요"):(menu==="it"?"이 분야에는 글이 없어요":"이 종류에는 글이 없어요");
+      var t2=onlyStar?"글을 펼친 뒤 저장을 누르면 여기에 모여요.":noPast?"내일부터 하루씩 쌓이고, 올라온 날부터 7일 동안 볼 수 있어요.":noRole?(view==="now"?"맞는 글이 있을 때만 올려요. 지난 7일에서 이전 글을 볼 수 있어요.":"다른 날짜를 골라 보세요."):(menu==="it"?"다른 분야를 골라 보거나 지난 7일을 눌러 보세요.":"다른 종류를 골라 보세요.");
       el.innerHTML='<div class="empty"><b>'+t1+'</b>'+t2+'</div>';
       return;
     }
     var groups={};
-    items.forEach(function(it){(groups[it.type]=groups[it.type]||[]).push(it)});
-    var order=TYPE_ORDER.filter(function(t){return groups[t]}).concat(Object.keys(groups).filter(function(t){return TYPE_ORDER.indexOf(t)<0}));
+    items.forEach(function(it){var g=grp(it);(groups[g]=groups[g]||[]).push(it)});
+    var order=gorder().filter(function(t){return groups[t]}).concat(Object.keys(groups).filter(function(t){return gorder().indexOf(t)<0}));
     var key=menu+"|"+role+"|"+view+"|"+(issue||"")+"|"+type+"|"+onlyStar;
     el.innerHTML=dg+order.map(function(t){
       var g=groups[t].slice().sort(function(a,b){return a.date<b.date?1:-1});
