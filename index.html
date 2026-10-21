@@ -246,6 +246,7 @@ h1{margin:0;font-size:26px;line-height:1.25;font-weight:700;letter-spacing:-.03e
 .ritem .nm{display:grid;gap:2px;min-width:0}
 .ritem .nm b{font-size:16px;font-weight:600}
 .ritem .nm span{font-size:13px;color:var(--label2);line-height:1.45}
+.ritem .nm b .mine{font-style:normal;font-size:11px;font-weight:600;color:var(--tint);background:var(--tint-soft);border-radius:5px;padding:2px 6px;margin-left:6px;vertical-align:2px}
 .ritem .ok{width:20px;height:20px;color:var(--tint);visibility:hidden}
 .ritem[aria-checked="true"] .ok{visibility:visible}
 .ritem[aria-checked="true"] .nm b{color:var(--tint)}
@@ -276,6 +277,7 @@ body.lock{overflow:hidden}
     <div class="seg" role="tablist" id="evviews" hidden>
       <button role="tab" id="evview-cal" data-evview="cal" aria-selected="true">달력</button>
       <button role="tab" id="evview-list" data-evview="list" aria-selected="false">목록</button>
+      <button role="tab" id="evview-star" data-evview="star" aria-selected="false">저장</button>
     </div>
     <div class="tokens" id="issues" hidden></div>
     <div class="tokens" id="chips"></div>
@@ -330,7 +332,7 @@ body.lock{overflow:hidden}
             <li>첫 번째 탭은 <strong>직군 탭</strong>이에요. 탭 위 직군 이름을 눌러 내 직군을 고르면 아래 탭에 고정되고, 언제든 다시 바꿀 수 있어요. 여러 직군에 함께 쓸모 있는 글에는 공통 표시가 붙어요.</li>
             <li>글은 올라온 날부터 <strong>7일 동안</strong> 볼 수 있어요. 저장한 글도 함께 사라지니, 오래 둘 글은 복사해 두세요.</li>
             <li><strong>AI근황</strong>은 새 AI 모델과 서비스, 규제, 업무에 AI를 쓰는 방법을 모아요. <strong>IT업계</strong>는 플랫폼/커머스/정책 쪽에서 새로 생긴 일을 모아요.</li>
-            <li><strong>행사</strong>는 국내에서 열리는 기획/디자인/개발/AI/IT 행사를 모아요. 내 직군 행사가 먼저 보이고, 다른 직군이나 전체를 눌러 볼 수도 있어요. 끝나는 날까지 남고, 끝나면 자동으로 빠져요.</li>
+            <li><strong>행사</strong>는 국내에서 열리는 기획/디자인/개발/AI/IT 행사를 모아요. 내 직군 행사가 먼저 보이고, 위쪽 제목을 누르면 다른 직군이나 전체 행사를 볼 수 있어요. 끝나는 날까지 남고, 끝나면 자동으로 빠져요.</li>
             <li>글을 펼쳐 저장을 누르면 위쪽 <strong>저장</strong> 보기에 모여요.</li>
             <li>공개된 기사, 글, 영상만 모아요. 회사 내부 자료는 올리지 않아요.</li>
             <li>기사/리포트는 원문에서 확인한 사실만 실어요. 요약과 기획 포인트는 직접 쓴 글이고, 원문의 저작권은 각 출처에 있어요.</li>
@@ -355,7 +357,7 @@ body.lock{overflow:hidden}
 <div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-labelledby="sheet-title" hidden>
   <div class="sheet-hd">
     <b id="sheet-title">내 직군 고르기</b>
-    <p>고른 직군이 아래 탭에 고정돼요. 언제든 다시 바꿀 수 있어요.</p>
+    <p id="sheet-desc">고른 직군이 아래 탭에 고정돼요. 언제든 다시 바꿀 수 있어요.</p>
     <button class="x" type="button" id="sheetx" aria-label="닫기">✕</button>
   </div>
   <div class="sheet-body"><div class="roles" id="roles" role="radiogroup" aria-label="직군"></div></div>
@@ -448,7 +450,7 @@ body.lock{overflow:hidden}
     return s+'</article>';
   }
   function renderArticleControls(){
-    document.getElementById("views").hidden=false; document.getElementById("evviews").hidden=true;
+    document.getElementById("views").hidden=false; document.getElementById("evviews").hidden=true; document.getElementById("chips").hidden=false;
     document.querySelectorAll("#views button").forEach(function(b){b.setAttribute("aria-selected",String(b.dataset.view===view))});
     var is=document.getElementById("issues"), past=data.issues.slice(1);
     if(view==="past"&&past.length){
@@ -547,14 +549,8 @@ body.lock{overflow:hidden}
     var ev=document.getElementById("evviews"); ev.hidden=false;
     ev.querySelectorAll("button").forEach(function(b){b.setAttribute("aria-selected",String(b.dataset.evview===evView))});
     var is=document.getElementById("issues"); is.hidden=true; is.innerHTML="";
-    var all=evs().filter(function(e){return (!evOpenOnly||e.reg_status==="신청 중")&&(!evStarOnly||stars[e.id])}), c={all:all.length};
-    ROLES.forEach(function(r){c[r.id]=0});
-    all.forEach(function(e){evRolesOf(e).forEach(function(r){if(c[r]!=null)c[r]++})});
-    var order=[role,"all"].concat(ROLES.map(function(r){return r.id}).filter(function(id){return id!==role}));
-    var html=order.map(function(id){var mine=id===role,nm=id==="all"?"전체":ROLE[id].name;
-      return '<button class="tok" data-ev="'+id+'" aria-pressed="'+(evf===id)+'"'+(mine?' aria-label="내 직군 '+esc(nm)+'"':'')+'>'+(mine?'<span class="ri">'+ROLE[id].icon+'</span>':'')+esc(nm)+'<small>'+c[id]+'</small></button>'}).join("");
-    document.getElementById("chips").innerHTML=html;
-    document.getElementById("opts").innerHTML='<button class="opt" type="button" data-opt="open" aria-pressed="'+evOpenOnly+'"><i class="ck" aria-hidden="true"></i>신청 중만</button>'+'<button class="opt" type="button" data-opt="evstar" aria-pressed="'+evStarOnly+'"><i class="ck" aria-hidden="true"></i>저장한 행사만</button>';
+    var ch=document.getElementById("chips"); ch.innerHTML=""; ch.hidden=true;
+    document.getElementById("opts").innerHTML=evStarOnly?"":'<button class="opt" type="button" data-opt="open" aria-pressed="'+evOpenOnly+'"><i class="ck" aria-hidden="true"></i>신청 중만</button>';
   }
   function emptyEv(sel){return '<div class="empty"><b>'+(evStarOnly?"저장한 행사가 없어요":sel?"이 날은 행사가 없어요":"보여 줄 행사가 없어요")+'</b>'+(evStarOnly?"행사를 펼친 뒤 저장을 누르면 여기에 모여요.":"다른 조건을 골라 보세요.")+'</div>'}
   function renderEventList(){
@@ -573,7 +569,7 @@ body.lock{overflow:hidden}
     el.innerHTML=out;
   }
   function renderEvents(){
-    if(evView==="list"){renderEventList();return}
+    if(evView!=="cal"){renderEventList();return}
     var el=document.getElementById("list"), list=evPool(), t=today(), tk=ymd(t);
     if(calY===null){calY=t.getFullYear();calM=t.getMonth()}
     var last=list.reduce(function(m,e){return (e.end||e.start)>m?(e.end||e.start):m},tk), ld=parse(last);
@@ -626,6 +622,10 @@ body.lock{overflow:hidden}
     if(menu==="plan"){
       h1.innerHTML='<button class="rolebtn" type="button" id="rolebtn" aria-haspopup="dialog" aria-label="직군 바꾸기, 지금 '+esc(R.name)+'">'+esc(R.name)+'<i class="rdisc" aria-hidden="true"></i></button>';
       document.getElementById("rolehint").hidden=rolePinned;
+    } else if(menu==="ev"){
+      var en=evf==="all"?"전체 행사":ROLE[evf].name+" 행사";
+      h1.innerHTML='<button class="rolebtn" type="button" id="evrolebtn" aria-haspopup="dialog" aria-label="어떤 직군 행사를 볼지 바꾸기, 지금 '+esc(en)+'">'+esc(en)+'<i class="rdisc" aria-hidden="true"></i></button>';
+      document.getElementById("rolehint").hidden=true;
     } else {
       h1.textContent=MENUS[menu];
       document.getElementById("rolehint").hidden=true;
@@ -656,13 +656,24 @@ body.lock{overflow:hidden}
   /* role sheet */
   var sheet=document.getElementById("sheet"), sheetbg=document.getElementById("sheetbg"), lastFocus=null;
   var ICON_OK='<svg class="ok" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>';
+  var sheetMode="pin";
+  function evCount(id){return evs().filter(function(e){return id==="all"||evRolesOf(e).indexOf(id)>=0}).length}
   function renderRoles(){
+    var st=document.getElementById("sheet-title"), sp=document.getElementById("sheet-desc");
+    if(sheetMode==="ev"){
+      st.textContent="어떤 직군 행사를 볼까요"; sp.textContent="내 직군 설정은 그대로 두고 행사 탭에서만 바꿔 봐요.";
+      var ids=["all",role].concat(ROLES.map(function(r){return r.id}).filter(function(x){return x!==role}));
+      document.getElementById("roles").innerHTML=ids.map(function(id){var all=id==="all",nm=all?"전체":ROLE[id].name;
+        return '<button class="ritem" type="button" role="radio" data-evrole="'+id+'" aria-checked="'+(evf===id)+'"><span class="ic">'+(all?'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><rect x="13" y="13" width="7" height="7" rx="1.5"/></svg>':ROLE[id].icon)+'</span><span class="nm"><b>'+esc(nm)+(id===role?'<em class="mine">내 직군</em>':'')+'</b><span>행사 '+evCount(id)+'개</span></span>'+ICON_OK+'</button>'}).join("");
+      return;
+    }
+    st.textContent="내 직군 고르기"; sp.textContent="고른 직군이 아래 탭에 고정돼요. 언제든 다시 바꿀 수 있어요.";
     document.getElementById("roles").innerHTML=ROLES.map(function(r){
       return '<button class="ritem" type="button" role="radio" data-role="'+r.id+'" aria-checked="'+(r.id===role)+'"><span class="ic">'+r.icon+'</span><span class="nm"><b>'+esc(r.name)+'</b><span>'+esc(r.scope)+'</span></span>'+ICON_OK+'</button>';
     }).join("");
   }
-  function openSheet(){
-    lastFocus=document.activeElement; renderRoles();
+  function openSheet(mode){
+    sheetMode=mode==="ev"?"ev":"pin"; lastFocus=document.activeElement; renderRoles();
     sheet.hidden=false; sheetbg.hidden=false; document.body.classList.add("lock");
     requestAnimationFrame(function(){sheet.setAttribute("data-show","1");sheetbg.setAttribute("data-show","1");
       var cur=sheet.querySelector('[aria-checked="true"]'); if(cur)cur.focus()});
@@ -680,16 +691,16 @@ body.lock{overflow:hidden}
     closeSheet(); render(); window.scrollTo(0,0);
     toast(ROLE[id].name+ro(ROLE[id].name)+" 고정했어요");
   }
-  document.getElementById("h1").addEventListener("click",function(e){if(e.target.closest("#rolebtn"))openSheet()});
-  document.getElementById("rolehint").addEventListener("click",openSheet);
+  document.getElementById("h1").addEventListener("click",function(e){if(e.target.closest("#rolebtn"))openSheet("pin");else if(e.target.closest("#evrolebtn"))openSheet("ev")});
+  document.getElementById("rolehint").addEventListener("click",function(){openSheet("pin")});
   sheetbg.addEventListener("click",closeSheet);
   document.getElementById("sheetx").addEventListener("click",closeSheet);
-  document.getElementById("roles").addEventListener("click",function(e){var b=e.target.closest("button[data-role]");if(b)pickRole(b.dataset.role)});
+  document.getElementById("roles").addEventListener("click",function(e){var v=e.target.closest("button[data-evrole]");if(v){evf=v.dataset.evrole;selDay=null;closeSheet();render();window.scrollTo(0,0);return}var b=e.target.closest("button[data-role]");if(b)pickRole(b.dataset.role)});
   document.addEventListener("keydown",function(e){if(e.key==="Escape"&&!sheet.hidden)closeSheet()});
 
-  document.getElementById("menubar").addEventListener("click",function(e){var b=e.target.closest("button[data-menu]");if(!b)return;menu=b.dataset.menu;type="전체";onlyStar=false;if(view==="star")view="now";digestOpen=false;if(menu==="ev"){evf=role;selDay=null}try{localStorage.setItem("dp-menu",menu)}catch(x){}render();window.scrollTo(0,0)});
+  document.getElementById("menubar").addEventListener("click",function(e){var b=e.target.closest("button[data-menu]");if(!b)return;menu=b.dataset.menu;type="전체";onlyStar=false;if(view==="star")view="now";digestOpen=false;if(menu==="ev"){evf=role;selDay=null;if(evView==="star"){evView="cal";evStarOnly=false}}try{localStorage.setItem("dp-menu",menu)}catch(x){}render();window.scrollTo(0,0)});
   document.getElementById("views").addEventListener("click",function(e){var b=e.target.closest("button[data-view]");if(!b)return;view=b.dataset.view;onlyStar=(view==="star");type="전체";render();keepControls()});
-  document.getElementById("evviews").addEventListener("click",function(e){var b=e.target.closest("button[data-evview]");if(!b)return;evView=b.dataset.evview;render();keepControls()});
+  document.getElementById("evviews").addEventListener("click",function(e){var b=e.target.closest("button[data-evview]");if(!b)return;evView=b.dataset.evview;evStarOnly=(evView==="star");render();keepControls()});
   document.getElementById("issues").addEventListener("click",function(e){var b=e.target.closest("button[data-issue]");if(!b)return;issue=b.dataset.issue;type="전체";render();keepControls()});
   document.getElementById("chips").addEventListener("click",function(e){var b=e.target.closest("button");if(!b)return;
     if(b.dataset.ev){evf=b.dataset.ev;selDay=null}else{type=b.dataset.type}render();keepControls()});
