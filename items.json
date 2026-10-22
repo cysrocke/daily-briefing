@@ -4,19 +4,19 @@
    "id": "2026-10-22",
    "highlights": {
     "ai": "월마트가 AI 에이전트가 직접 장보고 결제하는 에이전트 게이트웨이를 발표했다. 카페24가 모든 자사몰에 웹MCP를 적용해 AI 에이전트가 장바구니까지 처리하게 했다. LLM 게이트웨이 LiteLLM 1.107.0이 공급망 공격으로 악성코드를 담아 배포됐다. 앤트로픽이 먼저 할 일을 알려 주는 에이전트 앱 클로드 듀엣을 연구 미리보기로 냈다.",
-    "it": "키즈 플랫폼 놀이의발견에서 회원 약 6만7000명 정보가 유출됐다. 명함 앱 리멤버에서 명함이 다른 이용자에게 노출돼 개인정보위가 조사에 나섰다. 연세대 포털 해킹으로 재학생과 졸업생 1만여 명의 정보가 빠져나갔다. 쿠팡이츠와 배민의 1시간 배달 경쟁이 다시 붙었다.",
+    "it": "키즈 플랫폼 놀이의발견에서 회원 약 6만7000명 정보가 유출됐다. 명함 앱 리멤버에서 명함이 다른 이용자에게 노출돼 개인정보위가 조사에 나섰다. 배포 플랫폼 Railway가 고객 환경 변수 유출 가능성을 알리고 배포를 멈췄다. 이마트 와우샵이 가격 상한을 1만원으로 올렸다.",
     "roles": {
-     "planner": "푸시 알림을 정보성과 광고성으로 나눠 발송 정책을 세운 기획 사례가 나왔다. NN/g가 AI 사용 표기 여부를 다섯 질문으로 가리는 판단 틀을 내놓았다. 피그마는 코드로 동작하는 프로토타입을 캔버스에 두는 코드 레이어를 오픈 베타로 냈다. 코드를 모르는 기획자가 AI 코딩 도구로 서버부터 앱까지 직접 만든 사례가 나왔다.",
-     "designer": "피그마가 캔버스 위에서 코드로 동작하는 코드 레이어를 오픈 베타로 냈다. NN/g는 AI 사용 표기를 정하는 PACED 판단 틀을 제안했다. Mastodon 디자인 팀이 5.0 웹 화면 개편에서 내린 결정을 공개했다. 피그마가 팀 단위 AI 도입을 이끈 네 가지 운영 방식을 소개했다.",
-     "pm": "넷플릭스 제품팀이 A/B 테스트로 효과를 확인한 뒤에만 AI를 넓힌 과정이 공개됐다. 오카도는 로드맵 슬라이드를 Jira 데이터 기반 사내 앱으로 바꿨다. 구글 플레이가 결제 실패 복구와 해지 방어를 담은 구독 결제 개편을 내놓았다. 토스가 추천 후보 수를 절반으로 줄이고도 구매 전환율을 높인 홈 피드 실험을 공개했다.",
-     "publisher": "Interop 2027 후보로 기대되는 CSS 기능 10가지를 정리한 글이 나왔다. Safari 27.0이 img의 sizes=auto와 select의 base-select 스타일을 지원한다. 앵커 포지셔닝으로 요소 겹침을 CSS만으로 감지하는 방법이 소개됐다. calc-size()로 배경 패턴이 잘리지 않게 섹션 높이를 맞추는 방법이 나왔다.",
-     "fe": "Next.js 16.4.1과 15.5.28이 원격 코드 실행 취약점 2건을 고쳤다. Vercel이 부분 프리페치로 v0 화면 이동의 로딩 스켈레톤을 없앴다. FE 두 명이 25주 만에 웹과 앱 웹뷰를 한 코드로 낸 구축기가 나왔다. Node.js가 22/24/26 버전 취약점 10건을 고친 보안 업데이트를 냈다.",
+     "planner": "푸시 알림을 정보성과 광고성으로 나눠 발송 정책을 세운 기획 사례가 나왔다. NN/g가 AI 사용 표기 여부를 다섯 질문으로 가리는 판단 틀을 내놓았다. 무신사가 매장 웨이팅을 QR과 위치 확인으로 바꾸며 생긴 GPS 오차를 풀었다. 코드를 모르는 기획자가 AI 코딩 도구로 서버부터 앱까지 직접 만든 사례가 나왔다.",
+     "designer": "피그마가 캔버스 위에서 코드로 동작하는 코드 레이어를 오픈 베타로 냈다. NN/g는 AI 사용 표기를 정하는 PACED 판단 틀을 제안했다. Mastodon 디자인 팀이 5.0 웹 화면 개편에서 내린 결정을 공개했다. Baymard가 홈과 카테고리 탐색 UX의 흔한 실수 10가지를 정리했다.",
+     "pm": "넷플릭스 제품팀이 A/B 테스트로 효과를 확인한 뒤에만 AI를 넓힌 과정이 공개됐다. SVPG가 AI 시대 제품 조직에서 실험의 역할을 넓혀야 한다고 짚었다. 구글 플레이가 결제 실패 복구와 해지 방어를 담은 구독 결제 개편을 내놓았다. 토스가 추천 후보 수를 절반으로 줄이고도 구매 전환율을 높인 홈 피드 실험을 공개했다.",
+     "publisher": "Interop 2027 후보로 기대되는 CSS 기능 10가지를 정리한 글이 나왔다. Safari 27.0이 img의 sizes=auto와 select의 base-select 스타일을 지원한다. 앵커 포지셔닝으로 요소 겹침을 CSS만으로 감지하는 방법이 소개됐다. WCAG 3에서 접근성 기준이 어떻게 달라지는지 정리한 글이 나왔다.",
+     "fe": "Next.js 16.4.1과 15.5.28이 원격 코드 실행 취약점 2건을 고쳤다. GitHub가 CSS 전달 방식을 바꿔 사이트 성능을 높인 과정을 공개했다. FE 두 명이 25주 만에 웹과 앱 웹뷰를 한 코드로 낸 구축기가 나왔다. Node.js가 22/24/26 버전 취약점 10건을 고친 보안 업데이트를 냈다.",
      "app": "애플이 10월 23일 출시되는 iPhone Duo용 앱 준비와 제출 안내를 냈다. 구글 플레이가 결제 실패 복구와 해지 방어를 담은 구독 결제 개편을 내놓았다. App Store 심사 지침이 심사 뒤 기능을 바꾸는 앱을 퇴출 대상으로 명확히 했다. 활성 사용자 500만 명 앱을 하룻밤에 새 앱으로 바꾼 뒤 OTA로 수습한 기록이 나왔다.",
-     "qa": "토스가 LLM과 실기기로 앱 스모크 테스트를 자동화한 토스닥터 V2를 공개했다. AI가 코드를 쓰자 병목이 검증으로 옮겨 간 요기요 사례가 나왔다. 여기어때가 운영 트래픽으로 신구 API를 비교하는 검증을 대시보드로 바꿨다. Playwright 1.64가 시드로 재현되는 무작위 순서 실행을 넣었다.",
-     "dba": "당근이 Aurora MySQL 인덱스 DDL 한 번에 Reader 버퍼풀이 무효화된 사례를 공개했다. PgBouncer 1.26.1이 SCRAM 인증 우회 취약점을 고쳤다. PostgreSQL 19 첫 출시 후보가 나왔고 정식판은 11월 19일 예정이다. 연도와 월로 버전을 매기는 MySQL 26.7이 나왔다.",
-     "be": "무신사가 동기 로깅 때문에 커넥션 풀이 고갈된 장애와 해결 과정을 공개했다. 아임웹이 이벤트 트래픽 80배를 견딘 예약형 자동 증설 구조를 공개했다. 당근은 모델 교체 뒤 LLM 비용이 3.2배로 뛴 원인을 캐시 구간에서 찾았다. GitHub가 스타 기록 API를 다시 만들어 요청 2,500번을 24번으로 줄였다."
+     "qa": "토스가 LLM과 실기기로 앱 스모크 테스트를 자동화한 토스닥터 V2를 공개했다. AI가 코드를 쓰자 병목이 검증으로 옮겨 간 요기요 사례가 나왔다. 여기어때가 운영 트래픽으로 신구 API를 비교하는 검증을 대시보드로 바꿨다. 코딩 에이전트에 계약 테스트 하네스를 붙이는 비용을 따진 글이 나왔다.",
+     "dba": "당근이 Aurora MySQL 인덱스 DDL 한 번에 Reader 버퍼풀이 무효화된 사례를 공개했다. PgBouncer 1.26.1이 SCRAM 인증 우회 취약점을 고쳤다. PostgreSQL 19 첫 출시 후보가 나왔고 정식판은 11월 19일 예정이다. pgBackRest 2.60.0이 페이지 체크섬 오류 때 복원을 멈추도록 기본 동작을 바꿨다.",
+     "be": "무신사가 동기 로깅 때문에 커넥션 풀이 고갈된 장애와 해결 과정을 공개했다. 아임웹이 이벤트 트래픽 80배를 견딘 예약형 자동 증설 구조를 공개했다. GitHub가 Git 저장소 쓰기 잠금을 브랜치 단위로 좁혀 Azure로 옮겼다. GitHub가 스타 기록 API를 다시 만들어 요청 2,500번을 24번으로 줄였다."
     },
-    "plan": "푸시 알림을 정보성과 광고성으로 나눠 발송 정책을 세운 기획 사례가 나왔다. NN/g가 AI 사용 표기 여부를 다섯 질문으로 가리는 판단 틀을 내놓았다. 피그마는 코드로 동작하는 프로토타입을 캔버스에 두는 코드 레이어를 오픈 베타로 냈다. 코드를 모르는 기획자가 AI 코딩 도구로 서버부터 앱까지 직접 만든 사례가 나왔다."
+    "plan": "푸시 알림을 정보성과 광고성으로 나눠 발송 정책을 세운 기획 사례가 나왔다. NN/g가 AI 사용 표기 여부를 다섯 질문으로 가리는 판단 틀을 내놓았다. 무신사가 매장 웨이팅을 QR과 위치 확인으로 바꾸며 생긴 GPS 오차를 풀었다. 코드를 모르는 기획자가 AI 코딩 도구로 서버부터 앱까지 직접 만든 사례가 나왔다."
    }
   },
   {
@@ -48,6 +48,427 @@
   }
  ],
  "items": [
+  {
+   "menu": "plan",
+   "type": "아티클/블로그",
+   "roles": [
+    "be",
+    "dba"
+   ],
+   "title": "The bridge to agent-scale Git infrastructure",
+   "title_ko": "쓰기 잠금을 저장소 전체에서 브랜치 단위로: GitHub Git 저장소의 Azure 이전 다리 놓기",
+   "source": "GitHub Blog",
+   "url": "https://github.blog/engineering/architecture-optimization/the-bridge-to-agent-scale-git-infrastructure/",
+   "date": "2026-10-21",
+   "summary": "GitHub은 저장소의 99.99999%에 대해 복제본을 Azure에도 두었지만, 가장 바쁜 나머지 저장소는 지역 간 25ms 왕복 지연 때문에 옮기지 못하고 있었다. 이를 풀려고 쿼럼이 쓰기를 직렬화하는 범위를 저장소 전체에서 개별 참조(브랜치) 단위로 좁혔고, 내부 시험에서 서로 다른 참조에 대한 쓰기 처리량이 3~4배 높아지고 지연도 줄었다. 다음 단계로 객체 스토리지를 쿼럼 구성원으로 넣고, 쿼럼에 들지 않고 객체 스토리지에서 캐시를 채우는 읽기 복제본을 필요한 만큼 늘리는 구조를 소개했다.",
+   "why": "주문/재고처럼 한 자원에 쓰기가 몰리는 곳에서 잠금 범위를 키 단위로 좁혀 처리량을 올리는 설계에 참고한다.",
+   "lang": "en",
+   "id": "2026-10-22-plan-70",
+   "issue": "2026-10-22"
+  },
+  {
+   "menu": "plan",
+   "type": "아티클/블로그",
+   "roles": [
+    "dba",
+    "be"
+   ],
+   "title": "Under the hood, off the hot path: how D1 scales to millions of databases",
+   "title_ko": "수백만 개 DB를 운영하는 Cloudflare D1 제어 영역 설계",
+   "source": "Cloudflare Blog",
+   "url": "https://blog.cloudflare.com/d1-control-plane/",
+   "date": "2026-10-13",
+   "summary": "Cloudflare가 SQLite 기반 서버리스 DB인 D1을 수백만 개 규모로 키우며 바꾼 제어 영역 구조를 공개했다. 라우팅 메타데이터를 전역 분산 KV 저장소에 두어 쿼리 경로가 중앙 Postgres를 거의 거치지 않게 했고, 계정별 저장 용량 합계는 변경 로그 테이블에 쌓았다가 DELETE ... RETURNING CTE로 계정별로 묶어 반영해 한 행에 몰리는 쓰기 잠금 경합을 줄였다. 삭제되지 않은 D1 DB 수는 1년 새 15배, 하루 한 번 이상 쿼리가 실행된 DB 수는 18배 늘었다(10월 8일 기준).",
+   "why": "쿠폰/포인트 잔액처럼 계정 단위 합계 행에 쓰기가 몰리는 테이블에 변경 로그 후 일괄 반영 패턴을 적용할 때 참고한다.",
+   "lang": "en",
+   "id": "2026-10-22-plan-71",
+   "issue": "2026-10-22"
+  },
+  {
+   "menu": "plan",
+   "type": "아티클/블로그",
+   "roles": [
+    "dba",
+    "be"
+   ],
+   "title": "Bulk Executor for Amazon DynamoDB, Part 2: Lessons we learned the hard way",
+   "title_ko": "DynamoDB 대량 작업 도구를 만들며 겪은 함정과 해결책",
+   "source": "AWS Architecture Blog",
+   "url": "https://aws.amazon.com/blogs/architecture/bulk-executor-for-amazon-dynamodb-part-2-lessons-we-learned-the-hard-way/",
+   "date": "2026-10-13",
+   "summary": "AWS가 DynamoDB 테이블 전체에 대량 삭제/비교/적재를 돌리는 오픈소스 도구 Bulk Executor를 AWS Glue로 만들며 겪은 문제와 해결책을 정리했다. 데이터를 바꾸는 명령은 시점 복구(PITR)가 켜진 테이블에서만 돌게 했고, 작업 전에 읽기/쓰기 비용을 추정해 보여 주며, 모든 워커를 묶는 분산 속도 제한기로 스로틀링을 막았다. CloudWatch Live Tail이 초당 500건까지만 보여 줘 큰 결과는 S3에 쓰고 앞 10건만 화면에 띄우는 등 운영 중 만난 함정도 함께 적었다.",
+   "why": "휴면 회원 정리나 만료 쿠폰 삭제 같은 대량 배치 전에 복구 수단/비용 추정/속도 제한을 갖췄는지 점검하는 목록으로 쓴다.",
+   "lang": "en",
+   "id": "2026-10-22-plan-72",
+   "issue": "2026-10-22"
+  },
+  {
+   "menu": "plan",
+   "type": "아티클/블로그",
+   "roles": [
+    "dba"
+   ],
+   "title": "“MongoDB was slow on Thursday”: answering the app team with mongo-health",
+   "title_ko": "'목요일에 MongoDB가 느렸다'는 문의에 진단 데이터로 답하기",
+   "source": "Percona Blog",
+   "url": "https://www.percona.com/blog/mongodb-was-slow-on-thursday-answering-the-app-team-with-mongo-health/",
+   "date": "2026-10-16",
+   "summary": "Percona가 MongoDB가 초 단위로 남기는 진단 데이터(FTDC)를 3개월간 보관하고 매시간 68개 항목을 점검해 클러스터별 판정을 내는 오픈소스 도구 mongo-health를 소개했다. Atlas M10에서는 FTDC가 2~5일치만 남아 며칠 전 지연 원인을 놓치기 쉽다는 점을 짚었다. 인덱스 없는 쿼리가 반환 1건당 약 1000만 건을 읽은 경우, 디스크 쓰기가 최대 400ms까지 느려진 경우 등을 실험 환경에서 재현해 어떤 카드로 보이는지 보여 줬다.",
+   "why": "'어제 몇 시에 느렸다'는 앱팀 문의에 근거 차트로 답하는 DB 진단 체계를 만들 때 참고한다.",
+   "lang": "en",
+   "id": "2026-10-22-plan-73",
+   "issue": "2026-10-22"
+  },
+  {
+   "menu": "plan",
+   "type": "출시/업데이트",
+   "roles": [
+    "dba"
+   ],
+   "title": "pgBackRest 2.60.0 Released",
+   "title_ko": "pgBackRest 2.60.0: 페이지 체크섬 오류 시 복원/만료를 멈추는 기본 동작 변경",
+   "source": "PostgreSQL 공식 뉴스",
+   "url": "https://www.postgresql.org/about/news/pgbackrest-2600-released-3416/",
+   "date": "2026-10-18",
+   "summary": "PostgreSQL 백업/복구 도구 pgBackRest 2.60.0이 10월 18일 나왔다. 이제 복원한 파일에 잘못된 페이지 체크섬이 있으면 restore가 오류로 멈추고 클러스터는 시작할 수 없어 다시 복원해야 하며, 남겨 둘 가장 오래된 백업에 체크섬 오류가 있으면 expire도 거부한다. 예전처럼 경고만 받으려면 checksum-page-error=n을 설정해야 하고, PostgreSQL 19 RC1은 2.59.2 이후 판에서 지원한다.",
+   "why": "복구 훈련 스크립트와 백업 보관 주기 자동화가 이번 기본 동작 변경으로 멈추지 않는지 업그레이드 전에 확인한다.",
+   "lang": "en",
+   "id": "2026-10-22-plan-74",
+   "issue": "2026-10-22"
+  },
+  {
+   "menu": "plan",
+   "type": "아티클/블로그",
+   "roles": [
+    "planner",
+    "designer"
+   ],
+   "title": "Homepage and Category Navigation UX 2026: 10 Pitfalls and Best Practices (64% of Sites Have Mediocre-to-Poor Performance)",
+   "title_ko": "홈과 카테고리 탐색 UX 2026: 흔한 실수 10가지와 모범 사례",
+   "source": "Baymard Institute",
+   "url": "https://baymard.com/research-articles/ecommerce-navigation-best-practice",
+   "date": "2026-10-13",
+   "summary": "Baymard가 미국과 유럽 주요 커머스 사이트 180여 곳의 홈과 카테고리 탐색 UX 점수 1만 7천여 건을 2026년 기준으로 다시 매겨 기존 글을 갱신했다. 데스크톱 61%, 모바일 65%가 '보통 이하' 수준이었고 카테고리 분류 체계가 두 환경 모두에서 가장 낮은 점수를 받았다. 공통 속성을 가진 상품을 카테고리로 쪼갠 사이트가 79%, 메인 메뉴에서 현재 위치를 표시하지 않는 사이트가 96%였고, 모바일에서 상품 카테고리를 메뉴 첫 단계에 두지 않은 사이트도 22%였다.",
+   "why": "앱/웹 GNB와 카테고리 개편 때 '카테고리로 나눌지 필터로 묶을지', 현재 위치 표시, 중간 카테고리 페이지 구성 기준을 정하는 점검표로 쓴다.",
+   "lang": "en",
+   "id": "2026-10-22-plan-75",
+   "issue": "2026-10-22"
+  },
+  {
+   "menu": "plan",
+   "type": "아티클/블로그",
+   "roles": [
+    "pm",
+    "planner",
+    "designer"
+   ],
+   "title": "The New Big Ball of Mud: Why Agentic AI Systems Turn Fragile",
+   "title_ko": "새로운 진흙 덩어리: AI 에이전트 업무 체계가 쉽게 망가지는 이유",
+   "source": "NN/g",
+   "url": "https://www.nngroup.com/articles/big-ball-of-mud-ai/",
+   "date": "2026-10-02",
+   "summary": "NN/g가 AI 에이전트와 컨텍스트 파일로 자기 업무 체계를 만드는 비개발 실무자들을 관찰한 연구에서, 임시로 만든 규칙 파일과 자동화가 덧붙여지며 아무도 구조를 모르는 상태로 굳어지는 과정을 대체로 차례로 나타나는 5가지 패턴으로 정리했다. 쓰고 버릴 초안, 조각난 덧붙임, 일단 돌아가게 유지, 문제 덮어두기를 거쳐 결국 전면 재구축에 이르는 경우가 많다는 것이다. 재구축 시점은 '바꾸고 싶을 때 공통/작업별/주변 정보 중 어느 컨텍스트를 고칠지 아는가'로 판단하고, 세 종류를 따로 관리하라고 권한다.",
+   "why": "팀에서 AI 에이전트용 공통 지침과 기획 템플릿을 쌓아갈 때 공통/과제별 컨텍스트를 나눠 관리하고 주기적으로 정리하는 운영 규칙을 세우는 근거로 쓴다.",
+   "lang": "en",
+   "id": "2026-10-22-plan-76",
+   "issue": "2026-10-22"
+  },
+  {
+   "menu": "plan",
+   "type": "아티클/블로그",
+   "roles": [
+    "fe",
+    "publisher"
+   ],
+   "title": "Improving site performance by shipping more CSS",
+   "title_ko": "CSS를 더 많이 내보내서 사이트 성능을 높인 방법",
+   "source": "GitHub Blog",
+   "url": "https://github.blog/engineering/architecture-optimization/improving-site-performance-by-shipping-more-css/",
+   "date": "2026-09-25",
+   "summary": "GitHub은 디자인 시스템 Primer와 github.com 전체를 CSS-in-JS(styled-components)에서 CSS Modules로 옮긴 과정을 공개했다. 컴포넌트마다 새 CSS 파일을 만들고 기능 플래그와 시각 회귀 테스트로 화면이 같은지 확인하며 단계적으로 바꿨고, Primer 전환 뒤 서버 렌더링 시간이 55%, 컴포넌트 초기화 시간이 25% 줄었다. 최대 약 7,760개였던 sx 속성은 코드 변환 도구로 대부분 옮겼고, 마지막 895개는 AI 코딩 도구를 써서 두 명이 3주 만에 0개로 줄였다.",
+   "why": "상품 목록처럼 컴포넌트가 많은 화면의 스타일 방식을 바꿀 때 기능 플래그와 시각 회귀 테스트로 나눠 옮기는 절차를 그대로 참고할 수 있다.",
+   "lang": "en",
+   "id": "2026-10-22-plan-77",
+   "issue": "2026-10-22"
+  },
+  {
+   "menu": "plan",
+   "type": "아티클/블로그",
+   "roles": [
+    "fe"
+   ],
+   "title": "How we made claude.ai 3x faster in two weeks",
+   "title_ko": "claude.ai를 2주 만에 3배 빠르게 만든 방법",
+   "source": "claude.dev 블로그",
+   "url": "https://claude.dev/blog/how-we-made-claude-ai-faster/",
+   "date": "2026-09-23",
+   "summary": "Anthropic은 8월 2주 스프린트에서 사용 비중 95%를 차지하는 네 가지 흐름을 정해 웹과 데스크톱 앱 속도를 개선한 과정을 공개했다. 75백분위 기준 첫 접속 후 입력 가능해지기까지 걸린 시간이 3.1초에서 0.55초로 줄었고, HTML에 정적 입력창을 미리 넣거나 사이드바 리렌더링을 90% 줄이는 방식이 쓰였다. AI 에이전트가 명령어 수와 리렌더링 횟수 같은 결정적 지표로 벤치마크를 만들고 CI 기준선으로 걸어 3천 건 넘는 변경을 고객 장애나 롤백 없이 배포했다고 회사는 밝혔다.",
+   "why": "앱 첫 화면과 검색 입력 같은 핵심 흐름을 지표로 정하고 CI에서 성능 회귀를 막는 방식을 FE 성능 개선 과제에 바로 적용할 수 있다.",
+   "lang": "en",
+   "id": "2026-10-22-plan-78",
+   "issue": "2026-10-22"
+  },
+  {
+   "menu": "plan",
+   "type": "아티클/블로그",
+   "roles": [
+    "fe"
+   ],
+   "title": "How fast is the web? Explore billions of real-user measurements with BEACON",
+   "title_ko": "웹은 얼마나 빠른가, 실사용자 측정 데이터셋 BEACON 공개",
+   "source": "Cloudflare Blog",
+   "url": "https://blog.cloudflare.com/how-fast-is-the-web/",
+   "date": "2026-09-28",
+   "summary": "Cloudflare가 자사 네트워크의 대형 사이트 1만 곳에서 모은 실사용자 Core Web Vitals를 익명화해 BigQuery 공개 데이터셋 BEACON으로 내놓았다. 분석 결과 LCP가 느린 경우 이미지나 폰트 다운로드보다 LCP 후보를 늦게 찾거나 렌더링이 막히는 구간이 더 큰 원인이었고, 느린 INP는 자바스크립트 실행과 레이아웃 재계산이 주로 차지했다. SPA의 소프트 내비게이션은 일반 페이지 이동보다 2~3배 빠르지만 첫 진입 페이지가 더 무거워 그 비용을 상쇄해야 한다고 짚었다.",
+   "why": "상품 상세 LCP 개선 우선순위를 정할 때 이미지 용량보다 발견과 렌더 차단 구간을 먼저 보라는 근거로 쓸 수 있다.",
+   "lang": "en",
+   "id": "2026-10-22-plan-79",
+   "issue": "2026-10-22"
+  },
+  {
+   "menu": "plan",
+   "type": "출시/업데이트",
+   "roles": [
+    "fe"
+   ],
+   "title": "Experimental soft navigation metrics now available in CrUX",
+   "title_ko": "CrUX에 소프트 내비게이션 실험 지표 추가",
+   "source": "web.dev",
+   "url": "https://web.dev/blog/crux-experimental-soft-navs",
+   "date": "2026-10-13",
+   "summary": "Chrome이 CrUX 데이터셋에 SPA의 화면 전환(소프트 내비게이션)을 포함한 LCP, INP, CLS 실험 지표를 추가했다. 전체 사이트의 약 70%는 소프트 내비게이션 비중이 5% 미만이라 변화가 거의 없지만, 상위 1,000개 사이트 중 안드로이드 35%, 데스크톱 42%는 페이지뷰의 절반 넘게 소프트 내비게이션이다. 소프트 내비게이션이 75% 이상인 사이트는 안드로이드 LCP 'Good' 비율이 26%에서 87%로 오르는 등 점수가 좋아질 수 있으며, 새 지표는 기존 지표와 별도의 실험 지표로 제공된다.",
+   "why": "SPA로 만든 쇼핑 웹의 화면 전환 성능까지 실사용 지표로 볼 수 있게 되므로 성능 대시보드와 목표치를 다시 잡을 때 참고할 수 있다.",
+   "lang": "en",
+   "id": "2026-10-22-plan-80",
+   "issue": "2026-10-22"
+  },
+  {
+   "menu": "plan",
+   "type": "아티클/블로그",
+   "roles": [
+    "publisher",
+    "fe"
+   ],
+   "title": "Lazy Loading Images and Media: How Far Ahead Browsers Fetch",
+   "title_ko": "이미지와 미디어 지연 로딩, 브라우저는 얼마나 미리 받아 오나",
+   "source": "Calibre",
+   "url": "https://calibreapp.com/blog/native-lazy-loading",
+   "date": "2026-09-28",
+   "summary": "웹 성능 측정 회사 Calibre가 loading=\"lazy\"를 브라우저별로 측정한 결과를 정리했다. Chrome은 4G에서 이미지 1,250px, 2G에서 6,000px 앞부터 미리 받고, Firefox는 600px 고정, Safari는 화면 한 개 높이만큼 받으며 Safari의 지연 iframe은 화면에 들어와야 불러온다. 페이지의 17%가 LCP 이미지까지 지연 로딩해 오히려 느려지고 있어, 첫 화면 이미지는 eager와 fetchpriority를 쓰고 지연 이미지에는 width와 height를 꼭 넣으라고 권했다.",
+   "why": "메인 배너와 상품 목록 이미지 마크업에서 지연 로딩을 어디까지 걸지 정하는 점검표로 쓸 수 있다.",
+   "lang": "en",
+   "id": "2026-10-22-plan-81",
+   "issue": "2026-10-22"
+  },
+  {
+   "menu": "plan",
+   "type": "아티클/블로그",
+   "roles": [
+    "publisher",
+    "qa",
+    "designer"
+   ],
+   "title": "WCAG 3: A Different Future for Accessibility",
+   "title_ko": "WCAG 3, 접근성 기준이 달라지는 방향",
+   "source": "TetraLogical",
+   "url": "https://tetralogical.com/blog/2026/10/15/wcag3/",
+   "date": "2026-10-15",
+   "summary": "접근성 컨설팅 회사 TetraLogical이 작성 중인 WCAG 3가 WCAG 2와 어떻게 다른지 정리했다. WCAG 2의 통과/실패 판정이 '기준만 넘기면 끝'인 상한선이 됐다고 짚고, WCAG 3는 핵심 요건을 모두 지키면 적합으로 보고 보충 요건과 절차에 대한 선언을 더해 브론즈/실버/골드 단계로 인정받는 구조라고 설명했다. 요건마다 사람에게 주는 영향(위해, 위험, 장벽, 불편)을 표시하자는 초기 제안도 소개했으며, 아직 작업 중인 초안이라는 점을 분명히 했다.",
+   "why": "접근성 점검을 체크리스트 통과에서 실제 사용 가능 여부 중심으로 바꿀 때 리테일 웹 점검 기준과 보고서 형식을 미리 손볼 근거가 된다.",
+   "lang": "en",
+   "id": "2026-10-22-plan-82",
+   "issue": "2026-10-22"
+  },
+  {
+   "menu": "plan",
+   "type": "아티클/블로그",
+   "roles": [
+    "qa",
+    "be"
+   ],
+   "title": "Are Harnesses Worth the Cost?",
+   "title_ko": "코딩 에이전트에 계약 테스트 하네스를 붙이면 값어치가 있을까",
+   "source": "martinfowler.com",
+   "url": "https://martinfowler.com/articles/are-harnesses-worth-the-cost.html",
+   "date": "2026-10-13",
+   "summary": "같은 API 서비스를 코딩 에이전트에게 하네스 유무로 10번씩 만들게 하고 178개 인수 테스트로 평가한 실험 글이다. OpenAPI/AsyncAPI 명세와 예시, 계약 테스트를 하네스로 준 결과 최상위 모델은 차이가 없고 비용만 약 7배 늘었지만, 비용 절감형 모델은 하네스 없이 10번 중 3번만 통과하다 하네스를 붙이자 10번 모두 통과했다. 이때 실행당 비용은 최상위 모델보다 33% 낮았으며, 글은 테스트 기대값을 에이전트가 아닌 사람이 합의한 계약에서 가져와야 한다고 강조한다.",
+   "why": "AI 코딩 도구로 만든 주문/결제 API를 검수할 때 명세 기반 계약 테스트를 인수 기준으로 두는 근거로 쓴다.",
+   "lang": "en",
+   "id": "2026-10-22-plan-83",
+   "issue": "2026-10-22"
+  },
+  {
+   "menu": "plan",
+   "type": "아티클/블로그",
+   "roles": [
+    "pm",
+    "planner"
+   ],
+   "title": "Experimentation, AI and the Product Model",
+   "title_ko": "AI 시대 제품 조직에서 실험의 역할을 넓혀야 하는 이유",
+   "source": "SVPG",
+   "url": "https://www.svpg.com/experimentation-ai-and-the-product-model/",
+   "date": "2026-10-21",
+   "summary": "SVPG가 실험 콘퍼런스 기조연설을 글로 옮겨, 만드는 비용이 줄어든 지금 무엇을 만들지 가려내는 실험이 제품 조직의 핵심 역량이 된다고 주장했다. 신규 제품, 기존 제품의 새 가치, 최적화라는 세 가지 일에 맞는 정성/정량 실험을 나누고, AI 제품은 평가(evals)로 품질을 먼저 확인한 뒤 A/B 테스트는 가치 검증에 집중하라고 권한다. 실험 운영 방식으로는 제품팀이 실험을 직접 맡고 전문 조직이 설계와 해석을 돕는 혼합형을 추천했다.",
+   "why": "리테일 앱 기능 실험을 운영할 때 A/B 테스트 범위와 리서치/데이터 조직의 역할 분담을 정하는 기준으로 쓴다.",
+   "lang": "en",
+   "id": "2026-10-22-plan-84",
+   "issue": "2026-10-22"
+  },
+  {
+   "menu": "plan",
+   "type": "팟캐스트",
+   "roles": [
+    "pm",
+    "qa"
+   ],
+   "title": "Building an AI Voice Agent for 360 Degree Feedback: How Your360 AI Uses State Machines, Evals, and Layered Synthesis",
+   "title_ko": "음성 AI 코치 제품을 만든 팀의 상태 기계와 평가 운영법",
+   "source": "Product Talk",
+   "url": "https://www.producttalk.org/building-an-ai-voice-agent-for-360-degree-feedback-how-your360-ai-uses-state-machines-evals-and-layered-synthesis/",
+   "date": "2026-10-15",
+   "summary": "Product Talk 팟캐스트가 음성 AI로 360도 피드백 인터뷰를 진행하는 스타트업 팀을 만나 제품을 단계별로 만든 과정을 다뤘다. 프롬프트 하나로는 대화 흐름을 유지하지 못해 상태 기계로 바꿨고, 실패한 통화로 만든 페르소나 평가 세트로 모델과 공급사를 바꿀 때마다 회귀 테스트를 돌린다. 결과 요약은 오류를 잡는 구조 평가와 놓친 패턴을 찾는 내용 평가 두 겹으로 검증하고, 비판 의견은 교차 확인되고 응답자가 3명 이상일 때만 보여 주는 익명 규칙을 둔다고 소개했다.",
+   "why": "상담 챗봇 같은 대화형 AI 기능을 출시할 때 실패 사례 기반 평가 세트와 모델 교체 시 회귀 점검 절차를 설계하는 데 쓴다.",
+   "lang": "en",
+   "id": "2026-10-22-plan-85",
+   "issue": "2026-10-22"
+  },
+  {
+   "menu": "plan",
+   "type": "아티클/블로그",
+   "roles": [
+    "planner",
+    "app",
+    "fe"
+   ],
+   "title": "태블릿을 없애자 생긴 문제",
+   "title_ko": "매장 웨이팅을 QR과 위치 확인으로 바꾸자 생긴 GPS 오차 문제와 해결",
+   "source": "무신사 기술블로그",
+   "url": "https://techblog.musinsa.com/%ED%83%9C%EB%B8%94%EB%A6%BF%EC%9D%84-%EC%97%86%EC%95%A0%EC%9E%90-%EC%83%9D%EA%B8%B4-%EB%AC%B8%EC%A0%9C-7d6a1cee7df5",
+   "date": "2026-10-06",
+   "summary": "무신사 스토어 커머스 엔지니어링팀이 매장 입구 태블릿에 전화번호를 넣는 방식 대신 회원 계정과 QR로 접수하는 웨이팅을 만들며 위치로 매장 방문을 확인한 과정을 공개했다. 현장 테스트에서 주소를 변환해 얻은 매장 좌표가 실제 접수 지점과 달라 한 매장은 정문에서 29m, 다른 매장은 매장 안에서 205m 벗어난 것으로 측정돼 반경 10m로는 접수가 안 됐고, 반경을 넓히면 매장 밖 접수 어뷰징이 생긴다는 운영 담당자 지적이 나왔다. 결국 매장 운영자가 어드민에서 현재 위치로 접수 지점을 등록하고 반경을 웨이팅마다 정하도록 바꿨다.",
+   "why": "매장 예약/대기나 픽업 접수 화면에 위치 확인을 넣을 때 반경 정책과 운영자 어드민 설정 항목을 정하는 데 쓴다.",
+   "lang": "ko",
+   "id": "2026-10-22-plan-86",
+   "issue": "2026-10-22"
+  },
+  {
+   "menu": "ai",
+   "type": "아티클/블로그",
+   "title": "글로벌 최고 수준의 자체 비전 인코더, Kanana-2-vision-encoder 개발기",
+   "title_ko": "카카오, 한국어 문서 읽기에 강한 자체 비전 인코더 Kanana-2-vision-encoder 공개",
+   "source": "카카오 기술블로그",
+   "url": "https://tech.kakao.com/posts/840",
+   "date": "2026-10-21",
+   "summary": "카카오가 자체 언어모델 Kanana-2의 가중치와 구조를 이어받아 만든 비전 인코더 개발 과정을 소개하고, 4억 2600만/9800만 파라미터의 Medium과 Tiny 가중치를 상업적 이용이 가능한 Kanana-open 라이선스로 공개했다. 언어모델 가중치로 초기화해 학습 효율을 약 4배 높였고, 2560x2560 해상도에서 지연 시간을 61.8%, 최대 메모리를 21.8% 줄였다고 밝혔다. 회사 자체 평가에서 4억 파라미터 모델은 9개 영역 42개 벤치마크 가운데 8개 영역에서 구글/메타/애플/알리바바의 같은 규모 공개 인코더보다 높은 점수를 냈다.",
+   "why": "메뉴판 가격이나 영수증, 상품 라벨처럼 이미지 속 한글을 읽는 기능을 기획할 때 온디바이스용 1억 파라미터급 국산 모델을 검토할 근거가 된다.",
+   "lang": "ko",
+   "id": "2026-10-22-ai-16",
+   "issue": "2026-10-22"
+  },
+  {
+   "menu": "ai",
+   "type": "출시/업데이트",
+   "title": "NVIDIA Agent Toolkit Expands, Grounding Enterprise Agents in Company Data",
+   "title_ko": "엔비디아, 사내 데이터로 답하는 기업용 에이전트 도구 묶음 확장",
+   "source": "NVIDIA",
+   "url": "https://blogs.nvidia.com/blog/enterprise-platforms-agent-toolkit/",
+   "date": "2026-10-21",
+   "summary": "엔비디아가 GTC 베를린에서 오픈소스 Agent Toolkit에 사내 데이터를 고객/상품/주문 같은 업무 개념으로 정리해 주는 Agent Knowledge Foundation과 Auto-Ontology 라이브러리, 표/관계형 데이터 예측용 Kumo 오픈 모델을 더했다고 발표했다. 에이전트가 접근하고 실행할 수 있는 범위를 제한하는 OpenShell 실행 환경과 보안 에이전트 설계안 NemoClaw도 함께 묶었다. 회사는 데이터를 옮기거나 기존 거버넌스를 바꾸지 않고 쓸 수 있다고 설명했으며 Palantir/Databricks/Snowflake/SAP 등이 이 기반을 쓰고 있다고 밝혔다.",
+   "why": "주문/상품 데이터를 에이전트가 읽게 할 때 권한 경계와 데이터 의미 정의를 어떻게 나눌지 설계하는 데 참고할 구조다.",
+   "lang": "en",
+   "id": "2026-10-22-ai-17",
+   "issue": "2026-10-22"
+  },
+  {
+   "menu": "ai",
+   "type": "출시/업데이트",
+   "title": "Microsoft empowers more than 330,000 Volkswagen Group employees with Copilot",
+   "title_ko": "폭스바겐 그룹, 직원 33만 명에게 코파일럿 배포하고 한 달 새 에이전트 2만6천 개 가동",
+   "source": "Microsoft",
+   "url": "https://news.microsoft.com/source/2026/10/21/microsoft-empowers-more-than-330000-volkswagen-group-employees-with-copilot/",
+   "date": "2026-10-21",
+   "summary": "마이크로소프트는 폭스바겐 그룹이 직원 33만 명 이상에게 Copilot을 배포했다고 10월 21일 발표했다. 그룹은 먼저 Copilot Chat을 넓게 열어 월 사용자 30만 명 이상을 확보한 뒤 엔지니어링/생산/구매/영업 업무로 단계적으로 확대했고, 최근 한 달 동안 그룹 안에서 2만6000개가 넘는 에이전트가 활동했다. 두 회사는 그룹 공통 데이터 기반을 Microsoft Fabric 위에서 더 키울 계획이다.",
+   "why": "전사 AI 도입을 채팅 개방, 업무별 확대, 에이전트 순으로 단계를 나눈 대기업 사례라 사내 AI 도입 로드맵과 지표를 잡을 때 비교 기준이 된다.",
+   "lang": "en",
+   "id": "2026-10-22-ai-18",
+   "issue": "2026-10-22"
+  },
+  {
+   "menu": "it",
+   "type": "기사/리포트",
+   "topic": "규제/보안",
+   "title": "Railway 보안 사고 공개",
+   "title_ko": "배포 플랫폼 Railway, 고객 환경 변수 유출 가능성 공지하고 배포 중단",
+   "source": "GeekNews / Railway",
+   "url": "https://news.hada.io/topic?id=35778",
+   "date": "2026-10-22",
+   "summary": "클라우드 배포 플랫폼 Railway가 10월 21일(미국 시간) 고객 환경 변수를 저장하는 시스템에서 이상 활동을 탐지했고, 비인가 제3자가 암호화된 환경 변수에 접근해 일부는 복호화했을 가능성이 있다고 공지했다. 회사는 모든 사용자에게 API 키와 DB/레지스트리 자격 증명 교체를 권고하고 저장소 버킷 자격 증명을 일괄 폐기했으며, 조사 동안 배포를 멈췄다. 상태 페이지에는 PostgreSQL/MySQL/MongoDB/Redis 자격 증명 교체와 OpenAI/Anthropic/Stripe 등 외부 서비스 사용 내역 점검 안내가 이어졌다.",
+   "why": "외부 호스팅에 맡긴 키가 새면 배포까지 막힐 수 있어, 장애 공지와 키 교체 절차를 미리 정해 둘 필요가 있다.",
+   "lang": "ko",
+   "id": "2026-10-22-it-12",
+   "issue": "2026-10-22"
+  },
+  {
+   "menu": "it",
+   "type": "기사/리포트",
+   "topic": "리테일/커머스",
+   "title": "5000원 지키는 다이소, 1만원 연 이마트…균일가 '천장 싸움'",
+   "title_ko": "이마트 와우샵, 가격 상한 1만원으로 올려 5000원 다이소와 차별화",
+   "source": "블로터",
+   "url": "https://www.bloter.net/news/articleView.html?idxno=676286",
+   "date": "2026-10-21",
+   "summary": "이마트가 초저가 생활용품 매장 와우샵의 가격 상한을 시범 매장 때의 5000원에서 1만원으로 올리고 10월 22일부터 중대형 전문점 운영에 들어간다. 신규 개발 상품의 약 60%는 2000원 이하로 채우고, 에어프라이어와 커피메이커 같은 1만원 상품 100여 종은 한정 판매해 객단가를 높이는 구조다. 6개 가격대를 5000원 안에서 운영해 온 다이소는 가격 상한을 조정할 계획이 없다고 밝혔다.",
+   "why": "균일가 가격대 설계와 저가 미끼 상품으로 객단가를 올리는 구성은 기획전과 카테고리 화면을 짤 때 참고할 만하다.",
+   "lang": "ko",
+   "id": "2026-10-22-it-13",
+   "issue": "2026-10-22"
+  },
+  {
+   "menu": "it",
+   "type": "기사/리포트",
+   "topic": "리테일/커머스",
+   "title": "DH, 대만 푸드판다 매각 불발…우버 DH 인수에도 영향 주나",
+   "title_ko": "대만 공정위, 딜리버리히어로의 푸드판다 대만 사업 그랩 매각 불허",
+   "source": "전자신문",
+   "url": "https://www.etnews.com/20261022000101",
+   "date": "2026-10-22",
+   "summary": "대만 공정거래위원회가 10월 21일(현지시간) 딜리버리히어로의 푸드판다 대만 사업을 그랩에 6억 달러에 넘기는 거래를 거절했다. 딜리버리히어로를 인수하기로 한 우버가 그랩 지분 13.1%를 갖고 있어 우버이츠와의 경쟁이 약해질 수 있다는 판단이다. 매각 대금으로 부채를 갚으려던 계획에 차질이 생겼고, 우버의 딜리버리히어로 인수 절차에도 변수가 될 수 있다.",
+   "why": "배달 플랫폼 지분 구조가 각국 경쟁 당국 심사로 흔들리는 흐름은 배달/퀵커머스 제휴 전략을 볼 때 참고가 된다.",
+   "lang": "ko",
+   "id": "2026-10-22-it-14",
+   "issue": "2026-10-22"
+  },
+  {
+   "menu": "it",
+   "type": "기사/리포트",
+   "topic": "규제/보안",
+   "title": "Apple blocks web certificates that could be used by scammers, but Mac vulnerability remains",
+   "title_ko": "스크립트 오류로 개인 키를 알아낼 수 있던 중간 인증서 8개, 애플/구글/모질라가 차단했지만 맥은 계속 신뢰할 수도",
+   "source": "9to5Mac",
+   "url": "https://9to5mac.com/2026/10/21/apple-blocks-web-certificates-that-could-be-used-by-scammers-but-mac-vulnerability-remains/",
+   "date": "2026-10-21",
+   "summary": "인증서 생성 스크립트 오류로 개인 키를 256가지 경우만 시험해도 알아낼 수 있었던 중간 인증서 8개가 폐기됐고, 애플과 구글, 모질라가 각자 브라우저에서 이를 차단했다. 다만 macOS는 폐기 여부를 확인하지 않아 이미 받아들인 인증서를 계속 신뢰할 수 있고, 내장 curl도 같은 문제가 있다는 경고가 나왔다. 실제 악용 사례는 아직 확인되지 않았다.",
+   "why": "가짜 사이트가 정상 인증서를 달 수 있는 사고라 결제/로그인 화면의 피싱 대응 안내와 보안 점검 일정에 넣어 둘 만하다.",
+   "lang": "en",
+   "id": "2026-10-22-it-15",
+   "issue": "2026-10-22"
+  },
+  {
+   "menu": "it",
+   "type": "기사/리포트",
+   "topic": "규제/보안",
+   "title": "\"통신3사 유심 보안조치에도 보호 사각지대\"",
+   "title_ko": "통신 3사 유심 보안 조치 뒤에도 SKT 고객 886만 명이 교체 안 해",
+   "source": "ZDNet Korea",
+   "url": "https://zdnet.co.kr/view/?no=20261022084110",
+   "date": "2026-10-22",
+   "summary": "국회 과학기술정보방송통신위원회에 제출된 과기정통부 자료에 따르면 SK텔레콤은 유심 정보 유출 사고 뒤 전 가입자에게 무상 교체를 제공했지만 9월 말까지 886만 명이 교체나 재설정을 하지 않았다. 이 가운데 교체도 하지 않고 유심보호서비스에도 가입하지 않은 이용자는 157만 명이었다. KT는 교체가 필요한 고객 중 8004명이 미완료 상태이고, LG유플러스의 유심 업데이트 완료율은 36.5%에 머물렀다.",
+   "why": "보안 조치를 '안내했다'와 '실제로 적용됐다'를 따로 관리해야 한다는 지적이라 유출 사고 뒤 고객 조치 화면과 완료율 지표 설계에 참고할 만하다.",
+   "lang": "ko",
+   "id": "2026-10-22-it-16",
+   "issue": "2026-10-22"
+  },
   {
    "menu": "plan",
    "type": "아티클/블로그",
@@ -2911,7 +3332,7 @@
    "lang": "en"
   }
  ],
- "updated": "2026-10-22T10:45+09:00",
+ "updated": "2026-10-22T11:22+09:00",
  "next": "2026-10-23",
  "seen": [
   "https://2026.feconf.kr/",
@@ -3142,7 +3563,39 @@
   "https://news.hada.io/topic?id=35752",
   "https://it.chosun.com/news/articleView.html?idxno=2023092172464",
   "https://www.bloter.net/news/articleView.html?idxno=676327",
-  "https://ticketa.co/event/8dedugs6"
+  "https://ticketa.co/event/8dedugs6",
+  "https://github.blog/engineering/architecture-optimization/the-bridge-to-agent-scale-git-infrastructure/",
+  "https://blog.cloudflare.com/d1-control-plane/",
+  "https://aws.amazon.com/blogs/architecture/bulk-executor-for-amazon-dynamodb-part-2-lessons-we-learned-the-hard-way/",
+  "https://www.percona.com/blog/mongodb-was-slow-on-thursday-answering-the-app-team-with-mongo-health/",
+  "https://www.postgresql.org/about/news/pgbackrest-2600-released-3416/",
+  "https://baymard.com/research-articles/ecommerce-navigation-best-practice",
+  "https://www.nngroup.com/articles/big-ball-of-mud-ai/",
+  "https://github.blog/engineering/architecture-optimization/improving-site-performance-by-shipping-more-css/",
+  "https://claude.dev/blog/how-we-made-claude-ai-faster/",
+  "https://blog.cloudflare.com/how-fast-is-the-web/",
+  "https://web.dev/blog/crux-experimental-soft-navs",
+  "https://calibreapp.com/blog/native-lazy-loading",
+  "https://tetralogical.com/blog/2026/10/15/wcag3/",
+  "https://martinfowler.com/articles/are-harnesses-worth-the-cost.html",
+  "https://www.svpg.com/experimentation-ai-and-the-product-model/",
+  "https://www.producttalk.org/building-an-ai-voice-agent-for-360-degree-feedback-how-your360-ai-uses-state-machines-evals-and-layered-synthesis/",
+  "https://techblog.musinsa.com/%ED%83%9C%EB%B8%94%EB%A6%BF%EC%9D%84-%EC%97%86%EC%95%A0%EC%9E%90-%EC%83%9D%EA%B8%B4-%EB%AC%B8%EC%A0%9C-7d6a1cee7df5",
+  "https://tech.kakao.com/posts/840",
+  "https://blogs.nvidia.com/blog/enterprise-platforms-agent-toolkit/",
+  "https://news.microsoft.com/source/2026/10/21/microsoft-empowers-more-than-330000-volkswagen-group-employees-with-copilot/",
+  "https://news.hada.io/topic?id=35778",
+  "https://www.bloter.net/news/articleView.html?idxno=676286",
+  "https://www.etnews.com/20261022000101",
+  "https://9to5mac.com/2026/10/21/apple-blocks-web-certificates-that-could-be-used-by-scammers-but-mac-vulnerability-remains/",
+  "https://zdnet.co.kr/view/?no=20261022084110",
+  "https://luma.com/8a5unpnu",
+  "https://luma.com/wlmnk9mo",
+  "https://event-us.kr/friendliai/event/137581",
+  "https://luma.com/kcr4mhqw",
+  "https://developeracademy.postech.ac.kr/showcase26",
+  "https://cday2026.awskr.org/",
+  "https://ticketa.co/event/o65cl11x"
  ],
  "events": [
   {
@@ -3253,8 +3706,8 @@
     "planner",
     "be"
    ],
-   "reg": "Luma 정원 마감, 대기자 명단 등록 가능",
-   "reg_status": "신청 마감",
+   "reg": "Luma에서 신청, 10/22 기준 잔여 2석",
+   "reg_status": "신청 중",
    "fee": "무료",
    "summary": "세종대 교수가 AI가 수학 문장을 이해하고 증명을 만들어 가는 방식을 설명하는 강연이다. 자동 형식화와 자동 정리 증명의 현재 수준을 다룬다.",
    "why": "AI가 추론을 검증하는 방식을 알면 AI 기능의 정확도 기준을 세울 때 도움이 된다.",
@@ -3335,6 +3788,28 @@
    ]
   },
   {
+   "id": "ev-20261024-mobbin-mcp-workshop",
+   "title": "Research Fast and Design Live with Mobbin MCP In Seoul",
+   "title_ko": "Mobbin MCP로 빠르게 리서치하고 바로 디자인하기 워크숍",
+   "host": "Designed Minds",
+   "start": "2026-10-24",
+   "end": "2026-10-24",
+   "place": "서울 강남구 선릉로 551 새롬빌딩 디캠프(dcamp)",
+   "menu": "plan",
+   "roles": [
+    "designer",
+    "planner"
+   ],
+   "reg": "Luma에서 승인제로 신청, 정원이 차서 현재 대기자 명단만 등록 가능",
+   "reg_status": "신청 마감",
+   "fee": "무료",
+   "summary": "디자이너 커뮤니티 Designed Minds가 10월 24일 낮 강남 디캠프에서 여는 실습 워크숍이다. 실제 앱 화면 흐름을 모아 둔 Mobbin 라이브러리를 MCP로 AI 도구에 연결하고, 다른 서비스가 같은 문제를 어떻게 풀었는지 물어 경쟁 분석을 한 뒤 직접 화면을 다시 그려 본다. 진행은 영어이고 핵심 내용은 한국어로 정리해 준다.",
+   "why": "경쟁 앱 화면 조사를 AI 에이전트로 줄이는 방법을 직접 써 볼 수 있어 화면 기획 리서치 단계에 바로 응용할 만하다.",
+   "url": "https://luma.com/8a5unpnu",
+   "lang": "en",
+   "added": "2026-10-22"
+  },
+  {
    "title": "AWSKRUG #을지로 소모임 - KiroCrew 및 올리브영앱 개선 사례 (10월 26일)",
    "title_ko": "AWSKRUG 을지로 소모임 - KiroCrew 및 올리브영 앱 개선 사례",
    "host": "AWSKRUG(AWS한국사용자모임)",
@@ -3397,6 +3872,28 @@
    "roles": [
     "be"
    ]
+  },
+  {
+   "id": "ev-20261028-autorag-meetup",
+   "title": "AutoRAG Meetup",
+   "title_ko": "AutoRAG 밋업",
+   "host": "Markr / 브레인크루(주관 노마다마스)",
+   "start": "2026-10-28",
+   "end": "2026-10-28",
+   "place": "서울 강남구 테헤란로 231 센터필드 EAST 18층 AWS Korea",
+   "menu": "ai",
+   "roles": [
+    "be",
+    "pm"
+   ],
+   "reg": "Luma에서 승인제로 신청, 10/22 (목)까지 접수(잔여 16석), 건물 출입 등록용 실명과 휴대폰 번호 필요",
+   "reg_status": "신청 중",
+   "fee": "무료",
+   "summary": "흩어진 사내 자료를 찾아 주는 오픈소스 AI 에이전트 AutoRAG 팀이 10월 28일 저녁 강남에서 여는 밋업이다. 에이전트 시대 RAG의 역할, Vectorless RAG 사례, 팀 단위 에이전트 운영을 위한 MCP 게이트웨이와 권한 관리, 문서 파싱 모델을 주제로 발표 5개가 이어진다. 개발자와 업무에 에이전트를 써 보려는 비개발자 모두 대상이다.",
+   "why": "사내 문서 검색이나 상담 기능에 RAG를 붙일 때 권한과 검색 품질을 어떻게 설계하는지 사례로 들을 수 있다.",
+   "url": "https://luma.com/wlmnk9mo",
+   "lang": "ko",
+   "added": "2026-10-22"
   },
   {
    "id": "ev-20261028-awskrug-seongsu-kiro-abuse",
@@ -3708,9 +4205,9 @@
     "be",
     "fe"
    ],
-   "reg": "Meetup이 아닌 Luma 페이지(luma.com/atze6fex)에서 신청, 현재 신청 가능",
+   "reg": "Luma 페이지(luma.com/atze6fex)에서 신청 후 참가비 입금, 10/29 (목) 10:00 최종 입금 확인으로 참가 확정",
    "reg_status": "신청 중",
-   "fee": "무료(Luma 신청 페이지 기준)",
+   "fee": "10,000원(입금)",
    "summary": "AI 코딩 도구 Kiro 사용자 모임이 11월 4일 저녁 강남에서 열린다. 요구사항 정의부터 설계, 작업 분해, 구현까지 스펙 주도 개발 흐름을 실습하는 입문 세션과, 멀티 에이전트를 쓰는 데스크톱 앱 Kiro Crew를 깊게 다루는 세션이 있다.",
    "why": "요구사항 문서가 AI 코딩 도구의 입력이 되는 방식이라 기획 문서를 어떻게 써야 할지 감을 잡을 수 있다.",
    "url": "https://www.meetup.com/awskrug/events/317046772/",
@@ -3761,6 +4258,27 @@
    "added": "2026-10-22"
   },
   {
+   "id": "ev-20261105-ollama-friendliai-meetup",
+   "title": "Ollama x FriendliAI Seoul Meetup",
+   "title_ko": "Ollama x FriendliAI 서울 밋업",
+   "host": "Ollama / FriendliAI",
+   "start": "2026-11-05",
+   "end": "2026-11-05",
+   "place": "서울 성동구 왕십리로 82-20 코사이어티 서울숲 C, D동",
+   "menu": "ai",
+   "roles": [
+    "be"
+   ],
+   "reg": "이벤터스 안내 페이지에서 Luma로 신청, 11/4 (수) 23:30까지",
+   "reg_status": "신청 중",
+   "fee": "무료",
+   "summary": "로컬 모델 실행 도구 Ollama와 추론 서비스 회사 FriendliAI가 11월 5일 저녁 서울숲에서 여는 밋업이다. 오픈 모델로 AI 에이전트를 만들고 로컬 개발부터 운영 환경 추론까지 배포하는 방법, 지연 시간과 처리량, 비용을 줄인 사례를 다룬다. 두 회사 대표가 발표하고 세부 주제와 연사는 추후 공개된다.",
+   "why": "상용 모델 대신 오픈 모델로 AI 기능을 운영할 때 비용과 속도 사이에서 무엇을 따져야 하는지 감을 잡을 수 있다.",
+   "url": "https://event-us.kr/friendliai/event/137581",
+   "lang": "ko",
+   "added": "2026-10-22"
+  },
+  {
    "id": "ev-20261107-flutter-korea-2026",
    "title": "Flutter Korea 2026",
    "title_ko": "플러터 코리아 2026",
@@ -3772,7 +4290,7 @@
    "roles": [
     "app"
    ],
-   "reg": "티켓타코에서 입장권 구매(9월 24일부터 판매). Meetup 유료 신청은 후원용이라 입장권으로 인정되지 않는다. 판매 마감일은 공지되지 않음",
+   "reg": "티켓타코에서 입장권 구매, 일반판매 9/24 09:00~11/7 (토) 09:00. Meetup 유료 신청은 후원용이라 입장권으로 인정되지 않는다",
    "reg_status": "신청 중",
    "fee": "20,000원",
    "summary": "플러터 서울 커뮤니티가 11월 7일 AWS Korea 강남 사무실에서 여는 연례 행사로, 주제는 'Back to Basics. Move Forward.'다. Flutter 트랙과 AI 트랙 두 갈래로 진행되며, Google Flutter 팀이 영어로 생성형 UI(A2UI) 등을 발표하고 국내 개발자들이 플러그인 설계와 온디바이스 에이전트 사례를 공유한다.",
@@ -3826,6 +4344,28 @@
    ]
   },
   {
+   "id": "ev-20261112-lennys-newsletter-meetup-seoul",
+   "title": "Lenny’s Newsletter Meetup in Seoul (with free drinks courtesy of PostHog)",
+   "title_ko": "레니스 뉴스레터 서울 밋업",
+   "host": "Lenny's Newsletter 커뮤니티 / Bloom",
+   "start": "2026-11-12",
+   "end": "2026-11-12",
+   "place": "서울 강남구 역삼로 180 마루180 1층 fyi 역삼",
+   "menu": "plan",
+   "roles": [
+    "pm",
+    "planner"
+   ],
+   "reg": "Luma에서 승인제로 신청, 구독자가 아니어도 신청 가능",
+   "reg_status": "신청 중",
+   "fee": "무료",
+   "summary": "PM 뉴스레터 Lenny's Newsletter 커뮤니티가 11월 12일 저녁 역삼에서 여는 밋업이다. 미국과 일본에서 일해 온 PM 두 명의 대담과 도쿄 AI 연구소 Sakana AI PM과의 1:1 대담으로 나라별로 다른 제품 결정 방식, PM의 범위, AI 에이전트에 맡기는 정도를 이야기한다. 진행은 영어이며 한국어 AI 번역을 제공한다.",
+   "why": "해외 팀이 AI 에이전트에 어디까지 일을 맡기는지 들어 보고 우리 기획/PM 역할 분담을 점검해 볼 수 있다.",
+   "url": "https://luma.com/kcr4mhqw",
+   "lang": "en",
+   "added": "2026-10-22"
+  },
+  {
    "id": "ev-20261119-oliveyoung-define-omni",
    "title": "올리브영 테크 컨퍼런스 define:OMNI",
    "title_ko": "올리브영 테크 컨퍼런스 define:OMNI",
@@ -3848,6 +4388,28 @@
    "summary": "올리브영이 처음 여는 테크 컨퍼런스다. 온/오프라인을 잇는 장바구니 구조 재설계, 1300여 개 매장 상태를 온라인몰에 담은 설계, 상품 명칭 통합 같은 옴니채널 세션과 PM 업무의 AI 활용 사례 세션이 있다. 매장 재고 반영 기준, 세일 부하 테스트, 디자인 토큰 배포 세션은 12월 중 온라인으로 따로 공개될 예정이다.",
    "why": "매장 상태를 앱에 반영하는 방식과 장바구니 통합 설계를 실제 사례로 볼 수 있다.",
    "url": "https://oliveyoung.tech/conf/2026/",
+   "lang": "ko",
+   "added": "2026-10-22"
+  },
+  {
+   "id": "ev-20261120-showcase26",
+   "title": "SHOWCASE26",
+   "title_ko": "애플 디벨로퍼 아카데미 쇼케이스 2026",
+   "host": "Apple Developer Academy @ POSTECH",
+   "start": "2026-11-20",
+   "end": "2026-11-20",
+   "place": "경북 포항시 남구 지곡로 80 C5 5층, 6층",
+   "menu": "plan",
+   "roles": [
+    "app",
+    "designer"
+   ],
+   "reg": "공식 페이지의 참가 등록 양식으로 신청, 마감일 공지 없음",
+   "reg_status": "신청 중",
+   "fee": "무료",
+   "summary": "포스텍 애플 디벨로퍼 아카데미가 11월 20일 오후 포항에서 여는 앱 쇼케이스다. 교육생 180명이 Apple 플랫폼 최신 기술로 만든 앱을 직접 체험하고, 오후 4시부터는 졸업생들의 커리어 인사이트 세션이 열린다.",
+   "why": "신입 개발자와 디자이너가 Apple 최신 기술로 만든 앱 흐름을 한자리에서 보며 앱 화면 아이디어를 얻기 좋다.",
+   "url": "https://developeracademy.postech.ac.kr/showcase26",
    "lang": "ko",
    "added": "2026-10-22"
   },
@@ -3893,6 +4455,28 @@
    "roles": [
     "be"
    ]
+  },
+  {
+   "id": "ev-20261122-aws-community-day-seoul",
+   "title": "AWS Community Day Seoul 2026 - AI 에이전트 시대의 클라우드 운영 배우기",
+   "title_ko": "AWS 커뮤니티 데이 서울 2026",
+   "host": "AWS한국사용자모임(AWSKRUG)",
+   "start": "2026-11-22",
+   "end": "2026-11-22",
+   "place": "서울 강남구 영동대로96길 20 대화빌딩 스페이스쉐어 삼성역센터",
+   "menu": "plan",
+   "roles": [
+    "be",
+    "fe"
+   ],
+   "reg": "이벤터스에서 10/19 (월) 18:00~11/19 (목) 18:00 신청, 티켓 취소는 11/17 (화) 18:00까지",
+   "reg_status": "신청 중",
+   "fee": "강연 티켓 10,000원, 강연과 네트워킹 파티 15,000원, 핸즈온 2개 회차는 입장권 구매자 무료",
+   "summary": "AWS 한국 사용자 모임이 11월 22일 오후 삼성역 인근에서 여는 커뮤니티 컨퍼런스다. 강연 3개 트랙과 핸즈온으로 에이전트형 AI, EKS와 서버리스 운영, 데이터와 보안, 바이브코딩 적용 사례를 다룬다. 여러 기술 커뮤니티가 세션과 부스로 함께한다.",
+   "why": "AI 에이전트를 서비스 운영에 붙인 현업 사례가 많아 기획 단계에서 운영 부담과 권한 문제를 미리 짚어 볼 수 있다.",
+   "url": "https://cday2026.awskr.org/",
+   "lang": "ko",
+   "added": "2026-10-22"
   },
   {
    "title": "디자인코리아 2026",
@@ -3949,7 +4533,7 @@
     "be",
     "fe"
    ],
-   "reg": "공식 페이지의 티켓 구매 링크(티켓타코)로 신청, 10/11 접수 시작",
+   "reg": "티켓타코(ticketa.co/event/ytbqha4p)에서 구매, 일반 판매 10/6 10:00~11/23 (월) 23:59",
    "reg_status": "신청 중",
    "fee": "기본 티켓 20,000원, 후원/비즈니스 티켓 각 100,000원",
    "summary": "오픈소스 단체 FOSS for All이 11월 28일 서울에서 여는 컨퍼런스다. 오픈소스 기술과 거버넌스, 문서화, 커뮤니티 운영, 실제 도입 사례를 기조연설과 발표, 워크숍으로 다룬다.",
@@ -4010,8 +4594,8 @@
    "end": "2026-12-04",
    "place": "서울 코엑스 A홀",
    "menu": "it",
-   "reg": "홈페이지 참관객 사전등록(준비 중)",
-   "reg_status": "신청 전",
+   "reg": "홈페이지(k-softwave.com/reg.cm)에서 개인 또는 20인 이상 단체 참관객 사전등록",
+   "reg_status": "신청 중",
    "fee": "확인 안 됨",
    "summary": "전자신문사가 12월 2일부터 4일까지 코엑스 A홀에서 대한민국 소프트웨어대전 소프트웨이브 2026을 연다. 'AI x SOFTWAVE'를 주제로 기업 디지털 전환과 AI/SW 솔루션을 전시한다.",
    "why": "국내 AI/SW 솔루션 기업을 한곳에서 볼 수 있어 어드민/업무 시스템 개선에 쓸 도구를 찾기 좋다.",
@@ -4024,6 +4608,28 @@
     "planner",
     "be"
    ]
+  },
+  {
+   "id": "ev-20261204-ddd-seoul-2026",
+   "title": "DDD Seoul 2026",
+   "title_ko": "DDD 서울 2026",
+   "host": "DDD Seoul",
+   "start": "2026-12-04",
+   "end": "2026-12-04",
+   "place": "서울 종로구 종로1길 50 더케이트윈타워 A동 13층 한국 마이크로소프트",
+   "menu": "plan",
+   "roles": [
+    "be",
+    "fe"
+   ],
+   "reg": "티켓타코에서 구매, 일반 Wave 1은 11/10 00:00까지, Wave 2는 11/10~12/4 00:00 판매",
+   "reg_status": "신청 중",
+   "fee": "20,000~50,000원(티켓 종류별, 개인후원 포함)",
+   "summary": "Microsoft 기술 중심 커뮤니티 컨퍼런스 DDD(Developer! Developer! Developer!)의 서울 행사가 12월 4일 광화문 한국 마이크로소프트에서 열린다. 발표자 15명이 개발 경험을 나누며 키노트와 세부 시간표는 추후 공개된다.",
+   "why": "여러 회사 개발자의 실무 경험 발표라 사내 개발 도구와 AI 활용 흐름을 넓게 훑어보기 좋다.",
+   "url": "https://ticketa.co/event/o65cl11x",
+   "lang": "ko",
+   "added": "2026-10-22"
   },
   {
    "id": "ev-20261211-iat-conference-2026",
@@ -4046,6 +4652,29 @@
    "summary": "정보접근성 개선과 기술 공유를 목적으로 열리는 하루 컨퍼런스다. 웹 접근성과 키오스크 접근성이 태그로 걸려 있다. 세부 세션은 신청 페이지에 아직 공개되지 않았다.",
    "why": "화면과 키오스크의 접근성 점검 기준이 어디로 가는지 미리 알아 두면 화면설계와 점검 항목에 반영하기 쉽다.",
    "url": "https://onoffmix.com/event/351274",
+   "lang": "ko",
+   "added": "2026-10-22"
+  },
+  {
+   "id": "ev-20261212-devfest-incheon-2026",
+   "title": "DEVFEST INCHEON 2026",
+   "title_ko": "데브페스트 인천 2026",
+   "host": "GDG Incheon",
+   "start": "2026-12-12",
+   "end": "2026-12-12",
+   "place": "송도컨벤시아(인천)",
+   "menu": "plan",
+   "roles": [
+    "fe",
+    "be",
+    "app"
+   ],
+   "reg": "티켓타코에서 예매, 마지막 얼리버드 10/9~10/31 23:59 판매(13:00~19:00 진행)",
+   "reg_status": "신청 중",
+   "fee": "마지막 얼리버드 20,000원",
+   "summary": "구글 개발자 그룹 인천이 12월 12일 송도컨벤시아에서 소프트웨어를 만드는 사람을 위한 컨퍼런스를 연다. AI 에이전트와 함께 개발하는 경험과 방법을 나누는 발표로 꾸리며, 1차로 연사 18명을 공개했고 세부 시간표는 준비 중이다.",
+   "why": "AI 에이전트를 개발 과정에 들인 팀의 경험을 들어 보고 우리 팀 개발 방식 변화를 가늠해 볼 자리다.",
+   "url": "https://ticketa.co/event/8dedugs6",
    "lang": "ko",
    "added": "2026-10-22"
   },
@@ -4094,29 +4723,6 @@
     "pm",
     "be"
    ]
-  },
-  {
-   "id": "ev-20261212-devfest-incheon-2026",
-   "title": "DEVFEST INCHEON 2026",
-   "title_ko": "데브페스트 인천 2026",
-   "host": "GDG Incheon",
-   "start": "2026-12-12",
-   "end": "2026-12-12",
-   "place": "송도컨벤시아(인천)",
-   "menu": "plan",
-   "roles": [
-    "fe",
-    "be",
-    "app"
-   ],
-   "reg": "티켓타코에서 예매, 마지막 얼리버드 10/9~10/31 23:59 판매(13:00~19:00 진행)",
-   "reg_status": "신청 중",
-   "fee": "마지막 얼리버드 20,000원",
-   "summary": "구글 개발자 그룹 인천이 12월 12일 송도컨벤시아에서 소프트웨어를 만드는 사람을 위한 컨퍼런스를 연다. AI 에이전트와 함께 개발하는 경험과 방법을 나누는 발표로 꾸리며, 1차로 연사 18명을 공개했고 세부 시간표는 준비 중이다.",
-   "why": "AI 에이전트를 개발 과정에 들인 팀의 경험을 들어 보고 우리 팀 개발 방식 변화를 가늠해 볼 자리다.",
-   "url": "https://ticketa.co/event/8dedugs6",
-   "lang": "ko",
-   "added": "2026-10-22"
   }
  ],
  "insights": [
