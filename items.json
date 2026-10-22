@@ -3,20 +3,20 @@
   {
    "id": "2026-10-22",
    "highlights": {
-    "ai": "월마트가 AI 에이전트가 직접 장보고 결제하는 에이전트 게이트웨이를 발표했다. AI가 찾은 PHP 치명적 취약점 2건이 공동 대응 끝에 고쳐졌다. 오픈AI가 챗GPT에 민감한 대화를 따로 숨기는 채팅 잠금을 내놓았다. 노트북에서 오프라인으로 도는 무료 코딩 모델 Flint가 공개됐다.",
-    "it": "키즈 플랫폼 놀이의발견에서 회원 약 6만7000명 정보가 유출됐다. 쿠팡이츠와 배민의 1시간 배달 경쟁이 다시 붙었다. 미국 뉴멕시코주 법원이 메타에 250억 달러 배상을 명령했다. 카카오가 남이 내 명의로 계정 인증을 등록하지 못하게 막는 기능을 도입했다.",
+    "ai": "월마트가 AI 에이전트가 직접 장보고 결제하는 에이전트 게이트웨이를 발표했다. LLM 게이트웨이 LiteLLM 1.107.0이 공급망 공격으로 악성코드를 담아 배포됐다. AI가 찾은 PHP 치명적 취약점 2건이 공동 대응 끝에 고쳐졌다. 앤트로픽이 먼저 할 일을 알려 주는 에이전트 앱 클로드 듀엣을 연구 미리보기로 냈다.",
+    "it": "키즈 플랫폼 놀이의발견에서 회원 약 6만7000명 정보가 유출됐다. 명함 앱 리멤버에서 명함이 다른 이용자에게 노출돼 개인정보위가 조사에 나섰다. 연세대 포털 해킹으로 재학생과 졸업생 1만여 명의 정보가 빠져나갔다. 쿠팡이츠와 배민의 1시간 배달 경쟁이 다시 붙었다.",
     "roles": {
-     "planner": "푸시 알림을 정보성과 광고성으로 나눠 발송 정책을 세운 기획 사례가 나왔다. NN/g가 AI 사용 표기 여부를 다섯 질문으로 가리는 판단 틀을 내놓았다. 피그마는 코드로 동작하는 프로토타입을 캔버스에 두는 코드 레이어를 오픈 베타로 냈다. AI 기획서 대신 실코드와 함께 바뀌는 목업으로 협업한 기획자 회고가 나왔다.",
+     "planner": "푸시 알림을 정보성과 광고성으로 나눠 발송 정책을 세운 기획 사례가 나왔다. NN/g가 AI 사용 표기 여부를 다섯 질문으로 가리는 판단 틀을 내놓았다. 피그마는 코드로 동작하는 프로토타입을 캔버스에 두는 코드 레이어를 오픈 베타로 냈다. 코드를 모르는 기획자가 AI 코딩 도구로 서버부터 앱까지 직접 만든 사례가 나왔다.",
      "designer": "피그마가 캔버스 위에서 코드로 동작하는 코드 레이어를 오픈 베타로 냈다. NN/g는 AI 사용 표기를 정하는 PACED 판단 틀을 제안했다. Mastodon 디자인 팀이 5.0 웹 화면 개편에서 내린 결정을 공개했다. 피그마가 팀 단위 AI 도입을 이끈 네 가지 운영 방식을 소개했다.",
-     "pm": "넷플릭스 제품팀이 A/B 테스트로 효과를 확인한 뒤에만 AI를 넓힌 과정이 공개됐다. 오카도는 로드맵 슬라이드를 Jira 데이터 기반 사내 앱으로 바꿨다. 구글 플레이가 결제 실패 복구와 해지 방어를 담은 구독 결제 개편을 내놓았다.",
+     "pm": "넷플릭스 제품팀이 A/B 테스트로 효과를 확인한 뒤에만 AI를 넓힌 과정이 공개됐다. 오카도는 로드맵 슬라이드를 Jira 데이터 기반 사내 앱으로 바꿨다. 구글 플레이가 결제 실패 복구와 해지 방어를 담은 구독 결제 개편을 내놓았다. 토스가 추천 후보 수를 절반으로 줄이고도 구매 전환율을 높인 홈 피드 실험을 공개했다.",
      "publisher": "Safari 27.0이 img의 sizes=auto와 select의 base-select 스타일을 지원한다. 앵커 위치 지정과 서비스 워커 정적 라우팅도 함께 들어갔다.",
-     "fe": "Next.js 16.4.1과 15.5.28이 원격 코드 실행 취약점 2건을 고쳤다. Vercel이 부분 프리페치로 v0 화면 이동의 로딩 스켈레톤을 없앴다. Safari 27.0이 img의 sizes=auto와 select의 base-select 스타일을 지원한다. Chrome 이메일 인증 API가 Chrome 154부터 안드로이드에서도 동작한다.",
-     "app": "애플이 10월 23일 출시되는 iPhone Duo용 앱 준비와 제출 안내를 냈다. 구글 플레이가 결제 실패 복구와 해지 방어를 담은 구독 결제 개편을 내놓았다. 안드로이드 다음 버전을 대상으로 하면 WRITE_CONTACTS로 연락처를 직접 쓸 수 없다. Android Studio에 외부 코딩 에이전트를 붙이는 기능이 미리보기로 나왔다.",
-     "qa": "테스터가 관점을 바꿔 쓰는 12가지 마인드셋 모델이 나왔다. 클릭 전 화면 준비 여부를 Playwright 테스트로 확인하며 프리페치를 개선한 사례가 나왔다.",
-     "dba": "당근이 Aurora MySQL 인덱스 DDL 한 번에 Reader 버퍼풀이 무효화된 사례를 공개했다. PgBouncer 1.26.1이 SCRAM 인증 우회 취약점을 고쳤다. 56TB PostgreSQL을 거의 무중단으로 업그레이드한 사례가 나왔다. 토스가 Milvus 벡터 DB 서버 규모를 recall 기준으로 산정한 사례를 공개했다.",
-     "be": "무신사가 동기 로깅 때문에 커넥션 풀이 고갈된 장애와 해결 과정을 공개했다. 당근은 모델 교체 뒤 LLM 비용이 3.2배로 뛴 원인을 캐시 구간에서 찾았다. 세이브포인트가 Postgres 작업 큐를 막은 장애 회고가 나왔다. 토스가 Milvus 벡터 DB 서버 규모 산정과 NUMA 배치 최적화 사례를 공개했다."
+     "fe": "Next.js 16.4.1과 15.5.28이 원격 코드 실행 취약점 2건을 고쳤다. Vercel이 부분 프리페치로 v0 화면 이동의 로딩 스켈레톤을 없앴다. FE 두 명이 25주 만에 웹과 앱 웹뷰를 한 코드로 낸 구축기가 나왔다. Node.js가 22/24/26 버전 취약점 10건을 고친 보안 업데이트를 냈다.",
+     "app": "애플이 10월 23일 출시되는 iPhone Duo용 앱 준비와 제출 안내를 냈다. 구글 플레이가 결제 실패 복구와 해지 방어를 담은 구독 결제 개편을 내놓았다. App Store 심사 지침이 심사 뒤 기능을 바꾸는 앱을 퇴출 대상으로 명확히 했다. 활성 사용자 500만 명 앱을 하룻밤에 새 앱으로 바꾼 뒤 OTA로 수습한 기록이 나왔다.",
+     "qa": "테스터가 관점을 바꿔 쓰는 12가지 마인드셋 모델이 나왔다. 클릭 전 화면 준비 여부를 Playwright 테스트로 확인하며 프리페치를 개선한 사례가 나왔다. Playwright 1.64가 시드로 재현되는 무작위 순서 실행을 넣었다. Cypress 16.2.0이 역할 기반 조회 cy.getByRole을 추가했다.",
+     "dba": "당근이 Aurora MySQL 인덱스 DDL 한 번에 Reader 버퍼풀이 무효화된 사례를 공개했다. PgBouncer 1.26.1이 SCRAM 인증 우회 취약점을 고쳤다. PostgreSQL 19 첫 출시 후보가 나왔고 정식판은 11월 19일 예정이다. 연도와 월로 버전을 매기는 MySQL 26.7이 나왔다.",
+     "be": "무신사가 동기 로깅 때문에 커넥션 풀이 고갈된 장애와 해결 과정을 공개했다. 당근은 모델 교체 뒤 LLM 비용이 3.2배로 뛴 원인을 캐시 구간에서 찾았다. 세이브포인트가 Postgres 작업 큐를 막은 장애 회고가 나왔다. GitHub가 스타 기록 API를 다시 만들어 요청 2,500번을 24번으로 줄였다."
     },
-    "plan": "푸시 알림을 정보성과 광고성으로 나눠 발송 정책을 세운 기획 사례가 나왔다. NN/g가 AI 사용 표기 여부를 다섯 질문으로 가리는 판단 틀을 내놓았다. 피그마는 코드로 동작하는 프로토타입을 캔버스에 두는 코드 레이어를 오픈 베타로 냈다. AI 기획서 대신 실코드와 함께 바뀌는 목업으로 협업한 기획자 회고가 나왔다."
+    "plan": "푸시 알림을 정보성과 광고성으로 나눠 발송 정책을 세운 기획 사례가 나왔다. NN/g가 AI 사용 표기 여부를 다섯 질문으로 가리는 판단 틀을 내놓았다. 피그마는 코드로 동작하는 프로토타입을 캔버스에 두는 코드 레이어를 오픈 베타로 냈다. 코드를 모르는 기획자가 AI 코딩 도구로 서버부터 앱까지 직접 만든 사례가 나왔다."
    }
   },
   {
@@ -48,6 +48,537 @@
   }
  ],
  "items": [
+  {
+   "menu": "plan",
+   "type": "아티클/블로그",
+   "roles": [
+    "be",
+    "dba"
+   ],
+   "title": "From 2,500 requests to 24: Rebuilding star history without the stargazers",
+   "title_ko": "요청 2,500번을 24번으로: 사용자 정보 없이 스타 기록 API를 다시 만든 과정",
+   "source": "GitHub Blog",
+   "url": "https://github.blog/engineering/architecture-optimization/from-2500-requests-to-24-rebuilding-star-history-without-the-stargazers/",
+   "date": "2026-10-14",
+   "lang": "en",
+   "summary": "GitHub는 스타를 누른 사용자 목록이 스팸 수집에 쓰이고, 페이지마다 전체 스타 수를 세는 버그로 느린 쿼리가 한 주에 약 3만 7천 건 쌓이자 목록 공개를 막고 집계 전용 API를 새로 만들었다. 집계 후 LIMIT/OFFSET으로 자르는 방식은 응답만 줄일 뿐 쿼리 비용은 그대로여서, 인덱스가 걸린 생성일 범위로 먼저 거른 뒤 일별로 묶는 구조로 바꿨다. 스타 약 25만 1천 개인 저장소 기준으로 전체 기록을 받는 요청이 약 2,511번에서 24번으로 줄었다.",
+   "why": "상품 찜/리뷰 수 추이처럼 큰 테이블을 집계해 보여주는 API를 만들 때, 개인 식별 정보는 빼고 범위 조건을 먼저 거는 설계 기준으로 쓸 수 있다.",
+   "id": "2026-10-22-plan-29",
+   "issue": "2026-10-22"
+  },
+  {
+   "menu": "plan",
+   "type": "아티클/블로그",
+   "roles": [
+    "dba",
+    "be"
+   ],
+   "title": "Inside Hyperdrive: How we solved a rare Hyperdrive MySQL caching bug",
+   "title_ko": "Hyperdrive의 드문 MySQL 캐시 버그를 잡은 과정",
+   "source": "Cloudflare Blog",
+   "url": "https://blog.cloudflare.com/hyperdrive-mysql/",
+   "date": "2026-10-14",
+   "lang": "en",
+   "summary": "Cloudflare는 커넥션 풀러 Hyperdrive의 MySQL 지원을 정식 출시하며 베타 동안 고친 버그를 공개했다. utf8 별칭이 3바이트까지만 지원해 이모지가 깨진 문제, COM_RESET_CONNECTION 뒤 문자셋이 서버 기본값으로 돌아간 문제가 있었고, 약 0.001% 확률로 빈 결과가 나온 원인은 클라이언트와 엔드포인트 노드가 서로 다른 프로토콜 기능 플래그로 인코딩한 응답을 같은 캐시에 저장한 데 있었다. 캐시에는 항상 한 가지 기준 형식으로만 저장하도록 바꾼 뒤 클라이언트 연결 성공률이 99.99%에 이르렀다.",
+   "why": "주문/상품 조회 앞단에 커넥션 풀이나 쿼리 캐시를 둘 때 문자셋(utf8mb4)과 연결 초기화 후 세션 상태를 점검하는 체크리스트로 쓸 수 있다.",
+   "id": "2026-10-22-plan-30",
+   "issue": "2026-10-22"
+  },
+  {
+   "menu": "plan",
+   "type": "출시/업데이트",
+   "roles": [
+    "dba",
+    "be"
+   ],
+   "title": "PostgreSQL 19 RC 1 Released!",
+   "title_ko": "PostgreSQL 19 첫 출시 후보(RC 1) 공개, 정식 출시는 11월 19일 예정",
+   "source": "PostgreSQL 공식 뉴스",
+   "url": "https://www.postgresql.org/about/news/postgresql-19-rc-1-released-3409/",
+   "date": "2026-10-15",
+   "lang": "en",
+   "summary": "PostgreSQL 개발 그룹이 10월 15일 PostgreSQL 19의 첫 출시 후보를 내놓았다. 11월 12일 정기 업데이트와 같은 날 RC 2를 내고, 문제가 없으면 11월 19일 정식 출시할 계획이다. 베타 4 이후 REPACK (CONCURRENTLY), 병렬 autovacuum, wal_level=replica일 때 논리 복제 자동 활성화 등이 고쳐졌고, 올리려면 pg_upgrade나 pg_dump/pg_restore 같은 메이저 업그레이드 절차가 필요하다.",
+   "why": "내년 DB 메이저 업그레이드 일정을 잡을 때 정식 출시일과 RC 기간 검증 항목을 미리 넣어 두는 기준이 된다.",
+   "id": "2026-10-22-plan-31",
+   "issue": "2026-10-22"
+  },
+  {
+   "menu": "plan",
+   "type": "아티클/블로그",
+   "roles": [
+    "dba"
+   ],
+   "title": "Meet MySQL 26.7: A New Versioning Era Begins",
+   "title_ko": "MySQL 26.7: 연도.월 방식 새 버전 체계와 업그레이드 경로",
+   "source": "Percona Blog",
+   "url": "https://www.percona.com/blog/meet-mysql-26-7-a-new-versioning-era-begins/",
+   "date": "2026-10-12",
+   "lang": "en",
+   "summary": "MySQL이 9.8 대신 연도.월.패치 형식의 26.7.0으로 혁신(Innovation) 판을 내며 버전 체계를 바꿨다. 새 계열로 가려면 반드시 9.7 LTS를 거쳐야 해서 8.4 LTS 사용처는 8.4, 9.7, 26.7 순으로 올려야 하고, 다음 LTS는 2028년 4월 28.4.0으로 예상된다. 26.7에는 적용과 커밋 순서를 분리한 새 복제 적용기(Change Stream Applier)와 커뮤니티판 스레드 풀 플러그인이 들어갔다.",
+   "why": "MySQL 기반 주문/회원 DB의 장기 버전 정책과 8.4 이후 업그레이드 단계를 정할 때 바로 참고할 수 있다.",
+   "id": "2026-10-22-plan-32",
+   "issue": "2026-10-22"
+  },
+  {
+   "menu": "plan",
+   "type": "아티클/블로그",
+   "roles": [
+    "dba"
+   ],
+   "title": "When a Small Change Writes Too Much – How A Linux Kernel Improvement Can Strike You in PXC/Galera Workloads",
+   "title_ko": "OS 커널 업그레이드 뒤 Galera 클러스터 디스크 쓰기가 폭증한 원인",
+   "source": "Percona Blog",
+   "url": "https://www.percona.com/blog/when-a-small-change-writes-too-much-how-a-linux-kernel-improvement-can-strike-you-in-pxc-galera-workloads/",
+   "date": "2026-10-16",
+   "lang": "en",
+   "summary": "Percona가 PXC를 5.7에서 8.0으로 올린 고객사에서 워크로드 변화 없이 몇 초에 수 GB씩 디스크 쓰기가 몰린 사례를 분석했다. 원인은 함께 진행한 Debian 11에서 12로의 OS 업그레이드로 커널이 5.10에서 6.1로 바뀌며 XFS 페이지 캐시에 대형 folio가 적용됐고, mmap으로 다루는 Galera 캐시 파일이 작은 변경에도 큰 단위로 다시 쓰인 데 있었다. 커널 쪽 해결책은 아직 없어 madvise의 MADV_RANDOM 적용이나 THP를 끈 커널 빌드 같은 우회책을 제시했다.",
+   "why": "DB 버전 업그레이드와 OS 교체를 한 번에 묶는 작업을 계획할 때 분리 검증이 필요한 이유와 점검 지표로 쓸 수 있다.",
+   "id": "2026-10-22-plan-33",
+   "issue": "2026-10-22"
+  },
+  {
+   "menu": "plan",
+   "type": "아티클/블로그",
+   "roles": [
+    "be",
+    "qa"
+   ],
+   "title": "Java 디컴파일러로 운영 서버와 형상관리 소스의 불일치를 해소하다",
+   "title_ko": "Java 디컴파일러와 AI로 운영 서버와 형상관리 소스 불일치를 바로잡은 과정",
+   "source": "올리브영 테크블로그",
+   "url": "https://oliveyoung.tech/2026-09-30/decompiler_ai/",
+   "date": "2026-09-30",
+   "lang": "ko",
+   "summary": "올리브영 백오피스팀이 2016년부터 운영한 ERP 백오피스에서 증분 배포 누락과 운영 서버 직접 수정으로 쌓인 소스 불일치를 정리한 과정이다. 디컴파일, 포맷팅, 비교, AI 위험도 분류로 이어지는 파이프라인으로 WAS 파일 약 1,000개 중 10%, 화면 파일 약 4,800개 중 20%가 불일치함을 찾았다. 디컴파일 소스로 덮어쓰지 않고 다른 로직만 골라 반영한 뒤 재컴파일 결과를 운영 클래스와 다시 비교하는 4단계 절차로 99%를 맞췄다.",
+   "why": "오래된 어드민/백오피스를 넘겨받거나 배포 체계를 바꾸기 전에 운영본과 소스의 차이를 점검하는 절차로 쓸 수 있다.",
+   "id": "2026-10-22-plan-34",
+   "issue": "2026-10-22"
+  },
+  {
+   "menu": "plan",
+   "type": "아티클/블로그",
+   "roles": [
+    "be",
+    "pm"
+   ],
+   "title": "CJ올리브영의 AI 기반 운영 이슈 분석과 일일 점검 자동화",
+   "title_ko": "리테일 프로모션 장애 분석과 일일 점검을 AI 에이전트로 자동화한 사례",
+   "source": "AWS 기술 블로그",
+   "url": "https://aws.amazon.com/ko/blogs/tech/cj-oliveyoung-operations-agent-bedrock/",
+   "date": "2026-10-16",
+   "lang": "ko",
+   "summary": "올리브영이 미국 진출 뒤 시차 구간 장애 대응을 위해 Amazon Bedrock 기반 인시던트 분석 에이전트와 데일리 헬스 체크 에이전트를 만든 사례다. 계산과 판정은 코드로 고정하고 해석만 LLM에 맡겼으며, Datadog 로그/APM과 쿠폰/주문/가격 데이터를 연결해 고객별 피해와 보상안 후보를 정리한다. 6분 동안 약 32만 건 오류가 난 장애에서 원인 파악부터 피해 규모 산정까지 1분 안에 끝냈고, 1~2일 걸리던 분석이 수분으로 줄었다고 밝혔다.",
+   "why": "쿠폰/프로모션 장애 때 고객 영향과 보상 대상을 뽑는 운영 도구를 만들 때 코드와 LLM의 역할 분리 기준으로 쓸 수 있다.",
+   "id": "2026-10-22-plan-35",
+   "issue": "2026-10-22"
+  },
+  {
+   "menu": "plan",
+   "type": "아티클/블로그",
+   "roles": [
+    "be"
+   ],
+   "title": "Amazon Bedrock 기반 사내 LLM, 키 발급부터 비용 차단까지: F&F의 LiteLLM 게이트웨이 운영 사례",
+   "title_ko": "사내 LLM 키 발급, 모델 승인, 비용 차단을 게이트웨이 하나로 묶은 F&F 사례",
+   "source": "AWS 기술 블로그",
+   "url": "https://aws.amazon.com/ko/blogs/tech/fnf-llm-gateway-on-amazon-bedrock/",
+   "date": "2026-10-18",
+   "lang": "ko",
+   "summary": "패션 기업 F&F의 AI 엔지니어링팀이 상위 모델을 이틀 시험하다 예상보다 몇 배 많은 비용이 청구된 뒤 LiteLLM 게이트웨이로 사내 LLM 플랫폼을 만든 과정이다. 키 발급은 셀프서비스로 바꿔 발급부터 첫 호출까지 3분 안에 끝나게 했고, 고가 모델은 승인제로 묶어 게이트웨이에서 403으로 막는다. 일/월 예산의 80%에서 경고, 100%에서 차단하는 2단계 한도와 사용량 감사 기능을 함께 운영한다.",
+   "why": "개발팀에 AI 코딩 도구와 LLM API를 열어 줄 때 키 관리, 모델 승인, 예산 차단 정책을 설계하는 참고안이 된다.",
+   "id": "2026-10-22-plan-36",
+   "issue": "2026-10-22"
+  },
+  {
+   "menu": "plan",
+   "type": "아티클/블로그",
+   "roles": [
+    "dba",
+    "be"
+   ],
+   "title": "Spark Connect on Kubernetes #2: Operator로 만드는 Control Plane",
+   "title_ko": "Spark Connect 서버 수명주기를 Operator로 관리하고 메모리 증가를 잡은 방법",
+   "source": "토스 기술블로그",
+   "url": "https://toss.tech/article/spark-connect-on-kubernetes-2",
+   "date": "2026-10-14",
+   "lang": "ko",
+   "summary": "토스증권 데이터 인프라팀이 Spark Connect 서버를 용도별 테넌트로 묶고, 자체 Spark Tenant Operator로 서버 수 유지와 무중단 교체를 맡긴 구조를 소개했다. 새 서버가 모두 준비되면 신규 세션만 옮기고 기존 서버는 세션이 끝나거나 기본 90분이 지나면 정리하며, 실패하면 마지막 성공 설정으로 되돌린다. Heap은 안정적인데 메모리가 계속 늘던 문제는 glibc arena 수를 제한해 72시간 관측 동안 약 9.06GiB로 유지됐고, 현재 20개 이상 테넌트를 운영한다.",
+   "why": "주문/매출 데이터 분석 플랫폼에서 대화형 분석과 배치를 나눠 운영하고 무중단 설정 변경 절차를 만들 때 참고할 수 있다.",
+   "id": "2026-10-22-plan-37",
+   "issue": "2026-10-22"
+  },
+  {
+   "menu": "plan",
+   "type": "아티클/블로그",
+   "roles": [
+    "planner",
+    "pm"
+   ],
+   "title": "코드를 모르는 기획자의 Product Engineer 도전 : 준비와 소통으로 서버부터 앱까지",
+   "title_ko": "코드를 모르는 기획자가 서버/어드민/앱까지 직접 개발해 출시한 과정",
+   "source": "요기요 기술블로그",
+   "url": "https://techblog.yogiyo.co.kr/%EC%BD%94%EB%93%9C%EB%A5%BC-%EB%AA%A8%EB%A5%B4%EB%8A%94-%EA%B8%B0%ED%9A%8D%EC%9E%90%EC%9D%98-product-engineer-%EB%8F%84%EC%A0%84-%EC%A4%80%EB%B9%84%EC%99%80-%EC%86%8C%ED%86%B5%EC%9C%BC%EB%A1%9C-%EC%84%9C%EB%B2%84%EB%B6%80%ED%84%B0-%EC%95%B1%EA%B9%8C%EC%A7%80-f6c1db423de9",
+   "date": "2026-10-15",
+   "summary": "서비스 운영과 기획을 맡던 기획자가 Claude Code로 주문추적 화면 지도 마커를 광고 지면으로 바꾸는 기능을 서버/API/어드민/Android/iOS까지 약 한 달 만에 직접 개발해 2026년 6월 17일 출시했다. 기획 초안으로 AI에게 영향 범위를 먼저 분석시키고, 영향 범위와 확정 정책과 바뀐 스펙을 마크다운 설계 계획서 하나에 모아 영역별 담당자의 설계 리뷰와 코드 리뷰, QA팀 전체 테스트를 거쳤다. 첫 외부 광고는 노출수와 클릭수에서 사전 목표 대비 200% 이상을 달성했다고 밝혔다.",
+   "why": "어드민 등록부터 앱 노출까지 걸친 작은 기능을 기획자가 AI로 직접 만들 때 필요한 준비물(설계 계획서, 리뷰 순서, 상태별 검증 시나리오) 체크리스트로 쓸 수 있다.",
+   "lang": "ko",
+   "id": "2026-10-22-plan-38",
+   "issue": "2026-10-22"
+  },
+  {
+   "menu": "plan",
+   "type": "아티클/블로그",
+   "roles": [
+    "pm",
+    "planner"
+   ],
+   "title": "추천 후보는 많을수록 좋을까? TopK를 최적화해 전환율을 높인 방법",
+   "title_ko": "추천 후보 수를 절반으로 줄이고 구매 전환율을 높인 홈 피드 실험",
+   "source": "토스 기술블로그",
+   "url": "https://toss.tech/article/53545",
+   "date": "2026-10-01",
+   "summary": "토스 커머스 팀은 경험으로 정하던 리트리벌 모델별 추천 후보 수(TopK)를 정수계획법 최적화 문제로 바꿔, 전체 후보를 기존의 약 절반으로 제한한 채 가치가 큰 모델에 더 많이 배정했다. 홈 피드 온라인 실험에서 이 안은 비교군 대비 User CVR 7.55%, 사용자당 주문 수 10.13%가 늘었지만 CTR은 3.71%, 사용자당 고유 노출 상품 수는 22.07% 줄었다. 후보를 1/4로 줄인 실험군은 CVR이 더 높았으나 RPU와 객단가가 떨어져 위너로 고르지 않았고, 후속 실험에서는 샘플링 방식을 바꿔 피드 중복도를 평균 11.25% 낮췄다.",
+   "why": "추천/개인화 영역 A/B 실험에서 목표 지표 하나가 아니라 객단가/다양성 같은 가드레일 지표까지 함께 놓고 위너를 정하는 기준 예시로 쓸 수 있다.",
+   "lang": "ko",
+   "id": "2026-10-22-plan-39",
+   "issue": "2026-10-22"
+  },
+  {
+   "menu": "plan",
+   "type": "아티클/블로그",
+   "roles": [
+    "app",
+    "fe",
+    "designer"
+   ],
+   "title": "Next.js 모바일 웹을 일주일 만에 앱으로 바꾼 방법 ①",
+   "title_ko": "Next.js 모바일 웹을 AI 에이전트로 일주일 만에 앱으로 옮기다 실패한 이유",
+   "source": "요즘IT",
+   "url": "https://yozm.wishket.com/magazine/detail/4001",
+   "date": "2026-10-21",
+   "summary": "웹 헤더 알림을 앱 밖에서 못 봐 계약이 불발됐다는 VOC를 계기로, 거의 혼자 프론트엔드를 맡은 개발자가 Next.js 모바일 웹을 React Native(Expo)와 pnpm 모노레포로 옮겨 일주일 만에 POC 이상의 앱을 만들었다. UI는 웹용과 앱용 패키지를 나누고 색/타이포/간격 토큰만 공유했으며, Figma 화면과 모바일 웹, 앱 화면 스크린샷을 비교해 맞추는 스킬을 만들어 반복 작업을 돌렸다. 그러나 웹과 앱의 UI/UX 흐름 차이, 어긋난 로직, 푸시 알림과 패스키 같은 네이티브 기능 개발이 남아 바로 출시하지는 못했다고 밝혔다.",
+   "why": "모바일 웹을 앱으로 옮기거나 웹뷰를 네이티브로 바꿀 때 디자인만 맞추면 안 되는 지점(알림, 인증, 화면 흐름)을 미리 일정에 넣는 근거로 쓸 수 있다.",
+   "lang": "ko",
+   "id": "2026-10-22-plan-40",
+   "issue": "2026-10-22"
+  },
+  {
+   "menu": "plan",
+   "type": "아티클/블로그",
+   "roles": [
+    "fe",
+    "app",
+    "qa"
+   ],
+   "title": "여기어때 해외투어 프론트엔드 구축기록",
+   "title_ko": "FE 두 명이 25주 만에 웹과 앱 웹뷰를 한 코드로 낸 해외투어 구축기",
+   "source": "여기어때 기술블로그",
+   "url": "https://techblog.gccompany.co.kr/%EC%97%AC%EA%B8%B0%EC%96%B4%EB%95%8C-%ED%95%B4%EC%99%B8%ED%88%AC%EC%96%B4-%ED%94%84%EB%A1%A0%ED%8A%B8%EC%97%94%EB%93%9C-%EA%B5%AC%EC%B6%95%EA%B8%B0%EB%A1%9D-056eeab367cc",
+   "date": "2026-10-20",
+   "summary": "여기어때가 9월 7일 연 해외투어 서비스의 프론트엔드를 두 명이 25주 동안 모노레포 하나로 만들며 내린 판단을 정리했다. 웹 19개와 앱 웹뷰 18개 라우트가 화면 컴포넌트를 공유하고, mock을 API 호출 함수 안에만 두어 실 API 전환 때 화면 코드를 거의 고치지 않았으며, 앱 결제는 뒤로가기 시 주문서 상태가 사라지는 문제로 오픈 5일 전 PG를 자식 네이티브 웹뷰로 분리했다. QA 티켓은 280건으로 이전 프로젝트보다 늘었지만 3일 내 처리율은 81%까지 올랐다고 밝혔다.",
+   "why": "주문서와 결제 확인 화면을 웹과 앱 웹뷰에서 함께 쓰는 구조, HTTP 200으로 오는 업무 오류 처리, PG 웹뷰 분리를 우리 앱 결제 흐름 점검표로 쓸 수 있다.",
+   "lang": "ko",
+   "id": "2026-10-22-plan-41",
+   "issue": "2026-10-22"
+  },
+  {
+   "menu": "plan",
+   "type": "출시/업데이트",
+   "roles": [
+    "fe",
+    "planner"
+   ],
+   "title": "Blocking Identity Resolution Infrastructure",
+   "title_ko": "Safari 27, 이메일로 사용자를 추적하는 '아이덴티티 해석' 업체 접속 차단",
+   "source": "WebKit",
+   "url": "https://webkit.org/blog/18438/blocking-identity-resolution-infrastructure/",
+   "date": "2026-10-19",
+   "summary": "WebKit은 로그인이나 뉴스레터 가입 때 제3자가 이메일 주소를 몰래 수집해 추적 ID를 만들어 돌려주는 방식을 '아이덴티티 해석'이라 부르고, iOS/iPadOS/macOS/visionOS 27의 Safari에서 이런 업체로 가는 네트워크 접속을 도메인 단위로 막았다고 밝혔다. 요청 형태를 바꿔 우회할 수 없도록 했으며, 사이트가 직접 하는 개인화는 차단 대상이 아니라고 설명했다.",
+   "why": "회원가입/로그인/뉴스레터 화면에 붙은 마케팅/광고 태그가 Safari 27에서 막히는지 점검하고, 측정 지표가 갑자기 줄 때 원인 후보로 둘 수 있다.",
+   "lang": "en",
+   "id": "2026-10-22-plan-42",
+   "issue": "2026-10-22"
+  },
+  {
+   "menu": "plan",
+   "type": "출시/업데이트",
+   "roles": [
+    "fe",
+    "be"
+   ],
+   "title": "Wednesday, October 21, 2026 Security Releases",
+   "title_ko": "Node.js 10월 21일 보안 업데이트: 22/24/26 버전 취약점 10건 수정",
+   "source": "Node.js",
+   "url": "https://nodejs.org/en/blog/vulnerability/october-2026-security-releases",
+   "date": "2026-10-21",
+   "summary": "Node.js는 10월 21일 26.x/24.x/22.x 버전에서 취약점 10건을 고친 보안 업데이트를 냈고, 이 가운데 Brotli 압축 해제 과정의 원격 코드 실행과 TLS 인증서 호스트명 검증 우회 등 4건이 높음 등급이다. 수정 버전은 22.23.4, 24.22.1, 26.12.1이며, eMudhra 중간 인증서 침해에 따른 인증서 목록과 OpenSSL/Undici 등 의존성도 함께 갱신됐다.",
+   "why": "SSR 서버와 FE 빌드/배포 환경의 Node 버전을 수정 버전으로 올렸는지 바로 확인하는 데 쓴다.",
+   "lang": "en",
+   "id": "2026-10-22-plan-43",
+   "issue": "2026-10-22"
+  },
+  {
+   "menu": "plan",
+   "type": "출시/업데이트",
+   "roles": [
+    "fe"
+   ],
+   "title": "Announcing TypeScript 7.1 Beta",
+   "title_ko": "TypeScript 7.1 베타: import 속성 타입 선언, 새 컴파일러 API, 빌드 최적화",
+   "source": "TypeScript",
+   "url": "https://devblogs.microsoft.com/typescript/announcing-typescript-7-1-beta/",
+   "date": "2026-10-20",
+   "summary": "TypeScript 7.1 베타가 10월 20일 공개됐으며, ambient 모듈 선언에서 import 속성(with { type: \"css\" } 등)에 따라 타입을 정하고 속성을 빠뜨리면 오류를 내는 기능, source phase import, --target es2026이 들어갔다. 동기/비동기 클라이언트와 AST 등으로 나눈 새 컴파일러 API를 제공하고, 메모리 사용을 줄이고 빌드를 빠르게 하는 최적화를 다수 넣었다고 밝혔다.",
+   "why": "CSS/JSON/텍스트 파일을 import하는 FE 코드의 타입 선언을 정리하고, 7.x 전환 일정과 사내 린트/빌드 도구의 새 API 대응을 계획할 때 참고한다.",
+   "lang": "en",
+   "id": "2026-10-22-plan-44",
+   "issue": "2026-10-22"
+  },
+  {
+   "menu": "plan",
+   "type": "출시/업데이트",
+   "roles": [
+    "app",
+    "planner",
+    "qa"
+   ],
+   "title": "Strengthening App Review Guidelines against nonconsensual intimate imagery and bait-and-switch apps",
+   "title_ko": "App Store 심사 지침 개정: 심사 뒤 기능을 바꾸는 앱 퇴출 명시",
+   "source": "Apple Developer News",
+   "url": "https://developer.apple.com/news/?id=vvzx6cul",
+   "date": "2026-10-16",
+   "summary": "Apple은 10월 16일 App Review Guidelines를 고쳐, 1.2항 콘텐츠 관리 의무에 AI로 만든 것을 포함한 비동의 성적 이미지를 넣었다. 2.5.19항은 심사 때 제출하지 않은 기능을 승인 뒤에 추가하는 등 심사에서 앱의 동작을 속이는 행위를 금지해 온 기존 원칙을 명확히 하고, 적발 시 App Store와 개발자 프로그램에서 퇴출한다고 밝혔다. 5항은 아동 착취 등 콘텐츠가 있는 앱을 대체 배포에서도 막는다고 명시했다.",
+   "why": "서버 설정이나 원격 플래그로 심사 뒤 화면/기능을 켜는 운영 방식이 2.5.19항에 걸리지 않는지 출시 절차를 점검하는 데 쓴다.",
+   "lang": "en",
+   "id": "2026-10-22-plan-45",
+   "issue": "2026-10-22"
+  },
+  {
+   "menu": "plan",
+   "type": "출시/업데이트",
+   "roles": [
+    "app"
+   ],
+   "title": "Expo SDK 58",
+   "title_ko": "Expo SDK 58: iOS 27의 scene 생명주기 의무화와 Xcode 27 Device Hub 대응",
+   "source": "Expo",
+   "url": "https://expo.dev/changelog/sdk-58",
+   "date": "2026-10-15",
+   "summary": "Expo SDK 58은 iOS 27과 React Native 0.88 기준으로 나왔고, iOS 27이 UIKit scene 기반 생명주기를 요구하고 iPhone 앱 창 크기 조절을 기본으로 켜는 변화에 맞췄다. iOS 27에서는 requireFullScreen으로 크기 조절을 끌 수 없고 화면 방향 고정이 듣지 않을 수 있으며, AppDelegate를 직접 고친 앱은 scene 생명주기 이전 안내서를 읽어야 한다고 밝혔다. Xcode 27이 Simulator.app을 Device Hub로 바꾼 데 맞춰 CLI도 고쳤고, Siri/Spotlight에 앱 기능을 노출하는 expo-app-intents는 알파로 공개했다.",
+   "why": "iOS 27 SDK로 빌드할 때 AppDelegate 콜백, 화면 방향 고정, 안전 영역 처리가 깨지는 화면을 출시 전 점검 목록에 넣는 데 쓴다.",
+   "lang": "en",
+   "id": "2026-10-22-plan-46",
+   "issue": "2026-10-22"
+  },
+  {
+   "menu": "plan",
+   "type": "아티클/블로그",
+   "roles": [
+    "app",
+    "qa",
+    "pm"
+   ],
+   "title": "Relaunching TeamReach: how OTA updates saved a 5,000,000-user cutover",
+   "title_ko": "활성 사용자 500만 명 앱을 하룻밤에 새 앱으로 바꾸고 OTA 12번으로 수습한 기록",
+   "source": "Expo",
+   "url": "https://expo.dev/blog/teamreach-ota-updates-relaunch",
+   "date": "2026-10-14",
+   "summary": "스포츠 팀 일정 앱 TeamReach는 iOS/안드로이드 네이티브 두 코드베이스를 네 명이 약 석 달 만에 Expo로 다시 만들고 6월 28일 밤 전체 사용자를 새 앱으로 옮겼다. 전환 직후 터진 오류를 사흘 동안 스토어 심사 없이 OTA 업데이트 12번으로 고쳤고, 비용은 약 4,000달러였다고 회사가 밝혔다. OTA는 JS/스타일/이미지 층만 바꾸고 네이티브 코드는 스토어를 거쳐야 하며, 업데이트는 다음 실행 때 적용돼 전체 사용자에게 퍼지는 데 24시간쯤 걸렸다고 설명했다.",
+   "why": "앱 대규모 개편 출시 때 OTA로 고칠 수 있는 범위와 없는 범위를 나눠 롤백/핫픽스 계획과 출시 직후 고객 문의 분류 체계를 짜는 데 참고한다.",
+   "lang": "en",
+   "id": "2026-10-22-plan-47",
+   "issue": "2026-10-22"
+  },
+  {
+   "menu": "plan",
+   "type": "팟캐스트",
+   "roles": [
+    "pm",
+    "planner"
+   ],
+   "title": "How Google structures its product team, prototypes, and ships fast at scale",
+   "title_ko": "구글 검색 제품팀이 팀을 꾸리고 시제품을 만들어 빠르게 출시하는 방식",
+   "source": "Mind the Product",
+   "url": "https://www.mindtheproduct.com/how-google-structures-its-product-team-prototypes-and-ships-fast-at-scale-soufi-esmaeilzadeh-product-director-google-search/",
+   "date": "2026-10-14",
+   "summary": "구글 검색의 AI 경험 담당 제품 책임자가 가설에서 거친 시제품, 실제 데이터 데모, 소규모 베타로 빠르게 넘어가는 진행 방식을 설명한다. 만들기 전에 좋은 결과와 나쁜 결과의 기준을 먼저 정하고, 선임 리드 한 명과 소수 실무자로 된 작은 팀을 꾸리며, 문제 영역은 2~3년 유지하되 방법은 몇 달마다 바꾼다고 한다. 평가 버튼/후속 불만/베타 보고/사용자 조사를 묶어 개인화 실패를 찾는 방법도 다룬다.",
+   "why": "리테일 앱 신규 기능을 문서 논쟁 대신 시제품과 소규모 베타로 검증하고 출시 전 품질 기준을 먼저 합의하는 진행 틀로 쓸 수 있다.",
+   "lang": "en",
+   "id": "2026-10-22-plan-48",
+   "issue": "2026-10-22"
+  },
+  {
+   "menu": "plan",
+   "type": "아티클/블로그",
+   "roles": [
+    "pm"
+   ],
+   "title": "Re-engineering the PM-PMM handoff: A case study in process transformation",
+   "title_ko": "PM과 프로덕트 마케팅 사이 인수인계를 다시 설계한 사례",
+   "source": "Mind the Product",
+   "url": "https://www.mindtheproduct.com/re-engineering-the-pm-pmm-handoff-a-case-study-in-process-transformation/",
+   "date": "2026-10-15",
+   "summary": "채권 회수 팀용 핀테크 SaaS 회사가 새 기능 묶음을 내놓은 뒤 고객이 기존 업무 흐름과 연결하지 못하자 PM과 마케팅의 협업 방식을 바꾼 과정이다. 마케팅이 고객 발견 인터뷰에 들어가고, 데모와 온보딩을 기능 나열 대신 고객 계정 하나를 처리하는 업무 흐름 중심으로 바꿨으며, 영업이 성과를 설명하지 못하자 출시를 멈추고 대상 고객과 핵심 성과부터 다시 맞췄다. 범위는 제품, 메시지는 마케팅, 출시 준비는 지정된 출시 책임자가 정하는 결정 구조를 두었고, 글쓴이는 전후 수치가 없다고 밝힌다.",
+   "why": "리테일 앱 신기능 출시 때 기획/마케팅/영업 사이 역할을 나누고 출시 준비 책임자를 따로 두는 출시 체크 구조로 참고할 수 있다.",
+   "lang": "en",
+   "id": "2026-10-22-plan-49",
+   "issue": "2026-10-22"
+  },
+  {
+   "menu": "plan",
+   "type": "팟캐스트",
+   "roles": [
+    "pm",
+    "qa"
+   ],
+   "title": "Evals, Analytics, and How to escape the feature factory",
+   "title_ko": "평가(evals)를 새 요구사항 문서로: 분석 솔루션 회사의 AI 제품 운영",
+   "source": "Mind the Product",
+   "url": "https://www.mindtheproduct.com/evals-analytics-and-how-to-escape-the-feature-factory-francois-lopitaux-svp-product-management-thought-spot/",
+   "date": "2026-10-06",
+   "summary": "분석 솔루션 회사 ThoughtSpot의 제품 책임자가 AI로 개발 속도가 2~3배 빨라졌다는 회사 자체 추정과 함께 AI 기능을 운영하는 방식을 설명한다. 좋은 결과와 피해야 할 결과를 평가 세트로 정의해 모델이나 기능이 바뀔 때마다 돌리는 것을 요구사항 문서처럼 쓰고, '신규 고객', '매출' 같은 업무 용어는 시맨틱 레이어로 고정해 답이 흔들리지 않게 한다. 채택률과 재사용률을 주 지표로 보고, 대화형 에이전트를 세 번째 판까지 만들면서 옛 판을 걷어내는 일도 중요하다고 말한다.",
+   "why": "리테일 앱에 AI 검색/상담 기능을 넣을 때 기대 결과를 평가 세트로 정의해 요구사항과 회귀 기준으로 함께 쓰는 방법으로 참고할 수 있다.",
+   "lang": "en",
+   "id": "2026-10-22-plan-50",
+   "issue": "2026-10-22"
+  },
+  {
+   "menu": "plan",
+   "type": "출시/업데이트",
+   "roles": [
+    "qa",
+    "fe"
+   ],
+   "title": "Cypress 16.2.0 changelog",
+   "title_ko": "Cypress 16.2.0: 역할 기반 조회 cy.getByRole 추가와 회귀 버그 수정",
+   "source": "Cypress",
+   "url": "https://docs.cypress.io/app/references/changelog#16-2-0",
+   "date": "2026-10-13",
+   "summary": "Cypress 16.2.0이 10월 13일 나왔고, ARIA 역할과 접근 가능한 이름으로 요소를 찾는 cy.getByRole이 추가됐다. 숨은 요소는 기본으로 건너뛰며 hidden 옵션을 줘야 찾는다. 16.0.0 이후 크롬 계열에서 클라이언트 인증서가 전달되지 않던 문제, cy.request로 바꾼 쿠키가 다음 이동 때 옛 값으로 전송되던 문제, cy.go가 페이지 로드 전에 끝나던 문제 등이 함께 고쳐졌다.",
+   "why": "리테일 웹 E2E 테스트의 셀렉터를 CSS 클래스 대신 역할과 이름 기준으로 바꿔 화면 개편에도 덜 깨지고 접근성 점검도 겸하는 데 쓸 수 있다.",
+   "lang": "en",
+   "id": "2026-10-22-plan-51",
+   "issue": "2026-10-22"
+  },
+  {
+   "menu": "plan",
+   "type": "출시/업데이트",
+   "roles": [
+    "qa",
+    "fe"
+   ],
+   "title": "Playwright Release notes: Version 1.64",
+   "title_ko": "Playwright 1.64: 테스트 무작위 순서 실행, 숨은 iframe 처리 변경 등",
+   "source": "Playwright",
+   "url": "https://playwright.dev/docs/release-notes",
+   "date": "2026-10-07",
+   "summary": "Playwright 1.64가 10월 7일 나왔고, 시드로 순서를 재현할 수 있는 --shuffle 무작위 실행, 기본 실행에서 뺄 수 있는 프로젝트 옵션, 로케이터 범위를 좁히는 Locator.within() 등이 추가됐다. 호환성이 바뀌는 변경도 있어 기기 설정의 화면 크기가 window.screen과 미디어 쿼리에 반영되고, 숨은 iframe 안 요소는 숨김으로 처리되며, --update-snapshots=missing은 이제 테스트를 통과시킨다. 브라우저는 Chromium 156, Firefox 157, WebKit 27.2 기준이다.",
+   "why": "리테일 웹 회귀 테스트를 1.64로 올리기 전에 모바일 기기 에뮬레이션 결과와 iframe 결제창 테스트가 달라지는지 점검하고, 무작위 실행으로 순서 의존 테스트를 찾는 데 쓸 수 있다.",
+   "lang": "en",
+   "id": "2026-10-22-plan-52",
+   "issue": "2026-10-22"
+  },
+  {
+   "menu": "ai",
+   "type": "출시/업데이트",
+   "title": "Introducing Claude Duet",
+   "title_ko": "앤트로픽, 먼저 연락하는 개인 비서 에이전트 '클로드 듀엣' 연구 미리보기 공개",
+   "source": "Anthropic",
+   "url": "https://claude.com/resources/articles/claude-duet",
+   "date": "2026-10-21",
+   "summary": "앤트로픽이 10월 21일 연결된 앱을 지켜보다가 사용자가 챙겨야 할 일을 먼저 알려 주는 에이전트 앱 클로드 듀엣을 연구 미리보기로 공개했다. 매일 아침 주요 항목 요약을 보내고 하루 동안 앱을 살피다 필요할 때만 메시지를 보내며, 메시지 발송이나 결제 같은 민감한 작업은 사용자 승인을 먼저 받고 로그인과 승인은 사용자 전용 클라우드 컴퓨터에서 처리해 비밀번호를 직접 보지 않는다. 미국 Pro/Max 구독자 대상 대기자 명단으로만 열렸고 iOS/안드로이드 앱과 웹에서 쓰며, 백그라운드 점검도 기존 사용량 한도에서 차감된다.",
+   "why": "사용자 대신 먼저 움직이는 에이전트가 승인 단계/알림 주기/권한 분리를 어떻게 설계했는지 보여 줘, 우리 앱 알림과 에이전트 위임 화면 기획에 참고할 만하다.",
+   "lang": "en",
+   "id": "2026-10-22-ai-10",
+   "issue": "2026-10-22"
+  },
+  {
+   "menu": "ai",
+   "type": "출시/업데이트",
+   "title": "Contained: Oct 21, 2026 LiteLLM release v1.107.0 Compromised",
+   "title_ko": "LLM 게이트웨이 LiteLLM 1.107.0, 공급망 공격으로 계정 정보 탈취 악성코드 배포",
+   "source": "LiteLLM",
+   "url": "https://docs.litellm.ai/blog/security-incident-oct-21-2026",
+   "date": "2026-10-21",
+   "summary": "여러 LLM을 하나의 API로 묶어 주는 오픈소스 LiteLLM의 1.107.0판이 10월 21일 PyPI에 약 1시간 43분, Docker Hub에 약 2시간 33분 동안 악성 빌드로 배포됐다고 개발사가 공지했다. 공격자는 개발자 3명의 GitHub CLI 인증 정보를 손에 넣었고, 그중 조직 소유자 토큰으로 브랜치 보호를 끄고 변경을 강제 반영한 뒤 배포 워크플로를 돌렸으며, 악성코드는 계정 정보를 빼내고 원격 실행 도구를 내려받았다. 개발사는 1.106.2 등 이전 판으로 고정하고, 해당 환경을 새로 만들고, 프록시에 저장된 모든 모델 공급사 키와 클라우드 권한 등을 교체하라고 안내했다.",
+   "why": "사내 AI 기능이 쓰는 LLM 게이트웨이 하나가 뚫리면 모든 모델 키가 함께 새므로, AI 기능 도입 때 버전 고정과 키 교체 절차를 요건에 넣어야 한다는 사례다.",
+   "lang": "en",
+   "id": "2026-10-22-ai-11",
+   "issue": "2026-10-22"
+  },
+  {
+   "menu": "ai",
+   "type": "기사/리포트",
+   "title": "AI promises productivity, but for managers, it's mostly a headache for now, says new survey",
+   "title_ko": "AI 도입 뒤 관리자 절반 이상 '직원 성과 평가가 더 어려워졌다'",
+   "source": "TechCrunch",
+   "url": "https://techcrunch.com/2026/10/21/ai-promises-productivity-but-for-managers-its-mostly-a-headache-for-now-says-new-survey/",
+   "date": "2026-10-21",
+   "summary": "업무관리 소프트웨어 기업 먼데이닷컴이 의뢰한 벤더 의뢰 조사로, 닐슨이 7개국 임원/관리자 1700명에게 물은 결과 절반 이상이 AI 도입 뒤 직원의 일을 평가하기가 더 어려워졌다고 답했다. 78%는 AI 도입 후 평가 방식을 바꿨고, 57%는 조직 안 도구가 전보다 많아졌다고 했으며 AI 인프라가 완전히 정리됐다는 응답은 29%에 그쳤다. 58%는 1년 안에 사람보다 AI 에이전트를 더 많이 관리하게 될 것으로 봤고, 46%는 에이전트 행동을 통제하지 못할까 걱정했다.",
+   "why": "AI로 산출물이 늘수록 검토와 평가 부담이 관리자에게 몰린다는 수치라, 팀에 AI 도구를 들일 때 검수 기준과 책임 범위를 먼저 정해 둘 근거가 된다.",
+   "lang": "en",
+   "id": "2026-10-22-ai-12",
+   "issue": "2026-10-22"
+  },
+  {
+   "menu": "ai",
+   "type": "기사/리포트",
+   "title": "공정위, 'AI 워싱' 광고 기준 마련…가상후기·딥페이크도 판단 대상",
+   "title_ko": "공정위, 'AI 워싱' 막는 인공지능 표시광고 가이드라인 초안 공개",
+   "source": "ZDNet Korea",
+   "url": "https://zdnet.co.kr/view/?no=20261022093913",
+   "date": "2026-10-22",
+   "summary": "공정위는 AI가 없거나 보조 역할에 그치는데 AI 제품처럼 알리는 'AI 워싱', AI로 만든 가상 인물 후기, 딥페이크 광고를 판단하는 '인공지능 관련 표시광고 가이드라인' 초안을 10월 22일 공개하고 11월 11일까지 의견을 받는다. 4개 위반 유형에 16개 사례를 담았고, 성능을 내세울 때는 검증 가능한 수치와 시험 조건을 밝히도록 했다. 법적 구속력은 없지만 사업자가 광고 전 점검할 4단계 8개 항목 체크리스트도 함께 내놨다.",
+   "why": "상품 상세와 기획전에서 'AI 추천', AI 생성 모델 이미지/후기를 쓸 때 표기 문구와 근거 자료를 미리 정해 둬야 한다.",
+   "lang": "ko",
+   "id": "2026-10-22-ai-13",
+   "issue": "2026-10-22"
+  },
+  {
+   "menu": "it",
+   "type": "기사/리포트",
+   "topic": "규제/보안",
+   "title": "내 명함이 남의 명함첩에... 리멤버 개인정보 일부 유출에 개보위 조사 착수",
+   "title_ko": "리멤버, 회원 명함 정보가 다른 이용자 명함첩에 노출돼 개인정보위 조사 착수",
+   "source": "보안뉴스",
+   "url": "https://www.boannews.com/news/articleView.html?idxno=146582",
+   "date": "2026-10-21",
+   "summary": "명함 관리 서비스 리멤버에서 10월 12일 명함 자동 입력 지연을 고치던 중 특정 시간대에 등록된 명함이 다른 이용자의 명함첩에 보이는 사고가 났다. 이름/회사/직함/휴대전화/이메일 등 최대 8개 항목이 노출됐고, 회사는 일시적 시스템 오류라며 해킹은 부인했다. 개인정보위는 14일 신고를 받고 정식 조사에 들어갔으며, 회사는 15일 이메일로 대상 회원에게 알렸다.",
+   "why": "장애 복구용 긴급 배포가 개인정보 노출로 번질 수 있으니, 데이터 처리 로직 수정 때 노출 범위 점검과 유출 통지 절차를 기획 단계 체크리스트에 넣어 둘 만하다.",
+   "lang": "ko",
+   "id": "2026-10-22-it-07",
+   "issue": "2026-10-22"
+  },
+  {
+   "menu": "it",
+   "type": "기사/리포트",
+   "topic": "규제/보안",
+   "title": "[속보] 연세대 포털 해킹, 학생 등 1만여명 개인정보 유출… 수사의뢰",
+   "title_ko": "연세대 포털 해킹으로 재학생/졸업생 1만여 명 개인정보 유출",
+   "source": "세계일보",
+   "url": "https://www.segye.com/newsView/20261022506822",
+   "date": "2026-10-22",
+   "summary": "연세대 정보통신처는 외부 공격자가 포털 서비스에 비인가 접근해 재학생과 졸업생 등 1만여 명의 학번/휴대전화 번호/이메일/일부 시스템 관리 정보가 빠져나갔다고 10월 22일 밝혔다. 학교는 주민등록번호 같은 고유식별정보와 민감정보는 포함되지 않았다고 설명했다. 유출 경로를 차단하고 수사를 의뢰했으며, 같은 날 오후 1시부터 홈페이지 공지사항에서 개인별 유출 항목을 확인할 수 있게 한다고 밝혔다.",
+   "why": "개인별 유출 항목을 따로 조회해 주는 공지 방식은 회원 서비스에서 유출 안내 화면을 설계할 때 참고할 수 있다.",
+   "lang": "ko",
+   "id": "2026-10-22-it-08",
+   "issue": "2026-10-22"
+  },
+  {
+   "menu": "it",
+   "type": "기사/리포트",
+   "topic": "빅테크/서비스 동향",
+   "title": "\"카톡 불편한 점 직접 말한다\"…카카오, 이용자 의견 창구 신설",
+   "title_ko": "카카오, '카카오톡은 지금' 개편해 이용자 의견 창구 열고 메시지 서식 기능 추가",
+   "source": "파이낸셜뉴스",
+   "url": "https://www.fnnews.com/news/202610211008085190",
+   "date": "2026-10-21",
+   "summary": "카카오는 8월에 연 '카카오톡은 지금' 페이지를 개편해 하단 입력란에서 이용자가 불편이나 개선 의견을 직접 낼 수 있게 했다고 10월 21일 밝혔다. 의견이 실제 개선으로 이어진 사례도 계속 공개한다. 함께 나온 26.9.0 업데이트에는 굵게/기울임/취소선/목록 메시지 서식, 오픈채팅 새 메시지 배지 끄기, 보조 기기 등록 범위 확대가 들어갔다.",
+   "why": "이용자 의견을 받아 반영 사례까지 공개하는 창구 구조는 우리 앱의 고객 의견 수렴 화면과 개선 공지 운영에 그대로 견줘 볼 만하다.",
+   "lang": "ko",
+   "id": "2026-10-22-it-09",
+   "issue": "2026-10-22"
+  },
   {
    "menu": "plan",
    "type": "아티클/블로그",
@@ -2020,7 +2551,7 @@
    "lang": "en"
   }
  ],
- "updated": "2026-10-22T10:01+09:00",
+ "updated": "2026-10-22T10:37+09:00",
  "next": "2026-10-23",
  "seen": [
   "https://2026.feconf.kr/",
@@ -2191,7 +2722,45 @@
   "https://abcnews.com/Technology/wireStory/meta-ordered-pay-new-mexico-25-billion-deceiving-137452515",
   "https://m.etnews.com/20261022000036",
   "https://www.meetup.com/awskrug/events/316792002/",
-  "https://ticketa.co/event/c9xsstcs"
+  "https://ticketa.co/event/c9xsstcs",
+  "https://github.blog/engineering/architecture-optimization/from-2500-requests-to-24-rebuilding-star-history-without-the-stargazers/",
+  "https://blog.cloudflare.com/hyperdrive-mysql/",
+  "https://www.postgresql.org/about/news/postgresql-19-rc-1-released-3409/",
+  "https://www.percona.com/blog/meet-mysql-26-7-a-new-versioning-era-begins/",
+  "https://www.percona.com/blog/when-a-small-change-writes-too-much-how-a-linux-kernel-improvement-can-strike-you-in-pxc-galera-workloads/",
+  "https://oliveyoung.tech/2026-09-30/decompiler_ai/",
+  "https://aws.amazon.com/ko/blogs/tech/cj-oliveyoung-operations-agent-bedrock/",
+  "https://aws.amazon.com/ko/blogs/tech/fnf-llm-gateway-on-amazon-bedrock/",
+  "https://toss.tech/article/spark-connect-on-kubernetes-2",
+  "https://techblog.yogiyo.co.kr/%EC%BD%94%EB%93%9C%EB%A5%BC-%EB%AA%A8%EB%A5%B4%EB%8A%94-%EA%B8%B0%ED%9A%8D%EC%9E%90%EC%9D%98-product-engineer-%EB%8F%84%EC%A0%84-%EC%A4%80%EB%B9%84%EC%99%80-%EC%86%8C%ED%86%B5%EC%9C%BC%EB%A1%9C-%EC%84%9C%EB%B2%84%EB%B6%80%ED%84%B0-%EC%95%B1%EA%B9%8C%EC%A7%80-f6c1db423de9",
+  "https://toss.tech/article/53545",
+  "https://yozm.wishket.com/magazine/detail/4001",
+  "https://techblog.gccompany.co.kr/%EC%97%AC%EA%B8%B0%EC%96%B4%EB%95%8C-%ED%95%B4%EC%99%B8%ED%88%AC%EC%96%B4-%ED%94%84%EB%A1%A0%ED%8A%B8%EC%97%94%EB%93%9C-%EA%B5%AC%EC%B6%95%EA%B8%B0%EB%A1%9D-056eeab367cc",
+  "https://webkit.org/blog/18438/blocking-identity-resolution-infrastructure/",
+  "https://nodejs.org/en/blog/vulnerability/october-2026-security-releases",
+  "https://devblogs.microsoft.com/typescript/announcing-typescript-7-1-beta/",
+  "https://developer.apple.com/news/?id=vvzx6cul",
+  "https://expo.dev/changelog/sdk-58",
+  "https://expo.dev/blog/teamreach-ota-updates-relaunch",
+  "https://www.mindtheproduct.com/how-google-structures-its-product-team-prototypes-and-ships-fast-at-scale-soufi-esmaeilzadeh-product-director-google-search/",
+  "https://www.mindtheproduct.com/re-engineering-the-pm-pmm-handoff-a-case-study-in-process-transformation/",
+  "https://www.mindtheproduct.com/evals-analytics-and-how-to-escape-the-feature-factory-francois-lopitaux-svp-product-management-thought-spot/",
+  "https://docs.cypress.io/app/references/changelog#16-2-0",
+  "https://playwright.dev/docs/release-notes",
+  "https://claude.com/resources/articles/claude-duet",
+  "https://docs.litellm.ai/blog/security-incident-oct-21-2026",
+  "https://techcrunch.com/2026/10/21/ai-promises-productivity-but-for-managers-its-mostly-a-headache-for-now-says-new-survey/",
+  "https://zdnet.co.kr/view/?no=20261022093913",
+  "https://www.boannews.com/news/articleView.html?idxno=146582",
+  "https://www.segye.com/newsView/20261022506822",
+  "https://www.fnnews.com/news/202610211008085190",
+  "https://www.meetup.com/cloud-native-computing-seoul/events/317043715/",
+  "https://www.meetup.com/awskrug/events/317007691/",
+  "https://www.meetup.com/awskrug/events/317046772/",
+  "https://www.meetup.com/awskrug/events/316937476/",
+  "https://event-us.kr/owasp/event/133675",
+  "https://2026.fossforall.org/en/",
+  "https://www.meetup.com/seoul-pyladies-meetup/events/317021466/"
  ],
  "events": [
   {
@@ -2435,7 +3004,7 @@
    "place": "서울 강남 센터필드 12층",
    "menu": "ai",
    "reg": "밋업에서 참석 신청, 참가 신청과 입금은 10/22 (목) 09:00까지",
-   "reg_status": "신청 중",
+   "reg_status": "신청 마감",
    "fee": "유료(5,000원)",
    "summary": "AWSKRUG가 10월 27일 저녁 7시 강남 센터필드에서 AI 엔지니어링 소모임을 연다. Amazon Bedrock 기반 문서 처리 파이프라인과 업무 흐름을 실행하는 AI 에이전트 구축 사례를 다룬다.",
    "why": "표/이미지/스캔본이 섞인 문서를 AI가 처리하는 구조를 알 수 있어 어드민 업무 자동화 기획에 참고가 된다.",
@@ -2495,6 +3064,27 @@
    ]
   },
   {
+   "id": "ev-20261028-k8s-korea-meetup",
+   "title": "Kubernetes Korea Group 밋업 (2026년 10월 28일, 삼성동 오픈소스컨설팅 2층)",
+   "title_ko": "쿠버네티스 코리아 그룹 10월 밋업",
+   "host": "Cloud Native Computing & K8S Korea",
+   "start": "2026-10-28",
+   "end": "2026-10-28",
+   "place": "서울 강남구 삼성동 오픈소스컨설팅 2층 세미나실",
+   "menu": "plan",
+   "roles": [
+    "be"
+   ],
+   "reg": "Meetup에서 신청한 뒤 참가비 입금, 정원 30명이 차서 대기 신청만 가능",
+   "reg_status": "신청 마감",
+   "fee": "10,000원(식사 포함)",
+   "summary": "쿠버네티스 커뮤니티가 10월 28일 저녁 삼성동에서 여는 밋업이다. 쿠버네티스 위에서 돌아가는 AI 에이전트 생태계를 KServe, K8sGPT 같은 프로젝트로 정리하는 발표와, AI 에이전트로 플랫폼 구축과 검증을 자동화한 경험 발표가 이어진다.",
+   "why": "서버 운영에 AI 에이전트를 붙일 때 어떤 도구가 쓰이는지 기획자가 흐름을 잡아 두기 좋다.",
+   "url": "https://www.meetup.com/cloud-native-computing-seoul/events/317043715/",
+   "lang": "ko",
+   "added": "2026-10-22"
+  },
+  {
    "title": "WOOWACON 2026",
    "title_ko": "우아콘 2026",
    "host": "우아한형제들",
@@ -2543,6 +3133,28 @@
     "pm",
     "be"
    ]
+  },
+  {
+   "id": "ev-20261029-awskrug-security-casa",
+   "title": "AWSKRUG #Security 소모임 - CASA AL1 보안인증 취득기 및 AWS RAG 보안 사례 (10월 29일)",
+   "title_ko": "AWSKRUG 보안 소모임: CASA AL1 인증 취득기와 RAG 보안 사례",
+   "host": "AWSKRUG",
+   "start": "2026-10-29",
+   "end": "2026-10-29",
+   "place": "서울 강남구 테헤란로 231 센터필드 EAST 18층",
+   "menu": "plan",
+   "roles": [
+    "be",
+    "qa"
+   ],
+   "reg": "Meetup에서 참석 신청 후 입금, 10/26 (월) 23:59까지, 마감 뒤 환불 불가",
+   "reg_status": "신청 중",
+   "fee": "10,000원",
+   "summary": "AWS 한국 사용자 모임 보안 소모임이 10월 29일 저녁 강남에서 연다. 앱 보안 인증인 CASA AL1의 48개 평가 항목을 준비한 과정과, KISA AI 보안 안내서를 기준으로 Bedrock RAG 보안 기준을 세우고 운영을 입증하는 방법을 발표한다.",
+   "why": "AI 검색이나 상담 기능을 넣을 때 보안 심의에서 무엇을 요구받는지 미리 알 수 있다.",
+   "url": "https://www.meetup.com/awskrug/events/317007691/",
+   "lang": "ko",
+   "added": "2026-10-22"
   },
   {
    "id": "ev-20261029-mongodb-seoul-6",
@@ -2700,6 +3312,49 @@
     "planner",
     "pm"
    ]
+  },
+  {
+   "id": "ev-20261104-kiro-korea-users",
+   "title": "Kiro 한국 사용자 모임 (2026-11)",
+   "title_ko": "Kiro 한국 사용자 모임 11월",
+   "host": "AWSKRUG / Kiro 한국 사용자 모임",
+   "start": "2026-11-04",
+   "end": "2026-11-04",
+   "place": "서울 강남구 테헤란로 231 센터필드",
+   "menu": "plan",
+   "roles": [
+    "be",
+    "fe"
+   ],
+   "reg": "Meetup이 아닌 Luma 페이지(luma.com/atze6fex)에서 신청, 현재 신청 가능",
+   "reg_status": "신청 중",
+   "fee": "무료(Luma 신청 페이지 기준)",
+   "summary": "AI 코딩 도구 Kiro 사용자 모임이 11월 4일 저녁 강남에서 열린다. 요구사항 정의부터 설계, 작업 분해, 구현까지 스펙 주도 개발 흐름을 실습하는 입문 세션과, 멀티 에이전트를 쓰는 데스크톱 앱 Kiro Crew를 깊게 다루는 세션이 있다.",
+   "why": "요구사항 문서가 AI 코딩 도구의 입력이 되는 방식이라 기획 문서를 어떻게 써야 할지 감을 잡을 수 있다.",
+   "url": "https://www.meetup.com/awskrug/events/317046772/",
+   "lang": "ko",
+   "added": "2026-10-22"
+  },
+  {
+   "id": "ev-20261105-awskrug-junior",
+   "title": "AWSKRUG #Junior 소모임 - 보안 기반 DevOps 경력기 및 GitHub for ML (11월 5일)",
+   "title_ko": "AWSKRUG 주니어 소모임: 보안에서 DevOps로, Hugging Face 실전",
+   "host": "AWSKRUG",
+   "start": "2026-11-05",
+   "end": "2026-11-05",
+   "place": "서울 강남구 테헤란로 231 센터필드 EAST 18층",
+   "menu": "plan",
+   "roles": [
+    "be"
+   ],
+   "reg": "Meetup에서 이름/소속/연락처를 내고 입금, 신청과 입금/환불은 10/30 (금)까지",
+   "reg_status": "신청 중",
+   "fee": "7,000원",
+   "summary": "AWS 한국 사용자 모임 주니어 소모임이 11월 5일 저녁 강남에서 연다. 보안 담당에서 DevOps 엔지니어로 옮긴 경력 전환기와, Hugging Face 생태계를 실전 시연과 함께 소개하는 발표로 꾸린다.",
+   "why": "주니어 개발자 대상 모임이라 기획자는 팀 신규 인력 교육 자료를 찾을 때 참고할 만하다.",
+   "url": "https://www.meetup.com/awskrug/events/316937476/",
+   "lang": "ko",
+   "added": "2026-10-22"
   },
   {
    "id": "ev-20261105-exem-pg-wait",
@@ -2898,6 +3553,72 @@
    "roles": [
     "designer"
    ]
+  },
+  {
+   "id": "ev-20261128-foss-for-all-2026",
+   "title": "FOSS for All Conference 2026",
+   "title_ko": "FOSS for All 컨퍼런스 2026",
+   "host": "FOSS for All",
+   "start": "2026-11-28",
+   "end": "2026-11-28",
+   "place": "서울 AWS Korea 센터필드 EAST 18층",
+   "menu": "plan",
+   "roles": [
+    "be",
+    "fe"
+   ],
+   "reg": "공식 페이지의 티켓 구매 링크(티켓타코)로 신청, 10/11 접수 시작",
+   "reg_status": "신청 중",
+   "fee": "기본 티켓 20,000원, 후원/비즈니스 티켓 각 100,000원",
+   "summary": "오픈소스 단체 FOSS for All이 11월 28일 서울에서 여는 컨퍼런스다. 오픈소스 기술과 거버넌스, 문서화, 커뮤니티 운영, 실제 도입 사례를 기조연설과 발표, 워크숍으로 다룬다.",
+   "why": "서비스에 오픈소스를 들일 때 라이선스와 운영 부담을 기획 단계에서 따져 볼 근거가 된다.",
+   "url": "https://2026.fossforall.org/en/",
+   "lang": "ko",
+   "added": "2026-10-22"
+  },
+  {
+   "id": "ev-20261128-owasp-korea-day",
+   "title": "OWASP Korea Day",
+   "title_ko": "OWASP 코리아 데이 2026",
+   "host": "OWASP Seoul Chapter",
+   "start": "2026-11-28",
+   "end": "2026-11-28",
+   "place": "서울 강남구 영동대로96길 20 스페이스쉐어 삼성역센터 B1",
+   "menu": "plan",
+   "roles": [
+    "be",
+    "fe",
+    "qa"
+   ],
+   "reg": "이벤터스에서 신청, 11/27 (금) 23:30까지",
+   "reg_status": "신청 중",
+   "fee": "일반 10,000원, OWASP 활성 회원 5,000원",
+   "summary": "웹 보안 커뮤니티 OWASP 서울 지부가 11월 28일 삼성역 인근에서 하루 행사를 연다. AI가 강해지며 늘어난 보안 위협에 대비해 현업 경험을 나누는 자리라고 소개하며, 세션 목록은 아직 공개되지 않았다.",
+   "why": "앱/웹 취약점 대응이 기획 일정과 정책에 어떤 영향을 주는지 현업 사례로 들을 수 있다.",
+   "url": "https://event-us.kr/owasp/event/133675",
+   "lang": "ko",
+   "added": "2026-10-22"
+  },
+  {
+   "id": "ev-20261129-pyladies-asia-2026",
+   "title": "PyLadies Asia Conference 2026",
+   "title_ko": "파이레이디스 아시아 컨퍼런스 2026",
+   "host": "PyLadies Seoul",
+   "start": "2026-11-29",
+   "end": "2026-11-29",
+   "place": "서울 강남구 테헤란로 231 센터필드 AWS 18층",
+   "menu": "plan",
+   "roles": [
+    "be"
+   ],
+   "reg": "Meetup에서 신청 후 이메일 인증, 선착순 200명",
+   "reg_status": "신청 중",
+   "fee": "일반 40,000원, 학생/취업준비생 무료",
+   "summary": "파이썬 커뮤니티 PyLadies 서울이 11월 29일 강남에서 아시아 컨퍼런스를 연다. 기조연설 1개와 발표 18개, 튜토리얼과 스프린트로 생성형 AI, 데이터 시각화, 오픈소스, gRPC, HTTP/3 같은 주제를 다룬다.",
+   "why": "데이터 시각화와 생성형 AI 발표가 있어 어드민 지표 화면을 기획할 때 참고할 만하다.",
+   "url": "https://www.meetup.com/seoul-pyladies-meetup/events/317021466/",
+   "lang": "ko",
+   "added": "2026-10-22"
   },
   {
    "title": "소프트웨이브 2026 (제11회 대한민국 소프트웨어대전)",
