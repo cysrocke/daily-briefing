@@ -364,24 +364,6 @@
    ]
   },
   {
-   "id": "2026-10-22-plan-105",
-   "issue": "2026-10-22",
-   "menu": "plan",
-   "type": "아티클/블로그",
-   "title": "Embracing Playful Imperfection with CSS's random() Function",
-   "title_ko": "CSS random() 함수로 자바스크립트 없이 불규칙한 배치 만들기",
-   "source": "Smashing Magazine",
-   "url": "https://www.smashingmagazine.com/2026/10/embracing-playful-imperfection-css-random-function/",
-   "date": "2026-10-20",
-   "summary": "CSS Values and Units Level 5 명세의 random() 함수가 Safari에 들어갔고 Chrome 156에 순차 적용되고 있어, 자바스크립트나 Sass 반복문 없이 CSS 안에서 임의의 값을 만들 수 있게 됐다. 글은 글자마다 기울기를 다르게 준 타이포그래피, 흩어진 카드 배치 같은 데모로 문법과 쓰임새를 보여 주고, 디자인 시스템 안에서 무작위를 어디까지 허용할지 함께 다룬다.",
-   "why": "이벤트/기획전 페이지의 장식용 배치를 이미지나 스크립트 대신 CSS로 처리할 때, 지원 브라우저를 확인하고 대체 스타일을 정하는 기준으로 쓸 수 있다.",
-   "lang": "en",
-   "roles": [
-    "publisher",
-    "designer"
-   ]
-  },
-  {
    "id": "2026-10-22-plan-106",
    "issue": "2026-10-22",
    "menu": "plan",
@@ -3851,7 +3833,7 @@
    "lang": "en"
   }
  ],
- "updated": "2026-10-22T12:00+09:00",
+ "updated": "2026-10-22T12:11+09:00",
  "next": "2026-10-23",
  "seen": [
   "https://2026.feconf.kr/",
