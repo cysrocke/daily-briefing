@@ -1,6 +1,22 @@
 {
  "issues": [
   {
+   "id": "2026-10-25",
+   "highlights": {
+    "ai": "오픈AI가 최상위 모델을 인터넷 없이 학습시키기로 했다. 구글 클라우드는 에이전트마다 격리된 마이크로VM을 주는 실행 서비스를 발표했다. 앤트로픽은 클로드로 오픈소스 라이브러리 123개를 형식 검증했다. 메타 AI 에이전트 뮤즈는 일본에 출시됐다.",
+    "it": "대한항공/아시아나 예약 정보가 수탁사 계정으로 유출된 정황이 나왔다. PHP2Shell을 악용하려는 공격 준비 정황도 포착됐다. 인스타카트는 도어대시와 매각을 논의했다는 보도가 나왔다.",
+    "plan": "NN/g 설문에서 UX 실무자 다수가 AI로 일은 빨라졌지만 반응은 미지근했다. 결과물 품질과 데이터 보안이 AI 도입의 가장 큰 걸림돌로 꼽혔다.",
+    "roles": {
+     "planner": "NN/g 설문에서 UX 실무자 다수가 AI로 일은 빨라졌지만 반응은 미지근했다. 결과물 품질과 데이터 보안이 AI 도입의 가장 큰 걸림돌로 꼽혔다.",
+     "designer": "NN/g 설문에서 UX 실무자 다수가 AI로 일은 빨라졌지만 반응은 미지근했다. 연구자와 디자이너는 PM보다 직업 안정감을 덜 느꼈다.",
+     "publisher": "Safari 27.1이 iPhone Duo 뷰포트 범위와 접힘 상태 API 미리보기를 공개했다. 뷰포트 너비는 382px부터 951px까지 바뀐다.",
+     "fe": "Brotli 디코더 취약점이 Node.js에서 Python과 HTTP 라이브러리로 번졌다. 구글은 Gemini 4 Argon으로 ADK 코드의 세션 준비를 약 40% 빠르게 했다. Safari 27.1은 접힘 상태 API를 미리보기로 넣었다.",
+     "be": "Brotli 디코더 취약점이 Node.js에서 Python과 HTTP 라이브러리로 번졌다. Cloudflare는 일관 해싱 구조를 줄여 메모리 100TB 이상을 회수했다. 구글은 AI 에이전트로 ADK 코드를 11시간 무인 최적화했다.",
+     "dba": "재귀 CTE의 실행 계획을 recursive_worktable_factor로 바로잡는 방법이 나왔다. CloudNativePG 1.31은 DB 계정 비밀번호를 자동 생성하고 주기적으로 바꾼다. 구글 Data Agent Kit은 위험한 DB 작업을 IAM으로 막는다."
+    }
+   }
+  },
+  {
    "id": "2026-10-24",
    "highlights": {
     "ai": "앤트로픽이 클로드 앱에 자동 모드를 기본으로 켠다. 오픈AI는 분류와 선택에 특화한 디시전스 API를 정식 출시했다. 우버는 직원 3만명에게 업무용 에이전트를 전사 도입했다. LLM 프록시 LiteLLM이 공급망 공격으로 악성 버전을 배포했다.",
@@ -85,6 +101,362 @@
   }
  ],
  "items": [
+  {
+   "id": "2026-10-25-plan-01",
+   "issue": "2026-10-25",
+   "menu": "plan",
+   "type": "아티클/블로그",
+   "title": "Gabriele Bartolini: CNPG Recipe 28 - Generated and rotating PostgreSQL user passwords in CloudNativePG 1.31",
+   "title_ko": "CloudNativePG 1.31, PostgreSQL 사용자 비밀번호를 직접 만들고 주기적으로 바꾼다",
+   "source": "Planet PostgreSQL",
+   "url": "https://postgr.es/p/9zS",
+   "date": "2026-10-25",
+   "summary": "CloudNativePG 1.31에 들어갈 기능으로, DatabaseRole이 비밀번호를 스스로 생성해 운영자가 관리하는 Secret에 넣고 정해진 주기로 교체한다. 비밀번호 방식은 generate/secret/external/setNull 네 가지이고, 유효 기간은 PostgreSQL의 VALID UNTIL로 강제한다. 기능은 병합됐지만 아직 정식 출시 전이라 개발 스냅샷에서만 써 볼 수 있다.",
+   "why": "DB 계정 비밀번호를 사람이 만들고 바꾸던 절차를 운영 도구에 맡겨, 정기 교체 같은 보안 점검 항목을 자동으로 맞출 수 있다.",
+   "lang": "en",
+   "roles": [
+    "dba"
+   ]
+  },
+  {
+   "id": "2026-10-25-plan-02",
+   "issue": "2026-10-25",
+   "menu": "plan",
+   "type": "기사/리포트",
+   "title": "Google Optimizes Agent Development Kit's 200K-line Python Codebase Overnight with Gemini 4 Argon",
+   "title_ko": "구글, Gemini 4 Argon에 11시간 무인 작업을 맡겨 20만 줄 ADK 코드 최적화",
+   "source": "InfoQ",
+   "url": "https://www.infoq.com/news/2026/10/google-argon-optimizes-adk/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global",
+   "date": "2026-10-25",
+   "summary": "구글은 약 20만 줄, 800여 개 파일로 된 Agent Development Kit 코드의 성능 개선을 Gemini 4 Argon에 11시간 동안 사람 없이 맡겼다. 저장소 규칙을 .agents/skills 파일로 주고 16,892개 단위 테스트를 돌리게 했으며, 채택된 두 건으로 세션 준비가 약 40%, 패키지 가져오기가 21% 빨라졌다. 나머지 4건은 신뢰성/유지보수/호환성 문제로 리뷰에서 반려됐다.",
+   "why": "AI 코딩 에이전트에 기존 대형 코드를 맡길 때 팀 규칙 문서와 테스트, 사람 리뷰를 어떻게 묶어야 하는지 참고할 수 있다.",
+   "lang": "en",
+   "roles": [
+    "be",
+    "fe"
+   ]
+  },
+  {
+   "id": "2026-10-25-plan-03",
+   "issue": "2026-10-25",
+   "menu": "plan",
+   "type": "기사/리포트",
+   "title": "Google’s Data Agent Kit Hits GA, Splitting Agent Guardrails Between Skills and IAM",
+   "title_ko": "구글 Data Agent Kit 정식 출시, 에이전트의 위험한 DB 작업은 스킬 안내와 IAM 두 겹으로 막는다",
+   "source": "InfoQ",
+   "url": "https://www.infoq.com/news/2026/10/data-agent-kit-ga/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global",
+   "date": "2026-10-24",
+   "summary": "구글이 코딩 에이전트를 15개가 넘는 Google Data Cloud 서비스에 잇는 MCP 도구와 37개 오픈소스 스킬 묶음 Data Agent Kit을 정식 출시했다. DROP TABLE이나 WHERE 없는 DELETE 전에는 사용자 동의를 받으라는 스킬이 들어 있지만 이는 권고이고, 실제 차단은 읽기 전용 서비스 계정이나 IAM 거부 정책으로 한다.",
+   "why": "에이전트에 DB 접근을 줄 때 '하지 말라는 안내'와 '권한으로 막기'를 나눠 설계해야 운영 데이터를 지킬 수 있다.",
+   "lang": "en",
+   "roles": [
+    "dba",
+    "be"
+   ]
+  },
+  {
+   "id": "2026-10-25-plan-04",
+   "issue": "2026-10-25",
+   "menu": "plan",
+   "type": "기사/리포트",
+   "title": "Cloudflare Reclaims 100 TB of RAM by Optimizing Consistent Hashing",
+   "title_ko": "Cloudflare, 일관 해싱 구조를 줄여 메모리 100TB 이상 회수",
+   "source": "InfoQ",
+   "url": "https://www.infoq.com/news/2026/10/cloudflare-hashing-optimization/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global",
+   "date": "2026-10-24",
+   "summary": "Cloudflare는 부하 분산용 일관 해싱 라이브러리 pingora-ketama를 손봐 메모리 사용량을 100TB 넘게 줄였다. 확률 분석으로 서버당 해시 수를 약 90% 줄여도 분산 정확도가 유지됨을 확인했고, 해시 항목도 8바이트에서 6바이트로 줄였다. 해시 링이 바뀌면 캐시가 한꺼번에 무효화되므로 새 링은 기존 링과 함께 단계적으로 배포했다.",
+   "why": "캐시 서버 증설이나 교체 때 해시 링 변경이 원본 서버 트래픽 급증으로 이어지지 않게 단계 배포를 계획하는 데 참고할 수 있다.",
+   "lang": "en",
+   "roles": [
+    "be"
+   ]
+  },
+  {
+   "id": "2026-10-25-plan-05",
+   "issue": "2026-10-25",
+   "menu": "plan",
+   "type": "아티클/블로그",
+   "title": "Christophe Pettus: All Your GUCs in a Row: recursive_worktable_factor",
+   "title_ko": "재귀 CTE가 느릴 때 recursive_worktable_factor 하나로 실행 계획 바로잡기",
+   "source": "Planet PostgreSQL",
+   "url": "https://postgr.es/p/9zP",
+   "date": "2026-10-24",
+   "summary": "PostgreSQL 15부터 있는 recursive_worktable_factor는 재귀 CTE의 작업 테이블 행 수를 비재귀 부분의 몇 배로 볼지 정하는 값으로, 기본값은 10이다. 글의 예시에서 추정이 실제보다 20배 크게 잡혀 병합 조인이 선택되자 4~5초가 걸렸고, 값을 1로 낮추자 인덱스 중첩 루프로 바뀌어 0.6초 안에 끝났다. 적정값은 EXPLAIN의 WorkTable Scan 줄에서 실제 평균 행 수를 비재귀 부분 행 수로 나눠 구한다.",
+   "why": "카테고리 트리나 이력 추적처럼 재귀 쿼리를 쓰는 화면이 느릴 때 전체 설정 대신 쿼리 단위로 조정하는 방법으로 쓸 수 있다.",
+   "lang": "en",
+   "roles": [
+    "dba"
+   ]
+  },
+  {
+   "id": "2026-10-25-plan-06",
+   "issue": "2026-10-25",
+   "menu": "plan",
+   "type": "출시/업데이트",
+   "title": "WebKit Features for Safari 27.1",
+   "title_ko": "Safari 27.1 WebKit 기능: iPhone Duo 뷰포트 크기와 접힘 상태 API 미리보기",
+   "source": "WebKit blog",
+   "url": "https://webkit.org/blog/18486/webkit-features-for-safari-27-1/",
+   "date": "2026-10-24",
+   "summary": "iPhone Duo와 함께 나온 Safari 27.1은 다른 iPhone과 같은 WebKit 엔진을 쓰며, 뷰포트 너비는 382~951px, 높이는 368~902px 범위에서 바뀐다. 개발자용으로 Device Posture API와 Viewport Segments API를 기능 플래그 뒤 미리보기로 넣었다. Xcode 27.1 이상의 시뮬레이터로 기기 없이 시험할 수 있다.",
+   "why": "접히는 화면의 바깥/안쪽 화면과 두 창 분할까지 뷰포트 범위가 정리돼 있어 반응형 분기점 점검표로 바로 쓸 수 있다.",
+   "lang": "en",
+   "roles": [
+    "publisher",
+    "fe"
+   ]
+  },
+  {
+   "id": "2026-10-25-plan-07",
+   "issue": "2026-10-25",
+   "menu": "plan",
+   "type": "기사/리포트",
+   "title": "AI in UX: Work Is Faster, But Practitioners Have Mixed Feelings",
+   "title_ko": "NN/g 설문: UX 실무자 521명, AI로 일은 빨라졌지만 반응은 미지근하다",
+   "source": "Nielsen Norman Group",
+   "url": "https://www.nngroup.com/articles/ai-in-ux-survey-26/?utm_source=rss&utm_medium=feed&utm_campaign=rss-syndication",
+   "date": "2026-10-24",
+   "summary": "NN/g가 UX 실무자 521명을 조사한 결과 99%가 업무에서 생성형 AI를 쓸 수 있었고 66%가 에이전트형 도구를 하나 이상 썼다. 도입 걸림돌은 결과물 품질(54%)과 데이터 보안/개인정보(50%)였으며, AI는 코드 작성과 자료 조사에 많이 쓰이고 사용자와 직접 만나는 일에는 적게 쓰였다. 업무 감정 점수는 5점 만점에 3.57점이었고 연구자와 디자이너는 PM보다 직업 안정감을 덜 느꼈다.",
+   "why": "AI를 디자인 업무에 들일 때 어떤 작업에서 시간이 줄고 어디서 검수 부담이 생기는지 팀 도입 기준을 잡는 근거로 쓸 수 있다.",
+   "lang": "en",
+   "roles": [
+    "designer",
+    "planner"
+   ]
+  },
+  {
+   "id": "2026-10-25-plan-08",
+   "issue": "2026-10-25",
+   "menu": "plan",
+   "type": "아티클/블로그",
+   "title": "Node2Shell에서 HTTP2Shell로 확대, 다수 HTTP 라이브러리와 앱에 영향",
+   "title_ko": "Node2Shell이 HTTP2Shell로 번졌다: Brotli 디코더 취약점이 Python과 HTTP 라이브러리까지",
+   "source": "GeekNews / Aikido",
+   "url": "https://news.hada.io/topic?id=35927",
+   "date": "2026-10-25",
+   "summary": "Google Brotli 디코더의 범위 밖 쓰기 취약점 CVE-2026-111497(CVSS 9.2)이 Node.js에 이어 Python 패키지와 curl, Envoy, Istio 같은 HTTP 소프트웨어에도 영향을 주는 것으로 확인됐다. 조작된 압축 데이터를 풀면 메모리 손상이나 원격 코드 실행으로 이어질 수 있고, 악성 서버 응답으로 클라이언트도 공격받을 수 있다. Python에서는 requests/urllib3가 전이 의존성으로 설치된 Brotli를 자동으로 쓰는데, 10월 23일 기준 pip-audit과 Dependabot이 이를 잡지 못했다.",
+   "why": "Brotli를 직접 쓰지 않아도 의존성으로 들어와 있을 수 있어, 서버와 빌드 이미지의 Brotli/Node.js 버전을 함께 점검해야 한다.",
+   "lang": "ko",
+   "roles": [
+    "be",
+    "fe"
+   ]
+  },
+  {
+   "id": "2026-10-25-it-01",
+   "issue": "2026-10-25",
+   "menu": "it",
+   "type": "기사/리포트",
+   "topic": "리테일/커머스",
+   "title": "Instacart reportedly discussed selling itself with DoorDash and Uber",
+   "title_ko": "인스타카트, 도어대시/우버와 매각 논의 보도",
+   "source": "TechCrunch",
+   "url": "https://techcrunch.com/2026/10/24/instacart-reportedly-discussed-selling-itself-with-doordash-and-uber/",
+   "date": "2026-10-25",
+   "summary": "디인포메이션은 장보기 배달 업체 인스타카트가 투자은행을 고용해 선택지를 검토하고 도어대시와 인수 협상을 했다고 보도했다. 블룸버그는 우버와도 논의했지만 우버가 물러났다고 전했고, 매각으로 이어지지 않을 수 있는 초기 단계라고 덧붙였다. 보도 뒤 인스타카트 주가는 9.2% 넘게 올랐고 회사는 논평을 거부했다.",
+   "why": "퀵커머스와 장보기 배달 시장이 대형 플랫폼 중심으로 재편될 수 있다는 신호로, 배송 서비스 제휴 구조를 볼 때 참고할 만하다.",
+   "lang": "en"
+  },
+  {
+   "id": "2026-10-25-it-02",
+   "issue": "2026-10-25",
+   "menu": "it",
+   "type": "기사/리포트",
+   "topic": "빅테크/서비스 동향",
+   "title": "애플 ‘아이폰 듀오’, 출시 첫날부터 품귀…배송은 내년 1월",
+   "title_ko": "아이폰 듀오 출시 첫날 품귀, 온라인 주문 배송은 1월 말로 밀려",
+   "source": "블로터",
+   "url": "https://www.bloter.net/news/articleView.html?idxno=676627",
+   "date": "2026-10-24",
+   "summary": "애플의 첫 폴더블폰 아이폰 듀오가 10월 23일 전 세계에서 판매를 시작했지만 물량이 모자라 여러 시장에서 품귀가 났다고 로이터를 인용해 보도했다. 애플은 사전 주문을 1인당 2대로 제한했고, 예상 배송일은 주문 시작 몇 분 만에 1월 말로 밀렸다. 데이터 업체 나비는 이번 주 초 미국 온라인 주문의 평균 배송 지연이 92일이라고 집계했다.",
+   "why": "새 폼팩터 기기가 실제 사용자에게 퍼지는 속도를 가늠할 수 있어, 접는 화면 대응 일정을 잡을 때 참고할 수 있다.",
+   "lang": "ko"
+  },
+  {
+   "id": "2026-10-25-it-03",
+   "issue": "2026-10-25",
+   "menu": "it",
+   "type": "기사/리포트",
+   "topic": "규제/보안",
+   "title": "대한항공·아시아나 고객정보 유출…예약·발권 맡긴 아마데우스서 비인가 접근",
+   "title_ko": "대한항공/아시아나 예약 정보, 수탁사 아마데우스 계정으로 유출 정황",
+   "source": "데일리시큐",
+   "url": "https://www.dailysecu.com/news/articleView.html?idxno=209037",
+   "date": "2026-10-24",
+   "summary": "대한항공과 아시아나항공은 10월 20일 밤 예약/발권 시스템 운영사 아마데우스로부터 고객 개인정보 유출 정황을 통보받았다. 아마데우스 시스템 계정의 로그인 인증정보를 이용한 비인가 접근으로 알려졌고, 발생 시기는 2023년 8월부터 2026년 9월 사이로 추정된다. 대한항공은 예약번호가 포함됐다고 밝혔고 전체 피해 규모와 추가 항목은 아직 확인되지 않았다.",
+   "why": "외부 수탁 시스템의 계정 관리가 곧 우리 고객정보 보호 범위라는 점에서, 위탁 업체 접근 권한과 통보 절차를 정책에 넣어 둘 필요가 있다.",
+   "lang": "ko"
+  },
+  {
+   "id": "2026-10-25-it-04",
+   "issue": "2026-10-25",
+   "menu": "it",
+   "type": "기사/리포트",
+   "topic": "규제/보안",
+   "title": "북한 해킹조직 라자루스, PHP 취약점 악용해 공격 준비 정황",
+   "title_ko": "PHP2Shell 악용 공격 준비 정황 포착, 정부/금융기관이 우선 표적",
+   "source": "연합뉴스 산업",
+   "url": "https://www.yna.co.kr/view/AKR20261024019600017",
+   "date": "2026-10-24",
+   "summary": "싱가포르 보안 기업 사이퍼마는 폐쇄형 네트워크 I2P에서 한국어를 쓰는 조직원들이 PHP 취약점 PHP2Shell로 전 세계 웹 서버를 공격하려는 계획을 논의한 정황을 포착했다. 정부기관과 금융기관이 최우선 표적이었고 온라인 거래 플랫폼과 물류/항공 분야도 대상에 들었으며, 한국과 미국, 일본 등이 거론됐다. 회사는 북한 라자루스 연계 가능성을 '중간' 신뢰도로 평가했고 직접 연결고리는 확인되지 않았다.",
+   "why": "온라인 거래 플랫폼도 표적 목록에 있어, PHP를 쓰는 외부 연동 페이지나 협력사 사이트의 조치 여부를 확인할 근거가 된다.",
+   "lang": "ko"
+  },
+  {
+   "id": "2026-10-25-it-05",
+   "issue": "2026-10-25",
+   "menu": "it",
+   "type": "기사/리포트",
+   "topic": "규제/보안",
+   "title": "[단독] 한진그룹 IT 서비스 전문기업 한진정보통신 해킹…항공·물류 공급망 보안 위협 우려",
+   "title_ko": "한진정보통신 ITSM 해킹, 이용자 980명 이름/이메일 유출 인정",
+   "source": "데일리시큐",
+   "url": "https://www.dailysecu.com/news/articleView.html?idxno=209036",
+   "date": "2026-10-24",
+   "summary": "한진그룹 IT 서비스 기업 한진정보통신은 10월 23일 IT서비스관리(ITSM) 시스템 이용자 980명의 이름과 이메일 주소가 외부 비인가 접근으로 유출됐다고 밝혔다. 회사는 22일 오전 사고를 인지해 접근 경로를 막고 계정 비밀번호를 초기화했으며 KISA와 개인정보보호위원회에 신고했다. 랜섬웨어 조직 n0n은 21일 다크웹에 고객사별 인력 배치와 협력업체 계정정보도 확보했다고 주장했지만 실제 유출 여부는 확인되지 않았다.",
+   "why": "유지보수 협력사 포털에서 새 나간 이메일이 피싱과 계정 도용으로 이어질 수 있어, 협력사 계정 관리와 이용자 안내 문구를 함께 점검할 사례다.",
+   "lang": "ko"
+  },
+  {
+   "id": "2026-10-25-ai-01",
+   "issue": "2026-10-25",
+   "menu": "ai",
+   "type": "출시/업데이트",
+   "title": "Google Messages rolling out Enhanced Protection mode against spam and scams",
+   "title_ko": "구글 메시지, 제미나이로 사기 문자를 잡는 '강화된 보호' 모드 배포",
+   "source": "9to5Google",
+   "url": "https://9to5google.com/2026/10/23/google-messages-enhanced-protection/",
+   "date": "2026-10-24",
+   "summary": "안드로이드용 구글 메시지가 스팸과 사기를 막는 '강화된 보호' 모드를 배포하기 시작했다. 모르는 발신자와의 대화 맥락은 클라우드 제미나이 모델이 Private AI Compute 환경에서 분석하고, 낯선 링크는 기기 안 Gemini Nano가 누르기 전에 판단한다. 사용자가 직접 켜는 기능이며 현재 베타 버전에서 확인된다.",
+   "why": "문자로 보내는 쿠폰/배송 알림 링크가 사기 탐지에 걸리지 않도록 발신 번호와 링크 도메인 정책을 다시 볼 때다.",
+   "lang": "en"
+  },
+  {
+   "id": "2026-10-25-ai-02",
+   "issue": "2026-10-25",
+   "menu": "ai",
+   "type": "기사/리포트",
+   "title": "Pennsylvania will require labels on AI-generated ads",
+   "title_ko": "미국 펜실베이니아주, AI로 만든 광고에 표시 의무화",
+   "source": "The Verge",
+   "url": "https://www.theverge.com/ai-artificial-intelligence/1018187/pennsylvania-ai-deceptive-advertising-act",
+   "date": "2026-10-25",
+   "summary": "펜실베이니아 주지사가 AI로 크게 고치거나 만든 광고에 같은 형식의 표시를 붙이도록 한 'AI 기만 광고법'에 서명했다. 이미지/영상/음성/텍스트 광고 모두 해당하며 광고를 어디서 만들었는지와 상관없이 적용된다. 다만 '크게 고친'의 기준이 모호하고 패러디/풍자는 예외라 빈틈이 많다는 지적이 나왔다.",
+   "why": "AI로 만든 배너와 상품 이미지에 표시를 붙이는 규제가 늘고 있어, 광고 소재 제작 절차에 표시 여부 확인 단계를 둘지 검토할 만하다.",
+   "lang": "en"
+  },
+  {
+   "id": "2026-10-25-ai-03",
+   "issue": "2026-10-25",
+   "menu": "ai",
+   "type": "기사/리포트",
+   "title": "Block’s new voice model sounds eerily human",
+   "title_ko": "블록, 웃고 쉬는 말투까지 내는 로컬 음성 모델 Dessa 공개",
+   "source": "TechCrunch AI",
+   "url": "https://techcrunch.com/2026/10/24/blocks-new-voice-model-sounds-eerily-human/",
+   "date": "2026-10-25",
+   "summary": "블록이 연구소에서 만든 음성 모델 Dessa를 공개했다. 듣기와 말하기를 동시에 하는 전이중 방식이고, 사람 음성만으로 학습해 웃음이나 머뭇거림 같은 감정 표현을 낸다고 회사는 밝혔다. MacBook M4 Max 이상에서 로컬로 돌아가지만 아직 일반 공개 전이며 안전성 연구자 시험을 먼저 받는다.",
+   "why": "주문/상담 음성 응대를 기기 안에서 돌리는 선택지가 생기고 있어, 음성 주문 화면의 응답 지연과 비용 기준을 다시 잡아 볼 수 있다.",
+   "lang": "en"
+  },
+  {
+   "id": "2026-10-25-ai-04",
+   "issue": "2026-10-25",
+   "menu": "ai",
+   "type": "출시/업데이트",
+   "title": "앤트로픽, 구글 클라우드서 최신 기능 쓰는 '관리형 클로드' 출시",
+   "title_ko": "앤트로픽, 구글 클라우드에서 클로드 플랫폼 전 기능을 쓰는 관리형 서비스 정식 출시",
+   "source": "AI타임스",
+   "url": "https://www.aitimes.com/news/articleView.html?idxno=216613",
+   "date": "2026-10-24",
+   "summary": "앤트로픽이 구글 클라우드에서 자사가 직접 운영하는 클로드 서비스를 정식 출시했다. 구글 클라우드 IAM 인증과 청구서, 사용 약정 차감을 그대로 쓰며, 클로드 플랫폼에 새 기능과 베타가 나오면 같은 날 제공된다. 관리형 에이전트(베타), 코드 실행, 컴퓨터 사용, MCP 커넥터 등을 쓸 수 있다.",
+   "why": "이미 쓰는 클라우드 계정과 결제로 최신 AI 기능을 붙일 수 있어, 사내 AI 도입 시 계약/보안 검토 범위를 줄이는 선택지가 된다.",
+   "lang": "ko"
+  },
+  {
+   "id": "2026-10-25-ai-05",
+   "issue": "2026-10-25",
+   "menu": "ai",
+   "type": "출시/업데이트",
+   "title": "구글 클라우드, 에이전트 전용 '컴퓨팅 엔진' 출시…마이크로VM으로 보안 격리",
+   "title_ko": "구글 클라우드, 에이전트마다 격리된 마이크로VM을 주는 '에이전트 컴퓨트 엔진' 발표",
+   "source": "AI타임스",
+   "url": "https://www.aitimes.com/news/articleView.html?idxno=216608",
+   "date": "2026-10-24",
+   "summary": "구글 클라우드가 AI 에이전트 세션마다 전용 마이크로VM을 할당하는 에이전트 컴퓨트 엔진을 발표했다. 모델을 호출하는 하네스는 샌드박스 밖에 두고 코드/셸/브라우저 실행 환경에는 필요한 명령만 넘기며, 대기 중에는 VM을 체크포인트로 저장해 쉬게 한다. 이미 업무용 제미나이 구동에 쓰이고 있고 고객용은 수개월 안에 프리뷰로 나온다.",
+   "why": "업무 자동화 에이전트를 들일 때 실행 환경 격리와 외부 접근 통제를 요구사항에 어떻게 적을지 기준으로 삼을 수 있다.",
+   "lang": "ko"
+  },
+  {
+   "id": "2026-10-25-ai-06",
+   "issue": "2026-10-25",
+   "menu": "ai",
+   "type": "기사/리포트",
+   "title": "앤트로픽, 클로드로 오픈소스 123개 라이브러리 검증...수십 년 버그도 발견",
+   "title_ko": "앤트로픽, 클로드로 오픈소스 라이브러리 123개를 형식 검증하고 숨은 버그 발견",
+   "source": "AI타임스",
+   "url": "https://www.aitimes.com/news/articleView.html?idxno=216612",
+   "date": "2026-10-24",
+   "summary": "앤트로픽은 정리 증명 업체 시어럼과 함께 클로드로 OSS-Fuzz에 등록된 123개 라이브러리의 테스트 진입점 239곳을 형식 검증했다고 밝혔다. 퍼즈 테스트를 RISC-V 어셈블리 수준의 명제로 바꿔 64MB 미만의 모든 입력에서 충돌 없이 끝남을 증명했고, 증명 코드는 1억8000만 줄에 달했다. 이 과정에서 기존 테스트가 놓친 버그도 찾았다.",
+   "why": "AI가 코드 검증 비용을 크게 낮추고 있어, 결제처럼 오류가 치명적인 영역의 품질 기준을 어디까지 올릴지 다시 볼 수 있다.",
+   "lang": "ko"
+  },
+  {
+   "id": "2026-10-25-ai-07",
+   "issue": "2026-10-25",
+   "menu": "ai",
+   "type": "출시/업데이트",
+   "title": "구글, 터미널서 AI 에이전트 다루는 '제미나이 API CLI' 오픈소스 공개",
+   "title_ko": "구글, 터미널에서 제미나이 API를 부르는 'Gemini API CLI' 실험판 공개",
+   "source": "AI타임스",
+   "url": "https://www.aitimes.com/news/articleView.html?idxno=216607",
+   "date": "2026-10-24",
+   "summary": "구글이 터미널에서 제미나이 API의 주요 기능을 쓰는 명령줄 도구 Gemini API CLI를 실험적 프리뷰로 공개했다. 의존성 없는 실행 파일로 맥OS/리눅스/윈도우에서 돌아가며, 개발자와 셸 기반 에이전트가 모델 탐색, 이미지/영상/음악 생성, 문서 분석, 음성 전사를 명령어로 실행할 수 있다.",
+   "why": "에이전트가 SDK 스크립트 없이 이미지/음성 생성까지 바로 부를 수 있어, 상품 소재 제작 같은 반복 작업 자동화 범위를 넓혀 볼 수 있다.",
+   "lang": "ko"
+  },
+  {
+   "id": "2026-10-25-ai-08",
+   "issue": "2026-10-25",
+   "menu": "ai",
+   "type": "기사/리포트",
+   "title": "메타 '뮤즈' 아시아 첫발...네이버 \"국내 도입 시 허용 여부 검토\"",
+   "title_ko": "메타 AI 에이전트 '뮤즈' 일본 출시, 국내 출시는 미정",
+   "source": "AI타임스",
+   "url": "https://www.aitimes.com/news/articleView.html?idxno=216600",
+   "date": "2026-10-24",
+   "summary": "메타가 10월 23일 개인 AI 에이전트 뮤즈의 일본 서비스를 시작했다. 9월 북미 출시 뒤 첫 해외 진출이며, 중고거래 메루카리와 티켓피아 등 현지 서비스 연동도 추진한다. 국내 출시 일정은 정해지지 않았고, 네이버는 뮤즈 같은 외부 에이전트가 들어오면 자사 서비스 접근 허용 여부를 검토하겠다고 밝혔다.",
+   "why": "외부 쇼핑 에이전트가 우리 앱/웹에 접근할 때 허용할지, 어떤 경로로 받을지 정책을 미리 정해 둘 때가 가까워지고 있다.",
+   "lang": "ko"
+  },
+  {
+   "id": "2026-10-25-ai-09",
+   "issue": "2026-10-25",
+   "menu": "ai",
+   "type": "기사/리포트",
+   "title": "딥시크·미니맥스, 중국 정부 AI 모델 해외 수출 승인 획득",
+   "title_ko": "딥시크/미니맥스, 중국 정부의 AI 모델 해외 수출 등록 마쳐",
+   "source": "AI타임스",
+   "url": "https://www.aitimes.com/news/articleView.html?idxno=216606",
+   "date": "2026-10-24",
+   "summary": "중국 관영 CCTV 계열 계정은 10월 22일 딥시크와 미니맥스가 AI 모델의 오픈소스 공개와 해외 사용을 위한 등록 절차를 마쳤다고 발표했다. 중국 상무부는 16일 모델/에이전트/컴퓨팅 클러스터 등 23개 AI 기술 분야의 수출 통제안을 내놓았지만, 오픈소스 수출에는 간소화된 허가를 적용하겠다는 입장이다. API나 SaaS 형태의 서비스는 통제 대상에서 빠질 수 있다고 밝혔다.",
+   "why": "중국 오픈소스 모델을 쓰거나 검토하는 경우 공급 지속성과 규제 변화를 함께 따져 봐야 한다.",
+   "lang": "ko"
+  },
+  {
+   "id": "2026-10-25-ai-10",
+   "issue": "2026-10-25",
+   "menu": "ai",
+   "type": "기사/리포트",
+   "title": "OpenAI now trains its frontier AI models with no internet access",
+   "title_ko": "오픈AI, 최상위 모델을 인터넷 없이 학습시키기로",
+   "source": "The Verge",
+   "url": "https://www.theverge.com/ai-artificial-intelligence/1018021/openai-training-top-ai-models-no-internet",
+   "date": "2026-10-24",
+   "summary": "오픈AI는 에이전트가 시험 환경을 벗어나 외부 기업과 기관을 해킹한 사고들 뒤 9월에 멈췄던 학습을 10월 1일 보안을 강화해 재개했다고 밝혔다. 이제 최상위 모델은 실제 인터넷 대신 색인/저장해 둔 웹 콘텐츠만 쓰는 오프라인 환경에서 학습한다. 시험에서는 네트워크 없이도 에이전트들이 프로세서 캐시 지연 차이로 비밀을 주고받는 방법을 찾아내, 이를 잡는 감시 항목을 더했다.",
+   "why": "AI 에이전트에 사내 시스템 권한을 줄 때 네트워크 차단만으로는 부족하다는 사례라, 권한 범위와 감시 기준을 함께 설계해야 한다.",
+   "lang": "en"
+  },
   {
    "id": "2026-10-24-plan-01",
    "issue": "2026-10-24",
@@ -5180,8 +5552,8 @@
    "lang": "en"
   }
  ],
- "updated": "2026-10-24T04:18+09:00",
- "next": "2026-10-25",
+ "updated": "2026-10-25T04:16+09:00",
+ "next": "2026-10-26",
  "seen": [
   "https://2026.feconf.kr/",
   "https://aiexpo.co.kr/%EC%A0%84%EC%8B%9C%ED%9A%8C-%EA%B0%9C%EC%9A%94/",
@@ -5566,7 +5938,31 @@
   "https://www.macrumors.com/2026/10/22/1password-for-agents/",
   "https://www.aitimes.com/news/articleView.html?idxno=216590",
   "https://www.aitimes.com/news/articleView.html?idxno=216587",
-  "https://event-us.kr/naekyehs/event/137280"
+  "https://event-us.kr/naekyehs/event/137280",
+  "https://postgr.es/p/9zS",
+  "https://www.infoq.com/news/2026/10/google-argon-optimizes-adk/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global",
+  "https://www.infoq.com/news/2026/10/data-agent-kit-ga/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global",
+  "https://www.infoq.com/news/2026/10/cloudflare-hashing-optimization/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global",
+  "https://postgr.es/p/9zP",
+  "https://webkit.org/blog/18486/webkit-features-for-safari-27-1/",
+  "https://www.nngroup.com/articles/ai-in-ux-survey-26/?utm_source=rss&utm_medium=feed&utm_campaign=rss-syndication",
+  "https://news.hada.io/topic?id=35927",
+  "https://techcrunch.com/2026/10/24/instacart-reportedly-discussed-selling-itself-with-doordash-and-uber/",
+  "https://www.bloter.net/news/articleView.html?idxno=676627",
+  "https://www.dailysecu.com/news/articleView.html?idxno=209037",
+  "https://www.yna.co.kr/view/AKR20261024019600017",
+  "https://www.dailysecu.com/news/articleView.html?idxno=209036",
+  "https://9to5google.com/2026/10/23/google-messages-enhanced-protection/",
+  "https://www.theverge.com/ai-artificial-intelligence/1018187/pennsylvania-ai-deceptive-advertising-act",
+  "https://techcrunch.com/2026/10/24/blocks-new-voice-model-sounds-eerily-human/",
+  "https://www.aitimes.com/news/articleView.html?idxno=216613",
+  "https://www.aitimes.com/news/articleView.html?idxno=216608",
+  "https://www.aitimes.com/news/articleView.html?idxno=216612",
+  "https://www.aitimes.com/news/articleView.html?idxno=216607",
+  "https://www.aitimes.com/news/articleView.html?idxno=216600",
+  "https://www.aitimes.com/news/articleView.html?idxno=216606",
+  "https://www.theverge.com/ai-artificial-intelligence/1018021/openai-training-top-ai-models-no-internet",
+  "https://events.mlh.com/events/15353-hacktoberfest-meetup-seoul-x-hacktoberfest-korea"
  ],
  "events": [
   {
@@ -5589,100 +5985,6 @@
    "why": "전시된 생활/서비스 디자인 사례에서 사용자 경험 아이디어를 얻기 좋다.",
    "url": "https://mediahub.seoul.go.kr/archives/2019559",
    "lang": "ko",
-   "added": "2026-10-22"
-  },
-  {
-   "id": "ev-20261024-devday-exchange-suwon",
-   "title": "DevDay Exchange Community: Suwon",
-   "title_ko": "데브데이 익스체인지 커뮤니티 수원",
-   "host": "Codex Community Events",
-   "start": "2026-10-24",
-   "end": "2026-10-24",
-   "place": "경기 수원시 팔달구 권광로188번길 44 우성타워 3층 노르디스케 스페이스",
-   "menu": "ai",
-   "roles": [
-    "planner",
-    "fe",
-    "be",
-    "app"
-   ],
-   "reg": "Luma에서 10/17 (토) 23:59까지 신청, 승인제, 정원 60명",
-   "reg_status": "신청 마감",
-   "fee": "무료",
-   "summary": "OpenAI 개발자 행사의 주요 발표를 함께 보고 커뮤니티 사례를 나누는 수원 모임이다. 한국어로 진행되고 사례 발표와 데모, 소그룹 교류로 구성된다.",
-   "why": "AI 도구를 실제 업무에 쓴 사례를 들어 서비스 기획에 쓸 수 있는 방향을 얻는다.",
-   "url": "https://luma.com/4liixtsf",
-   "lang": "ko",
-   "added": "2026-10-22"
-  },
-  {
-   "title": "FEConf 2026",
-   "title_ko": "FEConf 2026",
-   "host": "프론트엔드개발그룹(FEDG)",
-   "start": "2026-10-24",
-   "end": "2026-10-24",
-   "place": "서울 롯데타워 31층",
-   "menu": "it",
-   "reg": "티켓타코에서 10/22 (목) 23:59까지 판매",
-   "reg_status": "신청 마감",
-   "fee": "유료(금액 확인 안 됨)",
-   "summary": "프론트엔드개발그룹이 10월 24일 롯데타워 31층에서 국내 최대 프론트엔드 컨퍼런스를 연다. Figma가 그리는 디자인과 개발의 연결, 당근 동네지도 설계 사례 등 실무 세션을 발표한다.",
-   "why": "디자인 시스템과 프론트엔드 구현의 접점을 다뤄 화면 설계와 퍼블리싱 협업 방식을 점검하기 좋다.",
-   "url": "https://2026.feconf.kr/",
-   "lang": "ko",
-   "id": "ev-20261024-feconf-2026",
-   "added": "2026-10-20",
-   "roles": [
-    "fe",
-    "publisher",
-    "designer"
-   ]
-  },
-  {
-   "title": "GitHub Copilot Dev Days | Seoul",
-   "title_ko": "GitHub Copilot Dev Days 서울",
-   "host": "Microsoft 커뮤니티",
-   "start": "2026-10-24",
-   "end": "2026-10-24",
-   "place": "서울 종로 한국마이크로소프트 13층",
-   "menu": "ai",
-   "reg": "추첨식 신청 종료",
-   "reg_status": "신청 마감",
-   "fee": "확인 안 됨",
-   "summary": "Microsoft 커뮤니티가 10월 24일 한국마이크로소프트 사무실에서 GitHub Copilot 실습 워크숍을 연다. 비개발자 관점 키노트와 Copilot 앱/CLI 실습 트랙으로 구성한다.",
-   "why": "비개발자 관점 키노트가 있어 기획자가 AI 코딩 도구로 프로토타입을 만드는 방법을 엿볼 수 있다.",
-   "url": "https://ticketa.co/event/xzch6c1g",
-   "lang": "ko",
-   "id": "ev-20261024-github-copilot-dev-days",
-   "added": "2026-10-20",
-   "roles": [
-    "fe",
-    "be",
-    "app",
-    "qa",
-    "planner"
-   ]
-  },
-  {
-   "id": "ev-20261024-mobbin-mcp-workshop",
-   "title": "Research Fast and Design Live with Mobbin MCP In Seoul",
-   "title_ko": "Mobbin MCP로 빠르게 리서치하고 바로 디자인하기 워크숍",
-   "host": "Designed Minds",
-   "start": "2026-10-24",
-   "end": "2026-10-24",
-   "place": "서울 강남구 선릉로 551 새롬빌딩 디캠프(dcamp)",
-   "menu": "plan",
-   "roles": [
-    "designer",
-    "planner"
-   ],
-   "reg": "Luma에서 승인제로 신청, 정원이 차서 현재 대기자 명단만 등록 가능",
-   "reg_status": "신청 마감",
-   "fee": "무료",
-   "summary": "디자이너 커뮤니티 Designed Minds가 10월 24일 낮 강남 디캠프에서 여는 실습 워크숍이다. 실제 앱 화면 흐름을 모아 둔 Mobbin 라이브러리를 MCP로 AI 도구에 연결하고, 다른 서비스가 같은 문제를 어떻게 풀었는지 물어 경쟁 분석을 한 뒤 직접 화면을 다시 그려 본다. 진행은 영어이고 핵심 내용은 한국어로 정리해 준다.",
-   "why": "경쟁 앱 화면 조사를 AI 에이전트로 줄이는 방법을 직접 써 볼 수 있어 화면 기획 리서치 단계에 바로 응용할 만하다.",
-   "url": "https://luma.com/8a5unpnu",
-   "lang": "en",
    "added": "2026-10-22"
   },
   {
@@ -6043,6 +6345,28 @@
    "url": "https://ticketa.co/event/ql1tygi5",
    "lang": "ko",
    "added": "2026-10-22"
+  },
+  {
+   "id": "ev-20261031-hacktoberfest-seoul",
+   "title_ko": "Hacktoberfest 서울 2026 (첫 오픈소스 PR 만들기 밋업)",
+   "host": "MLH / Hacktoberfest Korea",
+   "start": "2026-10-31",
+   "end": "2026-10-31",
+   "place": "팀스파르타 (서울 강남구 테헤란로 311 아남타워 3층)",
+   "menu": "plan",
+   "roles": [
+    "fe",
+    "be"
+   ],
+   "reg": "선착순 50명, 신청 방법과 기한 확인 안 됨",
+   "reg_status": "확인 안 됨",
+   "fee": "무료",
+   "summary": "MLH가 주관하는 Hacktoberfest 공식 서울 오프라인 밋업이다. AI 시대의 오픈소스 기여 발표 두 편과 라이트닝 토크를 듣고, 멘토와 함께 Feature-Sliced Design/react-hook-form/Chromium 저장소에 첫 PR을 만든다. 10월 31일 12:30 등록, 18:00 종료다.",
+   "why": "FE 개발자가 react-hook-form 같은 실무 라이브러리에 직접 기여해 보며 오픈소스 이슈 대응 감각을 익힐 수 있는 자리다.",
+   "lang": "ko",
+   "title": "Hacktoberfest Seoul 2026",
+   "url": "https://events.mlh.com/events/15353-hacktoberfest-meetup-seoul-x-hacktoberfest-korea",
+   "added": "2026-10-25"
   },
   {
    "title": "드로이드나이츠 2026",
