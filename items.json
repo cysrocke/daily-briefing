@@ -1,6 +1,20 @@
 {
  "issues": [
   {
+   "id": "2026-10-26",
+   "highlights": {
+    "ai": "카드사들이 '모두의 AI'에 에이전트 결제를 붙여 내년 상반기 출시를 노린다. 리퀴드 AI는 검색/결제용 50ms 미만 실시간 추론 엔진을 내놨다. 엔비디아와 카카오는 기기에서 도는 경량/멀티모달 모델을 공개했다. AWS는 2027년 컴퓨팅 용량이 대부분 팔렸다고 밝혔다.",
+    "it": "티켓베이 API 해킹으로 회원 약 1만6천명의 거래정보까지 유출됐다. 모바일 쿠폰 서비스 기프티엘에서는 환불 계좌번호가 유출됐다. 더존비즈온 백업서버와 부경대 등록금 시스템에서도 침해가 확인됐다.",
+    "plan": "대한전기학회가 유출 사고 뒤 계좌번호를 상시 보관하지 않기로 했다. 계좌번호는 환불이나 지급 때만 받고 정산이 끝나면 자동 파기한다.",
+    "roles": {
+     "planner": "대한전기학회가 유출 사고 뒤 계좌번호를 상시 보관하지 않기로 했다. 계좌번호는 환불이나 지급 때만 받고 정산이 끝나면 자동 파기한다.",
+     "dba": "PolarDB가 WAL만 저장하는 전용 노드로 동기 커밋 지연을 줄이는 방법을 소개했다. 같은 팀은 잠금 없이 스냅샷을 얻는 CSN 방식 MVCC 이식 과정도 공개했다. PingCAP은 내부 침해로 고객 관련 데이터가 유출됐다고 확인했다.",
+     "be": "PingCAP이 내부 침해로 소스 코드와 고객 관련 데이터가 유출됐다고 확인했다. 대한전기학회는 유출 사고 뒤 계좌번호를 지급 때만 받고 자동 파기하도록 바꿨다.",
+     "app": "구글이 LiteRT의 GPU 엔진 ML Drift를 오픈소스로 공개했다. 기존 TensorFlow Lite GPU delegate는 더 이상 업데이트하지 않는다."
+    }
+   }
+  },
+  {
    "id": "2026-10-25",
    "highlights": {
     "ai": "오픈AI가 최상위 모델을 인터넷 없이 학습시키기로 했다. 구글 클라우드는 에이전트마다 격리된 마이크로VM을 주는 실행 서비스를 발표했다. 앤트로픽은 클로드로 오픈소스 라이브러리 123개를 형식 검증했다. 메타 AI 에이전트 뮤즈는 일본에 출시됐다.",
@@ -101,6 +115,266 @@
   }
  ],
  "items": [
+  {
+   "id": "2026-10-26-plan-01",
+   "issue": "2026-10-26",
+   "menu": "plan",
+   "type": "아티클/블로그",
+   "title": "Vadim Yatsenko: DataMax: A Dedicated WAL Log-Store Node for Near-Synchronous Durability",
+   "title_ko": "PolarDB, WAL만 저장하고 재생하지 않는 전용 노드 DataMax로 동기 커밋 지연 줄이기",
+   "source": "Planet PostgreSQL",
+   "url": "https://postgr.es/p/9zY",
+   "date": "2026-10-25",
+   "summary": "PostgreSQL 기반 PolarDB를 다룬 기술 글이 WAL을 영구 저장하고 다음 노드로 넘기기만 하고 재생은 하지 않는 전용 노드 DataMax를 소개했다. DataMax를 주 노드와 같은 가용 영역에 두고 synchronous_standby_names에 넣으면 커밋은 짧은 구간만 기다리고, 먼 곳의 대기 서버는 DataMax에서 비동기로 WAL을 받는다. 전체 복제본을 하나 더 두지 않고 WAL의 두 번째 영구 사본을 얻는 방법이며 polar_datamax_mode 설정이 새로 생겼다.",
+   "why": "복제 서버 비용을 줄이면서 커밋 지연과 내구성을 함께 지키는 구성을 검토할 때 참고한다.",
+   "lang": "en",
+   "roles": [
+    "dba"
+   ]
+  },
+  {
+   "id": "2026-10-26-plan-02",
+   "issue": "2026-10-26",
+   "menu": "plan",
+   "type": "아티클/블로그",
+   "title": "Vadim Yatsenko: Commit Sequence Number (CSN) MVCC: Lock-Free Snapshot Acquisition",
+   "title_ko": "PolarDB, 전역 잠금 없이 스냅샷을 얻는 CSN 방식 MVCC를 PostgreSQL 17에 이식",
+   "source": "Planet PostgreSQL",
+   "url": "https://postgr.es/p/9zX",
+   "date": "2026-10-25",
+   "summary": "PolarDB 기술 글이 스냅샷을 진행 중인 트랜잭션 ID 목록 대신 단조 증가하는 커밋 순서 번호(CSN) 하나로 바꾼 과정을 정리했다. 기존 방식은 스냅샷마다 전역 ProcArrayLock을 잡아 동시 접속이 많을수록 처리량 한계가 됐는데, CSN 방식은 원자 변수만 읽어 잠금 없이 스냅샷을 얻는다. PostgreSQL 17 코드 기반으로 옮기면서 64비트 CSN 값이 32비트로 잘리던 문제 등 작은 결함도 함께 고쳤다.",
+   "why": "동시 접속이 몰리는 주문/조회 DB에서 스냅샷 잠금 경합이 왜 처리량 한계가 되는지 이해하는 데 쓴다.",
+   "lang": "en",
+   "roles": [
+    "dba"
+   ]
+  },
+  {
+   "id": "2026-10-26-plan-03",
+   "issue": "2026-10-26",
+   "menu": "plan",
+   "type": "기사/리포트",
+   "title": "PingCAP Breach Exposes Customer Records and Source Code",
+   "title_ko": "TiDB 개발사 PingCAP 내부 시스템 침해, 소스 코드와 고객 관련 데이터 유출",
+   "source": "InfoQ",
+   "url": "https://www.infoq.com/news/2026/10/pingcap-cloud-data-breach/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global",
+   "date": "2026-10-25",
+   "summary": "분산 SQL DB TiDB를 만드는 PingCAP이 내부 시스템 무단 접근과 소스 코드/고객 관련 데이터 탈취를 확인했다. 회사는 사용자 이름과 이메일, 조직/프로젝트 정보, SQL 편집기 내용과 오류가 유출됐고 TiDB에 저장된 데이터가 영향을 받은 증거는 없다고 밝혔다. 공격 조직 FulcrumSec은 10.6TB를 가져갔고 콘솔 API 키 115K쌍과 고객 DB 엔드포인트 약 1800개를 확보했다고 주장하지만, 이 주장은 독립 검증되지 않았다.",
+   "why": "운영 자격 증명과 API 키가 티켓/로그 같은 내부 도구에 남지 않는지, 유출 시 키를 바로 회수할 수 있는지 점검할 사례다.",
+   "lang": "en",
+   "roles": [
+    "be",
+    "dba"
+   ]
+  },
+  {
+   "id": "2026-10-26-plan-04",
+   "issue": "2026-10-26",
+   "menu": "plan",
+   "type": "기사/리포트",
+   "title": "대한전기학회, 개인정보 유출 사고 후속조치 완료…회원 계좌번호 전량 파기",
+   "title_ko": "대한전기학회, 유출 사고 뒤 회원 계좌번호 전량 파기하고 지급 때만 받는 방식으로 변경",
+   "source": "데일리시큐",
+   "url": "https://www.dailysecu.com/news/articleView.html?idxno=209057",
+   "date": "2026-10-26",
+   "summary": "대한전기학회가 개인정보 유출 사고 뒤 회원 DB에 보관하던 계좌번호를 복구할 수 없게 전량 삭제하고 계좌번호 입력 항목을 없앴다. 앞으로는 논문 심사비 지급이나 등록비 환불처럼 실제 금융거래가 필요할 때만 계좌번호를 1회 입력받고, 지급과 정산이 끝나면 자동 파기하며 보관하는 동안에는 암호화한다. 학회는 10월 23일 3차 공지로 이 후속 조치를 마쳤다고 알렸다.",
+   "why": "환불 계좌를 회원 정보에 상시 저장하지 않고 환불 시점에만 받는 흐름으로 바꿀지 검토할 근거가 된다.",
+   "lang": "ko",
+   "roles": [
+    "planner",
+    "dba",
+    "be"
+   ]
+  },
+  {
+   "id": "2026-10-26-plan-05",
+   "issue": "2026-10-26",
+   "menu": "plan",
+   "type": "출시/업데이트",
+   "title": "Google ML Drift Accelerates On-Device AI Inference Across Diverse GPUs",
+   "title_ko": "구글, LiteRT의 GPU 엔진 ML Drift 오픈소스 공개하고 TFLite GPU delegate 업데이트 중단",
+   "source": "InfoQ",
+   "url": "https://www.infoq.com/news/2026/10/google-ml-drift/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global",
+   "date": "2026-10-26",
+   "summary": "구글이 LiteRT의 GPU 가속 엔진 ML Drift를 Apache 2.0 오픈소스로 공개했다. OpenGL ES/OpenCL/Metal/WebGPU를 지원하며, 회사는 YouTube Shorts의 분할 기반 효과에서 안드로이드와 iOS 평균 프레임 지연을 최대 40% 줄였다고 밝혔다. 구글은 기존 TensorFlow Lite GPU delegate 업데이트를 멈추고 LiteRT ML Drift GPU 가속기로 옮기라고 권했다.",
+   "why": "앱에 온디바이스 모델을 쓰고 있다면 TFLite GPU delegate에서 LiteRT로 옮길 일정을 잡는다.",
+   "lang": "en",
+   "roles": [
+    "app"
+   ]
+  },
+  {
+   "id": "2026-10-26-it-01",
+   "issue": "2026-10-26",
+   "menu": "it",
+   "type": "기사/리포트",
+   "topic": "규제/보안",
+   "title": "티켓베이 해킹으로 회원 1만6천명 개인정보 유출…공연·주문내역까지 노출",
+   "title_ko": "티켓베이 API 해킹으로 회원 약 1만6천명 정보와 주문내역/공연명까지 유출",
+   "source": "데일리시큐",
+   "url": "https://www.dailysecu.com/news/articleView.html?idxno=209054",
+   "date": "2026-10-26",
+   "summary": "티켓 거래 플랫폼 티켓베이에서 10월 21일 외부 공격자가 일부 API에 비정상적으로 접근해 회원 약 1만6천명의 개인정보가 유출됐다. 유출 항목은 이름/아이디/가입일과 주문내역/공연명 같은 거래정보로, 실제 거래를 언급하는 맞춤형 피싱에 쓰일 우려가 있다. 회사는 KISA와 개인정보보호위원회에 신고했고, 본인인증 뒤 유출 여부와 항목을 확인하는 메뉴를 열었다.",
+   "why": "주문 조회 API의 인증/권한 검증과 '내 유출 내역 확인' 같은 사고 뒤 안내 화면을 미리 설계해 둘 이유가 된다.",
+   "lang": "ko"
+  },
+  {
+   "id": "2026-10-26-it-02",
+   "issue": "2026-10-26",
+   "menu": "it",
+   "type": "기사/리포트",
+   "topic": "규제/보안",
+   "title": "모바일 쿠폰 플랫폼 ‘기프티엘’ 해킹…고객 이름·휴대전화·이메일·환불 계좌번호 유출",
+   "title_ko": "모바일 쿠폰 서비스 기프티엘 해킹, 이름/휴대전화/이메일/환불 계좌번호 유출",
+   "source": "데일리시큐",
+   "url": "https://www.dailysecu.com/news/articleView.html?idxno=209044",
+   "date": "2026-10-25",
+   "summary": "모바일 쿠폰 서비스 기프티엘에서 10월 22일 외부 비인가 접근으로 고객의 이름/휴대전화번호/이메일/환불 계좌번호가 유출된 사실이 확인됐다. 운영사 스푼은 피해 인원과 최초 침입 시점, 공격 방법은 공개하지 않았고, 공격 IP 차단과 DB 접속 모니터링 강화를 밝혔다. 약 150개 브랜드의 상품을 다루는 서비스여서 환불이나 금융기관을 사칭한 사기에 주의가 필요하다.",
+   "why": "쿠폰 환불처럼 정산용 계좌정보를 어디에 얼마나 오래 보관하는지 다시 볼 사례다.",
+   "lang": "ko"
+  },
+  {
+   "id": "2026-10-26-it-03",
+   "issue": "2026-10-26",
+   "menu": "it",
+   "type": "기사/리포트",
+   "topic": "규제/보안",
+   "title": "더존비즈온, APO 백업서버 해킹 공지…암호화 데이터 외부 반출 정황",
+   "title_ko": "더존비즈온 백업서버 침해, 암호화된 일부 데이터 외부 반출 정황 공지",
+   "source": "데일리시큐",
+   "url": "https://www.dailysecu.com/news/articleView.html?idxno=209050",
+   "date": "2026-10-25",
+   "summary": "더존비즈온이 APO백업서비스 서버에 외부 침해가 있었고 암호화된 일부 데이터가 외부로 반출된 정황을 확인해 고객사에 개인정보 유출 가능성을 알렸다. 백업 솔루션 제공사 Ahsay에 이상징후를 문의하는 과정에서 솔루션 취약점을 전달받았으며, 유출된 고객사와 항목은 아직 확정되지 않았다. 회사는 백업 데이터가 모두 암호화돼 있었고 암호화 키가 유출된 정황은 없다고 밝혔다.",
+   "why": "외부 백업 솔루션도 취약점 공지와 접근 통제 점검 대상에 넣어야 한다는 사례다.",
+   "lang": "ko"
+  },
+  {
+   "id": "2026-10-26-it-04",
+   "issue": "2026-10-26",
+   "menu": "it",
+   "type": "기사/리포트",
+   "topic": "규제/보안",
+   "title": "[단독] 국립 부경대 학생·직원 5,108명 개인정보 유출…공격자 금전 요구로 사고 인지",
+   "title_ko": "부경대 등록금 수납 시스템 해킹, 학생/직원 5,108명 개인정보 유출",
+   "source": "데일리시큐",
+   "url": "https://www.dailysecu.com/news/articleView.html?idxno=209051",
+   "date": "2026-10-25",
+   "summary": "국립부경대학교 등록금 수납에 쓰는 수협은행 캠퍼스e모아시스템에서 학생 5,106명과 직원 2명, 총 5,108명의 개인정보가 유출됐다. 공격자는 10월 17~18일 시스템 보안 취약점을 이용해 비인가 관리자 계정을 만들고 정보를 조회했으며, 대학은 20일 유출 정보를 이용한 금전 요구를 받고서야 사고를 알았다. 대학은 회원가입/인증 절차 보안 강화와 개인정보 대량 조회 제한을 재발 방지책으로 내놓았다.",
+   "why": "외부 위탁 시스템의 관리자 계정 생성과 대량 조회 제한을 정책으로 정해 둘 필요를 보여 준다.",
+   "lang": "ko"
+  },
+  {
+   "id": "2026-10-26-ai-01",
+   "issue": "2026-10-26",
+   "menu": "ai",
+   "type": "기사/리포트",
+   "title": "카드사 '에이전트 커머스' 시대 연다…내년 에이전트 페이 출시",
+   "title_ko": "카드사들, '모두의 AI'에 AI 에이전트 결제 붙여 내년 상반기 출시 추진",
+   "source": "전자신문",
+   "url": "https://www.etnews.com/20261023000282",
+   "date": "2026-10-25",
+   "summary": "과기정통부와 SKT/카카오/KT 컨소시엄이 이끄는 '모두의 AI' 사업에서 카드사들이 AI 에이전트가 결제까지 하는 에이전트 페이를 추진한다. 신한카드/하나카드는 SKT 컨소시엄, 비씨카드는 KT 컨소시엄에 참여해 내년 상반기 서비스를 목표로 하며, 참여하지 않은 카드사들도 결제 인프라사와 실증을 준비하고 있다. 모두의 AI는 12월 정식 출시 예정이고 금융서비스는 내년에 더해질 전망이다.",
+   "why": "AI 에이전트가 대신 결제하는 흐름이 들어올 때 주문/결제 화면과 본인 확인 단계가 어떻게 바뀔지 미리 그려 볼 소식이다.",
+   "lang": "ko"
+  },
+  {
+   "id": "2026-10-26-ai-02",
+   "issue": "2026-10-26",
+   "menu": "ai",
+   "type": "출시/업데이트",
+   "title": "리퀴드 AI, 실시간 추론 엔진 ‘RIPL’ 출시...AI 응답 지연 50ms 미만 겨냥",
+   "title_ko": "리퀴드 AI, 검색/결제용 50ms 미만 실시간 추론 엔진 RIPL 출시",
+   "source": "AI타임스",
+   "url": "https://www.aitimes.com/news/articleView.html?idxno=216627",
+   "date": "2026-10-25",
+   "summary": "리퀴드 AI가 검색/광고/사기 탐지/결제처럼 밀리초 단위 응답이 필요한 업무를 위한 실시간 추론 엔진 RIPL을 기업용 상용 제품으로 출시했다. 요청부터 응답 완료까지 50ms 미만을 목표로 하며, 검색어 재작성이나 의도 분류처럼 출력이 짧은 작업에 맞췄다. 쇼피파이는 실제 검색 트래픽에서 20ms 미만 추론을 구현했다고 소개됐고, 다른 모델과의 지연 비교는 회사 자체 평가다.",
+   "why": "검색 의도 분류나 결과 재정렬에 생성 AI를 넣을 때 응답 시간 기준을 어디에 둘지 판단하는 참고가 된다.",
+   "lang": "ko"
+  },
+  {
+   "id": "2026-10-26-ai-03",
+   "issue": "2026-10-26",
+   "menu": "ai",
+   "type": "출시/업데이트",
+   "title": "엔비디아, 로컬 에이전트·로봇 겨냥 4GB 모델 '네모트론 3.5 볼트' 출시",
+   "title_ko": "엔비디아, 4GB 메모리에서 도는 경량 오픈 모델 '네모트론 3.5 볼트' 공개",
+   "source": "AI타임스",
+   "url": "https://www.aitimes.com/news/articleView.html?idxno=216625",
+   "date": "2026-10-25",
+   "summary": "엔비디아가 약 4GB 메모리에서 실행되는 오픈소스 경량 언어모델 '네모트론 3.5 볼트 E4B 4GB'를 공개했다. 구글 젬마 4 E4B를 바탕으로 사후학습했고, 대화 중 API를 호출해 작업을 수행하며 컨텍스트는 최대 6만4000토큰이다. 이전 모델보다 대화형 에이전트 벤치마크 평균이 약 40% 높았다는 것은 회사 자체 평가이며, 일부 도구 호출 평가에서는 큐원3.5-4B가 앞섰다.",
+   "why": "앱 안에서 기기 자체로 돌리는 음성/대화 도우미를 검토할 때 메모리와 성능 기준을 가늠하게 해 준다.",
+   "lang": "ko"
+  },
+  {
+   "id": "2026-10-26-ai-04",
+   "issue": "2026-10-26",
+   "menu": "ai",
+   "type": "기사/리포트",
+   "title": "카카오, 온디바이스용 '카나나-o' 모델 확보…멀티모달 AI 기술 순차 공개",
+   "title_ko": "카카오, 온디바이스용 멀티모달 모델 '카나나-o' 확보",
+   "source": "전자신문",
+   "url": "https://www.etnews.com/20261023000188",
+   "date": "2026-10-25",
+   "summary": "카카오가 텍스트/이미지/음성을 처리하는 옴니 모델 '카나나-o'를 스마트폰에서 구동할 수 있는 온디바이스 모델로 확보했다. 12월 비공개 베타를 시작하는 '카나나 스페이스'는 처음엔 서버 모델로 돌리고, 장기적으로 간단한 요청은 기기에서, 복잡한 요청은 프런티어 모델이 처리하는 구조로 갈 계획이다. 카카오는 10월 21일 비전 인코더를 오픈소스로 냈고 연내 음성 인코더도 공개한다.",
+   "why": "간단한 요청은 기기에서 처리해 응답 속도와 개인정보 노출 범위를 줄이는 구조가 앱 AI 기능 설계의 선택지가 되고 있다.",
+   "lang": "ko"
+  },
+  {
+   "id": "2026-10-26-ai-05",
+   "issue": "2026-10-26",
+   "menu": "ai",
+   "type": "기사/리포트",
+   "title": "아마존, AI 수요 폭증에 내년 컴퓨팅 용량 완판...2028년 예약도 몰려",
+   "title_ko": "AWS, 2027년 컴퓨팅 용량 대부분 판매되고 2028년 물량도 상당 부분 예약",
+   "source": "AI타임스",
+   "url": "https://www.aitimes.com/news/articleView.html?idxno=216620",
+   "date": "2026-10-25",
+   "summary": "아마존 CEO가 팟캐스트에서 AWS의 2027년 컴퓨팅 용량이 대부분 판매됐고 2028년 물량도 상당 부분 팔렸다고 말했다. 아마존은 2026년 자본지출을 약 2200억달러로 제시했으며, 고객 계약 대부분이 5년 약정이라고 설명했다. 자체 AI 칩 트레이니움이 기존 대안보다 가격 대비 성능이 30~40% 낫다는 것은 회사 측 주장이다.",
+   "why": "클라우드 AI 자원이 빠듯해지면 AI 기능의 비용과 일정에도 영향을 줄 수 있다는 신호다.",
+   "lang": "ko"
+  },
+  {
+   "id": "2026-10-26-ai-06",
+   "issue": "2026-10-26",
+   "menu": "ai",
+   "type": "아티클/블로그",
+   "title": "연 15만 달러짜리 Looker를 HTML 파일 버킷으로 대체할 수 있을까?",
+   "title_ko": "AI가 만든 HTML 대시보드 사내 서비스, 8개월 만에 주간 사용자가 Looker와 비슷해진 사례",
+   "source": "GeekNews / david.lequin.dev",
+   "url": "https://news.hada.io/topic?id=35975",
+   "date": "2026-10-25",
+   "summary": "직원 약 500명 회사의 데이터 플랫폼 팀이 Claude가 만든 HTML 대시보드를 호스팅하는 사내 서비스를 만들었고, 8개월 만에 주간 사용자가 Looker와 비슷하거나 더 많아졌다고 글쓴이가 밝혔다. 조회자의 Snowflake 권한으로 쿼리를 실행해 기존 데이터 권한을 그대로 썼지만, 초기에는 심각한 XSS 문제가 있어 대시보드별 격리 실행과 자격 증명 분리, 게시 후 검사를 뒤에 도입했다. 대시보드 하나의 토큰 비용은 약 0.50달러였고, 연간 예상 지출 약 2만 달러에는 엔지니어 3명의 시간이 빠져 있다고 했다.",
+   "why": "현업이 AI로 직접 만든 화면을 공유하게 할 때 권한과 보안 검사를 먼저 설계해야 한다는 점을 보여 준다.",
+   "lang": "ko"
+  },
+  {
+   "id": "2026-10-26-ai-07",
+   "issue": "2026-10-26",
+   "menu": "ai",
+   "type": "뉴스레터",
+   "title": "Google’s AI search changes upended online publishing",
+   "title_ko": "구글 AI 검색 기능 이후 언론사 검색 유입이 줄어든 흐름 정리",
+   "source": "The Verge",
+   "url": "https://www.theverge.com/column/1017983/google-ai-search-online-publishing",
+   "date": "2026-10-25",
+   "summary": "The Verge가 주간 뉴스레터에서 구글 AI 개요(AI Overviews)와 AI 모드 도입 뒤 언론사 검색 유입이 줄어든 흐름을 정리했다. DMG Media는 2025년 6~7월 사이 클릭률이 최대 89% 떨어졌다고 영국 경쟁시장청에 밝혔고, DCN 회원사 19곳은 2025년 5~6월 구글 유입이 1~25% 줄었다고 했다. 검색 결과 맨 위의 AI 요약이 클릭을 대신하면서 검색 노출 중심의 유입 구조가 흔들리고 있다는 분석이다.",
+   "why": "검색 유입에 기대는 기획전/콘텐츠 페이지라면 AI 검색 요약에 어떻게 보일지도 기획 항목에 넣어야 한다.",
+   "lang": "en"
+  },
+  {
+   "id": "2026-10-26-ai-08",
+   "issue": "2026-10-26",
+   "menu": "ai",
+   "type": "기사/리포트",
+   "title": "AI delivers ‘zero financial payoff’ to most companies, Apollo economist says",
+   "title_ko": "아폴로 이코노미스트 \"AI, 기술 업계 밖 대기업에는 재무 성과 없었다\"",
+   "source": "TechCrunch AI",
+   "url": "https://techcrunch.com/2026/10/25/ai-delivers-zero-financial-payoff-to-most-companies-according-to-apollo-economist/",
+   "date": "2026-10-26",
+   "summary": "사모펀드 아폴로의 수석 이코노미스트가 S&P 500에서 대형 기술주 7곳을 뺀 'S&P 493' 기업의 이익률과 직원당 매출이 제자리라며, AI가 기술 업계 밖 기업에 재무 성과를 주지 못했다고 분석했다. 그는 기업에서 지능은 대부분 판단이며 AI는 책임/신뢰/문화 같은 요소를 이해하지 못한다고 주장했다. 경제학자 한 명의 분석 노트를 다룬 기사다.",
+   "why": "AI 기능을 기획할 때 도입 자체보다 매출/이익 지표로 성과를 증명할 계획이 필요하다는 시각이다.",
+   "lang": "en"
+  },
   {
    "id": "2026-10-25-plan-01",
    "issue": "2026-10-25",
@@ -5552,8 +5826,8 @@
    "lang": "en"
   }
  ],
- "updated": "2026-10-25T04:16+09:00",
- "next": "2026-10-26",
+ "updated": "2026-10-26T04:21+09:00",
+ "next": "2026-10-27",
  "seen": [
   "https://2026.feconf.kr/",
   "https://aiexpo.co.kr/%EC%A0%84%EC%8B%9C%ED%9A%8C-%EA%B0%9C%EC%9A%94/",
@@ -5962,31 +6236,26 @@
   "https://www.aitimes.com/news/articleView.html?idxno=216600",
   "https://www.aitimes.com/news/articleView.html?idxno=216606",
   "https://www.theverge.com/ai-artificial-intelligence/1018021/openai-training-top-ai-models-no-internet",
-  "https://events.mlh.com/events/15353-hacktoberfest-meetup-seoul-x-hacktoberfest-korea"
+  "https://events.mlh.com/events/15353-hacktoberfest-meetup-seoul-x-hacktoberfest-korea",
+  "https://postgr.es/p/9zY",
+  "https://postgr.es/p/9zX",
+  "https://www.infoq.com/news/2026/10/pingcap-cloud-data-breach/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global",
+  "https://www.dailysecu.com/news/articleView.html?idxno=209057",
+  "https://www.infoq.com/news/2026/10/google-ml-drift/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global",
+  "https://www.dailysecu.com/news/articleView.html?idxno=209054",
+  "https://www.dailysecu.com/news/articleView.html?idxno=209044",
+  "https://www.dailysecu.com/news/articleView.html?idxno=209050",
+  "https://www.dailysecu.com/news/articleView.html?idxno=209051",
+  "https://www.etnews.com/20261023000282",
+  "https://www.aitimes.com/news/articleView.html?idxno=216627",
+  "https://www.aitimes.com/news/articleView.html?idxno=216625",
+  "https://www.etnews.com/20261023000188",
+  "https://www.aitimes.com/news/articleView.html?idxno=216620",
+  "https://news.hada.io/topic?id=35975",
+  "https://www.theverge.com/column/1017983/google-ai-search-online-publishing",
+  "https://techcrunch.com/2026/10/25/ai-delivers-zero-financial-payoff-to-most-companies-according-to-apollo-economist/"
  ],
  "events": [
-  {
-   "id": "ev-20261014-seoul-design-week-2026",
-   "title": "Seoul Design Week 2026",
-   "title_ko": "서울디자인위크 2026",
-   "host": "서울특별시",
-   "start": "2026-10-14",
-   "end": "2026-10-25",
-   "place": "동대문디자인플라자(DDP)와 성수/연희 등 서울 전역",
-   "menu": "plan",
-   "roles": [
-    "designer",
-    "planner"
-   ],
-   "reg": "유료 프로그램인 DDP 디자인페어(10/14~10/18) 예매와 컨퍼런스(10/15, 10/18)는 끝났다. 10/25까지 서울 전역 디자인 전시와 150개 스폿을 잇는 서울 디자인로드는 신청 없이 무료로 볼 수 있고, 디자인 마켓은 10/23~10/25 DDP 야외에서 열린다",
-   "reg_status": "신청 마감",
-   "fee": "DDP 디자인페어 얼리버드 9,000원/일반 15,000원, 디자인 전시 무료, 컨퍼런스 유료/무료 병행",
-   "summary": "동대문디자인플라자를 중심으로 서울 여러 동네에서 전시와 프로그램이 열리는 디자인 행사다. 도시 곳곳의 디자인 사례를 한 번에 둘러볼 수 있다.",
-   "why": "전시된 생활/서비스 디자인 사례에서 사용자 경험 아이디어를 얻기 좋다.",
-   "url": "https://mediahub.seoul.go.kr/archives/2019559",
-   "lang": "ko",
-   "added": "2026-10-22"
-  },
   {
    "title": "AWSKRUG #을지로 소모임 - KiroCrew 및 올리브영앱 개선 사례 (10월 26일)",
    "title_ko": "AWSKRUG 을지로 소모임 - KiroCrew 및 올리브영 앱 개선 사례",
@@ -7189,6 +7458,678 @@
   }
  ],
  "insights": [
+  {
+   "id": "2026-10-26",
+   "from": "2026-10-19",
+   "to": "2026-10-25",
+   "n": 328,
+   "flow": "AI 에이전트가 쇼핑과 결제 흐름 안으로 들어오기 시작했다. 코드를 만드는 속도보다 검증하고 리뷰하는 속도가 성과를 가른다는 연구와 사례가 늘었다. 널리 쓰는 서버 부품의 치명적 취약점이 한 주에 몰려 패치와 재시작 운영이 다시 중요해졌다.",
+   "signals": [
+    {
+     "text": "쇼핑몰과 결제사가 AI 에이전트에게 장바구니와 구매 기능을 직접 열어 주는 사례가 잇따랐다.",
+     "refs": [
+      "2026-10-23-plan-02",
+      "2026-10-22-ai-14",
+      "2026-10-22-ai-04",
+      "2026-10-20-ai-03"
+     ]
+    },
+    {
+     "text": "AI 코딩으로 코드와 PR은 늘었지만 해결한 일은 덜 늘어 병목이 리뷰와 검증으로 옮겨 갔다는 연구와 사례가 나왔다.",
+     "refs": [
+      "2026-10-23-plan-08",
+      "2026-10-22-plan-55",
+      "2026-10-23-plan-12"
+     ]
+    },
+    {
+     "text": "PHP/Node.js의 원격 코드 실행 취약점과 LiteLLM 공급망 공격이 같은 주에 겹쳤다.",
+     "refs": [
+      "2026-10-23-plan-20",
+      "2026-10-25-plan-08",
+      "2026-10-24-ai-01",
+      "2026-10-22-plan-69"
+     ]
+    }
+   ],
+   "roles": {
+    "planner": {
+     "flow": "쇼핑몰이 AI 에이전트용 주문 통로를 따로 여는 사례가 나왔다. 카페24는 상품 검색부터 주문 내역 조회까지 11개 기능을 에이전트에 열었지만 로그인과 최종 결제는 이용자에게 남겼다. 매장 웨이팅과 어드민에서는 현장 측정과 사용 로그로 정책 값을 다시 정한 사례가 이어졌다.",
+     "impact": "화면을 설계하는 것만큼 에이전트에 어떤 기능을 열고 어디서 사람 확인을 받을지 정하는 일이 기획 범위에 들어온다. 위치 반경이나 필터 같은 정책 값은 책상에서 정하기보다 현장 측정과 로그로 정하는 흐름이 강해졌다.",
+     "refs": [
+      "2026-10-23-plan-02",
+      "2026-10-22-ai-14",
+      "2026-10-22-ai-04",
+      "2026-10-22-plan-86",
+      "2026-10-20-plan-04",
+      "2026-10-21-plan-16"
+     ],
+     "junior": {
+      "know": [
+       "카페24는 에이전트가 장바구니 담기와 주문서 이동까지 할 수 있게 11개 기능을 열었고, 로그인과 최종 결제는 이용자가 직접 하도록 남겼다.",
+       "무신사는 매장 웨이팅을 회원 계정과 QR 접수로 바꾸며, 매장 운영자가 어드민에서 접수 지점과 반경을 정하도록 한 과정을 공개했다."
+      ],
+      "do": [
+       "화면 흐름을 그릴 때 사람이 하는 단계와 에이전트가 대신할 수 있는 단계를 나눠 적는다.",
+       "위치나 시간 같은 정책 값은 현장 테스트 결과를 받아 근거와 함께 기획서에 남긴다."
+      ]
+     },
+     "senior": {
+      "know": [
+       "월마트는 에이전트마다 프로필을 두고 건별 승인이나 지출 한도 안 자동 승인을 고르게 했으며, 에이전트는 고객 결제 정보에 접근할 수 없다.",
+       "우아한형제들은 전시 어드민 메뉴에 조회/검색/등록/수정 행동 로그를 심어 메뉴별 사용량을 보고 최근 필터 저장 기능을 넣었다."
+      ],
+      "do": [
+       "에이전트에 열 기능과 사람 확인이 필요한 지점을 서비스 정책으로 먼저 정한다.",
+       "어드민과 운영 정책 개선의 우선순위를 사용 로그로 정하는 체계를 만든다."
+      ]
+     },
+     "thin": false
+    },
+    "designer": {
+     "flow": "UX 실무자 대부분이 AI를 쓰지만 반응은 미지근하다는 조사가 나왔다. 디자인 시스템 관리처럼 반복되는 일을 에이전트에 맡기는 방법이 구체적으로 소개됐다. 에이전트 화면에서 작업 상태를 단계별로 나눠 보여 주는 설계 사례가 나왔다.",
+     "impact": "AI 도구를 쓰느냐보다 결과물 품질을 어떻게 지킬지가 디자이너의 과제가 됐다. 컴포넌트 문서화와 준수 점검이 자동화되면서 디자이너는 기준을 정하고 예외를 판단하는 일에 더 시간을 쓰게 된다.",
+     "refs": [
+      "2026-10-25-plan-07",
+      "2026-10-22-plan-95",
+      "2026-10-22-plan-96",
+      "2026-10-22-plan-115",
+      "2026-10-24-plan-04",
+      "2026-10-22-plan-04"
+     ],
+     "junior": {
+      "know": [
+       "NN/g 조사에서 UX 실무자 521명 중 99%가 업무에서 생성형 AI를 쓸 수 있었고, 도입 걸림돌로는 결과물 품질(54%)이 가장 많이 꼽혔다.",
+       "피그마는 캔버스 에이전트로 한 화면에 쓰인 컴포넌트와 토큰을 뽑아 라이브러리와 대조하고 하드코딩한 색과 간격을 찾는 방법을 소개했다."
+      ],
+      "do": [
+       "AI로 만든 시안은 컴포넌트와 토큰 준수 여부를 직접 확인한 뒤 넘긴다.",
+       "아코디언 아이콘이나 라이브 액티비티처럼 바뀐 지침과 연구 결과를 화면 규칙에 바로 반영한다."
+      ]
+     },
+     "senior": {
+      "know": [
+       "메타 뮤즈 디자인팀은 기술 이해도가 다른 사용자를 위해 에이전트 작업 상태를 세 층으로 나눠 보여 주게 설계했다.",
+       "AI 사용 표기 연구를 정리한 글은 'AI가 생성'했다고 밝히면 품질 평가가 떨어졌지만 일상적/거래적 메시지는 부정 반응이 미미할 가능성이 크다고 봤다."
+      ],
+      "do": [
+       "디자인 시스템 관리 중 에이전트에 맡길 일과 사람이 판단할 일을 나눈다.",
+       "에이전트 진행 상태와 AI 사용 표기에 대한 팀 공통 원칙을 정한다."
+      ]
+     },
+     "thin": false
+    },
+    "pm": {
+     "flow": "AI 코딩 도입 뒤 코드량보다 해결한 일이 덜 늘었다는 718개 회사 연구가 나왔다. AI 기능은 평가 세트와 신뢰성 비용을 먼저 정해야 한다는 제품 리더들의 조언이 이어졌다. 추천 실험에서 전환율과 객단가처럼 서로 부딪치는 지표를 함께 보고 결정한 사례가 나왔다.",
+     "impact": "AI 도입 성과를 코드량이나 속도가 아닌 끝낸 일과 고객 지표로 증명해야 하는 압박이 커진다. AI 기능 요구사항을 평가 세트로 관리하고 실패율과 복구 흐름까지 기획에 넣으라는 조언이 쌓이고 있다.",
+     "refs": [
+      "2026-10-23-plan-08",
+      "2026-10-22-plan-97",
+      "2026-10-22-plan-50",
+      "2026-10-22-plan-39",
+      "2026-10-23-plan-07",
+      "2026-10-23-plan-09"
+     ],
+     "junior": {
+      "know": [
+       "하버드 연구진의 718개 회사 분석에서 AI 에이전트 사용 뒤 추가 코드 줄 수는 30% 늘었지만 해결한 이슈는 12% 느는 데 그쳤다.",
+       "토스 커머스 팀은 추천 후보를 약 절반으로 줄인 안에서 User CVR이 7.55% 늘었지만 CTR은 3.71% 줄었고, 후보를 1/4로 줄인 안은 RPU와 객단가가 떨어져 고르지 않았다."
+      ],
+      "do": [
+       "실험 결과를 정리할 때 주 지표와 함께 떨어진 보조 지표를 같이 적는다.",
+       "AI 기능 요구사항에 좋은 결과와 피해야 할 결과의 예시를 평가 세트로 붙인다."
+      ]
+     },
+     "senior": {
+      "know": [
+       "ThoughtSpot 제품 책임자는 좋은 결과와 피해야 할 결과를 평가 세트로 정의해 기능이 바뀔 때마다 돌리는 것을 요구사항 문서처럼 쓴다고 말했다.",
+       "Stripe 과금 조직은 토큰 사용량을 그대로 청구하기보다 작업마다 공통 크레딧을 차감하는 방식을 제안했다."
+      ],
+      "do": [
+       "AI 도입 성과를 끝낸 일과 고객 지표로 재는 기준을 조직에 세운다.",
+       "AI 기능의 검사 책임자와 신뢰성 비용을 출시 전에 정하고 가격과 일정에 넣는다."
+      ]
+     },
+     "thin": false
+    },
+    "publisher": {
+     "flow": "접히는 iPhone Duo가 나오며 웹 뷰포트 범위와 접힘 상태 API가 실무 과제로 떠올랐다. axe-core 4.14는 보이는 버튼 이름과 접근 가능한 이름이 다르면 기본 검사에서 잡기 시작했다. 연말 접근성 인증 심사를 앞두고 SPA에서 자주 걸리는 컴포넌트 패턴을 정리한 글이 나왔다.",
+     "impact": "화면 너비 몇 개만 맞추는 반응형 점검으로는 접히는 기기의 크기 변화를 다 담기 어렵다. 자동 검사 도구의 기본 규칙이 엄격해지면서 aria-label을 화면 문구와 맞추는 일이 마크업 품질의 기본이 된다.",
+     "refs": [
+      "2026-10-25-plan-06",
+      "2026-10-22-plan-106",
+      "2026-10-23-plan-13",
+      "2026-10-22-plan-117",
+      "2026-10-22-plan-82",
+      "2026-10-22-plan-104"
+     ],
+     "junior": {
+      "know": [
+       "Safari 27.1의 iPhone Duo 뷰포트는 너비 382~951px, 높이 368~902px 범위에서 바뀌고, Device Posture와 Viewport Segments API는 기능 플래그 뒤 미리보기로 들어갔다.",
+       "넥스트리 글은 모달 초점 이탈, 화면 전환 미안내, 아코디언 상태 미전달이 접근성 인증 심사에서 자주 문제가 된다고 짚었다."
+      ],
+      "do": [
+       "Xcode 27.1 시뮬레이터로 접힘과 펼침 상태의 레이아웃을 직접 확인한다.",
+       "버튼의 aria-label에 화면에 보이는 문구가 들어가도록 마크업을 고친다."
+      ]
+     },
+     "senior": {
+      "know": [
+       "axe-core 4.14.0은 화면 라벨이 접근 가능한 이름에 없는 컨트롤을 기본 검사에서 보고하고 EN 301 549 v4.1.1 태그도 붙이기 시작했다.",
+       "작성 중인 WCAG 3는 핵심 요건을 모두 지키면 적합으로 보고 브론즈/실버/골드 단계로 인정하는 구조라는 분석이 나왔다."
+      ],
+      "do": [
+       "반응형 점검 기준을 고정 너비에서 크기 범위와 기기 자세로 넓힌다.",
+       "자동 검사 도구 판올림과 접근성 기준 변화를 배포 점검 규칙에 반영할 주기를 정한다."
+      ]
+     },
+     "thin": false
+    },
+    "fe": {
+     "flow": "Node.js와 Next.js에서 원격 코드 실행 취약점 수정판이 연달아 나왔다. 첫 화면 전 단계를 앞당겨 웹뷰 성능을 실사용자 지표로 증명한 사례가 나왔다. Next.js 16.4는 Cache Components를 새 앱 기본으로 켜며 정적 페이지 보장을 빌드 규칙으로 걸 수 있게 했다.",
+     "impact": "프레임워크와 런타임 보안 수정판을 얼마나 빨리 반영하느냐가 FE 운영 역량으로 드러났다. 성능 개선은 시제품 수치보다 실사용자 지표와 CI 기준선으로 지킨 사례가 설득력을 얻었다.",
+     "refs": [
+      "2026-10-22-plan-43",
+      "2026-10-25-plan-08",
+      "2026-10-22-plan-15",
+      "2026-10-22-plan-116",
+      "2026-10-22-plan-78",
+      "2026-10-22-plan-101"
+     ],
+     "junior": {
+      "know": [
+       "Node.js는 10월 21일 22.23.4/24.22.1/26.12.1을 내고 Brotli 압축 해제 원격 코드 실행 등 취약점 10건을 고쳤다.",
+       "우아한형제들 FE 팀은 HTML 인라인 스크립트가 번들보다 먼저 API를 부르도록 바꿔 웹뷰 LCP를 줄인 방법을 공개했다."
+      ],
+      "do": [
+       "맡은 서비스의 Node.js와 Next.js 버전, 보안 수정판 적용 여부를 바로 확인한다.",
+       "성능 개선 결과는 시제품 측정과 실사용자 지표를 나눠 보고한다."
+      ]
+     },
+     "senior": {
+      "know": [
+       "Next.js 긴급 업데이트 16.4.1/15.5.28에는 use cache와 이미지 최적화 API의 치명 등급 원격 코드 실행 수정이 들어갔다.",
+       "Anthropic은 명령어 수와 리렌더링 횟수 같은 결정적 지표를 CI 기준선으로 걸어 3천 건 넘는 변경을 고객 장애 없이 배포했다고 밝혔다."
+      ],
+      "do": [
+       "프레임워크 보안 수정판을 정기 배포와 별도로 바로 올리는 절차를 만든다.",
+       "성능 지표를 CI 기준선으로 걸어 개선한 수치가 다시 나빠지지 않게 한다."
+      ]
+     },
+     "thin": false
+    },
+    "be": {
+     "flow": "PHP와 Brotli 원격 코드 실행 취약점이 한 주에 겹치며 서버 패치 운영이 시험대에 올랐다. LLM 비용이 모델 단가보다 캐시 구조와 호출 방식에서 크게 갈린 사례가 이어졌다. 에이전트가 만든 코드와 LLM 키를 격리하고 게이트웨이로 묶는 플랫폼 사례가 나왔다.",
+     "impact": "패치는 버전을 올리는 것으로 끝나지 않고 워커 재시작과 키 교체까지 해야 끝나는 일이 됐다. AI 기능이 늘면서 백엔드는 비용/권한/격리를 함께 관리하는 플랫폼 역할을 떠안는다.",
+     "refs": [
+      "2026-10-23-plan-20",
+      "2026-10-25-plan-08",
+      "2026-10-22-plan-27",
+      "2026-10-23-plan-21",
+      "2026-10-22-plan-36",
+      "2026-10-23-plan-23"
+     ],
+     "junior": {
+      "know": [
+       "KISA는 PHP2Shell 대응으로 8.5.12/8.4.27/8.3.36/8.2.35 이상으로 올린 뒤 PHP-FPM 등 모든 웹 서비스를 재시작해야 이전 버전이 메모리에서 사라진다고 강조했다.",
+       "당근 커뮤니티홈 팀은 분류 모델을 바꾼 뒤 요청당 비용이 오른 일을 겪고, 사내 LLM 플랫폼이 명시적 캐시 구간을 넣도록 고쳤다."
+      ],
+      "do": [
+       "보안 패치 뒤 재시작과 실제 적용 버전 확인까지 작업 범위에 넣는다.",
+       "LLM 호출을 바꿀 때 캐시 적중률과 요청당 비용을 함께 잰다."
+      ]
+     },
+     "senior": {
+      "know": [
+       "Cloudflare는 비용의 43%가 캐시 쓰기, 34%가 캐시 읽기에서 나온다는 것을 찾아 AI 코드 리뷰 비용을 건당 평균 0.77달러로 68% 낮췄다.",
+       "F&F는 LiteLLM 게이트웨이로 키 발급을 셀프서비스로 바꾸고 일/월 예산 80%에서 경고, 100%에서 차단하는 한도를 운영한다."
+      ],
+      "do": [
+       "LLM 키와 모델 승인, 예산 한도를 한곳에서 관리하는 구조를 정한다.",
+       "취약점 대응을 버전 업데이트, 재시작, 키 교체, 로그 점검의 한 절차로 묶는다."
+      ]
+     },
+     "thin": false
+    },
+    "dba": {
+     "flow": "에이전트의 위험한 DB 작업은 권한으로 막아야 한다는 설계가 잇따랐다. AI가 SQL과 ERD를 직접 만들게 두지 않고 검사기와 도구로 감싼 사례가 나왔다. PostgreSQL 19 정식 출시를 앞두고 복제 슬롯과 WAL 보관 같은 운영 기본기를 다룬 글이 이어졌다.",
+     "impact": "DBA는 사람 계정만이 아니라 에이전트 계정의 권한과 차단 규칙까지 설계해야 한다. 쿼리를 대신 짜는 AI가 늘수록 행/열 단위 통제와 용어 기준을 DB 쪽에서 강제하는 역할이 커진다.",
+     "refs": [
+      "2026-10-25-plan-03",
+      "2026-10-22-plan-28",
+      "2026-10-22-plan-110",
+      "2026-10-23-plan-15",
+      "2026-10-22-plan-31",
+      "2026-10-22-plan-112"
+     ],
+     "junior": {
+      "know": [
+       "구글 Data Agent Kit에는 DROP TABLE 전에 동의를 받으라는 스킬이 있지만 이는 권고이고, 실제 차단은 읽기 전용 서비스 계정이나 IAM 거부 정책으로 한다.",
+       "Azure PostgreSQL 팀은 남은 복제 슬롯이 WAL을 붙잡으면 데이터 크기는 그대로인데 저장 공간이 차고, 임계치에 이르면 읽기 전용으로 바뀐다고 설명했다."
+      ],
+      "do": [
+       "비활성 복제 슬롯과 슬롯별 보관 WAL을 재는 쿼리를 정기 점검에 넣는다.",
+       "앱과 도구 계정에 슈퍼유저 대신 필요한 권한만 준다."
+      ]
+     },
+     "senior": {
+      "know": [
+       "LY 게임 플랫폼 조직은 LLM이 만든 SQL을 실행 전에 파싱해 행/열 단위 권한을 대조하고 개인 식별 컬럼 노출을 막는 검사기를 따로 뒀다.",
+       "여기어때는 AI가 설계만 하고 그림은 MCP로 연결한 자체 ERD 도구가 그리게 나눴고, 컬럼 이름과 타입은 도구 안의 용어사전이 정하게 했다."
+      ],
+      "do": [
+       "에이전트가 쓰는 DB 계정의 권한 경계와 차단 정책을 표준으로 정한다.",
+       "PostgreSQL 19 같은 메이저 판 이전 계획을 출시 일정에 맞춰 세운다."
+      ]
+     },
+     "thin": false
+    },
+    "app": {
+     "flow": "iPhone Duo 출시와 iOS 27 변화로 앱이 화면 크기와 생명주기를 다시 맞춰야 할 때가 왔다. App Store는 심사 때 제출하지 않은 기능을 나중에 붙이는 앱을 퇴출한다고 명시했다. 에이전트에 원격 기기를 붙여 모바일 PR을 맡긴 사례가 나왔다.",
+     "impact": "새 기기 대응이 스크린샷과 자세별 동작 점검까지 포함한 출시 요건이 되고 있다. 에이전트가 모바일 PR을 맡는 비중이 커지면 빌드 환경과 동작 증명 방식이 개발 생산성을 가른다.",
+     "refs": [
+      "2026-10-22-plan-02",
+      "2026-10-22-plan-46",
+      "2026-10-22-plan-45",
+      "2026-10-23-plan-12",
+      "2026-10-21-plan-04",
+      "2026-10-22-plan-47"
+     ],
+     "junior": {
+      "know": [
+       "애플은 Xcode 27.1로 다시 빌드해 모든 자세와 방향의 동작을 확인하라고 했고, 2027년 4월부터 iPhone Duo 스크린샷이 있어야 앱을 올릴 수 있다.",
+       "Expo SDK 58은 iOS 27이 scene 기반 생명주기를 요구하고 requireFullScreen으로 크기 조절을 끌 수 없는 변화에 맞췄다."
+      ],
+      "do": [
+       "Device Hub에서 접힘과 펼침, 가로와 세로 상태별 화면을 확인한다.",
+       "OTA로 바꿀 수 있는 층과 스토어를 거쳐야 하는 네이티브 층을 구분해 수정 계획을 세운다."
+      ]
+     },
+     "senior": {
+      "know": [
+       "Shopify는 에이전트마다 원격 Mac과 안드로이드 VM을 주고 화면 녹화로 동작을 증명하게 해, 에이전트가 만든 PR이 병합된 모바일 PR의 6%에서 61%로 늘었다.",
+       "Grab은 1천만 줄이 넘는 코드베이스에 R8 최적화와 Baseline/Startup Profile을 단계적으로 적용한 과정을 공개했다."
+      ],
+      "do": [
+       "심사 뒤 기능을 켜는 방식이 바뀐 심사 지침에 걸리지 않는지 팀 기준을 정한다.",
+       "에이전트가 쓸 빌드 환경과 동작 증명 방식을 모바일 개발 흐름에 넣을지 판단한다."
+      ]
+     },
+     "thin": false
+    },
+    "qa": {
+     "flow": "AI가 코드를 쓰자 병목이 검증으로 옮겨 갔다는 현장 기록이 나왔다. 사람이 문장으로 쓴 시나리오를 AI가 실기기에서 돌리는 테스트 자동화 사례가 여러 팀에서 나왔다. LLM 결과를 다른 LLM이 채점할 때 사람 기준에 다시 맞추는 운영 방법도 공개됐다.",
+     "impact": "QA는 테스트를 직접 누르는 일에서 검증 기준과 거짓 성공을 막는 규칙을 설계하는 일로 무게가 옮겨 간다. 개발 속도가 빨라질수록 회귀 테스트와 CI 게이트를 얼마나 갖췄는지가 출시 속도를 정한다.",
+     "refs": [
+      "2026-10-22-plan-55",
+      "2026-10-22-plan-54",
+      "2026-10-20-plan-07",
+      "2026-10-23-plan-11",
+      "2026-10-22-plan-83",
+      "2026-10-22-plan-52"
+     ],
+     "junior": {
+      "know": [
+       "요기요 프론트엔드 개발자는 AI와 함께 기능을 만들며 단위/통합/E2E 테스트와 PR마다 도는 CI 게이트를 쌓아 검증을 맡겼다.",
+       "토스닥터 V2는 화면을 가린 팝업은 치우고 이어가되 검증 스텝에서는 비슷한 요소로 통과시키지 못하게 막았다."
+      ],
+      "do": [
+       "시나리오를 클릭 순서보다 지켜져야 할 결과 중심으로 쓴다.",
+       "자동화 테스트가 통과했을 때 실제로 맞는 화면을 확인했는지 거짓 성공 사례를 따로 모은다."
+      ]
+     },
+     "senior": {
+      "know": [
+       "Netflix는 LLM 심사자를 사람이 단 정답과 이유로 맞추고, 매주 표본을 다시 채점해 어긋남이 기준을 넘으면 재학습한다.",
+       "계약 테스트 하네스 실험에서 비용 절감형 모델은 하네스 없이 10번 중 3번만 통과하다 하네스를 붙이자 10번 모두 통과했다."
+      ],
+      "do": [
+       "AI가 만든 테스트와 채점 결과를 사람 기준으로 다시 맞추는 주기를 정한다.",
+       "테스트 기대값을 에이전트가 아닌 사람이 합의한 계약과 명세에서 가져오게 한다."
+      ]
+     },
+     "thin": false
+    }
+   },
+   "sources": {
+    "2026-10-20-ai-03": {
+     "title": "아멕스, AI 에이전트의 무단 구매를 막는 프레임워크 공개",
+     "source": "TechCrunch",
+     "url": "https://techcrunch.com/2026/10/13/amex-introduces-a-framework-to-prevent-ai-agents-from-making-unauthorized-purchases/",
+     "date": "2026-10-13"
+    },
+    "2026-10-20-plan-04": {
+     "title": "사용 로그로 전시 어드민 메뉴 50여 개를 개선한 이야기",
+     "source": "우아한형제들 기술블로그",
+     "url": "https://techblog.woowahan.com/27821/",
+     "date": "2026-10-06"
+    },
+    "2026-10-20-plan-07": {
+     "title": "한 문장으로 앱을 테스트하기까지, 당근 QA 플랫폼",
+     "source": "당근 테크 블로그",
+     "url": "https://medium.com/daangn/%ED%95%9C-%EB%AC%B8%EC%9E%A5%EC%9C%BC%EB%A1%9C-%EC%95%B1%EC%9D%84-%ED%85%8C%EC%8A%A4%ED%8A%B8%ED%95%98%EA%B8%B0%EA%B9%8C%EC%A7%80-5340546886b5",
+     "date": "2026-10-06"
+    },
+    "2026-10-21-plan-04": {
+     "title": "Grab, R8와 프로파일 최적화로 ANR 32% 줄이고 시작 시간 35% 개선",
+     "source": "Android Developers Blog",
+     "url": "https://developer.android.com/blog/posts/grab-r8-profile-guided-optimization-anr-startup-time",
+     "date": "2026-10-19"
+    },
+    "2026-10-21-plan-16": {
+     "title": "불안을 줄이는 해외송금 화면: 상태 9개를 3개로",
+     "source": "토스 기술블로그",
+     "url": "https://toss.tech/article/remittance_transfer",
+     "date": "2026-09-21"
+    },
+    "2026-10-22-ai-04": {
+     "title": "아마존은 AI 에이전트를 막는데 월마트는 문을 연다",
+     "source": "TechCrunch",
+     "url": "https://techcrunch.com/2026/10/21/while-amazon-blocks-ai-agents-walmart-rolls-out-the-welcome-mat/",
+     "date": "2026-10-21"
+    },
+    "2026-10-22-ai-14": {
+     "title": "카페24, 모든 자사몰에 웹MCP 적용해 AI 에이전트가 장바구니까지 처리",
+     "source": "디지털데일리",
+     "url": "https://www.ddaily.co.kr/page/view/2026102209572735939",
+     "date": "2026-10-22"
+    },
+    "2026-10-22-plan-02": {
+     "title": "iPhone Duo용 앱 준비와 제출",
+     "source": "Apple Developer",
+     "url": "https://developer.apple.com/news/?id=kkphp5qo",
+     "date": "2026-10-05"
+    },
+    "2026-10-22-plan-04": {
+     "title": "AI 사용을 언제 밝혀야 하나: PACED 판단 틀",
+     "source": "NN/g",
+     "url": "https://www.nngroup.com/articles/disclose-ai-paced/",
+     "date": "2026-09-25"
+    },
+    "2026-10-22-plan-101": {
+     "title": "Next.js 16.4: Cache Components 기본 권장, 정적 페이지 보장 설정 ensureStatic 추가",
+     "source": "Next.js 블로그",
+     "url": "https://nextjs.org/blog/next-16-4",
+     "date": "2026-10-06"
+    },
+    "2026-10-22-plan-104": {
+     "title": "Firefox 158: JPEG XL 기본 지원, 안드로이드 aria-busy, CSS 단위 나눗셈",
+     "source": "MDN",
+     "url": "https://developer.mozilla.org/en-US/docs/Mozilla/Firefox/Releases/158",
+     "date": "2026-10-13"
+    },
+    "2026-10-22-plan-106": {
+     "title": "접히는 iPhone Duo에서 웹이 쓸 수 있는 API: Device Posture와 Viewport Segments",
+     "source": "Video.js 블로그",
+     "url": "https://videojs.org/blog/iphone-duo-web-development",
+     "date": "2026-10-06"
+    },
+    "2026-10-22-plan-110": {
+     "title": "AI에게 ERD를 그리게 하지 않고 도구를 쥐여 준 여기어때의 ERD 도구 제작기",
+     "source": "여기어때 기술블로그",
+     "url": "https://techblog.gccompany.co.kr/%EC%8B%9C%ED%82%AC-%EB%95%8C%EB%A7%88%EB%8B%A4-%EB%8B%A4%EB%A5%B8-%EA%B2%B0%EA%B3%BC%EB%A5%BC-%EB%82%B4%EB%8A%94-ai%EC%97%90%EA%B2%8C-%EB%8F%84%EA%B5%AC%EB%A5%BC-%EC%A5%90%EC%97%AC-%EC%A3%BC%EC%97%88%EC%8A%B5%EB%8B%88%EB%8B%A4-ai%EA%B0%80-%EC%93%B0%EB%8A%94-erd-%EB%8F%84%EA%B5%AC-%EC%A0%9C%EC%9E%91%EA%B8%B0-f97eefa26354",
+     "date": "2026-10-10"
+    },
+    "2026-10-22-plan-112": {
+     "title": "DB 크기는 그대로인데 저장 공간이 차는 이유: PostgreSQL 복제 슬롯과 WAL 보관",
+     "source": "Microsoft Azure Database for PostgreSQL 블로그",
+     "url": "https://techcommunity.microsoft.com/t5/microsoft-blog-for-postgresql/the-invisible-storage-leak-how-replication-slots-can-fill-azure/ba-p/4565392",
+     "date": "2026-10-20"
+    },
+    "2026-10-22-plan-115": {
+     "title": "애플 HIG 라이브 액티비티 지침 개정: 폭이 좁은 화면에서는 지름 28pt 원 안에 맞추기",
+     "source": "Apple Human Interface Guidelines",
+     "url": "https://developer.apple.com/design/human-interface-guidelines/live-activities",
+     "date": "2026-10-13"
+    },
+    "2026-10-22-plan-116": {
+     "title": "HTML 안 인라인 스크립트로 API 요청을 앞당겨 웹뷰 LCP를 25~35% 줄인 방법",
+     "source": "우아한형제들 기술블로그",
+     "url": "https://techblog.woowahan.com/27864/",
+     "date": "2026-10-21"
+    },
+    "2026-10-22-plan-117": {
+     "title": "React 화면에서 웹 접근성 인증 심사에 자주 걸리는 4가지 컴포넌트와 배포 전 점검 순서",
+     "source": "넥스트리",
+     "url": "https://www.nextree.io/si-peobeulrisyeoreul-wihan-web-jeobgeunseong-a11y-siljeon-gaideu/",
+     "date": "2026-10-20"
+    },
+    "2026-10-22-plan-15": {
+     "title": "Next.js 긴급 보안 업데이트: use cache와 이미지 최적화 API의 원격 코드 실행 취약점",
+     "source": "Next.js 블로그",
+     "url": "https://nextjs.org/blog/nextjs-security-update-october-14-2026",
+     "date": "2026-10-14"
+    },
+    "2026-10-22-plan-27": {
+     "title": "모델만 바꿨는데 LLM 비용이 3배가 된 이유",
+     "source": "당근 테크 블로그",
+     "url": "https://medium.com/daangn/%EB%AA%A8%EB%8D%B8%EB%A7%8C-%EB%B0%94%EA%BF%A8%EB%8A%94%EB%8D%B0-llm-%EB%B9%84%EC%9A%A9%EC%9D%B4-3%EB%B0%B0%EA%B0%80-%EB%90%9C-%EC%9D%B4%EC%9C%A0-5ae60ab5108b",
+     "date": "2026-10-21"
+    },
+    "2026-10-22-plan-28": {
+     "title": "LLM이 만든 SQL을 믿고 실행하기까지: A2A 기반의 대화형 BI 애플리케이션 개발기",
+     "source": "LY 기술 블로그",
+     "url": "https://techblog.lycorp.co.jp/ko/a2a-conversational-bi-app",
+     "date": "2026-10-02"
+    },
+    "2026-10-22-plan-31": {
+     "title": "PostgreSQL 19 첫 출시 후보(RC 1) 공개, 정식 출시는 11월 19일 예정",
+     "source": "PostgreSQL 공식 뉴스",
+     "url": "https://www.postgresql.org/about/news/postgresql-19-rc-1-released-3409/",
+     "date": "2026-10-15"
+    },
+    "2026-10-22-plan-36": {
+     "title": "사내 LLM 키 발급, 모델 승인, 비용 차단을 게이트웨이 하나로 묶은 F&F 사례",
+     "source": "AWS 기술 블로그",
+     "url": "https://aws.amazon.com/ko/blogs/tech/fnf-llm-gateway-on-amazon-bedrock/",
+     "date": "2026-10-18"
+    },
+    "2026-10-22-plan-39": {
+     "title": "추천 후보 수를 절반으로 줄이고 구매 전환율을 높인 홈 피드 실험",
+     "source": "토스 기술블로그",
+     "url": "https://toss.tech/article/53545",
+     "date": "2026-10-01"
+    },
+    "2026-10-22-plan-43": {
+     "title": "Node.js 10월 21일 보안 업데이트: 22/24/26 버전 취약점 10건 수정",
+     "source": "Node.js",
+     "url": "https://nodejs.org/en/blog/vulnerability/october-2026-security-releases",
+     "date": "2026-10-21"
+    },
+    "2026-10-22-plan-45": {
+     "title": "App Store 심사 지침 개정: 심사 뒤 기능을 바꾸는 앱 퇴출 명시",
+     "source": "Apple Developer News",
+     "url": "https://developer.apple.com/news/?id=vvzx6cul",
+     "date": "2026-10-16"
+    },
+    "2026-10-22-plan-46": {
+     "title": "Expo SDK 58: iOS 27의 scene 생명주기 의무화와 Xcode 27 Device Hub 대응",
+     "source": "Expo",
+     "url": "https://expo.dev/changelog/sdk-58",
+     "date": "2026-10-15"
+    },
+    "2026-10-22-plan-47": {
+     "title": "활성 사용자 500만 명 앱을 하룻밤에 새 앱으로 바꾸고 OTA 12번으로 수습한 기록",
+     "source": "Expo",
+     "url": "https://expo.dev/blog/teamreach-ota-updates-relaunch",
+     "date": "2026-10-14"
+    },
+    "2026-10-22-plan-50": {
+     "title": "평가(evals)를 새 요구사항 문서로: 분석 솔루션 회사의 AI 제품 운영",
+     "source": "Mind the Product",
+     "url": "https://www.mindtheproduct.com/evals-analytics-and-how-to-escape-the-feature-factory-francois-lopitaux-svp-product-management-thought-spot/",
+     "date": "2026-10-06"
+    },
+    "2026-10-22-plan-52": {
+     "title": "Playwright 1.64: 테스트 무작위 순서 실행, 숨은 iframe 처리 변경 등",
+     "source": "Playwright",
+     "url": "https://playwright.dev/docs/release-notes",
+     "date": "2026-10-07"
+    },
+    "2026-10-22-plan-54": {
+     "title": "토스 앱 스모크 테스트 자동화 도구 토스닥터 V2: 시나리오 작성부터 실패 자가 복구까지",
+     "source": "토스 기술블로그",
+     "url": "https://toss.tech/article/toss-doctor",
+     "date": "2026-09-22"
+    },
+    "2026-10-22-plan-55": {
+     "title": "AI가 코드를 쓰자 병목이 검증으로 옮겨 갔다: 요기요 Product Engineer 파일럿 3편",
+     "source": "요기요 기술블로그",
+     "url": "https://techblog.yogiyo.co.kr/product-engineer%EC%9D%98-%EB%B3%91%EB%AA%A9-%EC%BD%94%EB%93%9C%EC%97%90%EC%84%9C-%EA%B2%80%EC%A6%9D%EC%9C%BC%EB%A1%9C-17b3db81121d",
+     "date": "2026-09-30"
+    },
+    "2026-10-22-plan-69": {
+     "title": "KISA, 국내 침해사고 잇따르자 웹/API/인증정보 우선 점검 권고",
+     "source": "KISA 보호나라",
+     "url": "https://www.boho.or.kr/kr/bbs/view.do?bbsId=B0000133&menuNo=205020&nttId=72207",
+     "date": "2026-10-03"
+    },
+    "2026-10-22-plan-78": {
+     "title": "claude.ai를 2주 만에 3배 빠르게 만든 방법",
+     "source": "claude.dev 블로그",
+     "url": "https://claude.dev/blog/how-we-made-claude-ai-faster/",
+     "date": "2026-09-23"
+    },
+    "2026-10-22-plan-82": {
+     "title": "WCAG 3, 접근성 기준이 달라지는 방향",
+     "source": "TetraLogical",
+     "url": "https://tetralogical.com/blog/2026/10/15/wcag3/",
+     "date": "2026-10-15"
+    },
+    "2026-10-22-plan-83": {
+     "title": "코딩 에이전트에 계약 테스트 하네스를 붙이면 값어치가 있을까",
+     "source": "martinfowler.com",
+     "url": "https://martinfowler.com/articles/are-harnesses-worth-the-cost.html",
+     "date": "2026-10-13"
+    },
+    "2026-10-22-plan-86": {
+     "title": "매장 웨이팅을 QR과 위치 확인으로 바꾸자 생긴 GPS 오차 문제와 해결",
+     "source": "무신사 기술블로그",
+     "url": "https://techblog.musinsa.com/%ED%83%9C%EB%B8%94%EB%A6%BF%EC%9D%84-%EC%97%86%EC%95%A0%EC%9E%90-%EC%83%9D%EA%B8%B4-%EB%AC%B8%EC%A0%9C-7d6a1cee7df5",
+     "date": "2026-10-06"
+    },
+    "2026-10-22-plan-95": {
+     "title": "피그마 에이전트로 디자인 시스템 관리 일 덜기: 문서 작성/준수 점검/일괄 교체",
+     "source": "Figma Blog",
+     "url": "https://www.figma.com/blog/figma-agent-and-design-systems/",
+     "date": "2026-10-06"
+    },
+    "2026-10-22-plan-96": {
+     "title": "메타 AI 에이전트 '뮤즈' 디자인 디렉터가 말하는 에이전트 화면 설계",
+     "source": "Lenny's Newsletter / How I AI",
+     "url": "https://www.lennysnewsletter.com/p/how-meta-designed-muse-an-ai-agent",
+     "date": "2026-10-12"
+    },
+    "2026-10-22-plan-97": {
+     "title": "AI 기능을 넣기 전에 던질 네 가지 질문: 누가 실수를 잡고 신뢰성 비용은 누가 내나",
+     "source": "Mind the Product",
+     "url": "https://www.mindtheproduct.com/four-questions-to-ask-before-building-ai-into-your-product-kendra-vant-chief-product-officer-tapi",
+     "date": "2026-09-30"
+    },
+    "2026-10-23-plan-02": {
+     "title": "쇼핑몰 10만 곳에 AI 에이전트용 WebMCP를 한 번에 켜면서 상점별 끄기를 만든 방법",
+     "source": "Cloudflare Blog",
+     "url": "https://blog.cloudflare.com/webmcp-commerce/",
+     "date": "2026-10-21"
+    },
+    "2026-10-23-plan-07": {
+     "title": "추천이 실제로 시청을 얼마나 늘렸나: Netflix의 개인화 효과 측정법",
+     "source": "Netflix Tech Blog",
+     "url": "https://netflixtechblog.com/measuring-the-impact-of-personalized-recommendations-4c26be3a4d96?source=rss----2615bd06b42e---4",
+     "date": "2026-10-15"
+    },
+    "2026-10-23-plan-08": {
+     "title": "AI 에이전트로 코드는 30% 늘었지만 끝낸 일은 12%: 718개 회사 연구",
+     "source": "InfoQ",
+     "url": "https://www.infoq.com/news/2026/10/jellyfish-ai-productivity/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global",
+     "date": "2026-10-22"
+    },
+    "2026-10-23-plan-09": {
+     "title": "토큰 과금은 내부 장치로 두고 고객에게는 크레딧으로 보여 주자는 이유",
+     "source": "Stripe blog",
+     "url": "https://stripe.com/blog/where-pricing-is-headed",
+     "date": "2026-10-01"
+    },
+    "2026-10-23-plan-11": {
+     "title": "LLM이 다른 LLM을 채점할 때 사람 기준에서 벗어나지 않게 하는 Netflix의 4단계",
+     "source": "Netflix Tech Blog",
+     "url": "https://netflixtechblog.com/the-lifecycle-of-llm-as-a-judge-building-aligning-and-monitoring-at-scale-c95bd8283508?source=rss----2615bd06b42e---4",
+     "date": "2026-10-15"
+    },
+    "2026-10-23-plan-12": {
+     "title": "AI 에이전트에 원격 Mac과 안드로이드 VM을 붙여 모바일 PR의 61%를 맡긴 Shopify",
+     "source": "Shopify Engineering",
+     "url": "https://shopify.engineering/remote-dev",
+     "date": "2026-10-22"
+    },
+    "2026-10-23-plan-13": {
+     "title": "axe-core 4.14: 보이는 버튼 이름과 접근 가능한 이름이 다르면 기본으로 잡는다",
+     "source": "Deque blog",
+     "url": "https://www.deque.com/blog/find-label-in-name-issues-in-every-scan-with-axe-core-4-14-0/",
+     "date": "2026-10-22"
+    },
+    "2026-10-23-plan-15": {
+     "title": "앱 계정에 PostgreSQL 슈퍼유저를 주면 안 되는 이유와 대신 줄 권한",
+     "source": "Planet PostgreSQL",
+     "url": "https://postgr.es/p/9zC",
+     "date": "2026-10-23"
+    },
+    "2026-10-23-plan-20": {
+     "title": "KISA, PHP 원격 코드 실행 취약점(PHP2Shell) 기업 대응 수칙 발표",
+     "source": "KISA 보호나라",
+     "url": "https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=1&categoryCode=&nttId=72230",
+     "date": "2026-10-22"
+    },
+    "2026-10-23-plan-21": {
+     "title": "AI 코드 리뷰 한 건 비용을 2.43달러에서 0.77달러로 줄인 Cloudflare",
+     "source": "Cloudflare Blog",
+     "url": "https://blog.cloudflare.com/obsessive-inference-optimization/",
+     "date": "2026-10-20"
+    },
+    "2026-10-23-plan-23": {
+     "title": "AI 에이전트가 만든 코드를 EKS에서 격리해 돌리는 Agent Sandbox 구성",
+     "source": "AWS 기술 블로그",
+     "url": "https://aws.amazon.com/ko/blogs/tech/aws-ai-agent-sandbox-eks-isolation-part-1/",
+     "date": "2026-10-18"
+    },
+    "2026-10-24-ai-01": {
+     "title": "LLM 프록시 LiteLLM, 공급망 공격으로 악성 패키지 배포",
+     "source": "SecurityWeek",
+     "url": "https://www.securityweek.com/litellm-compromised-in-fresh-supply-chain-attack/",
+     "date": "2026-10-23"
+    },
+    "2026-10-24-plan-04": {
+     "title": "아코디언 아이콘, 어떤 모양이 가장 잘 통할까",
+     "source": "Smashing Magazine",
+     "url": "https://smashingmagazine.com/2026/10/accordion-icons-which-work-best/",
+     "date": "2026-10-23"
+    },
+    "2026-10-25-plan-03": {
+     "title": "구글 Data Agent Kit 정식 출시, 에이전트의 위험한 DB 작업은 스킬 안내와 IAM 두 겹으로 막는다",
+     "source": "InfoQ",
+     "url": "https://www.infoq.com/news/2026/10/data-agent-kit-ga/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global",
+     "date": "2026-10-24"
+    },
+    "2026-10-25-plan-06": {
+     "title": "Safari 27.1 WebKit 기능: iPhone Duo 뷰포트 크기와 접힘 상태 API 미리보기",
+     "source": "WebKit blog",
+     "url": "https://webkit.org/blog/18486/webkit-features-for-safari-27-1/",
+     "date": "2026-10-24"
+    },
+    "2026-10-25-plan-07": {
+     "title": "NN/g 설문: UX 실무자 521명, AI로 일은 빨라졌지만 반응은 미지근하다",
+     "source": "Nielsen Norman Group",
+     "url": "https://www.nngroup.com/articles/ai-in-ux-survey-26/?utm_source=rss&utm_medium=feed&utm_campaign=rss-syndication",
+     "date": "2026-10-24"
+    },
+    "2026-10-25-plan-08": {
+     "title": "Node2Shell이 HTTP2Shell로 번졌다: Brotli 디코더 취약점이 Python과 HTTP 라이브러리까지",
+     "source": "GeekNews / Aikido",
+     "url": "https://news.hada.io/topic?id=35927",
+     "date": "2026-10-25"
+    }
+   }
+  },
   {
    "id": "2026-10-19",
    "from": "2026-10-20",
