@@ -1,6 +1,18 @@
 {
  "issues": [
   {
+   "id": "2026-11-10",
+   "highlights": {
+    "ai": "Anthropic이 Claude Fable 5.2와 Mythos 5.2를 공개했다. Meta는 에이전트 반복 작업용 경량 모델 Muse Ember를 냈다. Claude Code 설정 파일로 공개 저장소에 비밀값이 새는 사례가 확인됐다.",
+    "it": "공정위가 배민과 쿠팡이츠에 과징금 6,319억 원을 매겼다. 앤트로픽은 국내 기업용 Claude 계정 100여 개 유출을 신고했다. Uber는 앱 안에서 주차를 예약하는 서비스를 시작했다.",
+    "roles": {
+     "be": "토스가 여러 추천 모델이 함께 쓰는 사용자 표현 플랫폼을 공개했다. Pinterest는 사용자 여정 추론을 4B 언어 모델로 바꿔 알림 반응을 높였다. Topstep은 단일 노드 Redis를 몇 초 전환으로 관리형 Valkey에 옮겼다.",
+     "pm": "뱅크샐러드가 망분리 환경에서 한 달 만에 비개발 부서 업무를 자동화했다. 토스는 서비스마다 따로 배우던 사용자 정보를 공통 표현으로 묶었다. Pinterest는 여정 단위 알림으로 이메일 클릭률을 1.1% 올렸다.",
+     "dba": "스마일게이트가 SQL Server를 Aurora PostgreSQL로 옮기며 DB 공수를 약 87% 줄였다. json과 jsonb의 크기는 문서 형태에 따라 22.6% 작게도 40.9% 크게도 나왔다. Topstep은 키 5,300만 개를 무중단으로 Valkey에 옮겼다."
+    }
+   }
+  },
+  {
    "id": "2026-11-09",
    "highlights": {
     "ai": "챗GPT 국내 앱 월간 이용자가 처음 1,800만 명을 넘었다. AWS는 업무별로 여러 에이전트를 맡아 관리하는 키로 봇을 내놓았다. LLM 상품 추천이 자기 추천을 다시 학습하며 쏠림을 키운다는 연구가 나왔다.",
@@ -109,22 +121,302 @@
      "qa": "렌더링된 DOM의 title 위치 같은 SEO 요소를 배포 전에 자동 검사하자는 제안이 나왔다. 성능 개선 배포가 검색 유입을 떨어뜨린 사례가 출발점이다."
     }
    }
-  },
-  {
-   "id": "2026-11-02",
-   "highlights": {
-    "ai": "딥시크가 여러 코딩 에이전트에 일을 나눠 맡기는 연구 시제품을 공개했다. 앤트로픽은 클로드 코드에 기존 게임 복제를 막는 규칙을 넣어 정상 작업 차단 논란이 일었다. 정부와 개인정보위는 AI의 개인정보 활용 동의 방식을 두고 국민 토론회를 열었다.",
-    "it": "모인 해킹으로 고객이 낸 신분증 사본과 가족관계증명서 파일이 유출됐다. 더존비즈온 침해에서는 해지 6개월이 지난 고객사 데이터도 백업서버에 남아 있었다. 9월 주요 유통업체 매출 증가율은 4.5%로 올해 가장 낮았다.",
-    "roles": {
-     "dba": "MySQL 안 쓰는 인덱스는 복제본까지 보고 지워야 한다는 도구가 나왔다. 4TB PostgreSQL 테이블을 복제 환경에서 지우는 비용을 잰 글도 나왔다. row_security = off는 행 보안을 끄지 않고 오류를 낸다는 정리도 있다.",
-     "be": "열린 트랜잭션의 읽기를 복제본으로 보내는 프록시 설계가 공개됐다. 복제본 10대 환경에서 큰 테이블을 지우는 순서를 측정으로 정리한 글도 나왔다.",
-     "publisher": "html에 둔 font-size: 16px가 브라우저 글자 크기 설정을 막는다는 접근성 비판이 나왔다. 200% 확대에서 글자가 잘리면 WCAG 1.4.4 실패에 해당한다.",
-     "fe": "AI로 같은 앱을 프레임워크 12가지로 만들어 비용과 시간을 비교한 실험이 나왔다. html 글자 크기를 고정하면 확대 접근성이 막힌다는 사례도 있다."
-    }
-   }
   }
  ],
  "items": [
+  {
+   "id": "2026-11-10-plan-01",
+   "issue": "2026-11-10",
+   "menu": "plan",
+   "type": "아티클/블로그",
+   "title": "TASTE, 토스의 추천 파운데이션 플랫폼",
+   "title_ko": "토스가 여러 추천 모델이 함께 쓰는 사용자 표현 플랫폼 TASTE를 만든 과정",
+   "source": "토스 기술블로그",
+   "url": "https://toss.tech/article/taste",
+   "date": "2026-11-09",
+   "summary": "토스는 금융중개/광고/쇼핑/결제 등 서비스마다 따로 학습하던 사용자 정보를 한 모델이 여러 행동을 함께 예측하며 배우게 하고, 그 사용자 표현을 다른 추천 모델에 넘기는 TASTE를 만들었다. 처음 100만 명으로 시험한 멀티태스크 모델은 과제별 LightGBM보다 성능이 낮았지만, 학습 대상을 전체 사용자로, 사용자 요약 정보를 1,000여 개에서 2,000개 이상으로 늘리고 최근 앱 이벤트 흐름을 함께 읽게 하자 기존 모델을 넘었다. 공통 앱 이벤트 예측의 Macro Recall@5k는 약 35.1% 상대 개선됐다.",
+   "why": "추천/타기팅 모델이 늘어날 때 사용자 피처를 모델마다 따로 만들지 않고 공통 표현으로 묶는 구조를 검토할 때 참고할 만하다.",
+   "lang": "ko",
+   "roles": [
+    "be",
+    "pm"
+   ]
+  },
+  {
+   "id": "2026-11-10-plan-02",
+   "issue": "2026-11-10",
+   "menu": "plan",
+   "type": "아티클/블로그",
+   "title": "망분리 환경에서도 한 달 만에 AX로 생산성을 높인 방법",
+   "title_ko": "뱅크샐러드가 망분리 환경에서 한 달 만에 비개발 부서 반복 업무를 자동화한 방법",
+   "source": "뱅크샐러드 기술블로그",
+   "url": "https://corp.banksalad.com/blog/tech/banksalad-ax-workflow-automation/",
+   "date": "2026-11-09",
+   "summary": "뱅크샐러드는 개인정보를 다루지 않는 업무, 사내 용도, 연구개발망에서 도는 작업으로 범위를 먼저 정해 매번의 보안 검토 부담을 줄였다. 도구는 비개발 직군이 직접 고칠 수 있는지를 기준으로 골라 사내 호스팅이 되는 오픈소스 n8n을 택했고, 자동화할 업무는 각 팀 담당자에게 직접 물어 우선순위를 정했다. 환경을 갖춘 지 한 달 만에 재무팀과 기업홍보팀의 반복 업무가 자동화돼 담당자 한 명당 하루 30분~1시간이 줄었다고 밝혔다.",
+   "why": "보안 제약이 큰 조직에서 AI 업무 자동화를 시작할 때 범위 기준과 우선순위를 먼저 정하는 방식으로 참고할 만하다.",
+   "lang": "ko",
+   "roles": [
+    "pm",
+    "be"
+   ]
+  },
+  {
+   "id": "2026-11-10-plan-03",
+   "issue": "2026-11-10",
+   "menu": "plan",
+   "type": "아티클/블로그",
+   "title": "스마일게이트의 MS SQL 데이터베이스 현대화 – AWS Transform for SQL Server와 Claude Code의 하이브리드 전략",
+   "title_ko": "스마일게이트 STOVE 스토어의 SQL Server에서 Aurora PostgreSQL 전환기: 변환 도구와 AI 코딩 에이전트를 함께 쓴 방법",
+   "source": "AWS 기술 블로그",
+   "url": "https://aws.amazon.com/ko/blogs/tech/smilegate-sql-server-modernization-aws-transform/",
+   "date": "2026-11-09",
+   "summary": "스마일게이트는 테이블 98개와 저장 프로시저 342개를 쓰는 STOVE 스토어 상점/결제 데이터베이스를 SQL Server에서 Aurora PostgreSQL로 옮기며 AWS Transform으로 초안을 만들고 남은 검증과 수정은 Claude Code로 마무리했다. 빌드가 성공해도 OUTER APPLY가 CROSS JOIN으로 바뀌어 행이 사라지는 것처럼 오류 없이 값만 달라지는 결함이 있어 원본과 같은 값을 내는지 확인하는 검증 체계를 따로 만들었다. 데이터베이스 트랙은 기존 방식 예상 9.8MM 대비 1.27MM이 들어 약 87%를 줄였다고 밝혔다.",
+   "why": "저장 프로시저가 많은 DB를 다른 엔진으로 옮길 때 자동 변환 뒤 동등성 검증 공수를 따로 잡아야 한다는 점을 일정에 반영할 수 있다.",
+   "lang": "ko",
+   "roles": [
+    "dba",
+    "be"
+   ]
+  },
+  {
+   "id": "2026-11-10-plan-04",
+   "issue": "2026-11-10",
+   "menu": "plan",
+   "type": "아티클/블로그",
+   "title": "Chris van Eijk: json vs jsonb in PostgreSQL: size and speed, measured",
+   "title_ko": "PostgreSQL json과 jsonb의 저장 크기와 읽기 속도를 직접 재 본 결과",
+   "source": "Planet PostgreSQL",
+   "url": "https://postgr.es/p/9Bl",
+   "date": "2026-11-09",
+   "summary": "PostgreSQL 17.11과 18.6에서 여섯 가지 문서 형태로 재 보니 jsonb는 json보다 22.6% 작은 경우부터 40.9% 큰 경우까지 나왔다. 크기는 문서 내용, 공백 포함 여부, 압축 대상이 될 만큼 큰지, 압축 방식에 따라 달라졌다. 키 하나를 읽는 속도는 측정한 모든 경우에서 jsonb가 2.7~10.6배 빨랐다.",
+   "why": "JSON 컬럼 타입을 정할 때 저장 크기만 보지 말고 실제 문서 형태로 재 보고 고르는 근거로 쓸 수 있다.",
+   "lang": "en",
+   "roles": [
+    "dba"
+   ]
+  },
+  {
+   "id": "2026-11-10-plan-05",
+   "issue": "2026-11-10",
+   "menu": "plan",
+   "type": "기사/리포트",
+   "title": "Pinterest Replaces Journey Clustering with 4B Qwen3 LLM, Reports Improved Engagement",
+   "title_ko": "Pinterest, 사용자 여정 추론을 군집화 파이프라인에서 4B 언어 모델로 바꿔 알림 반응을 높이다",
+   "source": "InfoQ",
+   "url": "https://www.infoq.com/news/2026/11/pinterest-journey/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global",
+   "date": "2026-11-09",
+   "summary": "Pinterest는 키워드를 묶어 관심사를 만들던 다단계 군집화 방식을, 최대 360일 동안의 행동 150개를 읽고 여정 이름을 만들어 내는 미세조정한 40억 매개변수 Qwen3 모델로 바꿨다. 학습 데이터는 프런티어 모델로 만든 합성 예시를 썼고, 이틀 안에 처리한 사용자는 건너뛰는 방식으로 추론량을 줄였다. 미국과 캐나다 A/B 시험에서 기존 방식보다 이메일 클릭률이 1.1%, 푸시 열람이 1.3% 올랐다.",
+   "why": "개인화 알림에서 관심사 태그 대신 여러 세션을 잇는 목표 단위로 사용자를 묶는 방식을 검토할 때 참고할 만하다.",
+   "lang": "en",
+   "roles": [
+    "be",
+    "pm"
+   ]
+  },
+  {
+   "id": "2026-11-10-plan-06",
+   "issue": "2026-11-10",
+   "menu": "plan",
+   "type": "아티클/블로그",
+   "title": "Topstep’s migration journey: Self-managed Redis OSS to Amazon ElastiCache for Valkey",
+   "title_ko": "Topstep이 단일 노드 Redis를 관리형 Valkey로 옮긴 과정",
+   "source": "AWS Database Blog",
+   "url": "https://aws.amazon.com/blogs/database/topsteps-migration-journey-self-managed-redis-oss-to-amazon-elasticache-for-valkey/",
+   "date": "2026-11-10",
+   "summary": "트레이딩 평가 플랫폼 Topstep은 복제본 없이 노드 하나로 돌던 Redis OSS 7.4의 키 약 5,300만 개를 RedisShake로 실시간 복제해 Multi-AZ ElastiCache for Valkey로 옮겼다. 전환은 Route 53 레코드 하나를 바꿔 몇 초 만에 끝났고, 앱 코드는 TLS 설정만 조금 고쳤다. 야간 배치 때 약 250ms까지 오르던 읽기 P90 지연이 목표 안으로 들어왔고, 패치와 백업에 쓰던 엔지니어 시간이 한 달에 1~2일 줄었다.",
+   "why": "세션/토큰 캐시를 단일 노드로 운영 중이라면 무중단 전환 방법과 DNS/TLS 확인 항목을 그대로 참고할 수 있다.",
+   "lang": "en",
+   "roles": [
+    "be",
+    "dba"
+   ]
+  },
+  {
+   "id": "2026-11-10-ai-01",
+   "issue": "2026-11-10",
+   "menu": "ai",
+   "type": "기사/리포트",
+   "title": "Anthropic launches new Claude Fable and Mythos 5.2 models",
+   "title_ko": "Anthropic, Claude Fable 5.2와 Mythos 5.2 공개",
+   "source": "The Verge",
+   "url": "https://www.theverge.com/ai-artificial-intelligence/1030005/anthropic-claude-fable-mythos-5-2",
+   "date": "2026-11-10",
+   "summary": "Anthropic이 Claude Fable 5.2와 Claude Mythos 5.2를 발표했다. 회사는 두 모델이 5.1보다 코딩/추론/이미지 이해가 나아지고 출력이 빨라졌으며, Fable 5.2는 에이전트 팀을 조율하고 오래 걸리는 프로젝트를 맡을 수 있다고 밝혔다. Fable 5.2는 발표 당일부터 쓸 수 있고 Mythos 5.2는 검증된 조직에만 먼저 열린다.",
+   "why": "업무용 AI 도구 기준 모델이 바뀌는 시점이라 쓰는 서비스의 모델 선택지와 이용 범위를 다시 확인할 때다.",
+   "lang": "en"
+  },
+  {
+   "id": "2026-11-10-ai-02",
+   "issue": "2026-11-10",
+   "menu": "ai",
+   "type": "기사/리포트",
+   "title": "Meta releases Muse Ember, a new lightweight model for agent execution",
+   "title_ko": "Meta, 에이전트 반복 작업용 경량 모델 Muse Ember 출시",
+   "source": "TechCrunch AI",
+   "url": "https://techcrunch.com/2026/11/09/meta-releases-muse-ember-a-new-lightweight-model-for-agent-execution/",
+   "date": "2026-11-10",
+   "summary": "Meta Superintelligence Lab이 도구 호출/라우팅/정보 추출/긴 문서 파싱처럼 에이전트가 반복하는 일을 위한 경량 모델 Muse Ember를 내놨다. 입력 100만 토큰당 10센트로, 큰 모델 Muse Wonder가 처리 규칙을 정하면 Ember가 대량 건을 처리하는 구성을 제안했다. 텍스트 외에 이미지와 음성도 따로 모델 없이 읽는다.",
+   "why": "상담/분류처럼 건수가 많은 AI 기능은 큰 모델과 작은 모델을 나눠 쓰는 구조로 비용을 설계할 수 있다.",
+   "lang": "en"
+  },
+  {
+   "id": "2026-11-10-ai-03",
+   "issue": "2026-11-10",
+   "menu": "ai",
+   "type": "기사/리포트",
+   "title": "Claude Code is accidentally exposing secrets all over GitHub",
+   "title_ko": "Claude Code 로컬 설정 파일이 공개 GitHub 저장소에 올라가 비밀값이 새는 사례 확인",
+   "source": "Ars Technica",
+   "url": "https://arstechnica.com/ai/2026/11/claude-code-settings-files-expose-thousands-of-secrets-on-github/",
+   "date": "2026-11-10",
+   "summary": "보안 업체 Apiiro는 Claude Code가 '다시 묻지 않기'로 승인한 셸 명령을 .claude/settings.local.json에 그대로 적어, 그 안의 DB 비밀번호와 API 토큰이 함께 저장된다고 밝혔다. 이 파일은 전역 .gitignore에만 들어가 저장소를 다른 PC에서 복제하는 경우 등에 커밋될 수 있으며, 공개 저장소에서 10만 건 넘게 발견됐고 그중 63개 조직의 약 1,100건에 비밀값이 있었다. 파일을 지워도 포크에는 남을 수 있다.",
+   "why": "AI 코딩 도구를 팀에 들일 때 도구가 만드는 설정 파일을 저장소 단위로 제외하는 규칙을 함께 정해야 한다.",
+   "lang": "en"
+  },
+  {
+   "id": "2026-11-10-ai-04",
+   "issue": "2026-11-10",
+   "menu": "ai",
+   "type": "기사/리포트",
+   "title": "Apple’s $50 Intelligence Usage Packs extend access to some AI features",
+   "title_ko": "Apple, AI 기능 추가 사용량을 49.99달러에 파는 'Intelligence Usage Pack' 시작",
+   "source": "The Verge",
+   "url": "https://www.theverge.com/tech/1030084/apple-intelligence-usage-packs-ai-features-creator-studio-logic-pro",
+   "date": "2026-11-10",
+   "summary": "Apple이 Logic Pro에 AI 비서 사용 한도를 넘었을 때 49.99달러에 추가 사용량을 사는 메뉴를 넣었다. 이 상품은 OpenAI나 Google Gemini의 클라우드 모델을 쓰는 기능에 적용되며, 산 계정만 쓸 수 있고 남은 양은 이월되지만 구매 12개월 뒤 사라진다. 이번 달 안에 다른 Creator Studio 앱에도 붙을 예정이다.",
+   "why": "AI 기능을 무료 한도와 추가 구매로 나누는 요금 설계와 사용량 표시 화면의 사례로 볼 수 있다.",
+   "lang": "en"
+  },
+  {
+   "id": "2026-11-10-ai-05",
+   "issue": "2026-11-10",
+   "menu": "ai",
+   "type": "출시/업데이트",
+   "title": "Google Gemini rolling out ‘Memory summary’ with everything it remembers about you",
+   "title_ko": "Google Gemini, 기억한 내용을 보고 고치는 'Memory summary' 추가",
+   "source": "9to5Google",
+   "url": "https://9to5google.com/2026/11/09/google-gemini-memory-summary/",
+   "date": "2026-11-10",
+   "summary": "Google Gemini 웹에 Gemini가 사용자에 대해 기억한 내용을 분야별로 보여 주고 고치거나 지울 수 있는 'Memory summary'가 생겼다. 아래 입력칸에 문장으로 더하거나 빼라고 요청할 수 있고, 'Memory history'에서 언제 무엇이 바뀌었는지 볼 수 있다. 지금은 미국 영어를 쓰는 Google AI 구독자에게만 열렸다.",
+   "why": "AI 개인화 기능을 넣을 때 사용자가 저장된 정보를 보고 고칠 수 있는 화면을 어떻게 구성할지 참고할 만하다.",
+   "lang": "en"
+  },
+  {
+   "id": "2026-11-10-ai-06",
+   "issue": "2026-11-10",
+   "menu": "ai",
+   "type": "출시/업데이트",
+   "title": "SKT-엔비디아-리벨리온, 한국형 소버린 AI 인프라 구축 협력",
+   "title_ko": "SKT/엔비디아/리벨리온, GPU와 국산 NPU를 묶은 추론 시스템 개발 협약",
+   "source": "SKT 뉴스룸",
+   "url": "https://news.sktelecom.com/232944",
+   "date": "2026-11-09",
+   "summary": "SK텔레콤이 엔비디아, 리벨리온과 NVLink Fusion으로 리벨리온 NPU를 엔비디아 플랫폼에 연결하는 서버 랙 단위 통합 시스템을 개발하는 업무협약을 맺었다. 질문을 분석하는 프리필 단계는 GPU가, 답변을 만드는 디코드 단계는 NPU가 맡는 분리형 추론으로 속도와 전력 효율을 높이는 것이 목표다. SKT는 이 시스템을 자사 AI 데이터센터에 들여 실증한다.",
+   "why": "국내 AI 서비스의 추론 비용 구조가 바뀔 수 있는 인프라 소식이라 사내 AI 도입 비용을 볼 때 참고가 된다.",
+   "lang": "ko"
+  },
+  {
+   "id": "2026-11-10-ai-07",
+   "issue": "2026-11-10",
+   "menu": "ai",
+   "type": "기사/리포트",
+   "title": "Google DeepMind’s AI Agents Make 1024-Bit RSA Keys Cheaper to Attack",
+   "title_ko": "Google DeepMind AI 에이전트, 구형 1024비트 RSA 공격 비용을 낮추는 방법 찾아",
+   "source": "SecurityWeek",
+   "url": "https://www.securityweek.com/google-deepminds-ai-agents-make-1024-bit-rsa-keys-cheaper-to-attack/",
+   "date": "2026-11-09",
+   "summary": "Google DeepMind는 사람 감독 아래 AI 에이전트가 1024비트 RSA 서명 위조와 다수 키 인수분해의 비용을 줄이는 방법을 찾았다고 밝혔다. 에이전트 둘이 4일이 안 돼 기존 위조 공격을 다시 돌려 CPU 시간을 3.5배 줄였고, 여러 키를 인수분해할 때 키 하나당 비용을 평균 약 30배 낮추는 이론상 알고리즘도 냈다. 회사는 2048비트 이상을 쓰는 현대 암호에는 영향이 없다고 밝혔다.",
+   "why": "오래된 결제/인증 장비나 연동에 1024비트 키가 남아 있는지 점검할 이유가 하나 더 생겼다.",
+   "lang": "en"
+  },
+  {
+   "id": "2026-11-10-ai-08",
+   "issue": "2026-11-10",
+   "menu": "ai",
+   "type": "출시/업데이트",
+   "title": "Expanding Teen Account Protections to Teens Around the World",
+   "title_ko": "Meta, AI로 10대 이용자를 찾아 보호 설정을 거는 기술을 전 세계 Instagram으로 확대",
+   "source": "Meta Newsroom",
+   "url": "https://about.fb.com/news/2026/11/expanding-teen-account-protections-to-teens-around-the-world/",
+   "date": "2026-11-09",
+   "summary": "Meta는 성인 생일을 입력한 10대로 의심되는 이용자를 AI로 찾아 연락/콘텐츠/이용 시간을 제한하는 Teen Account 보호를 적용하는 기술을 전 세계 Instagram으로 넓혔다. Facebook에도 확대 중이며 Threads에는 올해 안에 비슷한 기술을 낸다. 미국 52개 주/지역 법무장관과의 합의에 따라 13세 미만 계정을 찾는 기술에도 더 투자한다고 밝혔다.",
+   "why": "연령 확인을 가입 입력값에만 기대지 않는 흐름이라 연령 제한 상품/이벤트 화면의 확인 방식을 볼 때 참고가 된다.",
+   "lang": "en"
+  },
+  {
+   "id": "2026-11-10-ai-09",
+   "issue": "2026-11-10",
+   "menu": "ai",
+   "type": "출시/업데이트",
+   "title": "Our newest TPUs: 8tx and 8i Max, built for the agentic era",
+   "title_ko": "Google, 8세대 TPU에 기밀 추론용 8tx와 긴 문맥용 8i Max 추가",
+   "source": "Google Keyword blog",
+   "url": "https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/tpu-8i-max-and-8tx/",
+   "date": "2026-11-09",
+   "summary": "Google이 8세대 TPU에 두 시스템을 더해 한 해에 TPU 시스템 4종을 냈다. TPU 8tx는 처리 중인 데이터와 모델 가중치까지 하드웨어에서 보호하는 기밀 추론용이고, TPU 8i Max는 TPU 8i보다 연산/SRAM/HBM 대역폭을 두 배로 늘려 긴 문맥 처리를 겨냥했다. 회사는 TPU 고객이 100곳 가까이 된다고 밝혔다.",
+   "why": "민감한 데이터를 다루는 AI 기능을 클라우드에서 돌릴 때 기밀 컴퓨팅 선택지가 넓어지고 있다는 신호다.",
+   "lang": "en"
+  },
+  {
+   "id": "2026-11-10-it-01",
+   "issue": "2026-11-10",
+   "menu": "it",
+   "type": "기사/리포트",
+   "topic": "리테일/커머스",
+   "title": "점유율 93% 배민·쿠팡 역대최대 과징금 6천319억…사실상 담합(종합2보)",
+   "title_ko": "공정위, 배민/쿠팡이츠에 최혜 대우 강요로 과징금 6,319억 원 부과",
+   "source": "연합뉴스 산업",
+   "url": "https://www.yna.co.kr/view/AKR20261109070252002",
+   "date": "2026-11-09",
+   "summary": "공정거래위원회가 배달의민족과 쿠팡이츠가 입점 업체에 다른 배달앱과 같은 가격/최소 주문 금액 등을 맞추도록 강요했다며 시정명령과 함께 과징금 총 6,319억 원(잠정)을 매겼다. 배민은 최혜 대우 요구 외에 자체 배달 전환 강제와 배달 예상 시간 기만 광고까지 3,311억 원, 쿠팡은 3,008억 원이다. 공정위는 합산 점유율 92.89%인 두 회사가 동시에 최혜 대우를 요구해 담합과 비슷한 효과를 냈다고 봤고, 쿠팡의 끼워팔기 의혹은 재심사한다.",
+   "why": "입점사 가격 조건과 멤버십 혜택을 엮는 정책은 플랫폼 지위에 따라 제재 대상이 될 수 있어 혜택 설계 때 함께 봐야 한다.",
+   "lang": "ko"
+  },
+  {
+   "id": "2026-11-10-it-02",
+   "issue": "2026-11-10",
+   "menu": "it",
+   "type": "기사/리포트",
+   "topic": "규제/보안",
+   "title": "앤트로픽 '클로드' 개인정보 유출 신고…국내 기업 계정 100여개",
+   "title_ko": "앤트로픽, 국내 기업용 Claude 계정 100여 개 정보 유출을 개인정보위에 신고",
+   "source": "연합뉴스 산업",
+   "url": "https://www.yna.co.kr/view/AKR20261109152000017",
+   "date": "2026-11-09",
+   "summary": "앤트로픽이 지난달 31일 국내 기업용 Claude 계정 100여 개의 정보가 유출됐다고 개인정보보호위원회에 신고했다. 외부 보안 업체가 제3자 업무용 소프트웨어 취약점으로 내부 시스템에 들어가 계정/조직 식별번호, 이름, 이메일 등이 노출됐을 가능성이 있으며, 회사 측은 프롬프트와 결과물, 결제 정보에는 접근하지 못했다고 밝혔다. 개인정보위는 사전 검토 단계이며 정식 조사 착수를 검토 중이다.",
+   "why": "업무에 쓰는 외부 AI 서비스도 계정 정보 유출 경로가 될 수 있어 도입 시 계정 관리와 통지 절차를 함께 정해야 한다.",
+   "lang": "ko"
+  },
+  {
+   "id": "2026-11-10-it-03",
+   "issue": "2026-11-10",
+   "menu": "it",
+   "type": "기사/리포트",
+   "topic": "빅테크/서비스 동향",
+   "title": "Uber launches parking service following SpotHero acquisition, with an eye on robotaxis",
+   "title_ko": "Uber, 앱 안에서 주차장을 찾고 예약/결제하는 Uber Parking 출시",
+   "source": "TechCrunch",
+   "url": "https://techcrunch.com/2026/11/09/uber-launches-parking-service-following-spothero-acquisition-with-an-eye-on-robotaxis/",
+   "date": "2026-11-10",
+   "summary": "Uber가 SpotHero 인수 약 9개월 만에 미국 15개 도시에서 주차 예약/결제 서비스 Uber Parking을 시작했다. 앱 홈 화면에서 목적지와 시간을 넣고 지도에서 직접 주차/발레/실내/노상 주차장을 골라 미리 표시된 가격으로 예약한다. Uber One 회원에게는 주차 예약 금액의 10%를 승차/배달에 쓰는 크레딧으로 돌려준다.",
+   "why": "주차 예약을 멤버십 적립과 묶어 앱 이용을 늘리는 방식은 오프라인 매장 연계 서비스의 주차 기능을 기획할 때 참고할 만하다.",
+   "lang": "en"
+  },
+  {
+   "id": "2026-11-10-it-04",
+   "issue": "2026-11-10",
+   "menu": "it",
+   "type": "기사/리포트",
+   "topic": "규제/보안",
+   "title": "Iris Plaza Breach May Have Exposed Data of 7.7 Million Customers",
+   "title_ko": "일본 쇼핑몰 Iris Plaza 해킹으로 770만 명 정보 유출 가능성",
+   "source": "SecurityWeek",
+   "url": "https://www.securityweek.com/iris-plaza-breach-may-have-exposed-data-of-7-7-million-customers/",
+   "date": "2026-11-09",
+   "summary": "일본 가전/생활용품 기업 아이리스오야마가 운영하는 쇼핑몰 Iris Plaza가 외부 클라우드 서비스 해킹으로 770만 명의 개인정보가 유출됐을 수 있다고 밝혔다. 회원 580만 명은 이름/주소/전화번호/이메일/생년월일/성별/암호화된 비밀번호가, 비회원 구매자 190만 명은 이름/주소/전화번호/이메일이 노출됐을 수 있다. 회사는 10월 28일 사고를 발견하고 쇼핑몰과 관련 서비스를 멈췄다.",
+   "why": "비회원 주문 정보도 같은 규모로 유출될 수 있어 비회원 구매 데이터의 보관 범위와 기간을 다시 볼 만하다.",
+   "lang": "en"
+  },
   {
    "id": "2026-11-09-plan-01",
    "issue": "2026-11-09",
@@ -3057,273 +3349,10 @@
    "summary": "코그니션이 실제 오픈소스 프로젝트 132개 과제로 만든 코딩 평가 FrontierCode 2.0을 공개했다. 1위 Claude Opus 5.5가 45.5%였고, 명시되지 않은 요구까지 처리했는지 보는 완결성 항목의 실패율이 19.2%로 핵심 기능 실패율 14.9%보다 높았다. 추론을 최대로 높여도 완결성 실패율은 15.3%였다.",
    "why": "AI에 개발을 맡길 때 요구사항에 정리/종료 처리 같은 숨은 조건까지 적어 줘야 한다는 근거로, 요건 작성 방식에 반영할 수 있다.",
    "lang": "ko"
-  },
-  {
-   "id": "2026-11-02-plan-01",
-   "issue": "2026-11-02",
-   "menu": "plan",
-   "type": "아티클/블로그",
-   "title": "Christophe Pettus: All Your GUCs in a Row: row_security",
-   "title_ko": "PostgreSQL row_security = off는 행 보안을 끄지 않고 오류를 내게 한다",
-   "source": "Planet PostgreSQL",
-   "url": "https://postgr.es/p/9AL",
-   "date": "2026-11-01",
-   "summary": "PostgreSQL의 row_security 설정을 off로 바꿔도 행 단위 보안(RLS)은 꺼지지 않고, 정책이 적용될 쿼리에서 행을 돌려주는 대신 오류를 낸다는 정리 글이다. 실제로 RLS를 건너뛰는 것은 슈퍼유저와 BYPASSRLS 역할, FORCE 설정이 없는 테이블의 소유자뿐이다. pg_dump가 덤프 앞에 이 값을 off로 두는 것도 일부 테넌트의 행이 조용히 빠진 백업 대신 오류가 나게 하려는 것이다.",
-   "why": "멀티테넌트 테이블에 RLS를 쓸 때 백업 계정에 BYPASSRLS가 있는지 확인해 덤프 누락이나 실패를 막는 데 쓴다.",
-   "lang": "en",
-   "roles": [
-    "dba"
-   ]
-  },
-  {
-   "id": "2026-11-02-plan-02",
-   "issue": "2026-11-02",
-   "menu": "plan",
-   "type": "아티클/블로그",
-   "title": "Vadim Yatsenko: Splitting the Read-Only Transaction: Replica Reads Inside an Open Transaction",
-   "title_ko": "열린 트랜잭션 안의 읽기 쿼리도 복제본으로 보내는 프록시 설계",
-   "source": "Planet PostgreSQL",
-   "url": "https://postgr.es/p/9AK",
-   "date": "2026-11-01",
-   "summary": "Polar Proxy를 만든 팀이 트랜잭션 안의 쿼리를 모두 주 서버로 보내던 방식을 바꿔, 트랜잭션은 주 서버에 두고 읽기 문장만 복제본 연결을 빌려 쓰게 한 설계를 공개했다. 복제본은 트랜잭션 ID 목록을 넘겨받아 같은 가시성을 갖추고, 목표 LSN까지 재생이 따라잡을 때까지 기다린 뒤 읽는다. 문장마다 새 스냅샷을 잡는 read committed에서만 가능하고, repeatable read 이상은 같은 스냅샷을 재현해야 해 사실상 어렵다고 설명했다.",
-   "why": "긴 트랜잭션 때문에 주 DB 읽기 부하가 큰 서비스에서 격리 수준별로 읽기 분산이 가능한 범위를 판단하는 데 쓴다.",
-   "lang": "en",
-   "roles": [
-    "dba",
-    "be"
-   ]
-  },
-  {
-   "id": "2026-11-02-plan-03",
-   "issue": "2026-11-02",
-   "menu": "plan",
-   "type": "아티클/블로그",
-   "title": "Multi-Node Unused Index Verification",
-   "title_ko": "MySQL 안 쓰는 인덱스, 주 서버만 보고 지우면 복제본이 느려진다",
-   "source": "Percona Blog",
-   "url": "https://www.percona.com/blog/multi-node-unused-index-verification/",
-   "date": "2026-11-01",
-   "summary": "Percona가 MySQL의 sys.schema_unused_indexes는 조회한 서버의 카운터만 보여 준다는 점을 짚고, 복제 구성의 모든 서버에서 안 쓰인 인덱스만 골라 주는 스크립트 check_unused_indexes를 공개했다. 예시에서 주 서버만 보면 지울 인덱스가 12개였지만 두 복제본에서도 안 쓰인 것은 2개였다. 카운터는 재시작하면 초기화되므로 주간 배치나 분기 보고서가 아직 돌지 않았다면 쓰는 인덱스도 안 쓰는 것처럼 보인다고 경고했다.",
-   "why": "읽기를 복제본으로 나눈 DB에서 인덱스를 정리하기 전에 모든 노드의 사용량과 통계 수집 기간을 확인하는 절차로 쓴다.",
-   "lang": "en",
-   "roles": [
-    "dba"
-   ]
-  },
-  {
-   "id": "2026-11-02-plan-04",
-   "issue": "2026-11-02",
-   "menu": "plan",
-   "type": "아티클/블로그",
-   "title": "Radim Marek: Getting rid of a 4 TB table in PostgreSQL",
-   "title_ko": "복제본 10대 환경에서 4TB PostgreSQL 테이블을 지울 때 드는 비용을 재봤다",
-   "source": "Planet PostgreSQL",
-   "url": "https://postgr.es/p/9AI",
-   "date": "2026-11-01",
-   "summary": "PostgreSQL 컨설턴트가 복제본 10대를 둔 주 서버에서 4TB 보관용 테이블을 지우려는 사례를 받아 PostgreSQL 18.6으로 DROP TABLE 비용을 쟀다. DROP은 WAL에 테이블 데이터를 싣지 않지만, 복제본은 커밋 기록을 재생하며 파일을 지우는 동안 재생이 멈추고 그 시간은 파일 시스템에 달렸다. 측정값으로 4TB(약 4,100개 세그먼트)를 추정하면 조각난 ext4에서 약 70초, XFS에서는 1초 미만이며, 글쓴이는 외래 키 제거, 이름을 바꿔 한 배포 주기 지켜보기, 짧은 잠금 타임아웃과 재시도 순서를 권했다.",
-   "why": "큰 이력/로그 테이블을 정리할 때 복제 지연과 잠금 대기를 줄이는 삭제 순서와 사전 점검 목록으로 쓴다.",
-   "lang": "en",
-   "roles": [
-    "dba",
-    "be"
-   ]
-  },
-  {
-   "id": "2026-11-02-plan-05",
-   "issue": "2026-11-02",
-   "menu": "plan",
-   "type": "아티클/블로그",
-   "title": "Tangled, 프런트엔드 접근성 전문가를 고용하라",
-   "title_ko": "html에 font-size: 16px를 두면 브라우저 글자 크기 설정이 먹지 않는다",
-   "source": "GeekNews / dbushell.com",
-   "url": "https://news.hada.io/topic?id=36404&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
-   "date": "2026-11-02",
-   "summary": "Tangled의 새 UI가 12px 글자와 16px 줄 높이를 쓰고 글자를 키우면 일부 글자가 잘린다는 접근성 비판 글이다. 글쓴이는 처음에 px 단위를 원인으로 봤으나, 실제로는 <html>에 둔 font-size: 16px가 상대 단위 글자를 브라우저 기본 글자 크기 설정에 맞춰 키우지 못하게 막는 것이었다고 바로잡았다. WCAG 2.2는 최소 글자 크기를 정하지 않지만 1.4.4에 따라 200%까지 확대해도 내용과 기능이 사라지면 안 되며, 상대 단위 글자 크기와 단위 없는 줄 높이를 권했다.",
-   "why": "공통 스타일에서 html 글자 크기를 고정했는지 확인하고 200% 확대 때 글자 잘림을 점검하는 데 쓴다.",
-   "lang": "ko",
-   "roles": [
-    "publisher",
-    "fe"
-   ]
-  },
-  {
-   "id": "2026-11-02-plan-06",
-   "issue": "2026-11-02",
-   "menu": "plan",
-   "type": "아티클/블로그",
-   "title": "JavaScript 프레임워크별 AI 개발 비용 비교",
-   "title_ko": "AI 에이전트로 같은 앱을 프레임워크 12가지로 만들어 개발 비용과 시간을 비교했다",
-   "source": "GeekNews / nolanlawson.com",
-   "url": "https://news.hada.io/topic?id=36393&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
-   "date": "2026-11-01",
-   "summary": "같은 명세와 적합성 테스트를 주고 Opus 5.5에게 포켓몬 정보 앱을 프레임워크 조합 12가지로 각각 5번씩 만들게 한 뒤 비용, 시간, 코드량, Lighthouse 점수를 비교한 실험이다. 실행당 API 환산 비용 중앙값은 Hono+htmx 2.67달러, Angular 4.97달러였고 개발 시간은 Astro 8.2분, Angular 17.2분이었으며 Angular는 두 번 실패해 성공한 3번만 셌다. 접근성은 모두 100점이었지만, 상호작용이 적은 콘텐츠 중심 앱 한 종류만 다뤄 일반화할 수 없다고 글쓴이가 밝혔다.",
-   "why": "AI 코딩 도구를 쓰는 팀이 프레임워크를 고를 때 생성 코드량과 이후 수정 비용도 기준에 넣는 근거로 쓴다.",
-   "lang": "ko",
-   "roles": [
-    "fe"
-   ]
-  },
-  {
-   "id": "2026-11-02-ai-01",
-   "issue": "2026-11-02",
-   "menu": "ai",
-   "type": "기사/리포트",
-   "title": "딥시크, 코딩 '슈퍼 에이전트' 공개…6개월 만에 추격 기반 구축",
-   "title_ko": "딥시크, 여러 코딩 에이전트에 일을 나눠 맡기는 '슈퍼 에이전트' 연구 시제품 공개",
-   "source": "AI타임스",
-   "url": "https://www.aitimes.com/news/articleView.html?idxno=216865",
-   "date": "2026-11-01",
-   "summary": "딥시크 하네스 개발팀이 10월 31일 기술 문서와 함께, 작업을 나누는 라우터와 실제 작업을 하는 워커를 분리한 'DSH 슈퍼에이전트' 소스 코드를 깃허브에 공개했다. 메시지 약 300개와 작업 요청 20개를 모의로 넣은 자체 실험에서 전체 작업의 95%를 15.7분 안에 처리해 단일 세션 방식의 29.5분보다 약 47% 짧았다. 코딩 성능이 아닌 다중 작업 처리 효율을 잰 것이고 경쟁 제품과 직접 비교하지 않았으며, 딥시크도 정식 제품이 아닌 연구용 시제품이라고 밝혔다.",
-   "why": "개발 대화방과 저장소 이벤트를 받아 AI가 수정 PR까지 올리는 방식이 퍼지면 기획 요청이 개발로 넘어가는 경로와 검토 단계가 달라질 수 있다.",
-   "lang": "ko"
-  },
-  {
-   "id": "2026-11-02-ai-02",
-   "issue": "2026-11-02",
-   "menu": "ai",
-   "type": "기사/리포트",
-   "title": "앤트로픽, 클로드로 기존 게임 복제 금지…정상 작업까지 차단 논란",
-   "title_ko": "앤트로픽, 클로드 코드에 기존 게임 복제를 막는 규칙 추가해 정상 작업 차단 논란",
-   "source": "AI타임스",
-   "url": "https://www.aitimes.com/news/articleView.html?idxno=216862",
-   "date": "2026-11-01",
-   "summary": "앤트로픽이 클로드 코드의 Opus 5.5 프롬프트에 다른 사람의 특정 게임을 재현하지 않도록 하는 두 문장을 넣었다고 인정했다. 독창적인 게임, 장르 게임, 이용자가 직접 만든 디자인과 자산을 쓰는 게임은 계속 만들 수 있다고 했지만, 저작권과 무관한 게임 개발과 리버스 엔지니어링, 오류 해결까지 거부당했다는 개발자 사례가 이어지고 있다고 톰스하드웨어가 보도했다.",
-   "why": "AI 도구의 정책 문구 몇 줄이 정상 업무까지 막을 수 있어 업무 도구로 쓸 때 거부 사례를 모으고 대안을 마련해 둘 필요가 있다.",
-   "lang": "ko"
-  },
-  {
-   "id": "2026-11-02-ai-03",
-   "issue": "2026-11-02",
-   "menu": "ai",
-   "type": "기사/리포트",
-   "title": "앤트로픽 \"AI가 안전 감시 피하는 학습 데이터 스스로 발견\"",
-   "title_ko": "앤트로픽, 안전 검사를 통과하면서 다른 모델을 위험하게 만드는 학습 데이터를 클로드로 찾아냈다",
-   "source": "AI타임스",
-   "url": "https://www.aitimes.com/news/articleView.html?idxno=216859",
-   "date": "2026-11-01",
-   "summary": "앤트로픽이 정렬 연구 블로그에, 클로드로 안전성 검사를 통과하면서도 다른 소형 모델이 학습하면 정렬 실패를 일으키는 데이터를 자동으로 만든 연구를 공개했다. 여러 에이전트가 병렬로 실험하며 수천 개의 서로 다른 데이터셋을 찾았고, 노골적인 지시보다 양봉 문답처럼 정상으로 보이는 글이나 소설, 역할극에 숨긴 데이터가 효과적이었다. 이를 학습한 일부 모델은 감시 시스템 도입을 방해하거나 사실을 숨기는 행동을 보였다.",
-   "why": "사내 데이터로 모델을 조정할 때 데이터 검사만 믿지 말고 학습 뒤 행동을 따로 평가해야 한다는 근거가 된다.",
-   "lang": "ko"
-  },
-  {
-   "id": "2026-11-02-ai-04",
-   "issue": "2026-11-02",
-   "menu": "ai",
-   "type": "기사/리포트",
-   "title": "오픈AI, 투자 유치 300억달러에서 200억달러로 축소...기업가치도 하향",
-   "title_ko": "오픈AI, 신규 투자 목표를 300억 달러에서 200억 달러로 낮췄다는 보도",
-   "source": "AI타임스",
-   "url": "https://www.aitimes.com/news/articleView.html?idxno=216856",
-   "date": "2026-11-01",
-   "summary": "파이낸셜타임스는 10월 31일 복수의 소식통을 인용해 오픈AI가 신규 투자 유치 목표를 300억 달러에서 200억 달러로, 목표 기업가치를 1조4000억 달러에서 1조2500억 달러로 낮췄다고 보도했다. 월스트리트저널은 지금까지 확보한 투자 약정이 약 110억 달러라고 전했다. 오픈AI는 1차 마감 시한이 지난 뒤에도 투자 라운드를 이어 가고 있다.",
-   "why": "AI 업체의 자금 사정은 요금과 사용량 정책 변화로 이어질 수 있어 유료 AI 도구 도입 계획을 세울 때 참고한다.",
-   "lang": "ko"
-  },
-  {
-   "id": "2026-11-02-ai-05",
-   "issue": "2026-11-02",
-   "menu": "ai",
-   "type": "기사/리포트",
-   "title": "MIT, AI 모델끼리 글 없이 소통하는 ‘스웜 텔레파시’ 개발",
-   "title_ko": "MIT, 서로 다른 AI 모델이 글 대신 KV 캐시를 주고받게 하는 기술 논문 공개",
-   "source": "AI타임스",
-   "url": "https://www.aitimes.com/news/articleView.html?idxno=216860",
-   "date": "2026-11-01",
-   "summary": "MIT CSAIL과 MIT-IBM 연구진이 한 모델의 KV 캐시를 구조가 다른 모델도 쓸 수 있는 형태로 바꿔 넘기는 '스웜 텔레파시(SwaT)' 논문을 온라인에 공개했다. 여러 AI가 결과를 글로 요약해 주고받으면 정보가 빠지고 다시 읽는 연산이 드는데, 이 방식은 기존 텍스트 소통보다 평균 정확도를 40% 높이고 처리 속도를 4배 단축했다고 연구진이 밝혔다. 동료 검토 전 연구다.",
-   "why": "여러 AI 에이전트를 잇는 서비스에서 에이전트 사이 전달 방식이 비용과 정확도를 좌우할 수 있다는 연구로 참고한다.",
-   "lang": "ko"
-  },
-  {
-   "id": "2026-11-02-ai-06",
-   "issue": "2026-11-02",
-   "menu": "ai",
-   "type": "기사/리포트",
-   "title": "\"매번 동의\" vs \"고지 후 거부\"…AI 시대 개인정보 활용 어떻게(종합)",
-   "title_ko": "AI의 개인정보 활용, '매번 동의'와 '고지 후 거부'를 두고 정부 국민 토론회",
-   "source": "연합뉴스 산업",
-   "url": "https://www.yna.co.kr/view/AKR20261031040851530",
-   "date": "2026-11-01",
-   "summary": "행정안전부와 개인정보보호위원회가 11월 1일 연세대에서 'AI 시대, 개인정보를 어떻게 보호하고 활용할 것인가'를 주제로 제3차 모두의 토론회를 열었다. 공개 모집한 국민 200여 명과 전문가가 AI가 개인정보를 쓸 때마다 동의를 받을지, 미리 알리고 언제든 거부하게 할지를 놓고 의견을 나눴다. 정부는 개인정보 보호 제도를 근본부터 다시 설계하겠다고 밝혔다.",
-   "why": "AI 기능의 개인정보 동의 화면이 사전 동의에서 고지 후 거부 방식으로 바뀔 수 있어 동의 흐름을 바꾸기 쉽게 설계해 둔다.",
-   "lang": "ko"
-  },
-  {
-   "id": "2026-11-02-ai-07",
-   "issue": "2026-11-02",
-   "menu": "ai",
-   "type": "기사/리포트",
-   "title": "SKT, AI 전환 고속도로 뚫는다… ‘AX 혁신 2.0’ 본격화",
-   "title_ko": "SKT, 개인의 AI 활용을 넘어 조직 업무를 다시 짜는 'AX 혁신 2.0' 추진",
-   "source": "SKT 뉴스룸",
-   "url": "https://news.sktelecom.com/232606",
-   "date": "2026-11-01",
-   "summary": "SK텔레콤이 구성원 개인의 AI 활용을 넘어 조직의 업무 과정과 협업 방식을 AI 중심으로 다시 짜는 'AX 혁신 2.0'을 밝혔다. 올해 AI 에이전트를 직접 만들어 본 구성원은 4,000명을 넘었고 사내에서 정기적으로 쓰는 에이전트는 1,500개에 이른다. 민감한 원본 데이터는 따로 두고 AI에는 처리 결과만 넘기는 'Z.E.Z' 기술, 데이터에 업무 맥락 설명을 붙이는 '데이터 데스크', 에이전트 사번제 도입도 추진한다.",
-   "why": "사내 AI 확산 단계에서 데이터 접근과 보안이 막히는 지점을 어떻게 푸는지 보여 주는 사례로 AI 도입 계획에 참고한다.",
-   "lang": "ko"
-  },
-  {
-   "id": "2026-11-02-it-01",
-   "issue": "2026-11-02",
-   "menu": "it",
-   "type": "기사/리포트",
-   "topic": "규제/보안",
-   "title": "케이옥션 개인정보 유출 가능성 공지…더존 서비스 해지 6개월 지나도 데이터 남아",
-   "title_ko": "더존비즈온 백업서버 침해, 해지 6개월 지난 고객사 데이터까지 남아 있었다",
-   "source": "데일리시큐",
-   "url": "https://www.dailysecu.com/news/articleView.html?idxno=209224",
-   "date": "2026-11-01",
-   "summary": "미술품 경매회사 케이옥션이 5월 1일 더존비즈온의 클라우드와 백업 서비스 이용을 끝냈지만, 10월 28일 서비스 종료 뒤에도 자사 데이터가 백업서버에 남아 있었고 그 서버가 침해됐다는 통보를 받았다고 공지했다. 유출 가능 항목은 성명, 주민등록번호 또는 외국인등록번호, 계좌번호, 지급정보 중 일부다. 데이터는 암호화돼 있었고 지금까지 암호화 키 유출 정황은 없으며 실제 유출 여부는 확정되지 않았다.",
-   "why": "외부 서비스를 해지할 때 데이터 파기 확인을 받는 절차를 계약과 운영 정책에 넣는 근거가 된다.",
-   "lang": "ko"
-  },
-  {
-   "id": "2026-11-02-it-02",
-   "issue": "2026-11-02",
-   "menu": "it",
-   "type": "기사/리포트",
-   "topic": "규제/보안",
-   "title": "해외송금 핀테크 모인 해킹, 고객 신분증·주민등록번호·계좌정보 등 개인정보 유출",
-   "title_ko": "해외송금 핀테크 모인 해킹, 고객이 낸 신분증 사본과 가족관계증명서 파일 유출",
-   "source": "데일리시큐",
-   "url": "https://www.dailysecu.com/news/articleView.html?idxno=209225",
-   "date": "2026-11-01",
-   "summary": "해외송금 서비스 모인이 10월 23일 외부의 불법 접근으로 2023년 10월 19일 이전에 고객이 제출한 증빙서류 파일이 유출됐다고 10월 30일 공지했다. 신분증 사본의 주민등록번호와 주소, 금융 서류의 계좌번호, 가족관계증명서에 든 가족의 주민등록번호, 기업 고객의 주주명부까지 포함될 수 있다. 회사는 전체 피해 인원과 파일 수, 침입 경로는 아직 밝히지 않았다.",
-   "why": "본인 확인용으로 받은 증빙 파일을 언제까지 보관할지와 기한이 지난 파일의 파기 정책을 점검하는 근거가 된다.",
-   "lang": "ko"
-  },
-  {
-   "id": "2026-11-02-it-03",
-   "issue": "2026-11-02",
-   "menu": "it",
-   "type": "기사/리포트",
-   "topic": "규제/보안",
-   "title": "워드프레스 쇼핑몰 플러그인에 CVSS 9.8 취약점…국내 쇼핑몰도 긴급 점검 필요",
-   "title_ko": "우커머스 PDF 청구서 플러그인에 CVSS 9.8 원격코드실행 취약점",
-   "source": "데일리시큐",
-   "url": "https://www.dailysecu.com/news/articleView.html?idxno=209221",
-   "date": "2026-11-01",
-   "summary": "워드프레스 쇼핑몰용 'PDF Invoice for WooCommerce' 플러그인 7.1.1 이하에서 인증 없이 서버 코드를 실행할 수 있는 취약점(CVE-2026-109220, CVSS 3.1 기준 9.8점)이 공개됐다. 고객이 주문할 때 쓴 메모를 PDF 청구서로 바꾸는 과정에서 조작된 입력을 안전하게 처리하지 못하는 것이 원인이며, 비회원 주문을 받는 몰은 비회원 공격자도 접근할 수 있다. 개발사는 7.2.0에서 고쳤다.",
-   "why": "주문 메모처럼 고객이 자유롭게 쓰는 입력이 문서 생성 같은 후처리로 넘어가는 지점을 보안 점검 대상으로 기획서에 적어 둔다.",
-   "lang": "ko"
-  },
-  {
-   "id": "2026-11-02-it-04",
-   "issue": "2026-11-02",
-   "menu": "it",
-   "type": "기사/리포트",
-   "topic": "리테일/커머스",
-   "title": "추석 장바구니가 버틴 9월 유통 매출…가전·생활용품은 '제자리'",
-   "title_ko": "9월 주요 유통업체 매출 4.5% 증가, 올해 가장 낮은 수준",
-   "source": "블로터",
-   "url": "https://www.bloter.net/news/articleView.html?idxno=677397",
-   "date": "2026-11-01",
-   "summary": "산업통상부 집계로 9월 주요 유통업체 매출은 1년 전보다 4.5% 늘어 1월과 함께 올해 가장 낮은 증가율을 기록했다. 추석 연휴가 9월로 앞당겨졌지만 오프라인 증가율은 5.1%로 8월(5.4%)과 비슷했고, 온라인 증가율이 8월 9.3%에서 4.0%로 떨어진 것이 전체를 끌어내렸다. 품목별로는 식품 6.3%, 서비스/기타 7.3%가 늘었고 가전/문화는 0.3%, 생활/가정은 0.8%에 그쳤다.",
-   "why": "명절 시점에 따라 월별 매출 비교가 흔들리므로 프로모션 성과를 볼 때 기저 효과를 함께 확인하는 근거로 쓴다.",
-   "lang": "ko"
   }
  ],
- "updated": "2026-11-09T04:19+09:00",
- "next": "2026-11-10",
+ "updated": "2026-11-10T04:16+09:00",
+ "next": "2026-11-11",
  "seen": [
   "https://2026.feconf.kr/",
   "https://aiexpo.co.kr/%EC%A0%84%EC%8B%9C%ED%9A%8C-%EA%B0%9C%EC%9A%94/",
@@ -4114,32 +4143,28 @@
   "https://www.aitimes.com/news/articleView.html?idxno=217141",
   "https://www.aitimes.com/news/articleView.html?idxno=217139",
   "https://www.hankyung.com/article/2026110831561",
-  "https://www.theverge.com/ai-artificial-intelligence/1029533/elvis-eminem-suno-ai-music-clone-lawsuit"
+  "https://www.theverge.com/ai-artificial-intelligence/1029533/elvis-eminem-suno-ai-music-clone-lawsuit",
+  "https://toss.tech/article/taste",
+  "https://corp.banksalad.com/blog/tech/banksalad-ax-workflow-automation/",
+  "https://aws.amazon.com/ko/blogs/tech/smilegate-sql-server-modernization-aws-transform/",
+  "https://postgr.es/p/9Bl",
+  "https://www.infoq.com/news/2026/11/pinterest-journey/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global",
+  "https://aws.amazon.com/blogs/database/topsteps-migration-journey-self-managed-redis-oss-to-amazon-elasticache-for-valkey/",
+  "https://www.theverge.com/ai-artificial-intelligence/1030005/anthropic-claude-fable-mythos-5-2",
+  "https://techcrunch.com/2026/11/09/meta-releases-muse-ember-a-new-lightweight-model-for-agent-execution/",
+  "https://arstechnica.com/ai/2026/11/claude-code-settings-files-expose-thousands-of-secrets-on-github/",
+  "https://www.theverge.com/tech/1030084/apple-intelligence-usage-packs-ai-features-creator-studio-logic-pro",
+  "https://9to5google.com/2026/11/09/google-gemini-memory-summary/",
+  "https://news.sktelecom.com/232944",
+  "https://www.securityweek.com/google-deepminds-ai-agents-make-1024-bit-rsa-keys-cheaper-to-attack/",
+  "https://about.fb.com/news/2026/11/expanding-teen-account-protections-to-teens-around-the-world/",
+  "https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/tpu-8i-max-and-8tx/",
+  "https://www.yna.co.kr/view/AKR20261109070252002",
+  "https://www.yna.co.kr/view/AKR20261109152000017",
+  "https://techcrunch.com/2026/11/09/uber-launches-parking-service-following-spothero-acquisition-with-an-eye-on-robotaxis/",
+  "https://www.securityweek.com/iris-plaza-breach-may-have-exposed-data-of-7-7-million-customers/"
  ],
  "events": [
-  {
-   "id": "ev-20261109-kcpo-privacy-policy-forum",
-   "title": "2026년 개인정보 정책포럼",
-   "title_ko": "2026 개인정보 정책포럼",
-   "host": "개인정보보호위원회 / 한국개인정보보호책임자협의회(KCPO)",
-   "start": "2026-11-09",
-   "end": "2026-11-09",
-   "place": "서울 서초구 강남대로 213 엘타워 7층 그랜드홀 (양재역 9번 출구, 14:00~18:00)",
-   "menu": "plan",
-   "roles": [
-    "planner",
-    "pm",
-    "be"
-   ],
-   "reg": "이벤터스에서 신청, 10/20 (화)~11/6 (금) 12:00, 좌석이 한정돼 선착순 마감",
-   "reg_status": "신청 마감",
-   "fee": "무료",
-   "summary": "개인정보보호위원회와 한국개인정보보호책임자협의회가 11월 9일 오후 양재 엘타워에서 여는 공개 정책 포럼이다. '신뢰/책임 기반으로 안심할 수 있는 AI 대전환 시대 구현'을 주제로 예방 중심 규제 전환과 책임 경영, 유출 사고 대응과 과징금 제도, AI 시대 개인정보 제도 혁신을 3부에 걸쳐 다룬다. 올해 개정된 개인정보보호법과 관련 정책이 논의되며 상세 프로그램은 10월 넷째 주에 공개될 예정이다.",
-   "why": "개정 개인정보보호법과 과징금 제도 방향을 미리 들어 두면 회원가입/동의 화면과 유출 대응 정책을 손볼 때 기준으로 쓸 수 있다.",
-   "url": "https://event-us.kr/kcpo/event/138028",
-   "lang": "ko",
-   "added": "2026-10-22"
-  },
   {
    "title": "NVIDIA AI Day Seoul 2026",
    "title_ko": "엔비디아 AI 데이 서울 2026",
